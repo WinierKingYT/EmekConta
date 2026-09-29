@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
@@ -94,36 +95,76 @@ export default function ProductDetailPage({ params }: Props) {
         {/* Product Hero Grid (Left: CAD/Visual Schematic, Right: Specs & Actions) */}
         <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            {/* Left: Industrial Visual / Blueprint schematic */}
-            <div className="lg:col-span-5 bg-industrial-950 border border-industrial-800 p-6 flex flex-col justify-between aspect-square">
-              <div className="flex items-center justify-between text-xs font-mono text-industrial-400 pb-3 border-b border-industrial-850">
-                <span className="text-steel-blue font-bold uppercase">{product.category}</span>
-                <span>ASME / DIN UYUMLU</span>
-              </div>
-
-              {/* Vector diagram */}
-              <div className="my-auto flex flex-col items-center justify-center p-4">
-                <div className="w-36 h-36 rounded-full border-4 border-dashed border-steel-blue/40 flex items-center justify-center bg-industrial-900">
-                  <div className="w-24 h-24 rounded-full border-2 border-industrial-700 flex items-center justify-center text-center p-2">
-                    <span className="text-xs font-mono font-bold text-white uppercase">
-                      {product.name.split(" ")[0]}
+            {/* Left: Industrial Visual / Blueprint schematic or Clean Catalog Photo */}
+            <div
+              className={`lg:col-span-5 border flex flex-col justify-between aspect-square relative overflow-hidden group ${
+                product.image
+                  ? "bg-white border-industrial-200 p-4 sm:p-6"
+                  : "bg-industrial-950 border-industrial-800 p-6"
+              }`}
+            >
+              {product.image ? (
+                <>
+                  {/* Header bar inside white card */}
+                  <div className="flex items-center justify-between text-xs font-mono text-industrial-500 pb-3 border-b border-industrial-100 z-10 w-full">
+                    <span className="text-steel-darkblue font-bold uppercase">{product.category}</span>
+                    <span className="text-[11px] bg-industrial-100 px-2 py-0.5 border border-industrial-200 text-industrial-700">
+                      ASME / DIN UYUMLU
                     </span>
                   </div>
-                </div>
-                <div className="mt-4 text-center">
-                  <span className="text-xs font-mono text-industrial-300 block">
-                    {product.imagePlaceholderText}
-                  </span>
-                  <span className="text-[10px] font-mono text-steel-blue block mt-1">
-                    * Gerçek üretim ve atölye fotoğrafları güncellenecektir
-                  </span>
-                </div>
-              </div>
 
-              <div className="pt-3 border-t border-industrial-850 flex items-center justify-between text-[11px] font-mono text-industrial-400">
-                <span>İMALAT: İSTANBUL</span>
-                <span className="text-emerald-400">ÖZEL ÖLÇÜ KESİM</span>
-              </div>
+                  {/* Clean isolated photo on white */}
+                  <div className="relative w-full flex-1 flex items-center justify-center my-2">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Bottom bar */}
+                  <div className="pt-3 border-t border-industrial-100 flex items-center justify-between text-[11px] font-mono text-industrial-500 z-10 w-full">
+                    <span className="font-semibold text-industrial-700">İMALAT: İSTANBUL</span>
+                    <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 border border-emerald-200 font-semibold">
+                      ÖZEL ÖLÇÜ KESİM
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between text-xs font-mono text-industrial-400 pb-3 border-b border-industrial-850 z-10">
+                    <span className="text-steel-blue font-bold uppercase">{product.category}</span>
+                    <span>ASME / DIN UYUMLU</span>
+                  </div>
+
+                  {/* Vector diagram if no image */}
+                  <div className="my-auto flex flex-col items-center justify-center p-4 z-10">
+                    <div className="w-36 h-36 rounded-full border-4 border-dashed border-steel-blue/40 flex items-center justify-center bg-industrial-900">
+                      <div className="w-24 h-24 rounded-full border-2 border-industrial-700 flex items-center justify-center text-center p-2">
+                        <span className="text-xs font-mono font-bold text-white uppercase">
+                          {product.name.split(" ")[0]}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-center">
+                      <span className="text-xs font-mono text-industrial-300 block">
+                        {product.imagePlaceholderText}
+                      </span>
+                      <span className="text-[10px] font-mono text-steel-blue block mt-1">
+                        * Standart ve özel ölçü imalat
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-industrial-850 flex items-center justify-between text-[11px] font-mono text-industrial-400 z-10">
+                    <span>İMALAT: İSTANBUL</span>
+                    <span className="text-emerald-400">ÖZEL ÖLÇÜ KESİM</span>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Right: Technical Summary & Direct RFQ */}

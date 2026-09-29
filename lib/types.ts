@@ -27,6 +27,7 @@ export interface Product {
   standards: string[];
   applications: string[];
   specifications: ProductSpecification[];
+  image?: string;
   imagePlaceholderText: string;
   drawingSupported: boolean;
   relatedProductSlugs: string[];
