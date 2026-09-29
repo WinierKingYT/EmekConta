@@ -22,45 +22,45 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: "spiral",
-    title: "Hassas Spiral Sarım İmalatı",
-    badge: "ASME B16.20 & DIN EN 1514-2",
+    title: "Komple Flanş & Basınç Contaları Grubu",
+    badge: "ASME & DIN NORMU",
     image: "/images/hero/hero-slide-1.webp",
-    shortLabel: "01 Spiral Sarım",
-    metric1Label: "MALZEME BİLEŞENİ",
-    metric1Val: "AISI 316L + Saf Grafit",
-    metric2Label: "TOLERANS GÜVENCESİ",
-    metric2Val: "±0.2 mm Kumpas",
-    cornerBadgeLeft: "ASME B16.20 & DIN",
-    cornerBadgeRight: "±0.2 mm Hassasiyet",
-    description: "316L paslanmaz çelik sarım şeritleri ve saf grafit dolgu ile buhar ve petrokimya hatlarına özel imalat."
+    shortLabel: "01 Flanş Contaları",
+    metric1Label: "ÜRÜN GAMI",
+    metric1Val: "Spiral Sarım, Grafit, PTFE, EPDM",
+    metric2Label: "HASSASİYET",
+    metric2Val: "Kumpas & Kalibre Kontrol",
+    cornerBadgeLeft: "ASME & DIN",
+    cornerBadgeRight: "Stok & Özel İmalat",
+    description: "Spiral sarımlı contalar, telli saf grafit, Klingrit ve PTFE flanş contalarının tam donanımlı stüdyo koleksiyonu."
   },
   {
     id: "cnc",
-    title: "CNC Bıçak & Özel Kesim Masası",
+    title: "Özel Kesim & Mühendislik Plastikleri",
     badge: "CAD / CAM & DXF KESİM",
     image: "/images/hero/hero-slide-2.webp",
-    shortLabel: "02 CNC Kesim",
-    metric1Label: "KAPASİTE & ÇİZİM",
-    metric1Val: "Teknik Resim / DXF Veri",
+    shortLabel: "02 Özel Kesim & Plastik",
+    metric1Label: "GEOMETRİK İMALAT",
+    metric1Val: "Eşanjör, Karter & Özel Flanş",
     metric2Label: "İŞLEME ALANI",
-    metric2Val: "Kalıpsız Sıfır Hata",
+    metric2Val: "Kestamid, Mantar, Silikon",
     cornerBadgeLeft: "CAD/CAM & CNC",
-    cornerBadgeRight: "Kalıp Maliyetsiz",
-    description: "Vakum tablalı CNC tezgahlarda saf grafit, Klingrit, PTFE ve elastomer levhalardan milimetrik kesim."
+    cornerBadgeRight: "Kalıpsız Kesim",
+    description: "Eşanjör contaları, kauçuklu mantar, teflon zarf ve Kestamid/Delrin parçaların numuneye göre üretimi."
   },
   {
     id: "heavy",
-    title: "Ağır Sanayi & Salmastra Grubu",
-    badge: "PN10 - PN400 / 550°C",
+    title: "Salmastralar, Ambar Lastikleri & İzolasyon",
+    badge: "DENİZCİLİK & AĞIR SANAYİ",
     image: "/images/hero/hero-slide-3.webp",
     shortLabel: "03 Salmastra & Gemi",
-    metric1Label: "SICAKLIK DAYANIMI",
-    metric1Val: "-200°C ile +550°C",
+    metric1Label: "BASINÇ & SICAKLIK",
+    metric1Val: "PN10 - PN400 / +550°C",
     metric2Label: "SEKTÖR UYUMU",
-    metric2Val: "Tersane & Ağır Sanayi",
+    metric2Val: "Tersane, Pompa & Vana",
     cornerBadgeLeft: "YÜKSEK BASINÇ",
-    cornerBadgeRight: "400 Bar Test Gücü",
-    description: "Inconel örgülü grafit salmastralar, ambar kapak contaları ve yüksek basınç buhar vana sızdırmazlıkları."
+    cornerBadgeRight: "Tersane & Buhar",
+    description: "Örgülü grafit/PTFE/aramid salmastralar, gemi ambar kapak lastikleri ve cam elyaf izolasyon şeritleri."
   }
 ];
 
