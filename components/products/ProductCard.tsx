@@ -7,9 +7,10 @@ import { ArrowRightIcon, RulerIcon, CheckCircleIcon } from "@/components/icons/I
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <div className="group bg-white border border-industrial-200 hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between">
       <div>
@@ -30,6 +31,8 @@ export function ProductCard({ product }: ProductCardProps) {
                   alt={product.name}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={priority}
+                  loading={priority ? undefined : "lazy"}
                   className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
