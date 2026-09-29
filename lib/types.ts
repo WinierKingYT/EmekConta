@@ -1,0 +1,108 @@
+/**
+ * Core domain types for Emek Conta
+ */
+
+export interface NavItem {
+  label: string;
+  href: string;
+  badge?: string;
+}
+
+export interface ProductSpecification {
+  property: string;
+  value: string;
+  standard?: string;
+  notes?: string;
+}
+
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  category: ProductCategoryType;
+  shortDescription: string;
+  description: string;
+  features: string[];
+  materials: string[];
+  standards: string[];
+  applications: string[];
+  specifications: ProductSpecification[];
+  imagePlaceholderText: string;
+  drawingSupported: boolean;
+  relatedProductSlugs: string[];
+  seoTitle: string;
+  seoDescription: string;
+}
+
+export type ProductCategoryType =
+  | "contalar"
+  | "contalik-malzemeler"
+  | "kaucuk-urunleri"
+  | "ptfe-plastik"
+  | "salmastralar"
+  | "yuksek-isi-urunleri";
+
+export interface ProductCategory {
+  id: ProductCategoryType;
+  name: string;
+  shortDescription: string;
+  description: string;
+  itemCountEstimated: string;
+  highlights: string[];
+}
+
+export interface IndustrySector {
+  id: string;
+  slug: string;
+  name: string;
+  shortDescription: string;
+  description: string;
+  challenges: string[];
+  solutions: string[];
+  recommendedProducts: string[];
+  standards: string[];
+}
+
+export interface TechnicalArticle {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  summary: string;
+  readingTimeMinutes: number;
+  publishedAt: string;
+  updatedAt: string;
+  content: {
+    heading: string;
+    body: string[];
+  }[];
+  standardsMentioned?: string[];
+  relatedArticlesSlugs?: string[];
+}
+
+export interface CompanyLocation {
+  name: string;
+  type: "Merkez / İmalat" | "Satış / Şube";
+  address: string;
+  district: string;
+  city: string;
+  phone: string;
+  email: string;
+  workingHours: string;
+  mapEmbedQuery?: string;
+}
+
+export interface CompanyProfile {
+  name: string;
+  brandTitle: string;
+  foundingYear: number;
+  coreMessage: string;
+  subMessage: string;
+  phone: string;
+  phoneFormatted: string;
+  whatsapp: string;
+  whatsappFormatted: string;
+  email: string;
+  quoteEmail: string;
+  locations: CompanyLocation[];
+}
