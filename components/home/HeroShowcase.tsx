@@ -1,14 +1,101 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FactoryIcon, RulerIcon, CheckCircleIcon } from "@/components/icons/Icons";
+import { FactoryIcon, RulerIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons/Icons";
+
+interface SlideData {
+  id: string;
+  title: string;
+  badge: string;
+  image: string;
+  shortLabel: string;
+  metric1Label: string;
+  metric1Val: string;
+  metric2Label: string;
+  metric2Val: string;
+  cornerBadgeLeft: string;
+  cornerBadgeRight: string;
+  description: string;
+}
+
+const slides: SlideData[] = [
+  {
+    id: "spiral",
+    title: "Hassas Spiral Sarım İmalatı",
+    badge: "ASME B16.20 & DIN EN 1514-2",
+    image: "/images/hero/hero-slide-1.webp",
+    shortLabel: "01 Spiral Sarım",
+    metric1Label: "MALZEME BİLEŞENİ",
+    metric1Val: "AISI 316L + Saf Grafit",
+    metric2Label: "TOLERANS GÜVENCESİ",
+    metric2Val: "±0.2 mm Kumpas",
+    cornerBadgeLeft: "ASME B16.20 & DIN",
+    cornerBadgeRight: "±0.2 mm Hassasiyet",
+    description: "316L paslanmaz çelik sarım şeritleri ve saf grafit dolgu ile buhar ve petrokimya hatlarına özel imalat."
+  },
+  {
+    id: "cnc",
+    title: "CNC Bıçak & Özel Kesim Masası",
+    badge: "CAD / CAM & DXF KESİM",
+    image: "/images/hero/hero-slide-2.webp",
+    shortLabel: "02 CNC Kesim",
+    metric1Label: "KAPASİTE & ÇİZİM",
+    metric1Val: "Teknik Resim / DXF Veri",
+    metric2Label: "İŞLEME ALANI",
+    metric2Val: "Kalıpsız Sıfır Hata",
+    cornerBadgeLeft: "CAD/CAM & CNC",
+    cornerBadgeRight: "Kalıp Maliyetsiz",
+    description: "Vakum tablalı CNC tezgahlarda saf grafit, Klingrit, PTFE ve elastomer levhalardan milimetrik kesim."
+  },
+  {
+    id: "heavy",
+    title: "Ağır Sanayi & Salmastra Grubu",
+    badge: "PN10 - PN400 / 550°C",
+    image: "/images/hero/hero-slide-3.webp",
+    shortLabel: "03 Salmastra & Gemi",
+    metric1Label: "SICAKLIK DAYANIMI",
+    metric1Val: "-200°C ile +550°C",
+    metric2Label: "SEKTÖR UYUMU",
+    metric2Val: "Tersane & Ağır Sanayi",
+    cornerBadgeLeft: "YÜKSEK BASINÇ",
+    cornerBadgeRight: "400 Bar Test Gücü",
+    description: "Inconel örgülü grafit salmastralar, ambar kapak contaları ve yüksek basınç buhar vana sızdırmazlıkları."
+  }
+];
 
 export function HeroShowcase() {
   const [activeTab, setActiveTab] = useState<"showcase" | "cad">("showcase");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-advance slides every 5.5 seconds unless paused
+  useEffect(() => {
+    if (activeTab !== "showcase" || isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5500);
+
+    return () => clearInterval(timer);
+  }, [activeTab, isPaused]);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const activeSlideData = slides[currentSlide];
 
   return (
-    <div className="w-full max-w-md bg-industrial-950 border border-industrial-800 p-5 sm:p-6 shadow-2xl relative">
+    <div 
+      className="w-full max-w-md bg-industrial-950 border border-industrial-800 p-5 sm:p-6 shadow-2xl relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Tab Switcher & Header */}
       <div className="flex items-center justify-between border-b border-industrial-800 pb-3 mb-4 text-[11px] font-mono">
         <div className="flex items-center gap-1.5 p-0.5 bg-industrial-900 border border-industrial-800">
@@ -22,7 +109,7 @@ export function HeroShowcase() {
             }`}
           >
             <FactoryIcon className="w-3.5 h-3.5" />
-            <span>Üretim Vitrini</span>
+            <span>Üretim Vitrini ({slides.length})</span>
           </button>
           <button
             type="button"
@@ -41,7 +128,7 @@ export function HeroShowcase() {
         <div className="hidden sm:flex items-center gap-1.5 text-industrial-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-[10px] text-industrial-300">
-            {activeTab === "showcase" ? "CANLI VİTRİN" : "TEKNİK DOKÜMAN"}
+            {activeTab === "showcase" ? `VİTRİN ${currentSlide + 1}/${slides.length}` : "TEKNİK DOKÜMAN"}
           </span>
         </div>
       </div>
@@ -49,62 +136,114 @@ export function HeroShowcase() {
       {/* Main Content Area */}
       {activeTab === "showcase" ? (
         <div>
-          {/* Photographic Manufacturing Showcase */}
+          {/* Photographic Manufacturing Showcase Carousel */}
           <div className="aspect-square w-full bg-industrial-900 border border-industrial-850 relative overflow-hidden group">
-            <Image
-              src="/images/hero/hero-manufacturing.webp"
-              alt="Emek Conta Endüstriyel Sızdırmazlık İmalatı"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 450px"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+            {/* Render all slides for instant transition without re-renders */}
+            {slides.map((slide, idx) => (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                }`}
+              >
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  priority={idx === 0}
+                  sizes="(max-width: 1024px) 100vw, 450px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-            {/* Precision Vignette & Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-industrial-950/80 via-transparent to-industrial-950/40 pointer-events-none" />
+                {/* Precision Vignette & Gradient Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-industrial-950/85 via-transparent to-industrial-950/45 pointer-events-none" />
+
+                {/* Top Badge */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
+                  <span className="px-2 py-0.5 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-200 text-[10px] font-mono tracking-wider uppercase">
+                    {slide.title}
+                  </span>
+                  <span className="px-2 py-0.5 bg-steel-darkblue/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
+                    {slide.cornerBadgeLeft}
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Badges */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-steel-blue">
+                    <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
+                    {slide.cornerBadgeRight}
+                  </div>
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right">
+                    <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
+                    İstanbul / Türkiye
+                  </div>
+                </div>
+              </div>
+            ))}
 
             {/* Corner Crosshairs for Engineering Blueprint Aesthetic */}
-            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/60 pointer-events-none select-none">
+            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/60 pointer-events-none select-none">
+            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/60 pointer-events-none select-none">
+            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/60 pointer-events-none select-none">
+            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
               +
             </div>
 
-            {/* Top Badge */}
-            <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-              <span className="px-2 py-0.5 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-200 text-[10px] font-mono tracking-wider uppercase">
-                Hassas İmalat Vitrini
-              </span>
-              <span className="px-2 py-0.5 bg-steel-darkblue/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
-                ASME & DIN
-              </span>
-            </div>
-
-            {/* Bottom Overlay Badges */}
-            <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none">
-              <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-steel-blue">
-                <span className="text-industrial-400 block text-[9px]">TOLERANS GÜVENCESİ</span>
-                ±0.2 mm Hassasiyet
-              </div>
-              <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right">
-                <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
-                İstanbul / Türkiye
-              </div>
-            </div>
+            {/* Slider Navigation Arrows */}
+            <button
+              type="button"
+              onClick={prevSlide}
+              aria-label="Önceki Görsel"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-1.5 bg-industrial-950/70 hover:bg-industrial-900 border border-industrial-700/50 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100"
+            >
+              <ChevronLeftIcon className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={nextSlide}
+              aria-label="Sonraki Görsel"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-1.5 bg-industrial-950/70 hover:bg-industrial-900 border border-industrial-700/50 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100"
+            >
+              <ChevronRightIcon className="w-4 h-4" />
+            </button>
           </div>
 
-          {/* Metadata Block below photograph */}
-          <div className="mt-4 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
+          {/* Slide Indicator Selector Pills */}
+          <div className="mt-3 grid grid-cols-3 gap-1.5">
+            {slides.map((s, idx) => {
+              const isActive = idx === currentSlide;
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`py-1.5 px-1 text-center font-mono text-[10px] border transition-all rounded-none ${
+                    isActive
+                      ? "bg-industrial-900 border-steel-blue text-steel-blue font-bold shadow-xs"
+                      : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
+                  }`}
+                >
+                  <span className="block truncate">{s.shortLabel}</span>
+                  {isActive && <span className="block h-0.5 bg-steel-blue mt-0.5" />}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Synchronized Metadata Block below photograph */}
+          <div className="mt-3 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
             <div>
-              <span className="text-industrial-500 block text-[10px]">İMALAT GAMI</span>
-              <span className="text-industrial-200 truncate block">Spiral Sarımlı, Grafit, PTFE</span>
+              <span className="text-industrial-500 block text-[10px]">{activeSlideData.metric1Label}</span>
+              <span className="text-industrial-200 truncate block font-medium">
+                {activeSlideData.metric1Val}
+              </span>
             </div>
             <div className="text-right">
               <span className="text-industrial-500 block text-[10px]">TESLİMAT / TERMİN</span>
