@@ -76,7 +76,7 @@ export function ProductFilter({
               onClick={() => setSelectedCategory("all")}
               className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
                 selectedCategory === "all"
-                  ? "bg-night text-white border-night shadow-xs"
+                  ? "bg-rust text-white border-rust shadow-xs"
                   : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
               }`}
             >
@@ -92,7 +92,7 @@ export function ProductFilter({
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
                     selectedCategory === cat.id
-                      ? "bg-night text-white border-night shadow-xs"
+                      ? "bg-rust text-white border-rust shadow-xs"
                       : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
                   }`}
                 >

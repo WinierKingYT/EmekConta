@@ -34,11 +34,16 @@ export function Header() {
       {/* Top Utility Bar (B2B Quick Contact) */}
       <div className="hidden md:block bg-industrial-950 text-industrial-300 text-xs border-b border-industrial-850">
         <Container className="flex items-center justify-between py-2">
-          <div className="flex items-center gap-6">
-            <span className="font-mono text-industrial-400">
+          <div className="flex items-center gap-4 text-[11px] font-mono">
+            <span className="text-industrial-300 font-medium">
               1997'den Beri Sanayi & Denizcilik Sızdırmazlık Çözümleri
             </span>
-            <span className="text-industrial-600">|</span>
+            <span className="text-industrial-700">|</span>
+            <span className="text-industrial-400 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-rust" />
+              DIN EN 1514 & ASME B16.20 İmalat
+            </span>
+            <span className="text-industrial-700">|</span>
             <span className="text-industrial-400">
               İstanbul Fabrika & Karaköy Şube
             </span>
@@ -46,25 +51,29 @@ export function Header() {
           <div className="flex items-center gap-5">
             <a
               href={`tel:${companyData.phone}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-industrial-300 hover:text-white transition-colors group"
             >
-              <PhoneIcon className="w-3.5 h-3.5 text-rust" />
-              <span className="font-mono">{companyData.phoneFormatted}</span>
+              <PhoneIcon className="w-3.5 h-3.5 text-rust transition-transform group-hover:scale-110" />
+              <span className="font-mono text-xs">{companyData.phoneFormatted}</span>
             </a>
             <a
               href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-industrial-300 hover:text-white transition-colors group"
             >
-              <WhatsappIcon className="w-3.5 h-3.5 text-emerald-400" />
-              <span>WhatsApp Destek</span>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <WhatsappIcon className="w-3.5 h-3.5 text-emerald-400 transition-transform group-hover:scale-110" />
+              <span>WhatsApp RFQ</span>
             </a>
             <a
               href={`mailto:${companyData.quoteEmail}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-industrial-300 hover:text-white transition-colors group"
             >
-              <MailIcon className="w-3.5 h-3.5 text-rust" />
+              <MailIcon className="w-3.5 h-3.5 text-rust transition-transform group-hover:scale-110" />
               <span>{companyData.quoteEmail}</span>
             </a>
           </div>
@@ -75,7 +84,7 @@ export function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-200 ${
           isScrolled
-            ? "bg-night/95 backdrop-blur-md shadow-md border-b border-night-border py-2.5"
+            ? "bg-night/95 backdrop-blur-md shadow-xl border-b border-night-border py-2.5"
             : "bg-night border-b border-night-border py-3.5"
         }`}
       >
@@ -83,20 +92,29 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-rust p-1 -m-1"
+            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-rust rounded-xs p-1 -m-1"
             aria-label="Emek Conta Ana Sayfa"
           >
-            {/* Geometric industrial mark */}
-            <div className="w-9 h-9 bg-night-light border border-rust/40 flex items-center justify-center shrink-0 text-white font-mono font-bold text-sm tracking-tighter group-hover:border-rust transition-colors">
-              <span className="text-rust font-extrabold mr-0.5">E</span>
-              <span className="text-white">C</span>
+            {/* Precision geometric emblem */}
+            <div className="w-10 h-10 bg-night-light border-2 border-rust/50 group-hover:border-rust transition-all flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden">
+              {/* Subtle top-right metallic corner accent */}
+              <div className="absolute top-0 right-0 w-2 h-2 bg-rust/30 rotate-45 transform origin-top-right" />
+              <div className="flex items-center font-mono font-black text-sm tracking-tighter">
+                <span className="text-rust text-base mr-0.5">E</span>
+                <span className="text-white text-base">C</span>
+              </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white leading-none">
-                EMEK CONTA
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-mono tracking-wider text-industrial-400 uppercase mt-1 leading-none">
-                Endüstriyel Sızdırmazlık
+              <div className="flex items-center gap-2">
+                <span className="text-lg sm:text-xl font-black tracking-tight text-white leading-none">
+                  EMEK CONTA
+                </span>
+                <span className="hidden sm:inline-block text-[9px] font-mono px-1 py-0.2 bg-industrial-800 text-rust border border-rust/30 font-bold uppercase tracking-wider">
+                  EST. 1997
+                </span>
+              </div>
+              <span className="text-[9.5px] sm:text-[10px] font-mono tracking-widest text-industrial-400 uppercase mt-1 leading-none font-medium">
+                Endüstriyel Sızdırmazlık San. ve Tic.
               </span>
             </div>
           </Link>
@@ -109,22 +127,22 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-colors relative ${
+                  className={`px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-all duration-200 relative rounded-xs ${
                     isActive
-                      ? "text-white font-semibold"
-                      : "text-industrial-300 hover:text-white"
+                      ? "text-white font-bold bg-white/5"
+                      : "text-industrial-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   <span className="flex items-center gap-1.5">
                     {item.label}
                     {item.badge && (
-                      <span className="text-[10px] font-mono px-1 py-0.2 bg-rust/20 text-rust-light border border-rust/40 uppercase">
+                      <span className="text-[9px] font-mono px-1 py-0.2 bg-rust/20 text-rust-light border border-rust/40 uppercase font-semibold">
                         {item.badge}
                       </span>
                     )}
                   </span>
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-rust" />
+                    <span className="absolute bottom-0 left-2.5 right-2.5 h-[2.5px] bg-rust rounded-full shadow-xs" />
                   )}
                 </Link>
               );
@@ -137,9 +155,10 @@ export function Header() {
               href="/teklif-iste"
               variant="accent"
               size="sm"
-              className="hidden sm:inline-flex"
+              className="hidden sm:inline-flex shadow-md hover:shadow-brick/20 transition-all font-semibold"
             >
-              Teklif İste
+              <span>Teklif İste</span>
+              <span className="ml-1 text-xs opacity-80">→</span>
             </Button>
 
             <a

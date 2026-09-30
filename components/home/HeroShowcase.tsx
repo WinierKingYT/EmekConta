@@ -92,17 +92,23 @@ export function HeroShowcase() {
 
   return (
     <div 
-      className="w-full max-w-lg bg-industrial-950 border border-industrial-800 p-5 sm:p-6 shadow-2xl relative"
+      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Tab Switcher & Header */}
+      {/* Corner Precision Notches */}
+      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-rust" />
+      <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-rust" />
+      <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-rust" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-rust" />
+
+      {/* Tab Switcher & Console Header */}
       <div className="flex items-center justify-between border-b border-industrial-800 pb-3 mb-4 text-[11px] font-mono">
         <div className="flex items-center gap-1.5 p-0.5 bg-industrial-900 border border-industrial-800">
           <button
             type="button"
             onClick={() => setActiveTab("showcase")}
-            className={`flex items-center gap-1.5 px-2.5 py-1 text-xs transition-colors rounded-none ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded-none ${
               activeTab === "showcase"
                 ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
@@ -114,7 +120,7 @@ export function HeroShowcase() {
           <button
             type="button"
             onClick={() => setActiveTab("cad")}
-            className={`flex items-center gap-1.5 px-2.5 py-1 text-xs transition-colors rounded-none ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded-none ${
               activeTab === "cad"
                 ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
@@ -125,10 +131,10 @@ export function HeroShowcase() {
           </button>
         </div>
 
-        <div className="hidden sm:flex items-center gap-1.5 text-industrial-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[10px] text-industrial-300">
-            {activeTab === "showcase" ? `ÜRÜN ${currentSlide + 1}/${slides.length}` : "TEKNİK DOKÜMAN"}
+        <div className="hidden sm:flex items-center gap-2 text-industrial-400 px-2 py-1 bg-industrial-900/60 border border-industrial-800/80">
+          <span className={`w-1.5 h-1.5 rounded-full ${isPaused ? "bg-amber-400" : "bg-emerald-400 animate-pulse"}`} />
+          <span className="text-[10px] text-industrial-300 font-medium">
+            {activeTab === "showcase" ? (isPaused ? "DURAKLATILDI" : `ÜRÜN ${currentSlide + 1}/${slides.length}`) : "TEKNİK DOKÜMAN"}
           </span>
         </div>
       </div>
@@ -137,7 +143,7 @@ export function HeroShowcase() {
       {activeTab === "showcase" ? (
         <div>
           {/* 4:3 Aspect Ratio Container Matching Native Photograph Dimensions */}
-          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group">
+          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group shadow-inner">
             {/* Render all slides for instant transition without re-renders */}
             {slides.map((slide, idx) => (
               <div
@@ -156,25 +162,25 @@ export function HeroShowcase() {
                 />
 
                 {/* Subtle bottom gradient protection for badges */}
-                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-industrial-950/85 via-industrial-950/40 to-transparent pointer-events-none z-10" />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-industrial-950/95 via-industrial-950/50 to-transparent pointer-events-none z-10" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
-                  <span className="px-2.5 py-1 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold">
+                  <span className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-700/80 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold shadow-xs">
                     {slide.title}
                   </span>
-                  <span className="px-2 py-0.5 bg-rust/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
+                  <span className="px-2.5 py-1 bg-rust backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold shadow-xs">
                     {slide.cornerBadgeLeft}
                   </span>
                 </div>
 
                 {/* Bottom Overlay Badges */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust shadow-xs">
                     <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
                     {slide.cornerBadgeRight}
                   </div>
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right shadow-xs">
                     <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
                     İstanbul / Türkiye
                   </div>
@@ -183,16 +189,16 @@ export function HeroShowcase() {
             ))}
 
             {/* Corner Crosshairs for Engineering Blueprint Aesthetic */}
-            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
+            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
+            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
+            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/50 pointer-events-none select-none z-20">
+            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
 
@@ -201,7 +207,7 @@ export function HeroShowcase() {
               type="button"
               onClick={prevSlide}
               aria-label="Önceki Görsel"
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-rust transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100 shadow-md cursor-pointer"
             >
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
@@ -209,7 +215,7 @@ export function HeroShowcase() {
               type="button"
               onClick={nextSlide}
               aria-label="Sonraki Görsel"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-rust transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100 shadow-md cursor-pointer"
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
@@ -224,21 +230,21 @@ export function HeroShowcase() {
                   key={s.id}
                   type="button"
                   onClick={() => setCurrentSlide(idx)}
-                  className={`py-2 px-1 text-center font-mono text-[10px] border transition-all rounded-none ${
+                  className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-none cursor-pointer ${
                     isActive
-                      ? "bg-industrial-900 border-rust text-rust font-bold shadow-xs"
+                      ? "bg-industrial-900 border-rust text-rust font-bold shadow-sm shadow-rust/10"
                       : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
                   }`}
                 >
                   <span className="block truncate">{s.shortLabel}</span>
-                  {isActive && <span className="block h-0.5 bg-rust mt-1" />}
+                  {isActive && <span className="block h-0.5 bg-rust mt-1.5" />}
                 </button>
               );
             })}
           </div>
 
           {/* Synchronized Metadata Block below photograph */}
-          <div className="mt-3 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
+          <div className="mt-3.5 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
             <div>
               <span className="text-industrial-500 block text-[10px]">{activeSlideData.metric1Label}</span>
               <span className="text-industrial-200 truncate block font-medium">

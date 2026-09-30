@@ -12,11 +12,11 @@ interface ProductCardProps {
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
-    <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+    <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden">
       <div>
         {/* Visual Schematics / Clean Photo Showcase */}
         <div
-          className={`h-48 border-b border-industrial-200 relative overflow-hidden transition-colors ${
+          className={`h-56 border-b border-industrial-200 relative overflow-hidden transition-colors ${
             product.image
               ? "bg-white p-3 flex items-center justify-center"
               : "bg-industrial-900 p-4 flex flex-col justify-between"
@@ -33,20 +33,20 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={priority}
                   loading={priority ? undefined : "lazy"}
-                  className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain p-3 transition-transform duration-500 group-hover:scale-108"
                 />
               </div>
 
               {/* Clean Overlay Badges */}
               <div className="absolute top-2.5 left-2.5 z-10 flex items-center gap-1.5">
-                <span className="px-2 py-0.5 bg-industrial-100/90 text-night text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200 backdrop-blur-xs">
+                <span className="px-2.5 py-0.5 bg-industrial-100/95 text-night text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200/80 backdrop-blur-xs shadow-xs">
                   {product.category}
                 </span>
               </div>
 
               {product.drawingSupported && (
                 <div className="absolute top-2.5 right-2.5 z-10">
-                  <span className="px-2 py-0.5 bg-rust/90 text-white text-[10px] font-mono font-semibold tracking-wide shadow-xs">
+                  <span className="px-2 py-0.5 bg-rust text-white text-[10px] font-mono font-semibold tracking-wide shadow-xs">
                     CAD / ÖZEL KESİM
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
         {/* Content */}
         <div className="p-5 sm:p-6">
-          <div className="flex flex-wrap gap-1 mb-2">
+          <div className="flex flex-wrap gap-1.5 mb-2.5">
             {product.standards.slice(0, 2).map((std, idx) => (
               <Badge key={idx} variant="neutral">
                 {std}
@@ -89,7 +89,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             ))}
           </div>
 
-          <h3 className="text-lg font-bold text-night group-hover:text-rust transition-colors">
+          <h3 className="text-lg font-bold text-night group-hover:text-rust transition-colors leading-snug">
             <Link href={`/urunler/${product.slug}`}>
               {product.name}
             </Link>
@@ -108,13 +108,13 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </div>
 
       {/* Card Footer / Action */}
-      <div className="p-5 sm:p-6 pt-0">
+      <div className="border-t border-industrial-200">
         <Link
           href={`/urunler/${product.slug}`}
-          className="w-full inline-flex items-center justify-between px-3.5 py-2.5 bg-industrial-50 group-hover:bg-brick group-hover:text-white text-night text-xs font-mono font-bold uppercase tracking-wider border border-industrial-200 group-hover:border-brick transition-all duration-200"
+          className="w-full inline-flex items-center justify-between px-5 py-3 bg-industrial-50 group-hover:bg-brick group-hover:text-white text-night text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
         >
           <span>Teknik Özellikler & Teklif</span>
-          <ArrowRightIcon className="w-3.5 h-3.5" />
+          <ArrowRightIcon className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
     </div>

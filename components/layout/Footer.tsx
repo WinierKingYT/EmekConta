@@ -16,39 +16,45 @@ export function Footer() {
   return (
     <footer className="bg-industrial-950 text-industrial-300 border-t border-industrial-800 text-sm">
       {/* Upper Footer: Engineering Value Ribbon */}
-      <div className="border-b border-industrial-850 py-8 bg-industrial-900/60">
+      <div className="border-b border-industrial-850 py-10 bg-industrial-900/60">
         <Container className="grid grid-cols-1 md:grid-cols-3 gap-6 text-industrial-300">
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
               <ShieldCheckIcon className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-sm">Teknik Doğruluk & Standartlar</h4>
-              <p className="text-xs text-industrial-400 mt-1">
+              <h4 className="font-bold text-white text-sm tracking-tight group-hover:text-rust transition-colors">
+                Teknik Doğruluk & Standartlar
+              </h4>
+              <p className="text-xs text-industrial-400 mt-1 leading-relaxed">
                 DIN, ASME ve EN normlarına uygun standart ve numuneye göre özel üretim sızdırmazlık parçaları.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
               <PhoneIcon className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-sm">Hızlı Teknik Teklif</h4>
-              <p className="text-xs text-industrial-400 mt-1">
-                CAD, DXF veya teknik resminizi iletin; malzeme ve tolerans analizini yaparak teklif hazırlayalım.
+              <h4 className="font-bold text-white text-sm tracking-tight group-hover:text-rust transition-colors">
+                Hızlı Teknik Teklif & RFQ
+              </h4>
+              <p className="text-xs text-industrial-400 mt-1 leading-relaxed">
+                CAD, DXF veya teknik resminizi iletin; malzeme ve tolerans analizini yaparak aynı gün teklif hazırlayalım.
               </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
               <MapPinIcon className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-semibold text-white text-sm">İstanbul Üretim & Satış</h4>
-              <p className="text-xs text-industrial-400 mt-1">
+              <h4 className="font-bold text-white text-sm tracking-tight group-hover:text-rust transition-colors">
+                İstanbul Fabrika & Satış
+              </h4>
+              <p className="text-xs text-industrial-400 mt-1 leading-relaxed">
                 İkitelli OSB İmalat tesisimiz ve Karaköy şubemiz ile endüstri ve denizcilik sektörüne kesintisiz hizmet.
               </p>
             </div>
@@ -62,19 +68,41 @@ export function Footer() {
           {/* Col 1: About Emek Conta */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-industrial-800 border border-rust/40 flex items-center justify-center font-mono font-bold text-xs text-white">
-                <span className="text-rust">E</span>C
+              <div className="w-9 h-9 bg-night-light border border-rust/50 flex items-center justify-center font-mono font-bold text-xs text-white shadow-xs">
+                <span className="text-rust text-sm mr-0.5">E</span>C
               </div>
-              <span className="text-lg font-extrabold tracking-tight text-white">
-                EMEK CONTA
-              </span>
+              <div className="flex flex-col">
+                <span className="text-lg font-black tracking-tight text-white leading-none">
+                  EMEK CONTA
+                </span>
+                <span className="text-[9.5px] font-mono tracking-widest text-industrial-400 uppercase mt-0.5">
+                  Endüstriyel Sızdırmazlık San. ve Tic.
+                </span>
+              </div>
             </div>
             <p className="text-industrial-400 text-xs sm:text-sm leading-relaxed max-w-md">
               1997 yılından bu yana sanayi tesisleri, rafineriler, enerji santralleri ve denizcilik sektörü için yüksek sıcaklık, basınç ve kimyasal ortamlara dayanıklı endüstriyel sızdırmazlık elemanları imal ediyoruz.
             </p>
+            
+            {/* Certifications and Standards Badge Chips */}
+            <div className="pt-1 flex flex-wrap gap-1.5 text-[10px] font-mono">
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+                ASME B16.20
+              </span>
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+                DIN EN 1514-1/2
+              </span>
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+                ISO 9001:2015 Kalite
+              </span>
+            </div>
+
             <div className="pt-2 flex flex-col gap-1.5 text-xs text-industrial-400 font-mono">
               <div>İmalat: İkitelli OSB / Başakşehir / İstanbul</div>
               <div>Şube: Karaköy Perşembe Pazarı / İstanbul</div>
+              <div className="text-[11px] text-industrial-500 pt-1">
+                Çalışma Saatleri: Hafta içi 08:30 - 18:00 | Cmt 08:30 - 13:00
+              </div>
             </div>
           </div>
 
