@@ -22,45 +22,45 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: "spiral",
-    title: "Komple Flanş & Basınç Contaları Grubu",
+    title: "ASME B16.20 Spiral Sarımlı Flanş Contaları",
     badge: "ASME & DIN NORMU",
     image: "/images/hero/hero-slide-1.webp",
-    shortLabel: "01 Flanş Contaları",
-    metric1Label: "ÜRÜN GAMI",
-    metric1Val: "Spiral Sarım, Grafit, PTFE, EPDM",
-    metric2Label: "HASSASİYET",
-    metric2Val: "Kumpas & Kalibre Kontrol",
-    cornerBadgeLeft: "ASME & DIN",
-    cornerBadgeRight: "Stok & Özel İmalat",
-    description: "Spiral sarımlı contalar, telli saf grafit, Klingrit ve PTFE flanş contalarının tam donanımlı stüdyo koleksiyonu."
+    shortLabel: "01 Spiral Sarım",
+    metric1Label: "ÖLÇÜ GÜVENCESİ",
+    metric1Val: "Mitutoyo Dijital Kumpas Kontrolü",
+    metric2Label: "TOLERANS",
+    metric2Val: "±0.2 mm Hassas İmalat",
+    cornerBadgeLeft: "ASME B16.20 316L",
+    cornerBadgeRight: "Class 150 - 2500",
+    description: "316L paslanmaz çelik sarım şeritleri ve saf grafit dolgu ile yüksek basınç ve buhar hatlarına özel üretim."
   },
   {
-    id: "cnc",
-    title: "Özel Kesim & Mühendislik Plastikleri",
-    badge: "CAD / CAM & DXF KESİM",
+    id: "flange",
+    title: "Telli Grafit, Klingrit & PTFE Flanş Contaları",
+    badge: "DIN EN 1514-1",
     image: "/images/hero/hero-slide-2.webp",
-    shortLabel: "02 Özel Kesim & Plastik",
-    metric1Label: "GEOMETRİK İMALAT",
-    metric1Val: "Eşanjör, Karter & Özel Flanş",
+    shortLabel: "02 Levha Contalar",
+    metric1Label: "MALZEME GAMI",
+    metric1Val: "İç Yüksüklü Grafit, Aramid, PTFE",
     metric2Label: "İŞLEME ALANI",
-    metric2Val: "Kestamid, Mantar, Silikon",
-    cornerBadgeLeft: "CAD/CAM & CNC",
-    cornerBadgeRight: "Kalıpsız Kesim",
-    description: "Eşanjör contaları, kauçuklu mantar, teflon zarf ve Kestamid/Delrin parçaların numuneye göre üretimi."
+    metric2Val: "CNC Bıçak & Pres Kesim",
+    cornerBadgeLeft: "DIN & ASME",
+    cornerBadgeRight: "Sıfır Kalıp Maliyeti",
+    description: "Paslanmaz yüksüklü saf grafit, Klingrit aramid ve saf teflon flanş contalarının hassas ölçülü kesimi."
   },
   {
     id: "heavy",
-    title: "Salmastralar, Ambar Lastikleri & İzolasyon",
-    badge: "DENİZCİLİK & AĞIR SANAYİ",
+    title: "Örgülü Salmastralar & Gemi Ambar Lastikleri",
+    badge: "AĞIR SANAYİ & TERSANE",
     image: "/images/hero/hero-slide-3.webp",
     shortLabel: "03 Salmastra & Gemi",
     metric1Label: "BASINÇ & SICAKLIK",
-    metric1Val: "PN10 - PN400 / +550°C",
+    metric1Val: "PN10 - PN400 / -200°C ile +550°C",
     metric2Label: "SEKTÖR UYUMU",
     metric2Val: "Tersane, Pompa & Vana",
     cornerBadgeLeft: "YÜKSEK BASINÇ",
     cornerBadgeRight: "Tersane & Buhar",
-    description: "Örgülü grafit/PTFE/aramid salmastralar, gemi ambar kapak lastikleri ve cam elyaf izolasyon şeritleri."
+    description: "Zebra Kevlar aramid örgülü salmastralar, saf PTFE salmastra ve sünger göbekli ambar kapak lastikleri."
   }
 ];
 
@@ -92,7 +92,7 @@ export function HeroShowcase() {
 
   return (
     <div 
-      className="w-full max-w-md bg-industrial-950 border border-industrial-800 p-5 sm:p-6 shadow-2xl relative"
+      className="w-full max-w-lg bg-industrial-950 border border-industrial-800 p-5 sm:p-6 shadow-2xl relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -128,7 +128,7 @@ export function HeroShowcase() {
         <div className="hidden sm:flex items-center gap-1.5 text-industrial-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-[10px] text-industrial-300">
-            {activeTab === "showcase" ? `VİTRİN ${currentSlide + 1}/${slides.length}` : "TEKNİK DOKÜMAN"}
+            {activeTab === "showcase" ? `ÜRÜN ${currentSlide + 1}/${slides.length}` : "TEKNİK DOKÜMAN"}
           </span>
         </div>
       </div>
@@ -136,8 +136,8 @@ export function HeroShowcase() {
       {/* Main Content Area */}
       {activeTab === "showcase" ? (
         <div>
-          {/* Photographic Manufacturing Showcase Carousel */}
-          <div className="aspect-square w-full bg-industrial-900 border border-industrial-850 relative overflow-hidden group">
+          {/* 4:3 Aspect Ratio Container Matching Native Photograph Dimensions */}
+          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group">
             {/* Render all slides for instant transition without re-renders */}
             {slides.map((slide, idx) => (
               <div
@@ -151,16 +151,16 @@ export function HeroShowcase() {
                   alt={slide.title}
                   fill
                   priority={idx === 0}
-                  sizes="(max-width: 1024px) 100vw, 450px"
+                  sizes="(max-width: 1024px) 100vw, 550px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Precision Vignette & Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-industrial-950/85 via-transparent to-industrial-950/45 pointer-events-none" />
+                {/* Subtle bottom gradient protection for badges */}
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-industrial-950/85 via-industrial-950/40 to-transparent pointer-events-none z-10" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
-                  <span className="px-2 py-0.5 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-200 text-[10px] font-mono tracking-wider uppercase">
+                  <span className="px-2.5 py-1 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold">
                     {slide.title}
                   </span>
                   <span className="px-2 py-0.5 bg-steel-darkblue/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
@@ -201,7 +201,7 @@ export function HeroShowcase() {
               type="button"
               onClick={prevSlide}
               aria-label="Önceki Görsel"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 p-1.5 bg-industrial-950/70 hover:bg-industrial-900 border border-industrial-700/50 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
             >
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
@@ -209,14 +209,14 @@ export function HeroShowcase() {
               type="button"
               onClick={nextSlide}
               aria-label="Sonraki Görsel"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 p-1.5 bg-industrial-950/70 hover:bg-industrial-900 border border-industrial-700/50 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
           </div>
 
           {/* Slide Indicator Selector Pills */}
-          <div className="mt-3 grid grid-cols-3 gap-1.5">
+          <div className="mt-3.5 grid grid-cols-3 gap-2">
             {slides.map((s, idx) => {
               const isActive = idx === currentSlide;
               return (
@@ -224,14 +224,14 @@ export function HeroShowcase() {
                   key={s.id}
                   type="button"
                   onClick={() => setCurrentSlide(idx)}
-                  className={`py-1.5 px-1 text-center font-mono text-[10px] border transition-all rounded-none ${
+                  className={`py-2 px-1 text-center font-mono text-[10px] border transition-all rounded-none ${
                     isActive
                       ? "bg-industrial-900 border-steel-blue text-steel-blue font-bold shadow-xs"
                       : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
                   }`}
                 >
                   <span className="block truncate">{s.shortLabel}</span>
-                  {isActive && <span className="block h-0.5 bg-steel-blue mt-0.5" />}
+                  {isActive && <span className="block h-0.5 bg-steel-blue mt-1" />}
                 </button>
               );
             })}
@@ -254,8 +254,8 @@ export function HeroShowcase() {
       ) : (
         <div>
           {/* CAD Technical Drawing */}
-          <div className="aspect-square w-full bg-industrial-900 border border-industrial-850 flex items-center justify-center p-4 relative overflow-hidden">
-            <svg viewBox="0 0 280 280" className="w-full h-full text-industrial-400" fill="none">
+          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-850 flex items-center justify-center p-3 relative overflow-hidden">
+            <svg viewBox="0 0 280 280" className="w-full h-full max-h-[280px] text-industrial-400" fill="none">
               {/* Outer centering ring */}
               <circle cx="140" cy="140" r="126" stroke="#475569" strokeWidth="2" strokeDasharray="3 3" />
               <circle cx="140" cy="140" r="120" stroke="#94A3B8" strokeWidth="1.5" />
