@@ -21,7 +21,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-steel-blue focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-none select-none text-center";
+    "inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brick focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-none select-none text-center";
 
   const sizeClasses = {
     sm: "px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider",
@@ -31,15 +31,15 @@ export function Button({
 
   const variantClasses = {
     primary:
-      "bg-industrial-900 text-white hover:bg-industrial-800 border border-industrial-900",
+      "bg-night text-white hover:bg-night-light border border-night shadow-sm",
     secondary:
-      "bg-industrial-100 text-industrial-900 hover:bg-industrial-200 border border-industrial-200",
+      "bg-industrial-100 text-night hover:bg-industrial-200 border border-industrial-200",
     outline:
-      "bg-transparent text-industrial-900 border border-industrial-400 hover:border-industrial-900 hover:bg-industrial-50",
+      "bg-transparent text-night border border-industrial-300 hover:border-rust hover:text-rust hover:bg-white",
     accent:
-      "bg-steel-blue text-white hover:bg-steel-darkblue border border-steel-blue shadow-sm",
+      "bg-brick text-white hover:bg-brick-hover border border-brick shadow-sm font-bold",
     ghost:
-      "bg-transparent text-industrial-800 hover:bg-industrial-100 border border-transparent",
+      "bg-transparent text-night hover:bg-industrial-100 border border-transparent",
   };
 
   const combinedClasses = cn(

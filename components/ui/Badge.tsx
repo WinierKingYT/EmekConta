@@ -13,10 +13,10 @@ export function Badge({
   ...props
 }: BadgeProps) {
   const variantClasses = {
-    neutral: "bg-industrial-100 text-industrial-800 border-industrial-200",
-    accent: "bg-steel-light text-steel-darkblue border-sky-200",
-    dark: "bg-industrial-900 text-white border-industrial-800",
-    outline: "bg-transparent text-industrial-700 border-industrial-300",
+    neutral: "bg-industrial-100 text-night border-industrial-200",
+    accent: "bg-brick-subtle text-brick border-brick-light/40 font-semibold",
+    dark: "bg-night text-white border-night-border",
+    outline: "bg-transparent text-night border-industrial-300",
   };
 
   return (

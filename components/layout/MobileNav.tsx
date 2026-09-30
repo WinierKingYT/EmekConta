@@ -65,7 +65,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-none focus:outline-none focus:ring-2 focus:ring-steel-blue"
+              className="p-2 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-none focus:outline-none focus:ring-2 focus:ring-rust"
               aria-label="Menüyü Kapat"
             >
               <XIcon className="w-6 h-6" />
@@ -82,7 +82,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   href={item.href}
                   className={`flex items-center justify-between px-3.5 py-3 text-base font-medium transition-colors border-l-2 ${
                     isActive
-                      ? "border-steel-blue bg-industrial-850 text-white"
+                      ? "border-rust bg-industrial-850 text-white font-semibold"
                       : "border-transparent text-industrial-300 hover:text-white hover:bg-industrial-850/60"
                   }`}
                 >
@@ -114,7 +114,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               href={`tel:${companyData.phone}`}
               className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors"
             >
-              <PhoneIcon className="w-4 h-4 text-steel-blue shrink-0" />
+              <PhoneIcon className="w-4 h-4 text-rust shrink-0" />
               <span className="font-mono text-xs">{companyData.phoneFormatted}</span>
             </a>
 
@@ -132,7 +132,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               href={`mailto:${companyData.quoteEmail}`}
               className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors"
             >
-              <MailIcon className="w-4 h-4 text-steel-blue shrink-0" />
+              <MailIcon className="w-4 h-4 text-rust shrink-0" />
               <span className="font-mono text-xs">{companyData.quoteEmail}</span>
             </a>
           </div>

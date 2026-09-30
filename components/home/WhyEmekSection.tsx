@@ -63,19 +63,19 @@ export function WhyEmekSection() {
           {differentiators.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 bg-industrial-50/50 border border-industrial-200 hover:border-industrial-400 transition-colors flex flex-col justify-between"
+              className="group p-6 bg-industrial-50/50 border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono font-bold text-steel-darkblue">
+                  <span className="text-xs font-mono font-bold text-rust">
                     0{idx + 1}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700 uppercase">
+                  <span className="text-[10px] font-mono px-2 py-0.5 bg-rust-subtle text-rust border border-rust-border uppercase font-medium">
                     {item.badge}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-industrial-900 mb-2.5">
+                <h3 className="text-lg font-bold text-night group-hover:text-rust transition-colors mb-2.5">
                   {item.title}
                 </h3>
 

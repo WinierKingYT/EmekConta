@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
@@ -25,39 +26,47 @@ export function CategoryGrid() {
           {productCategories.map((category, idx) => (
             <div
               key={category.id}
-              className="group bg-white border border-industrial-200 hover:border-industrial-400 transition-all duration-200 flex flex-col justify-between"
+              className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Visual Header / Placeholder with technical grid */}
-                <div className="relative h-44 bg-industrial-900 border-b border-industrial-200 overflow-hidden flex flex-col justify-between p-4">
-                  <div className="flex items-center justify-between text-[11px] font-mono text-industrial-400">
-                    <span className="text-steel-blue font-bold">KAT-0{idx + 1}</span>
-                    <span className="px-1.5 py-0.5 bg-industrial-800 text-industrial-300">
+                {/* Visual Header / Real Product Photo */}
+                <div className="relative h-52 bg-gradient-to-b from-white to-industrial-50/70 border-b border-industrial-200 overflow-hidden flex flex-col justify-between p-4">
+                  {/* Category Image */}
+                  {category.image && (
+                    <div className="absolute inset-0 p-4 flex items-center justify-center">
+                      <Image
+                        src={category.image}
+                        alt={category.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+
+                  {/* Top Badges */}
+                  <div className="relative z-10 flex items-center justify-between text-[11px] font-mono">
+                    <span className="px-2 py-0.5 bg-white/95 backdrop-blur-xs border border-industrial-200 text-rust font-bold shadow-xs">
+                      KAT-0{idx + 1}
+                    </span>
+                    <span className="px-2 py-0.5 bg-night/85 backdrop-blur-xs text-white font-medium text-[10px] shadow-xs">
                       {category.itemCountEstimated}
                     </span>
                   </div>
 
-                  {/* Geometric Technical Schematic Placeholder */}
-                  <div className="flex items-center justify-center my-auto transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-16 h-16 rounded-full border-2 border-dashed border-steel-blue/50 flex items-center justify-center bg-industrial-850">
-                      <div className="w-10 h-10 rounded-full border border-industrial-400 flex items-center justify-center text-white font-mono text-[10px] font-bold">
-                        EC
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="text-[10px] font-mono text-industrial-400 flex items-center gap-1.5">
-                    <RulerIcon className="w-3.5 h-3.5 text-steel-blue" />
-                    <span>DIN / ASME Normları & Özel Ölçü</span>
+                  {/* Bottom Technical Indicator */}
+                  <div className="relative z-10 text-[10px] font-mono text-night bg-white/95 backdrop-blur-xs px-2 py-0.5 border border-industrial-200 inline-flex items-center gap-1.5 self-start shadow-xs">
+                    <RulerIcon className="w-3.5 h-3.5 text-rust shrink-0" />
+                    <span>DIN / ASME Normları & Özel Kesim</span>
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-industrial-900 group-hover:text-steel-darkblue transition-colors">
+                  <h3 className="text-xl font-bold text-night group-hover:text-rust transition-colors">
                     {category.name}
                   </h3>
-                  <p className="mt-2.5 text-sm text-industrial-600 leading-relaxed">
+                  <p className="mt-2.5 text-sm text-industrial-600 leading-relaxed line-clamp-2">
                     {category.shortDescription}
                   </p>
 
@@ -66,7 +75,7 @@ export function CategoryGrid() {
                     {category.highlights.map((highlight, hIdx) => (
                       <span
                         key={hIdx}
-                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700"
+                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-night border border-industrial-200/60"
                       >
                         {highlight}
                       </span>
@@ -79,10 +88,10 @@ export function CategoryGrid() {
               <div className="p-6 pt-0">
                 <Link
                   href={`/urunler?kategori=${category.id}`}
-                  className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-industrial-900 group-hover:text-steel-blue transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-night group-hover:text-brick transition-colors"
                 >
                   <span>Ürünleri Listele</span>
-                  <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRightIcon className="w-4 h-4 text-brick transition-transform group-hover:translate-x-1.5" />
                 </Link>
               </div>
             </div>

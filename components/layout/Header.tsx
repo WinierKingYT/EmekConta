@@ -48,7 +48,7 @@ export function Header() {
               href={`tel:${companyData.phone}`}
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
-              <PhoneIcon className="w-3.5 h-3.5 text-steel-blue" />
+              <PhoneIcon className="w-3.5 h-3.5 text-rust" />
               <span className="font-mono">{companyData.phoneFormatted}</span>
             </a>
             <a
@@ -64,7 +64,7 @@ export function Header() {
               href={`mailto:${companyData.quoteEmail}`}
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
-              <MailIcon className="w-3.5 h-3.5 text-steel-blue" />
+              <MailIcon className="w-3.5 h-3.5 text-rust" />
               <span>{companyData.quoteEmail}</span>
             </a>
           </div>
@@ -75,20 +75,20 @@ export function Header() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-200 ${
           isScrolled
-            ? "bg-industrial-900/95 backdrop-blur-md shadow-md border-b border-industrial-800 py-2.5"
-            : "bg-industrial-900 border-b border-industrial-800 py-3.5"
+            ? "bg-night/95 backdrop-blur-md shadow-md border-b border-night-border py-2.5"
+            : "bg-night border-b border-night-border py-3.5"
         }`}
       >
         <Container className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-steel-blue p-1 -m-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-rust p-1 -m-1"
             aria-label="Emek Conta Ana Sayfa"
           >
             {/* Geometric industrial mark */}
-            <div className="w-9 h-9 bg-industrial-800 border border-steel-blue/40 flex items-center justify-center shrink-0 text-white font-mono font-bold text-sm tracking-tighter group-hover:border-steel-blue transition-colors">
-              <span className="text-steel-blue font-extrabold mr-0.5">E</span>
+            <div className="w-9 h-9 bg-night-light border border-rust/40 flex items-center justify-center shrink-0 text-white font-mono font-bold text-sm tracking-tighter group-hover:border-rust transition-colors">
+              <span className="text-rust font-extrabold mr-0.5">E</span>
               <span className="text-white">C</span>
             </div>
             <div className="flex flex-col">
@@ -118,13 +118,13 @@ export function Header() {
                   <span className="flex items-center gap-1.5">
                     {item.label}
                     {item.badge && (
-                      <span className="text-[10px] font-mono px-1 py-0.2 bg-steel-blue/20 text-sky-300 border border-steel-blue/40 uppercase">
+                      <span className="text-[10px] font-mono px-1 py-0.2 bg-rust/20 text-rust-light border border-rust/40 uppercase">
                         {item.badge}
                       </span>
                     )}
                   </span>
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-steel-blue" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-rust" />
                   )}
                 </Link>
               );
@@ -144,7 +144,7 @@ export function Header() {
 
             <a
               href={`tel:${companyData.phone}`}
-              className="sm:hidden p-2 text-steel-blue hover:text-white focus:outline-none"
+              className="sm:hidden p-2 text-rust hover:text-white focus:outline-none"
               aria-label="Telefonla Ara"
             >
               <PhoneIcon className="w-5 h-5" />
@@ -154,7 +154,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 text-industrial-300 hover:text-white hover:bg-industrial-800 transition-colors focus:outline-none focus:ring-2 focus:ring-steel-blue"
+              className="lg:hidden p-2 text-industrial-300 hover:text-white hover:bg-industrial-800 transition-colors focus:outline-none focus:ring-2 focus:ring-rust"
               aria-label="Menüyü Aç"
               aria-expanded={mobileMenuOpen}
             >

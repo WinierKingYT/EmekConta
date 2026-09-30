@@ -59,7 +59,7 @@ export function ProductFilter({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Ürün adı, standart (ASME, DIN), malzeme (grafit, EPDM, PTFE) ara..."
-            className="w-full pl-11 pr-4 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm placeholder-industrial-500 focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none transition-colors"
+            className="w-full pl-11 pr-4 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm placeholder-industrial-500 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none transition-colors"
           />
         </div>
 
@@ -76,8 +76,8 @@ export function ProductFilter({
               onClick={() => setSelectedCategory("all")}
               className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
                 selectedCategory === "all"
-                  ? "bg-industrial-900 text-white border-industrial-900"
-                  : "bg-industrial-50 text-industrial-700 border-industrial-200 hover:bg-industrial-100"
+                  ? "bg-night text-white border-night shadow-xs"
+                  : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
               }`}
             >
               Tüm Ürünler ({products.length})
@@ -92,8 +92,8 @@ export function ProductFilter({
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
                     selectedCategory === cat.id
-                      ? "bg-industrial-900 text-white border-industrial-900"
-                      : "bg-industrial-50 text-industrial-700 border-industrial-200 hover:bg-industrial-100"
+                      ? "bg-night text-white border-night shadow-xs"
+                      : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
                   }`}
                 >
                   {cat.name} ({count})
@@ -107,7 +107,7 @@ export function ProductFilter({
       {/* Result Status */}
       <div className="flex items-center justify-between text-xs font-mono text-industrial-500">
         <span>
-          GÖSTERİLEN: <strong className="text-industrial-900">{filteredProducts.length}</strong> ÜRÜN
+          GÖSTERİLEN: <strong className="text-night">{filteredProducts.length}</strong> ÜRÜN
         </span>
         {(selectedCategory !== "all" || searchQuery) && (
           <button
@@ -116,7 +116,7 @@ export function ProductFilter({
               setSelectedCategory("all");
               setSearchQuery("");
             }}
-            className="text-steel-blue hover:underline"
+            className="text-rust hover:underline"
           >
             Filtreleri Temizle
           </button>

@@ -163,13 +163,13 @@ export function MaterialSelectorWidget() {
       <Container>
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-800 border border-industrial-700/80 text-xs font-mono text-steel-blue mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-800 border border-industrial-700/80 text-xs font-mono text-rust mb-4">
             <RulerIcon className="w-3.5 h-3.5" />
             <span>MÜHENDİSLİK HESAPLAMA & SEÇİM REHBERİ</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
             Doğru Conta Malzemesini <br className="hidden sm:inline" />
-            <span className="text-steel-blue">3 Adımda</span> Belirleyin
+            <span className="text-rust">3 Adımda</span> Belirleyin
           </h2>
           <p className="mt-3 text-sm sm:text-base text-industrial-400 leading-relaxed">
             Hattınızdaki akışkan türü, çalışma sıcaklığı ve basınç sınıfını seçin. Mühendislik algoritmamız tesisatınız için en güvenli conta standardını ve malzeme kombinasyonunu anında önersin.
@@ -183,7 +183,7 @@ export function MaterialSelectorWidget() {
             {/* Step 1: Fluid Type */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-steel-blue font-bold">
+                <span className="flex items-center gap-1.5 text-rust font-bold">
                   <span>1.</span> AKIŞKAN / ORTAM
                 </span>
                 <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
@@ -202,7 +202,7 @@ export function MaterialSelectorWidget() {
                     onClick={() => setFluid(item.id as FluidType)}
                     className={`w-full text-left px-3 py-2 text-xs font-mono transition-all border rounded-none flex items-center justify-between ${
                       fluid === item.id
-                        ? "bg-steel-darkblue border-steel-blue text-white font-bold shadow-xs"
+                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
                         : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
@@ -216,7 +216,7 @@ export function MaterialSelectorWidget() {
             {/* Step 2: Temperature Range */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-steel-blue font-bold">
+                <span className="flex items-center gap-1.5 text-rust font-bold">
                   <span>2.</span> ÇALIŞMA SICAKLIĞI
                 </span>
                 <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
@@ -233,7 +233,7 @@ export function MaterialSelectorWidget() {
                     onClick={() => setTemp(item.id as TempRange)}
                     className={`p-2 text-center font-mono border rounded-none transition-all ${
                       temp === item.id
-                        ? "bg-steel-darkblue border-steel-blue text-white font-bold shadow-xs"
+                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
                         : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
@@ -247,7 +247,7 @@ export function MaterialSelectorWidget() {
             {/* Step 3: Pressure Class */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-steel-blue font-bold">
+                <span className="flex items-center gap-1.5 text-rust font-bold">
                   <span>3.</span> BASINÇ SINIFI
                 </span>
                 <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
@@ -264,7 +264,7 @@ export function MaterialSelectorWidget() {
                     onClick={() => setPressure(item.id as PressureClass)}
                     className={`p-2 text-center font-mono border rounded-none transition-all ${
                       pressure === item.id
-                        ? "bg-steel-darkblue border-steel-blue text-white font-bold shadow-xs"
+                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
                         : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
@@ -286,7 +286,7 @@ export function MaterialSelectorWidget() {
                   MÜHENDİSLİK TAVSİYESİ (DOĞRULANMIŞ EŞLEŞME)
                 </span>
               </div>
-              <span className="text-xs font-mono text-steel-blue px-2.5 py-0.5 bg-industrial-900 border border-steel-blue/30">
+              <span className="text-xs font-mono text-rust px-2.5 py-0.5 bg-industrial-900 border border-rust/40">
                 {recommendation.standards}
               </span>
             </div>
@@ -304,7 +304,7 @@ export function MaterialSelectorWidget() {
               </div>
               <div className="p-2.5 bg-industrial-900/90 border border-industrial-800">
                 <span className="block text-[10px] text-industrial-500 uppercase">BASINÇ DAYANIMI</span>
-                <span className="text-steel-blue font-semibold">{recommendation.maxPressure}</span>
+                <span className="text-rust font-semibold">{recommendation.maxPressure}</span>
               </div>
               <div className="p-2.5 bg-industrial-900/90 border border-industrial-800">
                 <span className="block text-[10px] text-industrial-500 uppercase">STANDART NORM</span>
@@ -332,8 +332,8 @@ export function MaterialSelectorWidget() {
             </div>
 
             {/* Engineer Note Box */}
-            <div className="mt-6 p-3.5 bg-industrial-900/80 border-l-2 border-steel-blue text-xs text-industrial-300 leading-relaxed font-mono">
-              <span className="font-bold text-steel-blue block mb-1">MÜHENDİS NOTU & TAVSİYE:</span>
+            <div className="mt-6 p-3.5 bg-industrial-900/80 border-l-2 border-rust text-xs text-industrial-300 leading-relaxed font-mono">
+              <span className="font-bold text-rust block mb-1">MÜHENDİS NOTU & TAVSİYE:</span>
               {recommendation.engineerNote}
             </div>
 

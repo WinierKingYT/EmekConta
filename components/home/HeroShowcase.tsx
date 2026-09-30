@@ -104,7 +104,7 @@ export function HeroShowcase() {
             onClick={() => setActiveTab("showcase")}
             className={`flex items-center gap-1.5 px-2.5 py-1 text-xs transition-colors rounded-none ${
               activeTab === "showcase"
-                ? "bg-steel-darkblue text-white font-bold shadow-xs"
+                ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
             }`}
           >
@@ -116,7 +116,7 @@ export function HeroShowcase() {
             onClick={() => setActiveTab("cad")}
             className={`flex items-center gap-1.5 px-2.5 py-1 text-xs transition-colors rounded-none ${
               activeTab === "cad"
-                ? "bg-steel-darkblue text-white font-bold shadow-xs"
+                ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
             }`}
           >
@@ -163,14 +163,14 @@ export function HeroShowcase() {
                   <span className="px-2.5 py-1 bg-industrial-950/85 backdrop-blur-xs border border-industrial-700/60 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold">
                     {slide.title}
                   </span>
-                  <span className="px-2 py-0.5 bg-steel-darkblue/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
+                  <span className="px-2 py-0.5 bg-rust/90 backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold">
                     {slide.cornerBadgeLeft}
                   </span>
                 </div>
 
                 {/* Bottom Overlay Badges */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-steel-blue">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust">
                     <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
                     {slide.cornerBadgeRight}
                   </div>
@@ -201,7 +201,7 @@ export function HeroShowcase() {
               type="button"
               onClick={prevSlide}
               aria-label="Önceki Görsel"
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-rust transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
             >
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
@@ -209,7 +209,7 @@ export function HeroShowcase() {
               type="button"
               onClick={nextSlide}
               aria-label="Sonraki Görsel"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-steel-blue transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/80 hover:bg-industrial-900 border border-industrial-700/60 text-white hover:text-rust transition-all backdrop-blur-xs rounded-none opacity-85 hover:opacity-100 shadow-md"
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
@@ -226,12 +226,12 @@ export function HeroShowcase() {
                   onClick={() => setCurrentSlide(idx)}
                   className={`py-2 px-1 text-center font-mono text-[10px] border transition-all rounded-none ${
                     isActive
-                      ? "bg-industrial-900 border-steel-blue text-steel-blue font-bold shadow-xs"
+                      ? "bg-industrial-900 border-rust text-rust font-bold shadow-xs"
                       : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
                   }`}
                 >
                   <span className="block truncate">{s.shortLabel}</span>
-                  {isActive && <span className="block h-0.5 bg-steel-blue mt-1" />}
+                  {isActive && <span className="block h-0.5 bg-rust mt-1" />}
                 </button>
               );
             })}
@@ -262,9 +262,9 @@ export function HeroShowcase() {
               <circle cx="140" cy="140" r="95" stroke="#CBD5E1" strokeWidth="1.5" />
 
               {/* Sealing spiral element (shaded rings) */}
-              <circle cx="140" cy="140" r="90" stroke="#0284C7" strokeWidth="8" strokeOpacity="0.4" />
-              <circle cx="140" cy="140" r="82" stroke="#0284C7" strokeWidth="6" strokeOpacity="0.6" />
-              <circle cx="140" cy="140" r="75" stroke="#0284C7" strokeWidth="8" strokeOpacity="0.8" />
+              <circle cx="140" cy="140" r="90" stroke="#b7410e" strokeWidth="8" strokeOpacity="0.4" />
+              <circle cx="140" cy="140" r="82" stroke="#b7410e" strokeWidth="6" strokeOpacity="0.6" />
+              <circle cx="140" cy="140" r="75" stroke="#b7410e" strokeWidth="8" strokeOpacity="0.8" />
               
               {/* Inner ring */}
               <circle cx="140" cy="140" r="68" stroke="#E2E8F0" strokeWidth="2" />
@@ -278,9 +278,9 @@ export function HeroShowcase() {
               <line x1="5" y1="140" x2="275" y2="140" stroke="#334155" strokeWidth="0.75" strokeDasharray="4 4" />
 
               {/* Dimension callouts */}
-              <line x1="140" y1="14" x2="260" y2="14" stroke="#0284C7" strokeWidth="1" />
-              <circle cx="260" cy="14" r="2" fill="#0284C7" />
-              <text x="145" y="11" fill="#38BDF8" fontSize="8" fontFamily="monospace">Ø OD: 215.9 mm</text>
+              <line x1="140" y1="14" x2="260" y2="14" stroke="#b7410e" strokeWidth="1" />
+              <circle cx="260" cy="14" r="2" fill="#b7410e" />
+              <text x="145" y="11" fill="#d2521c" fontSize="8" fontFamily="monospace">Ø OD: 215.9 mm</text>
 
               <line x1="140" y1="72" x2="245" y2="72" stroke="#94A3B8" strokeWidth="0.75" />
               <text x="145" y="69" fill="#CBD5E1" fontSize="8" fontFamily="monospace">SARIM: 316L + GRAFİT</text>
@@ -290,7 +290,7 @@ export function HeroShowcase() {
             </svg>
 
             {/* Corner watermark badge */}
-            <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-industrial-950/90 border border-industrial-800 text-[10px] font-mono text-steel-blue">
+            <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-industrial-950/90 border border-industrial-800 text-[10px] font-mono text-rust">
               HASSAS İMALAT TOLERANSI: ±0.2mm
             </div>
           </div>

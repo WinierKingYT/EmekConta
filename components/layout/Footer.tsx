@@ -19,7 +19,7 @@ export function Footer() {
       <div className="border-b border-industrial-850 py-8 bg-industrial-900/60">
         <Container className="grid grid-cols-1 md:grid-cols-3 gap-6 text-industrial-300">
           <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-steel-blue border border-industrial-700 shrink-0">
+            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
               <ShieldCheckIcon className="w-5 h-5" />
             </div>
             <div>
@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-steel-blue border border-industrial-700 shrink-0">
+            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
               <PhoneIcon className="w-5 h-5" />
             </div>
             <div>
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div className="flex items-start gap-3.5">
-            <div className="p-2.5 bg-industrial-800 text-steel-blue border border-industrial-700 shrink-0">
+            <div className="p-2.5 bg-industrial-800 text-rust border border-industrial-700 shrink-0">
               <MapPinIcon className="w-5 h-5" />
             </div>
             <div>
@@ -62,8 +62,8 @@ export function Footer() {
           {/* Col 1: About Emek Conta */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-industrial-800 border border-steel-blue/40 flex items-center justify-center font-mono font-bold text-xs text-white">
-                <span className="text-steel-blue">E</span>C
+              <div className="w-8 h-8 bg-industrial-800 border border-rust/40 flex items-center justify-center font-mono font-bold text-xs text-white">
+                <span className="text-rust">E</span>C
               </div>
               <span className="text-lg font-extrabold tracking-tight text-white">
                 EMEK CONTA
@@ -115,7 +115,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/urunler" className="text-steel-blue hover:text-sky-300 font-medium pt-1 inline-block">
+                <Link href="/urunler" className="text-rust hover:text-rust-light font-medium pt-1 inline-block">
                   Tüm Kataloğu İncele →
                 </Link>
               </li>
@@ -186,14 +186,14 @@ export function Footer() {
               </div>
               <div>
                 <span className="block text-[11px] text-industrial-500 font-mono">Teklif E-posta:</span>
-                <a href={`mailto:${companyData.quoteEmail}`} className="text-steel-blue hover:text-sky-300 font-mono">
+                <a href={`mailto:${companyData.quoteEmail}`} className="text-rust hover:text-rust-light font-mono">
                   {companyData.quoteEmail}
                 </a>
               </div>
               <div className="pt-2">
                 <Link
                   href="/iletisim"
-                  className="inline-block px-3 py-1.5 bg-industrial-850 hover:bg-industrial-800 text-white font-mono text-[11px] border border-industrial-700 transition-colors"
+                  className="inline-block px-3 py-1.5 bg-industrial-850 hover:bg-industrial-800 text-white font-mono text-[11px] border border-industrial-700 hover:border-rust transition-colors"
                 >
                   Adres & Ulaşım Bilgileri →
                 </Link>

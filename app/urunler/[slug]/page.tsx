@@ -71,7 +71,7 @@ export default function ProductDetailPage({ params }: Props) {
     {
       key: "standard",
       header: "İlgili Standart",
-      className: "font-mono text-steel-darkblue text-xs",
+      className: "font-mono text-rust text-xs font-semibold",
     },
     {
       key: "notes",
@@ -107,8 +107,8 @@ export default function ProductDetailPage({ params }: Props) {
                 <>
                   {/* Header bar inside white card */}
                   <div className="flex items-center justify-between text-xs font-mono text-industrial-500 pb-3 border-b border-industrial-100 z-10 w-full">
-                    <span className="text-steel-darkblue font-bold uppercase">{product.category}</span>
-                    <span className="text-[11px] bg-industrial-100 px-2 py-0.5 border border-industrial-200 text-industrial-700">
+                    <span className="text-rust font-bold uppercase">{product.category}</span>
+                    <span className="text-[11px] bg-industrial-100 px-2 py-0.5 border border-industrial-200 text-night font-medium">
                       ASME / DIN UYUMLU
                     </span>
                   </div>
@@ -193,7 +193,7 @@ export default function ProductDetailPage({ params }: Props) {
                 <div className="mt-6 space-y-2.5">
                   {product.features.map((feature, fIdx) => (
                     <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-industrial-800">
-                      <CheckCircleIcon className="w-4 h-4 text-steel-blue shrink-0 mt-0.5" />
+                      <CheckCircleIcon className="w-4 h-4 text-rust shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -227,8 +227,8 @@ export default function ProductDetailPage({ params }: Props) {
         {/* Detailed Technical Specifications Table */}
         <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
+            <span className="w-4 h-[2px] bg-rust inline-block"></span>
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
               TEKNİK TABLO
             </span>
           </div>
@@ -252,13 +252,13 @@ export default function ProductDetailPage({ params }: Props) {
           {/* Materials */}
           <div className="bg-white border border-industrial-200 p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
-              <RulerIcon className="w-5 h-5 text-steel-blue" />
+              <RulerIcon className="w-5 h-5 text-rust" />
               <span>Malzeme Seçenekleri</span>
             </h3>
             <ul className="space-y-3">
               {product.materials.map((mat, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-industrial-700">
-                  <span className="w-1.5 h-1.5 bg-steel-blue rounded-full mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 bg-rust rounded-full mt-2 shrink-0" />
                   <span>{mat}</span>
                 </li>
               ))}
@@ -268,13 +268,13 @@ export default function ProductDetailPage({ params }: Props) {
           {/* Applications */}
           <div className="bg-white border border-industrial-200 p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
-              <ShieldCheckIcon className="w-5 h-5 text-steel-blue" />
+              <ShieldCheckIcon className="w-5 h-5 text-rust" />
               <span>Uygulama Alanları</span>
             </h3>
             <ul className="space-y-3">
               {product.applications.map((app, idx) => (
                 <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-industrial-700">
-                  <span className="w-1.5 h-1.5 bg-steel-blue rounded-full mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 bg-rust rounded-full mt-2 shrink-0" />
                   <span>{app}</span>
                 </li>
               ))}
@@ -297,7 +297,7 @@ export default function ProductDetailPage({ params }: Props) {
           <div className="mt-12">
             <h3 className="text-xl font-bold text-industrial-900 mb-6 flex items-center justify-between">
               <span>İlgili Sızdırmazlık Ürünleri</span>
-              <Link href="/urunler" className="text-xs font-mono text-steel-blue hover:underline">
+              <Link href="/urunler" className="text-xs font-mono text-rust hover:underline">
                 Tüm Ürünler →
               </Link>
             </h3>

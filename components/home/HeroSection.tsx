@@ -30,7 +30,7 @@ export function HeroSection() {
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
               Endüstriyel Sızdırmazlıkta <br />
-              <span className="text-steel-blue">1997'den Gelen</span> Tecrübe
+              <span className="text-rust">1997'den Gelen</span> Tecrübe
             </h1>
 
             {/* Subtext */}
@@ -56,15 +56,15 @@ export function HeroSection() {
             {/* Key Micro Capabilities */}
             <div className="mt-10 pt-8 border-t border-industrial-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-mono text-industrial-400 w-full">
               <div className="flex items-center gap-2">
-                <CheckCircleIcon className="w-4 h-4 text-steel-blue shrink-0" />
+                <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                 <span>Teknik Çizim / CAD</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircleIcon className="w-4 h-4 text-steel-blue shrink-0" />
+                <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                 <span>Numuneye Göre İmalat</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircleIcon className="w-4 h-4 text-steel-blue shrink-0" />
+                <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                 <span>DIN & ASME Normları</span>
               </div>
             </div>

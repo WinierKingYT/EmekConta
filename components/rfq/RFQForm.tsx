@@ -213,7 +213,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
       {/* Group 1: Contact Information */}
       <div>
         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-steel-darkblue">01.</span>
+          <span className="font-mono text-xs font-bold text-rust">01.</span>
           <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
             Yetkili & Firma Bilgileri
           </h3>
@@ -232,7 +232,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.fullName}
               onChange={handleInputChange}
               placeholder="Yetkili adı ve soyadı"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             />
           </div>
 
@@ -247,7 +247,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.companyName}
               onChange={handleInputChange}
               placeholder="Firma ünvanı"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             />
           </div>
 
@@ -263,7 +263,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.phone}
               onChange={handleInputChange}
               placeholder="0 (5XX) XXX XX XX"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
 
@@ -279,7 +279,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="ornek@firma.com"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
         </div>
@@ -288,7 +288,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
       {/* Group 2: Product & Dimension Details */}
       <div>
         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-steel-darkblue">02.</span>
+          <span className="font-mono text-xs font-bold text-rust">02.</span>
           <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
             Ürün & Ölçü Spesifikasyonları
           </h3>
@@ -304,7 +304,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               name="category"
               value={formData.category}
               onChange={handleInputChange}
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             >
               {productCategories.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -325,7 +325,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.productName}
               onChange={handleInputChange}
               placeholder="Örn: DN 100 PN 16 Spiral Sarımlı Conta"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             />
           </div>
 
@@ -340,7 +340,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.quantity}
               onChange={handleInputChange}
               placeholder="Örn: 50 Adet"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
 
@@ -355,7 +355,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.dimensions}
               onChange={handleInputChange}
               placeholder="Örn: Ø 114 x 168 x 4.5 mm"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
 
@@ -370,7 +370,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.material}
               onChange={handleInputChange}
               placeholder="Örn: Saf Grafit, EPDM Kauçuk, 316L Paslanmaz, Genleşmiş PTFE, Klingrit..."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             />
           </div>
         </div>
@@ -379,7 +379,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
       {/* Group 3: Technical Operating Parameters (Optional / Engineering) */}
       <div>
         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-steel-darkblue">03.</span>
+          <span className="font-mono text-xs font-bold text-rust">03.</span>
           <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
             Çalışma Koşulları (Mühendislik Değerlendirmesi İçin)
           </h3>
@@ -397,7 +397,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.temperature}
               onChange={handleInputChange}
               placeholder="Örn: 220 °C"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
 
@@ -412,7 +412,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.pressure}
               onChange={handleInputChange}
               placeholder="Örn: 25 Bar / PN 25"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
 
@@ -427,7 +427,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.medium}
               onChange={handleInputChange}
               placeholder="Örn: Doymuş buhar, deniz suyu, hidrolik yağ"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
             />
           </div>
 
@@ -442,7 +442,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
               value={formData.standard}
               onChange={handleInputChange}
               placeholder="Örn: ASME B16.5, DIN 2633"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none font-mono"
+              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none font-mono"
             />
           </div>
         </div>
@@ -451,14 +451,14 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
       {/* Group 4: File Upload (CAD, PDF, STEP, Image) */}
       <div>
         <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-steel-darkblue">04.</span>
+          <span className="font-mono text-xs font-bold text-rust">04.</span>
           <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
             Teknik Çizim / Dosya Eki (Opsiyonel)
           </h3>
         </div>
 
         <div className="border-2 border-dashed border-industrial-300 p-6 text-center bg-industrial-50 hover:bg-industrial-100/50 transition-colors">
-          <UploadCloudIcon className="w-10 h-10 text-steel-blue mx-auto mb-2" />
+          <UploadCloudIcon className="w-10 h-10 text-rust mx-auto mb-2" />
           <p className="text-xs sm:text-sm font-semibold text-industrial-800">
             Teknik çizim (CAD / DXF / STEP / PDF) veya numune fotoğrafı yükleyin
           </p>
@@ -519,7 +519,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
           value={formData.notes}
           onChange={handleInputChange}
           placeholder="Varsa özel toleranslar, ambalaj talebi, montaj ortamı veya teslim termin tarihi hakkında bilgi ekleyebilirsiniz."
-          className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue focus:bg-white rounded-none"
+          className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none"
         />
       </div>
 

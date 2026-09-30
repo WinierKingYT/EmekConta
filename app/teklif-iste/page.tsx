@@ -34,12 +34,12 @@ export default function QuotePage({
         {/* Page Header */}
         <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
+            <span className="w-4 h-[2px] bg-rust inline-block"></span>
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
               B2B TEKLİF & TEKNİK DEĞERLENDİRME
             </span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-night tracking-tight">
             Teknik Teklif Talebi (RFQ)
           </h1>
           <p className="mt-3 text-sm sm:text-base text-industrial-600 leading-relaxed">
@@ -50,9 +50,9 @@ export default function QuotePage({
           <div className="mt-6 pt-6 border-t border-industrial-100 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
             <a
               href={`tel:${companyData.phone}`}
-              className="flex items-center gap-2.5 p-3 bg-industrial-50 hover:bg-industrial-100 text-industrial-800 transition-colors border border-industrial-200"
+              className="flex items-center gap-2.5 p-3 bg-industrial-50 hover:bg-industrial-100 text-night transition-colors border border-industrial-200"
             >
-              <PhoneIcon className="w-4 h-4 text-steel-blue shrink-0" />
+              <PhoneIcon className="w-4 h-4 text-rust shrink-0" />
               <div>
                 <span className="block text-[10px] text-industrial-500">Santral:</span>
                 <span>{companyData.phoneFormatted}</span>
@@ -72,8 +72,8 @@ export default function QuotePage({
               </div>
             </a>
 
-            <div className="flex items-center gap-2.5 p-3 bg-industrial-50 text-industrial-800 border border-industrial-200">
-              <ClockIcon className="w-4 h-4 text-steel-blue shrink-0" />
+            <div className="flex items-center gap-2.5 p-3 bg-industrial-50 text-night border border-industrial-200">
+              <ClockIcon className="w-4 h-4 text-rust shrink-0" />
               <div>
                 <span className="block text-[10px] text-industrial-500">Geri Dönüş:</span>
                 <span>Aynı İş Günü İçinde</span>

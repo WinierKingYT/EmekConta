@@ -132,14 +132,14 @@ export function QuickRFQDropzone() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Authoritative B2B Proposition & Guarantees */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-900 border border-industrial-800 text-xs font-mono text-steel-blue mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-900 border border-industrial-800 text-xs font-mono text-rust mb-4">
               <UploadCloudIcon className="w-3.5 h-3.5" />
               <span>HIZLI TEKNİK ÇİZİM DEĞERLENDİRME</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Teknik Çiziminizi Yükleyin, <br />
-              <span className="text-steel-blue">2 Saatte Teklif</span> Alın
+              <span className="text-rust">2 Saatte Teklif</span> Alın
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-industrial-300 leading-relaxed">
@@ -161,7 +161,7 @@ export function QuickRFQDropzone() {
               </div>
 
               <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800">
-                <ShieldCheckIcon className="w-5 h-5 text-steel-blue shrink-0 mt-0.5" />
+                <ShieldCheckIcon className="w-5 h-5 text-rust shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
                     Gizlilik & Ticari NDA Güvencesi
@@ -173,7 +173,7 @@ export function QuickRFQDropzone() {
               </div>
 
               <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800">
-                <CheckCircleIcon className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircleIcon className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
                     Sıfır Kalıp Maliyeti (CNC Kesim)
@@ -256,10 +256,10 @@ export function QuickRFQDropzone() {
                     onClick={() => fileInputRef.current?.click()}
                     className={`border-2 border-dashed p-6 text-center cursor-pointer transition-all ${
                       isDragging
-                        ? "border-steel-blue bg-steel-darkblue/20"
+                        ? "border-rust bg-rust/20"
                         : file
                         ? "border-emerald-500/60 bg-emerald-950/20"
-                        : "border-industrial-700 bg-industrial-950/70 hover:border-industrial-500 hover:bg-industrial-950"
+                        : "border-industrial-700 bg-industrial-950/70 hover:border-rust/60 hover:bg-industrial-950"
                     }`}
                   >
                     <input
@@ -292,9 +292,9 @@ export function QuickRFQDropzone() {
                       </div>
                     ) : (
                       <div>
-                        <UploadCloudIcon className="w-8 h-8 text-steel-blue mx-auto mb-2" />
+                        <UploadCloudIcon className="w-8 h-8 text-rust mx-auto mb-2" />
                         <p className="text-xs font-mono text-industrial-200 font-semibold">
-                          Dosyayı buraya sürükleyin veya <span className="text-steel-blue underline">gözatın</span>
+                          Dosyayı buraya sürükleyin veya <span className="text-rust underline">gözatın</span>
                         </p>
                         <p className="text-[10px] font-mono text-industrial-500 mt-1">
                           Desteklenen: PDF, DWG, DXF, STEP, PNG, JPG (Maks. 25 MB)
@@ -322,7 +322,7 @@ export function QuickRFQDropzone() {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Yetkili Adı Soyadı *"
-                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-steel-blue"
+                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust"
                       />
                     </div>
                     <div>
@@ -332,7 +332,7 @@ export function QuickRFQDropzone() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="Telefon Numarası (Teklif İçin) *"
-                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-steel-blue"
+                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust"
                       />
                     </div>
                   </div>
@@ -343,7 +343,7 @@ export function QuickRFQDropzone() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Firma Adı (Opsiyonel)"
-                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-steel-blue"
+                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust"
                     />
                   </div>
 
@@ -353,7 +353,7 @@ export function QuickRFQDropzone() {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Ölçü, adet veya çalışma şartı notları (Örn: DN50 PN16, 50 adet, 250°C buhar hattı)..."
-                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-steel-blue resize-none"
+                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust resize-none"
                     />
                   </div>
                 </div>
@@ -363,7 +363,7 @@ export function QuickRFQDropzone() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-steel-darkblue hover:bg-steel-blue text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-steel-blue shadow-lg disabled:opacity-50"
+                    className="w-full py-3 bg-brick hover:bg-brick-hover text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-brick shadow-lg disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <>
@@ -373,7 +373,7 @@ export function QuickRFQDropzone() {
                     ) : (
                       <>
                         <span>Teknik Teklif İste (2 Saatte Geri Dönüş)</span>
-                        <span className="text-steel-blue">→</span>
+                        <span className="text-white font-bold">→</span>
                       </>
                     )}
                   </button>

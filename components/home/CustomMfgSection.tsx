@@ -19,8 +19,8 @@ export function CustomMfgSection() {
           {/* Left Column: Core Value Proposition */}
           <div className="lg:col-span-7">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-              <span className="text-xs font-mono font-semibold uppercase tracking-widest text-sky-400">
+              <span className="w-4 h-[2px] bg-rust inline-block"></span>
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
                 ÖZEL İMALAT KABİLİYETİ
               </span>
             </div>
@@ -28,7 +28,7 @@ export function CustomMfgSection() {
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
               Standart Ölçü Yetmediğinde
             </h2>
-            <p className="mt-2 text-xl sm:text-2xl font-medium text-steel-blue">
+            <p className="mt-2 text-xl sm:text-2xl font-medium text-rust">
               Teknik resme, ölçüye veya numuneye göre üretim.
             </p>
 
@@ -39,7 +39,7 @@ export function CustomMfgSection() {
             <ul className="mt-6 space-y-3">
               {capabilities.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-industrial-200">
-                  <CheckCircleIcon className="w-4 h-4 text-steel-blue shrink-0 mt-0.5" />
+                  <CheckCircleIcon className="w-4 h-4 text-rust shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -66,7 +66,7 @@ export function CustomMfgSection() {
             <div className="bg-industrial-950 border border-industrial-800 p-6 sm:p-8">
               <div className="flex items-center justify-between pb-4 border-b border-industrial-800 text-xs font-mono text-industrial-400">
                 <div className="flex items-center gap-2">
-                  <FactoryIcon className="w-4 h-4 text-steel-blue" />
+                  <FactoryIcon className="w-4 h-4 text-rust" />
                   <span>İMALAT VE TEKNİK ÇÖZÜM MERKEZİ</span>
                 </div>
                 <span className="text-emerald-400">CNC AKTİF</span>

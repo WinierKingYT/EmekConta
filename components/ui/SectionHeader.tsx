@@ -31,8 +31,8 @@ export function SectionHeader({
       <div className={cn(isCenter ? "w-full" : "max-w-3xl")}>
         {tag && (
           <div className="flex items-center gap-2 mb-2.5">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
+            <span className="w-4 h-[2px] bg-rust inline-block"></span>
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
               {tag}
             </span>
           </div>

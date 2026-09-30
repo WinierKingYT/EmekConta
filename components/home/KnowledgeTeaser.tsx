@@ -28,17 +28,17 @@ export function KnowledgeTeaser() {
             <Link
               key={article.id}
               href={`/teknik-bilgi/${article.slug}`}
-              className="group p-6 bg-white border border-industrial-200 hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between"
+              className="group p-6 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
-                  <span className="text-steel-darkblue font-semibold uppercase">
+                  <span className="text-rust font-bold uppercase">
                     {article.category}
                   </span>
                   <span>{article.readingTimeMinutes} dk okuma</span>
                 </div>
 
-                <h3 className="text-base font-bold text-industrial-900 group-hover:text-steel-blue transition-colors leading-snug">
+                <h3 className="text-base font-bold text-night group-hover:text-rust transition-colors leading-snug">
                   {article.title}
                 </h3>
 
@@ -51,7 +51,7 @@ export function KnowledgeTeaser() {
                     {article.standardsMentioned.map((std, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[10px] font-mono px-1.5 py-0.5 bg-industrial-100 text-industrial-700"
+                        className="text-[10px] font-mono px-1.5 py-0.5 bg-industrial-100 text-night border border-industrial-200/50"
                       >
                         {std}
                       </span>
@@ -60,9 +60,9 @@ export function KnowledgeTeaser() {
                 )}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-industrial-100 flex items-center justify-between text-xs font-mono font-medium text-industrial-800 group-hover:text-steel-blue">
+              <div className="mt-6 pt-4 border-t border-industrial-100 flex items-center justify-between text-xs font-mono font-medium text-night group-hover:text-brick transition-colors">
                 <span>Teknik Analizi İncele</span>
-                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRightIcon className="w-4 h-4 text-brick transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
           ))}

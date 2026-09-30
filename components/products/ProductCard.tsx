@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
-    <div className="group bg-white border border-industrial-200 hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between">
+    <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between">
       <div>
         {/* Visual Schematics / Clean Photo Showcase */}
         <div
@@ -39,14 +39,14 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
               {/* Clean Overlay Badges */}
               <div className="absolute top-2.5 left-2.5 z-10 flex items-center gap-1.5">
-                <span className="px-2 py-0.5 bg-industrial-100/90 text-industrial-800 text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200 backdrop-blur-xs">
+                <span className="px-2 py-0.5 bg-industrial-100/90 text-night text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200 backdrop-blur-xs">
                   {product.category}
                 </span>
               </div>
 
               {product.drawingSupported && (
                 <div className="absolute top-2.5 right-2.5 z-10">
-                  <span className="px-2 py-0.5 bg-steel-darkblue/90 text-white text-[10px] font-mono font-semibold tracking-wide shadow-xs">
+                  <span className="px-2 py-0.5 bg-rust/90 text-white text-[10px] font-mono font-semibold tracking-wide shadow-xs">
                     CAD / ÖZEL KESİM
                   </span>
                 </div>
@@ -55,9 +55,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           ) : (
             <>
               <div className="flex items-center justify-between text-[11px] font-mono text-industrial-400 z-10">
-                <span className="text-steel-blue font-bold uppercase">{product.category}</span>
+                <span className="text-rust font-bold uppercase">{product.category}</span>
                 {product.drawingSupported && (
-                  <span className="px-1.5 py-0.5 bg-industrial-800/90 text-sky-300 border border-steel-blue/40 text-[10px]">
+                  <span className="px-1.5 py-0.5 bg-industrial-800/90 text-rust-light border border-rust/40 text-[10px]">
                     CAD / ÖZEL KESİM
                   </span>
                 )}
@@ -66,7 +66,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
               {/* Central geometric seal schematic */}
               <div className="my-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105 z-10">
                 <div className="w-16 h-16 rounded-full border-2 border-industrial-700 flex items-center justify-center bg-industrial-850">
-                  <div className="w-10 h-10 rounded-full border border-steel-blue/60 flex items-center justify-center text-[10px] font-mono text-white">
+                  <div className="w-10 h-10 rounded-full border border-rust/60 flex items-center justify-center text-[10px] font-mono text-white">
                     DIN/ASME
                   </div>
                 </div>
@@ -89,7 +89,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             ))}
           </div>
 
-          <h3 className="text-lg font-bold text-industrial-900 group-hover:text-steel-darkblue transition-colors">
+          <h3 className="text-lg font-bold text-night group-hover:text-rust transition-colors">
             <Link href={`/urunler/${product.slug}`}>
               {product.name}
             </Link>
@@ -111,7 +111,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <div className="p-5 sm:p-6 pt-0">
         <Link
           href={`/urunler/${product.slug}`}
-          className="w-full inline-flex items-center justify-between px-3.5 py-2.5 bg-industrial-50 group-hover:bg-industrial-900 group-hover:text-white text-industrial-900 text-xs font-mono font-bold uppercase tracking-wider border border-industrial-200 group-hover:border-industrial-900 transition-colors"
+          className="w-full inline-flex items-center justify-between px-3.5 py-2.5 bg-industrial-50 group-hover:bg-brick group-hover:text-white text-night text-xs font-mono font-bold uppercase tracking-wider border border-industrial-200 group-hover:border-brick transition-all duration-200"
         >
           <span>Teknik Özellikler & Teklif</span>
           <ArrowRightIcon className="w-3.5 h-3.5" />

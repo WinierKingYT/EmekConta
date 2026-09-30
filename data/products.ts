@@ -8,6 +8,7 @@ export const productCategories: ProductCategory[] = [
     description: "Yüksek sıcaklık, basınç ve kimyasal akışkan hatlarında flanş sızdırmazlığı sağlayan standart ve özel kesim contalar.",
     itemCountEstimated: "1000+ Standart & Özel Ölçü",
     highlights: ["Spiral Sarımlı (ASME / DIN)", "Saf & Telli Grafit", "Klingrit / Aramid Levha", "Metal Ceketli & Sac Takviyeli"],
+    image: "/images/products/spiral-sarimli-contalar.webp",
   },
   {
     id: "contalik-malzemeler",
@@ -16,6 +17,7 @@ export const productCategories: ProductCategory[] = [
     description: "Atölye ve tesislerde doğrudan kesim veya yedek parça üretimi için rulo ve plaka formunda yüksek kaliteli sızdırmazlık levhaları.",
     itemCountEstimated: "Geniş Kalınlık & Ebat Seçeneği",
     highlights: ["Asbestsiz Aramid Levhalar", "Saf Esnek Grafit Plakalar", "Kauçuklu Mantar Kompozit", "Presbant & Vulkanize Fiber"],
+    image: "/images/products/klingrit-levha-contalar.webp",
   },
   {
     id: "kaucuk-urunleri",
@@ -24,6 +26,7 @@ export const productCategories: ProductCategory[] = [
     description: "Su, yağ, akaryakıt, buhar ve gıda hatlarında esnek sızdırmazlık sağlayan standart O-ring, conta, plaka ve gemi ambar profilleri.",
     itemCountEstimated: "Tüm Standart Sertlik Dereceleri",
     highlights: ["NBR (Yağ & Akaryakıt)", "EPDM (Su & Ozon Dayanımı)", "Viton / FKM (Yüksek Sıcaklık & Asit)", "Ambar Kapak Lastikleri"],
+    image: "/images/products/kaucuk-epdm-nbr-contalar.webp",
   },
   {
     id: "ptfe-plastik",
@@ -32,6 +35,7 @@ export const productCategories: ProductCategory[] = [
     description: "Agresif kimyasallar, asitler, solventler ve aşınmaya maruz mekanik parçalar için PTFE ve mühendislik plastikleri çözümleri.",
     itemCountEstimated: "İşlenmiş, Levha & Çubuk Formlar",
     highlights: ["Genleşmiş (Expanded) ePTFE Şerit", "Saf & Karbon Dolgulu PTFE", "Kestamid & Polyamid Çubuk/Levha", "Delrin (POM) Parçalar"],
+    image: "/images/products/ptfe-teflon-urunler.webp",
   },
   {
     id: "salmastralar",
@@ -40,6 +44,7 @@ export const productCategories: ProductCategory[] = [
     description: "Döner mil, piston, pompa ve endüstriyel vanalarda dinamik sızdırmazlık sağlayan yüksek kaliteli örgülü salmastra fitilleri.",
     itemCountEstimated: "4mm - 50mm Kesit Aralığı",
     highlights: ["Saf Grafit Salmastra", "Aramid Köşe Takviyeli (Zebra)", "Yağlı & Kuru PTFE Salmastra", "İnconel Telli Grafit"],
+    image: "/images/products/orgulu-salmastralar.webp",
   },
   {
     id: "yuksek-isi-urunleri",
@@ -48,6 +53,7 @@ export const productCategories: ProductCategory[] = [
     description: "Kazan kapakları, fırın kapakları, egzoz hatları ve termal bariyer uygulamalarında 1200°C'ye varan ısı yalıtım ve conta çözümleri.",
     itemCountEstimated: "Teknik Tekstil & Conta",
     highlights: ["Cam Elyaf Bant & İp", "Seramik Elyaf Kumaş & Battaniye", "Kazan Kapağı Contaları", "Alüminyum Folyo / PU Kaplı Kumaş"],
+    image: "/images/products/cam-elyaf-seramik-tekstil.webp",
   },
 ];
 

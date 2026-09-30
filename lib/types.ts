@@ -50,6 +50,7 @@ export interface ProductCategory {
   description: string;
   itemCountEstimated: string;
   highlights: string[];
+  image?: string;
 }
 
 export interface IndustrySector {

@@ -8,11 +8,11 @@ export function FinalCTASection() {
   return (
     <section className="py-16 sm:py-24 bg-industrial-950 text-white relative overflow-hidden">
       {/* Decorative technical line */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-industrial-800 via-steel-blue to-industrial-800" />
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-industrial-800 via-rust to-industrial-800" />
 
       <Container size="narrow" className="text-center relative">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-850 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider">
-          <span className="w-2 h-2 bg-steel-blue rounded-full" />
+          <span className="w-2 h-2 bg-rust rounded-full" />
           Hızlı B2B Teklif & Teknik Danışmanlık
         </div>
 
@@ -46,7 +46,7 @@ export function FinalCTASection() {
             href={`tel:${companyData.phone}`}
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <PhoneIcon className="w-4 h-4 text-steel-blue" />
+            <PhoneIcon className="w-4 h-4 text-rust" />
             <span>Santral: {companyData.phoneFormatted}</span>
           </a>
 
@@ -64,7 +64,7 @@ export function FinalCTASection() {
             href={`mailto:${companyData.quoteEmail}`}
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <MailIcon className="w-4 h-4 text-steel-blue" />
+            <MailIcon className="w-4 h-4 text-rust" />
             <span>{companyData.quoteEmail}</span>
           </a>
         </div>

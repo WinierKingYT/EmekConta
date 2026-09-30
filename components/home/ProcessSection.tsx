@@ -47,15 +47,15 @@ export function ProcessSection() {
           {steps.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between p-6 bg-industrial-50/60 border-t-2 border-industrial-900 group hover:bg-industrial-100/60 transition-colors"
+              className="flex flex-col justify-between p-6 bg-industrial-50/60 border-t-2 border-night group hover:border-rust hover:bg-industrial-100/60 transition-all duration-200"
             >
               <div>
                 {/* Step number in bold monospace editorial font */}
-                <div className="font-mono text-3xl sm:text-4xl font-extrabold text-steel-blue tracking-tighter mb-4">
+                <div className="font-mono text-3xl sm:text-4xl font-extrabold text-rust tracking-tighter mb-4">
                   {item.step}
                 </div>
 
-                <h3 className="text-lg font-bold text-industrial-900 mb-2">
+                <h3 className="text-lg font-bold text-night group-hover:text-rust transition-colors mb-2">
                   {item.title}
                 </h3>
 
