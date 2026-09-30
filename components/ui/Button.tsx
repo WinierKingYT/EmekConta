@@ -21,7 +21,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brick focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-md select-none text-center";
+    "inline-flex items-center justify-center font-medium transition-all focus:outline-none focus:ring-2 focus:ring-brick focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-lg select-none text-center";
 
   const sizeClasses = {
     sm: "px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider",

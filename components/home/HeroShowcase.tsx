@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FactoryIcon, RulerIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons/Icons";
+import { FactoryIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons/Icons";
 
 interface SlideData {
   id: string;
@@ -65,20 +65,19 @@ const slides: SlideData[] = [
 ];
 
 export function HeroShowcase() {
-  const [activeTab, setActiveTab] = useState<"showcase" | "cad">("showcase");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   // Auto-advance slides every 5.5 seconds unless paused
   useEffect(() => {
-    if (activeTab !== "showcase" || isPaused) return;
+    if (isPaused) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5500);
 
     return () => clearInterval(timer);
-  }, [activeTab, isPaused]);
+  }, [isPaused]);
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
@@ -92,222 +91,148 @@ export function HeroShowcase() {
 
   return (
     <div 
-      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md rounded-lg"
+      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md rounded-2xl"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Tab Switcher & Console Header */}
+      {/* Console Header */}
       <div className="flex items-center justify-between border-b border-industrial-800 pb-3 mb-4 text-[11px] font-mono">
-        <div className="flex items-center gap-1.5 p-1 bg-industrial-900 border border-industrial-800 rounded-md">
-          <button
-            type="button"
-            onClick={() => setActiveTab("showcase")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded ${
-              activeTab === "showcase"
-                ? "bg-rust text-white font-bold shadow-xs"
-                : "text-industrial-400 hover:text-industrial-200"
-            }`}
-          >
-            <FactoryIcon className="w-3.5 h-3.5" />
-            <span>Üretim Vitrini ({slides.length})</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("cad")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded ${
-              activeTab === "cad"
-                ? "bg-rust text-white font-bold shadow-xs"
-                : "text-industrial-400 hover:text-industrial-200"
-            }`}
-          >
-            <RulerIcon className="w-3.5 h-3.5" />
-            <span>CAD Çizim</span>
-          </button>
+        <div className="flex items-center gap-2 px-3 py-1.5 bg-industrial-900 border border-industrial-800 rounded-lg">
+          <FactoryIcon className="w-3.5 h-3.5 text-rust" />
+          <span className="text-white font-semibold tracking-wide">
+            Üretim & İmalat Vitrini
+          </span>
+          <span className="text-industrial-500">•</span>
+          <span className="text-industrial-400 text-[10px]">
+            {slides.length} Temel Seri
+          </span>
         </div>
 
-        <div className="hidden sm:flex items-center gap-2 text-industrial-400 px-2.5 py-1 bg-industrial-900/60 border border-industrial-800/80 rounded">
+        <div className="flex items-center gap-2 text-industrial-400 px-2.5 py-1.5 bg-industrial-900/60 border border-industrial-800/80 rounded-lg">
           <span className={`w-1.5 h-1.5 rounded-full ${isPaused ? "bg-amber-400" : "bg-emerald-400 animate-pulse"}`} />
           <span className="text-[10px] text-industrial-300 font-medium">
-            {activeTab === "showcase" ? (isPaused ? "DURAKLATILDI" : `ÜRÜN ${currentSlide + 1}/${slides.length}`) : "TEKNİK DOKÜMAN"}
+            {isPaused ? "DURAKLATILDI" : `0${currentSlide + 1} / 0${slides.length}`}
           </span>
         </div>
       </div>
 
-      {/* Main Content Area */}
-      {activeTab === "showcase" ? (
-        <div>
-          {/* 4:3 Aspect Ratio Container Matching Native Photograph Dimensions */}
-          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group shadow-inner rounded-md">
-            {/* Render all slides for instant transition without re-renders */}
-            {slides.map((slide, idx) => (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                }`}
-              >
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  fill
-                  priority={idx === 0}
-                  sizes="(max-width: 1024px) 100vw, 550px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+      {/* Main Photographic Area */}
+      <div>
+        {/* 4:3 Aspect Ratio Container Matching Native Photograph Dimensions */}
+        <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group shadow-inner rounded-xl">
+          {/* Render all slides for instant transition without re-renders */}
+          {slides.map((slide, idx) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                idx === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={idx === 0}
+                sizes="(max-width: 1024px) 100vw, 550px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-                {/* Subtle bottom gradient protection for badges */}
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-industrial-950/95 via-industrial-950/50 to-transparent pointer-events-none z-10" />
+              {/* Subtle bottom gradient protection for badges */}
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-industrial-950/95 via-industrial-950/50 to-transparent pointer-events-none z-10" />
 
-                {/* Top Badge */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
-                  <span className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-700/80 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold rounded shadow-xs">
-                    {slide.title}
-                  </span>
-                  <span className="px-2.5 py-1 bg-rust backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold rounded shadow-xs">
-                    {slide.cornerBadgeLeft}
-                  </span>
+              {/* Top Badge */}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
+                <span className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-700/80 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold rounded-md shadow-xs">
+                  {slide.title}
+                </span>
+                <span className="px-2.5 py-1 bg-rust backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold rounded-md shadow-xs">
+                  {slide.cornerBadgeLeft}
+                </span>
+              </div>
+
+              {/* Bottom Overlay Badges */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
+                <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust rounded-md shadow-xs">
+                  <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
+                  {slide.cornerBadgeRight}
                 </div>
-
-                {/* Bottom Overlay Badges */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust rounded shadow-xs">
-                    <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
-                    {slide.cornerBadgeRight}
-                  </div>
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right rounded shadow-xs">
-                    <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
-                    İstanbul / Türkiye
-                  </div>
+                <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right rounded-md shadow-xs">
+                  <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
+                  İstanbul / Türkiye
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
 
-            {/* Corner Crosshairs for Engineering Blueprint Aesthetic */}
-            <div className="absolute top-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
-              +
-            </div>
-            <div className="absolute top-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
-              +
-            </div>
-            <div className="absolute bottom-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
-              +
-            </div>
-            <div className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
-              +
-            </div>
-
-            {/* Slider Navigation Arrows (Circular, Soft, Ergonomic) */}
-            <button
-              type="button"
-              onClick={prevSlide}
-              aria-label="Önceki Görsel"
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
-            >
-              <ChevronLeftIcon className="w-4 h-4" />
-            </button>
-            <button
-              type="button"
-              onClick={nextSlide}
-              aria-label="Sonraki Görsel"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
-            >
-              <ChevronRightIcon className="w-4 h-4" />
-            </button>
+          {/* Corner Crosshairs for Engineering Blueprint Aesthetic */}
+          <div className="absolute top-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            +
+          </div>
+          <div className="absolute top-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            +
+          </div>
+          <div className="absolute bottom-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            +
+          </div>
+          <div className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            +
           </div>
 
-          {/* Slide Indicator Selector Pills */}
-          <div className="mt-3.5 grid grid-cols-3 gap-2">
-            {slides.map((s, idx) => {
-              const isActive = idx === currentSlide;
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-md cursor-pointer ${
-                    isActive
-                      ? "bg-industrial-900 border-rust text-rust font-bold shadow-sm shadow-rust/10"
-                      : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
-                  }`}
-                >
-                  <span className="block truncate">{s.shortLabel}</span>
-                  {isActive && <span className="block h-0.5 bg-rust mt-1.5 rounded-full" />}
-                </button>
-              );
-            })}
-          </div>
+          {/* Slider Navigation Arrows (Circular, Soft, Ergonomic) */}
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="Önceki Görsel"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+          >
+            <ChevronLeftIcon className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Sonraki Görsel"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+          >
+            <ChevronRightIcon className="w-4 h-4" />
+          </button>
+        </div>
 
-          {/* Synchronized Metadata Block below photograph */}
-          <div className="mt-3.5 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
-            <div>
-              <span className="text-industrial-500 block text-[10px]">{activeSlideData.metric1Label}</span>
-              <span className="text-industrial-200 truncate block font-medium">
-                {activeSlideData.metric1Val}
-              </span>
-            </div>
-            <div className="text-right">
-              <span className="text-industrial-500 block text-[10px]">TESLİMAT / TERMİN</span>
-              <span className="text-emerald-400 font-semibold">Hızlı Stok & İmalat</span>
-            </div>
+        {/* Slide Indicator Selector Pills */}
+        <div className="mt-3.5 grid grid-cols-3 gap-2">
+          {slides.map((s, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-lg cursor-pointer ${
+                  isActive
+                    ? "bg-industrial-900 border-rust text-rust font-bold shadow-sm shadow-rust/10"
+                    : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
+                }`}
+              >
+                <span className="block truncate">{s.shortLabel}</span>
+                {isActive && <span className="block h-0.5 bg-rust mt-1.5 rounded-full" />}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Synchronized Metadata Block below photograph */}
+        <div className="mt-3.5 pt-3 border-t border-industrial-850 grid grid-cols-2 gap-2 text-[11px] font-mono text-industrial-400">
+          <div>
+            <span className="text-industrial-500 block text-[10px]">{activeSlideData.metric1Label}</span>
+            <span className="text-industrial-200 truncate block font-medium">
+              {activeSlideData.metric1Val}
+            </span>
+          </div>
+          <div className="text-right">
+            <span className="text-industrial-500 block text-[10px]">TESLİMAT / TERMİN</span>
+            <span className="text-emerald-400 font-semibold">Hızlı Stok & İmalat</span>
           </div>
         </div>
-      ) : (
-        <div>
-          {/* CAD Technical Drawing */}
-          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-850 flex items-center justify-center p-3 relative overflow-hidden rounded-md">
-            <svg viewBox="0 0 280 280" className="w-full h-full max-h-[280px] text-industrial-400" fill="none">
-              {/* Outer centering ring */}
-              <circle cx="140" cy="140" r="126" stroke="#475569" strokeWidth="2" strokeDasharray="3 3" />
-              <circle cx="140" cy="140" r="120" stroke="#94A3B8" strokeWidth="1.5" />
-              <circle cx="140" cy="140" r="95" stroke="#CBD5E1" strokeWidth="1.5" />
-
-              {/* Sealing spiral element (shaded rings) */}
-              <circle cx="140" cy="140" r="90" stroke="#b7410e" strokeWidth="8" strokeOpacity="0.4" />
-              <circle cx="140" cy="140" r="82" stroke="#b7410e" strokeWidth="6" strokeOpacity="0.6" />
-              <circle cx="140" cy="140" r="75" stroke="#b7410e" strokeWidth="8" strokeOpacity="0.8" />
-              
-              {/* Inner ring */}
-              <circle cx="140" cy="140" r="68" stroke="#E2E8F0" strokeWidth="2" />
-              <circle cx="140" cy="140" r="50" stroke="#64748B" strokeWidth="1.5" strokeDasharray="4 2" />
-
-              {/* Center bore */}
-              <circle cx="140" cy="140" r="48" stroke="#334155" strokeWidth="1" />
-
-              {/* Dimension lines & crosshair */}
-              <line x1="140" y1="5" x2="140" y2="275" stroke="#334155" strokeWidth="0.75" strokeDasharray="4 4" />
-              <line x1="5" y1="140" x2="275" y2="140" stroke="#334155" strokeWidth="0.75" strokeDasharray="4 4" />
-
-              {/* Dimension callouts */}
-              <line x1="140" y1="14" x2="260" y2="14" stroke="#b7410e" strokeWidth="1" />
-              <circle cx="260" cy="14" r="2" fill="#b7410e" />
-              <text x="145" y="11" fill="#d2521c" fontSize="8" fontFamily="monospace">Ø OD: 215.9 mm</text>
-
-              <line x1="140" y1="72" x2="245" y2="72" stroke="#94A3B8" strokeWidth="0.75" />
-              <text x="145" y="69" fill="#CBD5E1" fontSize="8" fontFamily="monospace">SARIM: 316L + GRAFİT</text>
-
-              <line x1="140" y1="120" x2="220" y2="120" stroke="#94A3B8" strokeWidth="0.75" />
-              <text x="145" y="117" fill="#CBD5E1" fontSize="8" fontFamily="monospace">Ø ID: 114.3 mm</text>
-            </svg>
-
-            {/* Corner watermark badge */}
-            <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-industrial-950/90 border border-industrial-800 text-[10px] font-mono text-rust rounded">
-              HASSAS İMALAT TOLERANSI: ±0.2mm
-            </div>
-          </div>
-
-          {/* Metadata block below drawing */}
-          <div className="mt-4 pt-3 border-t border-industrial-850 flex items-center justify-between text-[11px] font-mono text-industrial-400">
-            <div>
-              <span className="text-industrial-500 block text-[10px]">STANDART</span>
-              <span className="text-industrial-200">ASME B16.20 CLASS 300</span>
-            </div>
-            <div className="text-right">
-              <span className="text-industrial-500 block text-[10px]">DURUM</span>
-              <span className="text-emerald-400 font-semibold">İmalata Hazır (CAD/CAM)</span>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }

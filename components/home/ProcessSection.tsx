@@ -47,7 +47,7 @@ export function ProcessSection() {
           {steps.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between p-6 bg-industrial-50/60 border border-industrial-200/70 border-t-2 border-t-night group hover:border-t-rust hover:bg-industrial-100/60 rounded-lg transition-all duration-200"
+              className="flex flex-col justify-between p-6 bg-industrial-50/60 border border-industrial-200/70 border-t-2 border-t-night group hover:border-t-rust hover:bg-industrial-100/60 rounded-xl transition-all duration-200"
             >
               <div>
                 {/* Step number in bold monospace editorial font */}

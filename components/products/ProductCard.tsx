@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
-    <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-lg overflow-hidden">
+    <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-xl overflow-hidden">
       <div>
         {/* Visual Schematics / Clean Photo Showcase */}
         <div
@@ -39,14 +39,14 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
               {/* Clean Overlay Badges */}
               <div className="absolute top-2.5 left-2.5 z-10 flex items-center gap-1.5">
-                <span className="px-2.5 py-0.5 bg-industrial-100/95 text-night text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200/80 backdrop-blur-xs rounded shadow-xs">
+                <span className="px-2.5 py-0.5 bg-industrial-100/95 text-night text-[10px] font-mono font-bold uppercase tracking-wider border border-industrial-200/80 backdrop-blur-xs rounded-md shadow-xs">
                   {product.category}
                 </span>
               </div>
 
               {product.drawingSupported && (
                 <div className="absolute top-2.5 right-2.5 z-10">
-                  <span className="px-2 py-0.5 bg-rust text-white text-[10px] font-mono font-semibold tracking-wide rounded shadow-xs">
+                  <span className="px-2 py-0.5 bg-rust text-white text-[10px] font-mono font-semibold tracking-wide rounded-md shadow-xs">
                     CAD / ÖZEL KESİM
                   </span>
                 </div>
@@ -57,7 +57,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
               <div className="flex items-center justify-between text-[11px] font-mono text-industrial-400 z-10">
                 <span className="text-rust font-bold uppercase">{product.category}</span>
                 {product.drawingSupported && (
-                  <span className="px-1.5 py-0.5 bg-industrial-800/90 text-rust-light border border-rust/40 text-[10px]">
+                  <span className="px-1.5 py-0.5 bg-industrial-800/90 text-rust-light border border-rust/40 text-[10px] rounded-md">
                     CAD / ÖZEL KESİM
                   </span>
                 )}

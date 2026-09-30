@@ -4,16 +4,23 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircleIcon, ShieldCheckIcon, ClockIcon } from "@/components/icons/Icons";
 import { companyData } from "@/data/company";
 import { HeroShowcase } from "./HeroShowcase";
+import { Header3DScene } from "@/components/layout/Header3DScene";
 
 export function HeroSection() {
   return (
     <section className="relative bg-industrial-950 text-white overflow-hidden border-b border-industrial-800">
+      {/* 3D Interactive Gasket Background */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden="true">
+        <Header3DScene />
+      </div>
+
       {/* Precision grid background texture */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-          backgroundSize: '24px 24px'
+          backgroundSize: '24px 24px',
+          zIndex: 1,
         }}
       />
 
@@ -21,16 +28,17 @@ export function HeroSection() {
       <div 
         className="absolute right-0 top-1/4 w-[650px] h-[650px] pointer-events-none opacity-60 blur-3xl rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(183, 65, 14, 0.22) 0%, rgba(26, 37, 54, 0.4) 45%, transparent 70%)'
+          background: 'radial-gradient(circle, rgba(183, 65, 14, 0.22) 0%, rgba(26, 37, 54, 0.4) 45%, transparent 70%)',
+          zIndex: 1,
         }}
       />
 
-      <Container className="relative py-16 sm:py-24 lg:py-28">
+      <Container className="relative py-16 sm:py-24 lg:py-28" style={{ zIndex: 2 }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Authoritative Engineering Copy */}
           <div className="lg:col-span-7 flex flex-col items-start">
             {/* Engineering Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 rounded shadow-xs">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 rounded-md shadow-xs">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
               <span className="font-semibold tracking-wide">[ 1997'DEN BUGÜNE ]</span>
               <span className="text-industrial-500">•</span>
@@ -76,7 +84,7 @@ export function HeroSection() {
 
             {/* Key Micro Capabilities as 3 Elevated Micro-Cards */}
             <div className="mt-8 pt-8 border-t border-industrial-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>DIN & ASME Normları</span>
@@ -86,7 +94,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>CAD / DXF Kesim</span>
@@ -96,7 +104,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>Numuneye Göre Üretim</span>
@@ -108,7 +116,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column: Dual-Mode Interactive Showcase (Photo & CAD) */}
+          {/* Right Column: High-Precision Photographic Showcase Console */}
           <div className="lg:col-span-5 flex justify-center">
             <HeroShowcase />
           </div>

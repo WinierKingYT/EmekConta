@@ -132,7 +132,7 @@ export function QuickRFQDropzone() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Authoritative B2B Proposition & Guarantees */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-900 border border-industrial-800 text-xs font-mono text-rust mb-4 rounded">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-900 border border-industrial-800 text-xs font-mono text-rust mb-4 rounded-md">
               <UploadCloudIcon className="w-3.5 h-3.5" />
               <span>HIZLI TEKNİK ÇİZİM DEĞERLENDİRME</span>
             </div>
@@ -148,7 +148,7 @@ export function QuickRFQDropzone() {
 
             {/* SLA & Security Guarantees */}
             <div className="mt-8 space-y-4 w-full">
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-md">
+              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
                 <ClockIcon className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
@@ -160,7 +160,7 @@ export function QuickRFQDropzone() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-md">
+              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
                 <ShieldCheckIcon className="w-5 h-5 text-rust shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
@@ -172,7 +172,7 @@ export function QuickRFQDropzone() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-md">
+              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
                 <CheckCircleIcon className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
@@ -201,7 +201,7 @@ export function QuickRFQDropzone() {
           </div>
 
           {/* Right Column: The Direct Dropzone Form */}
-          <div className="lg:col-span-7 bg-industrial-900 border border-industrial-800 p-6 sm:p-8 shadow-2xl relative rounded-lg">
+          <div className="lg:col-span-7 bg-industrial-900 border border-industrial-800 p-6 sm:p-8 shadow-2xl relative rounded-2xl">
             {isSuccess ? (
               <div className="py-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
@@ -211,7 +211,7 @@ export function QuickRFQDropzone() {
                 <p className="text-xs sm:text-sm text-industrial-300 max-w-md mx-auto leading-relaxed">
                   Mühendislik ekibimiz dosyanızı incelemeye aldı. En geç 2 saat içinde belirttiğiniz telefon numarasından sizinle iletişime geçilecektir.
                 </p>
-                <div className="p-3 bg-industrial-950 border border-industrial-800 max-w-xs mx-auto font-mono text-xs text-industrial-300 rounded-md">
+                <div className="p-3 bg-industrial-950 border border-industrial-800 max-w-xs mx-auto font-mono text-xs text-industrial-300 rounded-lg">
                   <span className="text-industrial-500 block text-[10px]">TAKİP REFERANS KODU:</span>
                   <span className="text-emerald-400 font-bold text-base">{referenceCode}</span>
                 </div>
@@ -223,7 +223,7 @@ export function QuickRFQDropzone() {
                     href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Merhaba Emek Conta, #${referenceCode} referans kodlu teknik çizimim hakkında bilgi almak istiyorum.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white text-xs font-mono hover:bg-emerald-500 transition-colors rounded-md"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white text-xs font-mono hover:bg-emerald-500 transition-colors rounded-lg"
                   >
                     <WhatsappIcon className="w-4 h-4" />
                     <span>WhatsApp'tan Takip Et</span>
@@ -254,7 +254,7 @@ export function QuickRFQDropzone() {
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
-                    className={`border-2 border-dashed p-6 text-center cursor-pointer transition-all rounded-md ${
+                    className={`border-2 border-dashed p-6 text-center cursor-pointer transition-all rounded-xl ${
                       isDragging
                         ? "border-rust bg-rust/20"
                         : file
@@ -322,7 +322,7 @@ export function QuickRFQDropzone() {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Yetkili Adı Soyadı *"
-                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-md"
+                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                     <div>
@@ -332,7 +332,7 @@ export function QuickRFQDropzone() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="Telefon Numarası (Teklif İçin) *"
-                        className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-md"
+                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                   </div>
@@ -343,7 +343,7 @@ export function QuickRFQDropzone() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Firma Adı (Opsiyonel)"
-                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-md"
+                      className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
                     />
                   </div>
 
@@ -353,7 +353,7 @@ export function QuickRFQDropzone() {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="Ölçü, adet veya çalışma şartı notları (Örn: DN50 PN16, 50 adet, 250°C buhar hattı)..."
-                      className="w-full px-3 py-2 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust resize-none rounded-md"
+                      className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust resize-none rounded-lg"
                     />
                   </div>
                 </div>
@@ -363,7 +363,7 @@ export function QuickRFQDropzone() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-brick hover:bg-brick-hover text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-brick shadow-lg disabled:opacity-50 rounded-md cursor-pointer"
+                    className="w-full py-3 bg-brick hover:bg-brick-hover text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-brick shadow-lg disabled:opacity-50 rounded-lg cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
