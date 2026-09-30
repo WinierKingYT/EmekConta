@@ -44,7 +44,7 @@ export function ProductFilter({
   return (
     <div className="space-y-8">
       {/* Filter and Search Bar */}
-      <div className="bg-white border border-industrial-200 p-4 sm:p-6 space-y-4">
+      <div className="bg-white border border-industrial-200 p-4 sm:p-6 space-y-4 rounded-lg shadow-xs">
         {/* Search Input */}
         <div className="relative">
           <label htmlFor="product-search" className="sr-only">
@@ -59,7 +59,7 @@ export function ProductFilter({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Ürün adı, standart (ASME, DIN), malzeme (grafit, EPDM, PTFE) ara..."
-            className="w-full pl-11 pr-4 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm placeholder-industrial-500 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-none transition-colors"
+            className="w-full pl-11 pr-4 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm placeholder-industrial-500 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-md transition-colors"
           />
         </div>
 
@@ -74,7 +74,7 @@ export function ProductFilter({
             <button
               type="button"
               onClick={() => setSelectedCategory("all")}
-              className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
+              className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-md ${
                 selectedCategory === "all"
                   ? "bg-rust text-white border-rust shadow-xs"
                   : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
@@ -90,7 +90,7 @@ export function ProductFilter({
                   key={cat.id}
                   type="button"
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-none ${
+                  className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-md ${
                     selectedCategory === cat.id
                       ? "bg-rust text-white border-rust shadow-xs"
                       : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
@@ -131,7 +131,7 @@ export function ProductFilter({
           ))}
         </div>
       ) : (
-        <div className="p-12 text-center bg-white border border-industrial-200">
+        <div className="p-12 text-center bg-white border border-industrial-200 rounded-lg">
           <p className="text-base font-semibold text-industrial-800">
             Arama kriterlerine uygun ürün bulunamadı.
           </p>

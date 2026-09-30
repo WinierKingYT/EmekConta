@@ -92,23 +92,17 @@ export function HeroShowcase() {
 
   return (
     <div 
-      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md"
+      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md rounded-lg"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Corner Precision Notches */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-rust" />
-      <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-rust" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-rust" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-rust" />
-
       {/* Tab Switcher & Console Header */}
       <div className="flex items-center justify-between border-b border-industrial-800 pb-3 mb-4 text-[11px] font-mono">
-        <div className="flex items-center gap-1.5 p-0.5 bg-industrial-900 border border-industrial-800">
+        <div className="flex items-center gap-1.5 p-1 bg-industrial-900 border border-industrial-800 rounded-md">
           <button
             type="button"
             onClick={() => setActiveTab("showcase")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded-none ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded ${
               activeTab === "showcase"
                 ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
@@ -120,7 +114,7 @@ export function HeroShowcase() {
           <button
             type="button"
             onClick={() => setActiveTab("cad")}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded-none ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition-colors rounded ${
               activeTab === "cad"
                 ? "bg-rust text-white font-bold shadow-xs"
                 : "text-industrial-400 hover:text-industrial-200"
@@ -131,7 +125,7 @@ export function HeroShowcase() {
           </button>
         </div>
 
-        <div className="hidden sm:flex items-center gap-2 text-industrial-400 px-2 py-1 bg-industrial-900/60 border border-industrial-800/80">
+        <div className="hidden sm:flex items-center gap-2 text-industrial-400 px-2.5 py-1 bg-industrial-900/60 border border-industrial-800/80 rounded">
           <span className={`w-1.5 h-1.5 rounded-full ${isPaused ? "bg-amber-400" : "bg-emerald-400 animate-pulse"}`} />
           <span className="text-[10px] text-industrial-300 font-medium">
             {activeTab === "showcase" ? (isPaused ? "DURAKLATILDI" : `ÜRÜN ${currentSlide + 1}/${slides.length}`) : "TEKNİK DOKÜMAN"}
@@ -143,7 +137,7 @@ export function HeroShowcase() {
       {activeTab === "showcase" ? (
         <div>
           {/* 4:3 Aspect Ratio Container Matching Native Photograph Dimensions */}
-          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group shadow-inner">
+          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-800 relative overflow-hidden group shadow-inner rounded-md">
             {/* Render all slides for instant transition without re-renders */}
             {slides.map((slide, idx) => (
               <div
@@ -166,21 +160,21 @@ export function HeroShowcase() {
 
                 {/* Top Badge */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
-                  <span className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-700/80 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold shadow-xs">
+                  <span className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-700/80 text-industrial-100 text-[10px] font-mono tracking-wider uppercase font-semibold rounded shadow-xs">
                     {slide.title}
                   </span>
-                  <span className="px-2.5 py-1 bg-rust backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold shadow-xs">
+                  <span className="px-2.5 py-1 bg-rust backdrop-blur-xs text-white text-[10px] font-mono tracking-wider font-semibold rounded shadow-xs">
                     {slide.cornerBadgeLeft}
                   </span>
                 </div>
 
                 {/* Bottom Overlay Badges */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between pointer-events-none z-20">
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust shadow-xs">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-rust rounded shadow-xs">
                     <span className="text-industrial-400 block text-[9px]">{slide.metric2Label}</span>
                     {slide.cornerBadgeRight}
                   </div>
-                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right shadow-xs">
+                  <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right rounded shadow-xs">
                     <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
                     İstanbul / Türkiye
                   </div>
@@ -189,25 +183,25 @@ export function HeroShowcase() {
             ))}
 
             {/* Corner Crosshairs for Engineering Blueprint Aesthetic */}
-            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            <div className="absolute top-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            <div className="absolute top-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            <div className="absolute bottom-2.5 left-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
-            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
+            <div className="absolute bottom-2.5 right-2.5 font-mono text-[10px] text-white/40 pointer-events-none select-none z-20">
               +
             </div>
 
-            {/* Slider Navigation Arrows */}
+            {/* Slider Navigation Arrows (Circular, Soft, Ergonomic) */}
             <button
               type="button"
               onClick={prevSlide}
               aria-label="Önceki Görsel"
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
             >
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
@@ -215,7 +209,7 @@ export function HeroShowcase() {
               type="button"
               onClick={nextSlide}
               aria-label="Sonraki Görsel"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-none opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
             >
               <ChevronRightIcon className="w-4 h-4" />
             </button>
@@ -230,14 +224,14 @@ export function HeroShowcase() {
                   key={s.id}
                   type="button"
                   onClick={() => setCurrentSlide(idx)}
-                  className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-none cursor-pointer ${
+                  className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-md cursor-pointer ${
                     isActive
                       ? "bg-industrial-900 border-rust text-rust font-bold shadow-sm shadow-rust/10"
                       : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
                   }`}
                 >
                   <span className="block truncate">{s.shortLabel}</span>
-                  {isActive && <span className="block h-0.5 bg-rust mt-1.5" />}
+                  {isActive && <span className="block h-0.5 bg-rust mt-1.5 rounded-full" />}
                 </button>
               );
             })}
@@ -260,7 +254,7 @@ export function HeroShowcase() {
       ) : (
         <div>
           {/* CAD Technical Drawing */}
-          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-850 flex items-center justify-center p-3 relative overflow-hidden">
+          <div className="aspect-[4/3] w-full bg-industrial-900 border border-industrial-850 flex items-center justify-center p-3 relative overflow-hidden rounded-md">
             <svg viewBox="0 0 280 280" className="w-full h-full max-h-[280px] text-industrial-400" fill="none">
               {/* Outer centering ring */}
               <circle cx="140" cy="140" r="126" stroke="#475569" strokeWidth="2" strokeDasharray="3 3" />
@@ -296,7 +290,7 @@ export function HeroShowcase() {
             </svg>
 
             {/* Corner watermark badge */}
-            <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-industrial-950/90 border border-industrial-800 text-[10px] font-mono text-rust">
+            <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-industrial-950/90 border border-industrial-800 text-[10px] font-mono text-rust rounded">
               HASSAS İMALAT TOLERANSI: ±0.2mm
             </div>
           </div>

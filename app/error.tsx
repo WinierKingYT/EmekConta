@@ -19,7 +19,7 @@ export default function ErrorBoundary({
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-industrial-50 py-16">
       <Container className="max-w-xl text-center">
-        <div className="w-16 h-16 bg-red-100 border border-red-300 text-red-700 flex items-center justify-center font-mono font-bold text-2xl mx-auto mb-6">
+        <div className="w-16 h-16 bg-red-100 border border-red-300 text-red-700 flex items-center justify-center font-mono font-bold text-2xl mx-auto mb-6 rounded-md">
           !
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-industrial-900 mb-3">
@@ -37,7 +37,7 @@ export default function ErrorBoundary({
           </Button>
         </div>
         {process.env.NODE_ENV === "development" && error?.message && (
-          <div className="mt-8 p-4 bg-industrial-900 text-left text-xs font-mono text-red-300 border border-industrial-700 overflow-x-auto">
+          <div className="mt-8 p-4 bg-industrial-900 text-left text-xs font-mono text-red-300 border border-industrial-700 rounded-md overflow-x-auto">
             <div className="text-industrial-400 mb-1 font-bold">Teknik Hata Detayı:</div>
             {error.message}
           </div>

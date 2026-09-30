@@ -63,7 +63,7 @@ export function CustomMfgSection() {
 
           {/* Right Column: Workshop Production Mock / Photo Placeholder */}
           <div className="lg:col-span-5">
-            <div className="bg-industrial-950 border border-industrial-800 p-6 sm:p-8">
+            <div className="bg-industrial-950 border border-industrial-800 p-6 sm:p-8 rounded-lg">
               <div className="flex items-center justify-between pb-4 border-b border-industrial-800 text-xs font-mono text-industrial-400">
                 <div className="flex items-center gap-2">
                   <FactoryIcon className="w-4 h-4 text-rust" />
@@ -73,17 +73,17 @@ export function CustomMfgSection() {
               </div>
 
               {/* Engineering Spec Card Mock */}
-              <div className="my-6 p-5 bg-industrial-900 border border-industrial-850 space-y-4">
+              <div className="my-6 p-5 bg-industrial-900 border border-industrial-850 space-y-4 rounded-md">
                 <div className="text-xs font-mono text-industrial-400 uppercase tracking-wider">
                   Kabul Edilen Çizim Formatları
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">.DWG</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">.DXF</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">.STEP</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">.PDF</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">.IGES</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200">NUMUNE</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">.DWG</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">.DXF</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">.STEP</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">.PDF</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">.IGES</span>
+                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded">NUMUNE</span>
                 </div>
 
                 <div className="pt-2 text-[11px] text-industrial-400 leading-relaxed font-sans">

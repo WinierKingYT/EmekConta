@@ -93,10 +93,10 @@ export default function ArticleDetailPage({ params }: Props) {
         />
 
         {/* Article Container */}
-        <article className="bg-white border border-industrial-200 p-6 sm:p-12 mb-10">
+        <article className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-12 mb-10">
           {/* Header Metadata */}
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-industrial-500 pb-4 border-b border-industrial-100 mb-6">
-            <span className="px-2 py-0.5 bg-steel-light text-steel-darkblue font-semibold uppercase">
+            <span className="px-2 py-0.5 bg-steel-light text-steel-darkblue font-semibold uppercase rounded">
               {article.category}
             </span>
             <span className="flex items-center gap-1">
@@ -113,7 +113,7 @@ export default function ArticleDetailPage({ params }: Props) {
           </h1>
 
           {/* Executive Summary Lead */}
-          <div className="p-4 sm:p-5 bg-industrial-50 border-l-4 border-steel-blue text-sm sm:text-base text-industrial-700 leading-relaxed mb-8">
+          <div className="p-4 sm:p-5 bg-industrial-50 border-l-4 border-steel-blue text-sm sm:text-base text-industrial-700 leading-relaxed mb-8 rounded-r-md">
             <strong>Teknik Özet:</strong> {article.summary}
           </div>
 
@@ -168,7 +168,7 @@ export default function ArticleDetailPage({ params }: Props) {
                 <Link
                   key={rel.id}
                   href={`/teknik-bilgi/${rel.slug}`}
-                  className="p-4 bg-white border border-industrial-200 hover:border-industrial-400 transition-colors flex flex-col justify-between"
+                  className="p-4 bg-white border border-industrial-200 rounded-lg hover:border-industrial-400 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-[10px] font-mono text-steel-darkblue block uppercase mb-1">

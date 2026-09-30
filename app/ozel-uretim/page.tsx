@@ -61,9 +61,9 @@ export default function CustomManufacturingPage() {
         />
 
         {/* Hero Section */}
-        <div className="bg-industrial-900 text-white border border-industrial-800 p-8 sm:p-12 lg:p-16 mb-12">
+        <div className="bg-industrial-900 text-white border border-industrial-800 rounded-lg p-8 sm:p-12 lg:p-16 mb-12">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider rounded">
               <span className="w-2 h-2 bg-rust rounded-full" />
               ÖZEL İMALAT & NUMUNEYE GÖRE KESİM
             </div>
@@ -78,15 +78,15 @@ export default function CustomManufacturingPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-industrial-300">
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700">
+              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded">
                 <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
                 Sıfır Kalıp Maliyeti
               </span>
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700">
+              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded">
                 <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
                 Hassas CNC Bıçak & Su Jeti
               </span>
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700">
+              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded">
                 <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
                 Aynı Gün Numune Kesimi
               </span>
@@ -104,14 +104,14 @@ export default function CustomManufacturingPage() {
             {capabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-industrial-200 p-6 sm:p-8 flex flex-col justify-between hover:border-rust hover:shadow-md transition-all duration-200"
+                className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8 flex flex-col justify-between hover:border-rust hover:shadow-md transition-all duration-200"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-mono font-bold text-rust">
                       0{idx + 1}. KABİLİYET
                     </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 bg-rust-subtle text-rust border border-rust-border uppercase font-medium">
+                    <span className="text-[10px] font-mono px-2 py-0.5 bg-rust-subtle text-rust border border-rust-border uppercase font-medium rounded">
                       {cap.badge}
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export default function CustomManufacturingPage() {
         </div>
 
         {/* Supported Material Library */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-14">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-14">
           <h2 className="text-xl sm:text-2xl font-bold text-night mb-4">
             Özel Kesimde Kullanılan Malzemeler
           </h2>
@@ -139,27 +139,27 @@ export default function CustomManufacturingPage() {
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs font-mono">
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">Saf Grafit</span>
               <span className="text-[10px] text-industrial-500">Telli / Düz</span>
             </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">Asbestsiz Klingrit</span>
               <span className="text-[10px] text-industrial-500">Aramid / NBR</span>
             </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">EPDM Kauçuk</span>
               <span className="text-[10px] text-industrial-500">Su & Ozon</span>
             </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">NBR Kauçuk</span>
               <span className="text-[10px] text-industrial-500">Yağ & Yakıt</span>
             </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">Saf PTFE / ePTFE</span>
               <span className="text-[10px] text-industrial-500">Asit & Kimya</span>
             </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200">
+            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
               <span className="font-bold text-night block">Viton / Silikon</span>
               <span className="text-[10px] text-industrial-500">Yüksek Isı / Gıda</span>
             </div>

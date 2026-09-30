@@ -26,7 +26,7 @@ export function CategoryGrid() {
           {productCategories.map((category, idx) => (
             <div
               key={category.id}
-              className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-lg overflow-hidden"
             >
               <div>
                 {/* Visual Header / Real Product Photo */}
@@ -46,16 +46,16 @@ export function CategoryGrid() {
 
                   {/* Top Badges */}
                   <div className="relative z-10 flex items-center justify-between text-[11px] font-mono">
-                    <span className="px-2.5 py-0.5 bg-white/95 backdrop-blur-xs border border-industrial-200 text-rust font-bold shadow-xs">
+                    <span className="px-2.5 py-0.5 bg-white/95 backdrop-blur-xs border border-industrial-200 text-rust font-bold rounded shadow-xs">
                       KAT-0{idx + 1}
                     </span>
-                    <span className="px-2.5 py-0.5 bg-night text-white font-medium text-[10px] shadow-xs">
+                    <span className="px-2.5 py-0.5 bg-night text-white font-medium text-[10px] rounded shadow-xs">
                       {category.itemCountEstimated}
                     </span>
                   </div>
 
                   {/* Bottom Technical Indicator */}
-                  <div className="relative z-10 text-[10px] font-mono text-night bg-white/95 backdrop-blur-xs px-2.5 py-1 border border-industrial-200 inline-flex items-center gap-1.5 self-start shadow-xs">
+                  <div className="relative z-10 text-[10px] font-mono text-night bg-white/95 backdrop-blur-xs px-2.5 py-1 border border-industrial-200 inline-flex items-center gap-1.5 self-start rounded shadow-xs">
                     <RulerIcon className="w-3.5 h-3.5 text-rust shrink-0" />
                     <span>DIN / ASME Normları & Özel Kesim</span>
                   </div>
@@ -77,7 +77,7 @@ export function CategoryGrid() {
                     {category.highlights.map((highlight, hIdx) => (
                       <span
                         key={hIdx}
-                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-night border border-industrial-200/60 group-hover:border-rust/30 transition-colors"
+                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-night border border-industrial-200/60 group-hover:border-rust/30 rounded transition-colors"
                       >
                         {highlight}
                       </span>

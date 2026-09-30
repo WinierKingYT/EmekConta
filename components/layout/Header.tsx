@@ -92,11 +92,11 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-rust rounded-xs p-1 -m-1"
+            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-rust rounded-md p-1 -m-1"
             aria-label="Emek Conta Ana Sayfa"
           >
             {/* Precision geometric emblem */}
-            <div className="w-10 h-10 bg-night-light border-2 border-rust/50 group-hover:border-rust transition-all flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden">
+            <div className="w-10 h-10 bg-night-light border-2 border-rust/50 group-hover:border-rust transition-all flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden rounded-md">
               {/* Subtle top-right metallic corner accent */}
               <div className="absolute top-0 right-0 w-2 h-2 bg-rust/30 rotate-45 transform origin-top-right" />
               <div className="flex items-center font-mono font-black text-sm tracking-tighter">
@@ -109,7 +109,7 @@ export function Header() {
                 <span className="text-lg sm:text-xl font-black tracking-tight text-white leading-none">
                   EMEK CONTA
                 </span>
-                <span className="hidden sm:inline-block text-[9px] font-mono px-1 py-0.2 bg-industrial-800 text-rust border border-rust/30 font-bold uppercase tracking-wider">
+                <span className="hidden sm:inline-block text-[9px] font-mono px-1.5 py-0.5 bg-industrial-800 text-rust border border-rust/30 font-bold uppercase tracking-wider rounded">
                   EST. 1997
                 </span>
               </div>
@@ -127,7 +127,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-all duration-200 relative rounded-xs ${
+                  className={`px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-all duration-200 relative rounded-md ${
                     isActive
                       ? "text-white font-bold bg-white/5"
                       : "text-industrial-300 hover:text-white hover:bg-white/5"
@@ -136,7 +136,7 @@ export function Header() {
                   <span className="flex items-center gap-1.5">
                     {item.label}
                     {item.badge && (
-                      <span className="text-[9px] font-mono px-1 py-0.2 bg-rust/20 text-rust-light border border-rust/40 uppercase font-semibold">
+                      <span className="text-[9px] font-mono px-1.5 py-0.5 bg-rust/20 text-rust-light border border-rust/40 uppercase font-semibold rounded">
                         {item.badge}
                       </span>
                     )}

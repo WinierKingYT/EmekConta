@@ -32,7 +32,7 @@ export default function QuotePage({
         />
 
         {/* Page Header */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-8">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-8">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-rust inline-block"></span>
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
@@ -50,7 +50,7 @@ export default function QuotePage({
           <div className="mt-6 pt-6 border-t border-industrial-100 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
             <a
               href={`tel:${companyData.phone}`}
-              className="flex items-center gap-2.5 p-3 bg-industrial-50 hover:bg-industrial-100 text-night transition-colors border border-industrial-200"
+              className="flex items-center gap-2.5 p-3 bg-industrial-50 hover:bg-industrial-100 text-night transition-colors border border-industrial-200 rounded-md"
             >
               <PhoneIcon className="w-4 h-4 text-rust shrink-0" />
               <div>
@@ -63,7 +63,7 @@ export default function QuotePage({
               href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 p-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 transition-colors border border-emerald-200"
+              className="flex items-center gap-2.5 p-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 transition-colors border border-emerald-200 rounded-md"
             >
               <WhatsappIcon className="w-4 h-4 text-emerald-600 shrink-0" />
               <div>
@@ -72,7 +72,7 @@ export default function QuotePage({
               </div>
             </a>
 
-            <div className="flex items-center gap-2.5 p-3 bg-industrial-50 text-night border border-industrial-200">
+            <div className="flex items-center gap-2.5 p-3 bg-industrial-50 text-night border border-industrial-200 rounded-md">
               <ClockIcon className="w-4 h-4 text-rust shrink-0" />
               <div>
                 <span className="block text-[10px] text-industrial-500">Geri Dönüş:</span>

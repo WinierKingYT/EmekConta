@@ -65,7 +65,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <button
               type="button"
               onClick={onClose}
-              className="p-2 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-none focus:outline-none focus:ring-2 focus:ring-rust"
+              className="p-2 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-rust"
               aria-label="Menüyü Kapat"
             >
               <XIcon className="w-6 h-6" />
@@ -80,7 +80,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between px-3.5 py-3 text-base font-medium transition-colors border-l-2 ${
+                  className={`flex items-center justify-between px-3.5 py-3 text-base font-medium transition-colors border-l-2 rounded-md ${
                     isActive
                       ? "border-rust bg-industrial-850 text-white font-semibold"
                       : "border-transparent text-industrial-300 hover:text-white hover:bg-industrial-850/60"
@@ -112,7 +112,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className="space-y-2 pt-2 text-sm text-industrial-300">
             <a
               href={`tel:${companyData.phone}`}
-              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors"
+              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors rounded-md"
             >
               <PhoneIcon className="w-4 h-4 text-rust shrink-0" />
               <span className="font-mono text-xs">{companyData.phoneFormatted}</span>
@@ -122,7 +122,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors"
+              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors rounded-md"
             >
               <WhatsappIcon className="w-4 h-4 text-emerald-400 shrink-0" />
               <span className="font-mono text-xs">WhatsApp Hızlı Destek</span>
@@ -130,7 +130,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
             <a
               href={`mailto:${companyData.quoteEmail}`}
-              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors"
+              className="flex items-center gap-3 p-2.5 bg-industrial-850 hover:bg-industrial-800 text-industrial-200 transition-colors rounded-md"
             >
               <MailIcon className="w-4 h-4 text-rust shrink-0" />
               <span className="font-mono text-xs">{companyData.quoteEmail}</span>

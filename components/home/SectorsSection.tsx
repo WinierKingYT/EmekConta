@@ -26,7 +26,7 @@ export function SectorsSection() {
             <Link
               key={sector.id}
               href={`/sektorler/${sector.slug}`}
-              className="group p-5 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+              className="group p-5 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between rounded-lg"
             >
               <div>
                 <div className="text-[11px] font-mono text-rust font-bold mb-2">

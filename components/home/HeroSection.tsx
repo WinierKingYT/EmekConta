@@ -30,7 +30,7 @@ export function HeroSection() {
           {/* Left Column: Authoritative Engineering Copy */}
           <div className="lg:col-span-7 flex flex-col items-start">
             {/* Engineering Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 shadow-xs">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 rounded shadow-xs">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
               <span className="font-semibold tracking-wide">[ 1997'DEN BUGÜNE ]</span>
               <span className="text-industrial-500">•</span>
@@ -76,7 +76,7 @@ export function HeroSection() {
 
             {/* Key Micro Capabilities as 3 Elevated Micro-Cards */}
             <div className="mt-8 pt-8 border-t border-industrial-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>DIN & ASME Normları</span>
@@ -86,7 +86,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>CAD / DXF Kesim</span>
@@ -96,7 +96,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 transition-colors">
+              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-md transition-colors">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
                   <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
                   <span>Numuneye Göre Üretim</span>

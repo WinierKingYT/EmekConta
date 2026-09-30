@@ -63,7 +63,7 @@ export default function AboutPage() {
         />
 
         {/* Page Header */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </div>
 
         {/* Section 1: Ne Yapıyoruz? */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <h2 className="text-xl sm:text-2xl font-bold text-industrial-900 mb-4">
@@ -94,7 +94,7 @@ export default function AboutPage() {
             </div>
 
             {/* Industrial Spec Box */}
-            <div className="lg:col-span-5 bg-industrial-900 text-white p-6 border border-industrial-800">
+            <div className="lg:col-span-5 bg-industrial-900 text-white p-6 border border-industrial-800 rounded-md">
               <div className="text-xs font-mono text-steel-blue uppercase tracking-wider mb-2">
                 TEMEL İMALAT YAKLAŞIMI
               </div>
@@ -110,8 +110,8 @@ export default function AboutPage() {
 
         {/* Section 2: Üretim Kabiliyeti & Makine Parkuru */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-white border border-industrial-200 p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
               <RulerIcon className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-base text-industrial-900 mb-2">
@@ -122,8 +122,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-industrial-200 p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
               <FactoryIcon className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-base text-industrial-900 mb-2">
@@ -134,8 +134,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-industrial-200 p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
               <ShieldCheckIcon className="w-5 h-5" />
             </div>
             <h3 className="font-bold text-base text-industrial-900 mb-2">
@@ -148,7 +148,7 @@ export default function AboutPage() {
         </div>
 
         {/* Section 3: Tarihçe (Milestones) */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
@@ -184,7 +184,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom CTA Card */}
-        <div className="bg-industrial-900 text-white p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="bg-industrial-900 text-white p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-lg border border-industrial-800">
           <div>
             <h3 className="text-xl font-bold text-white">
               Tesisiniz İçin Özel Sızdırmazlık Çözümü Mü Arıyorsunuz?

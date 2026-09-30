@@ -23,7 +23,7 @@ export function TechnicalTable<T extends Record<string, any>>({
   className,
 }: TechnicalTableProps<T>) {
   return (
-    <div className={cn("w-full overflow-x-auto border border-industrial-200 bg-white", className)}>
+    <div className={cn("w-full overflow-x-auto border border-industrial-200 bg-white rounded-md overflow-hidden", className)}>
       <table className="w-full text-left border-collapse text-sm">
         {caption && (
           <caption className="sr-only">{caption}</caption>

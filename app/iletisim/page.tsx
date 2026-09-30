@@ -36,7 +36,7 @@ export default function ContactPage() {
         />
 
         {/* Page Header */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-8">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-8">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
@@ -54,9 +54,9 @@ export default function ContactPage() {
         {/* 3 Direct Channels */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {/* Phone */}
-          <div className="bg-white border border-industrial-200 p-6 flex flex-col justify-between">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4">
+              <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
                 <PhoneIcon className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-base text-industrial-900 mb-1">
@@ -72,7 +72,7 @@ export default function ContactPage() {
             <div className="mt-6 pt-4 border-t border-industrial-100">
               <a
                 href={`tel:${companyData.phone}`}
-                className="w-full inline-flex items-center justify-center px-4 py-2 bg-industrial-900 hover:bg-industrial-800 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors"
+                className="w-full inline-flex items-center justify-center px-4 py-2 bg-industrial-900 hover:bg-industrial-800 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors rounded-md"
               >
                 Hemen Ara
               </a>
@@ -80,9 +80,9 @@ export default function ContactPage() {
           </div>
 
           {/* WhatsApp */}
-          <div className="bg-white border border-emerald-300 p-6 flex flex-col justify-between">
+          <div className="bg-white border border-emerald-300 rounded-lg p-6 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4 rounded-md">
                 <WhatsappIcon className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-base text-industrial-900 mb-1">
@@ -100,7 +100,7 @@ export default function ContactPage() {
                 href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors"
+                className="w-full inline-flex items-center justify-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors rounded-md"
               >
                 WhatsApp'tan Mesaj Yaz
               </a>
@@ -108,9 +108,9 @@ export default function ContactPage() {
           </div>
 
           {/* Email */}
-          <div className="bg-white border border-industrial-200 p-6 flex flex-col justify-between">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 flex flex-col justify-between">
             <div>
-              <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4">
+              <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
                 <MailIcon className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-base text-industrial-900 mb-1">
@@ -126,7 +126,7 @@ export default function ContactPage() {
             <div className="mt-6 pt-4 border-t border-industrial-100">
               <a
                 href={`mailto:${companyData.quoteEmail}`}
-                className="w-full inline-flex items-center justify-center px-4 py-2 bg-industrial-900 hover:bg-industrial-800 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors"
+                className="w-full inline-flex items-center justify-center px-4 py-2 bg-industrial-900 hover:bg-industrial-800 text-white text-xs font-mono font-semibold uppercase tracking-wider transition-colors rounded-md"
               >
                 E-posta Gönder
               </a>
@@ -139,7 +139,7 @@ export default function ContactPage() {
           {companyData.locations.map((loc, idx) => (
             <div
               key={idx}
-              className="bg-white border border-industrial-200 p-6 sm:p-8 flex flex-col justify-between"
+              className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-industrial-100 mb-4">
@@ -149,7 +149,7 @@ export default function ContactPage() {
                       {loc.name}
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700">
+                  <span className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700 rounded">
                     {loc.type}
                   </span>
                 </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
 
               {/* Lazy-loaded Google Maps Embed container */}
               <div className="mt-6 pt-4 border-t border-industrial-100">
-                <div className="aspect-video w-full bg-industrial-100 border border-industrial-200 overflow-hidden relative">
+                <div className="aspect-video w-full bg-industrial-100 border border-industrial-200 rounded-md overflow-hidden relative">
                   <iframe
                     title={`${loc.name} Haritası`}
                     loading="lazy"

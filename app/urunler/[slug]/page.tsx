@@ -93,11 +93,11 @@ export default function ProductDetailPage({ params }: Props) {
         />
 
         {/* Product Hero Grid (Left: CAD/Visual Schematic, Right: Specs & Actions) */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left: Industrial Visual / Blueprint schematic or Clean Catalog Photo */}
             <div
-              className={`lg:col-span-5 border flex flex-col justify-between aspect-square relative overflow-hidden group ${
+              className={`lg:col-span-5 border flex flex-col justify-between aspect-square relative overflow-hidden group rounded-lg ${
                 product.image
                   ? "bg-white border-industrial-200 p-4 sm:p-6"
                   : "bg-industrial-950 border-industrial-800 p-6"
@@ -108,7 +108,7 @@ export default function ProductDetailPage({ params }: Props) {
                   {/* Header bar inside white card */}
                   <div className="flex items-center justify-between text-xs font-mono text-industrial-500 pb-3 border-b border-industrial-100 z-10 w-full">
                     <span className="text-rust font-bold uppercase">{product.category}</span>
-                    <span className="text-[11px] bg-industrial-100 px-2 py-0.5 border border-industrial-200 text-night font-medium">
+                    <span className="text-[11px] bg-industrial-100 px-2 py-0.5 border border-industrial-200 text-night font-medium rounded">
                       ASME / DIN UYUMLU
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export default function ProductDetailPage({ params }: Props) {
                   {/* Bottom bar */}
                   <div className="pt-3 border-t border-industrial-100 flex items-center justify-between text-[11px] font-mono text-industrial-500 z-10 w-full">
                     <span className="font-semibold text-industrial-700">İMALAT: İSTANBUL</span>
-                    <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 border border-emerald-200 font-semibold">
+                    <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 border border-emerald-200 font-semibold rounded">
                       ÖZEL ÖLÇÜ KESİM
                     </span>
                   </div>
@@ -225,7 +225,7 @@ export default function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Detailed Technical Specifications Table */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-rust inline-block"></span>
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
@@ -250,7 +250,7 @@ export default function ProductDetailPage({ params }: Props) {
         {/* Materials and Applications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Materials */}
-          <div className="bg-white border border-industrial-200 p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <RulerIcon className="w-5 h-5 text-rust" />
               <span>Malzeme Seçenekleri</span>
@@ -266,7 +266,7 @@ export default function ProductDetailPage({ params }: Props) {
           </div>
 
           {/* Applications */}
-          <div className="bg-white border border-industrial-200 p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <ShieldCheckIcon className="w-5 h-5 text-rust" />
               <span>Uygulama Alanları</span>
@@ -283,7 +283,7 @@ export default function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Detailed Engineering Description */}
-        <div className="bg-white border border-industrial-200 p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
           <h3 className="text-xl font-bold text-industrial-900 mb-4">
             Ürün Hakkında Detaylı Mühendislik Bilgisi
           </h3>

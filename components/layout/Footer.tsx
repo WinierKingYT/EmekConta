@@ -18,8 +18,8 @@ export function Footer() {
       {/* Upper Footer: Engineering Value Ribbon */}
       <div className="border-b border-industrial-850 py-10 bg-industrial-900/60">
         <Container className="grid grid-cols-1 md:grid-cols-3 gap-6 text-industrial-300">
-          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
-            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-lg group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0 rounded-md">
               <ShieldCheckIcon className="w-5 h-5" />
             </div>
             <div>
@@ -32,8 +32,8 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
-            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-lg group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0 rounded-md">
               <PhoneIcon className="w-5 h-5" />
             </div>
             <div>
@@ -46,8 +46,8 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-xs group">
-            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0">
+          <div className="flex items-start gap-4 p-4 bg-night-light/40 border border-night-border/80 hover:border-rust/50 transition-all rounded-lg group">
+            <div className="p-3 bg-industrial-800 text-rust border border-rust/30 group-hover:border-rust transition-colors shrink-0 rounded-md">
               <MapPinIcon className="w-5 h-5" />
             </div>
             <div>
@@ -68,7 +68,7 @@ export function Footer() {
           {/* Col 1: About Emek Conta */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-night-light border border-rust/50 flex items-center justify-center font-mono font-bold text-xs text-white shadow-xs">
+              <div className="w-9 h-9 bg-night-light border border-rust/50 flex items-center justify-center font-mono font-bold text-xs text-white shadow-xs rounded-md">
                 <span className="text-rust text-sm mr-0.5">E</span>C
               </div>
               <div className="flex flex-col">
@@ -86,13 +86,13 @@ export function Footer() {
             
             {/* Certifications and Standards Badge Chips */}
             <div className="pt-1 flex flex-wrap gap-1.5 text-[10px] font-mono">
-              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300 rounded">
                 ASME B16.20
               </span>
-              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300 rounded">
                 DIN EN 1514-1/2
               </span>
-              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300">
+              <span className="px-2 py-0.5 bg-night-light border border-industrial-800 text-industrial-300 rounded">
                 ISO 9001:2015 Kalite
               </span>
             </div>
