@@ -45,6 +45,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
   const [fileError, setFileError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [referenceCode, setReferenceCode] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleInputChange = (
@@ -96,7 +97,6 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
 
     // Spam honeypot detection
     if (formData.website_hp) {
-      // Silently pretend success to fool automated bots
       setIsSuccess(true);
       return;
     }
@@ -110,11 +110,44 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
     setIsSubmitting(true);
 
     try {
-      // Simulate resilient B2B submission endpoint
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const payload = new FormData();
+      payload.append("type", "rfq_detailed");
+      payload.append("fullName", formData.fullName);
+      payload.append("companyName", formData.companyName);
+      payload.append("phone", formData.phone);
+      payload.append("email", formData.email);
+      payload.append("category", formData.category);
+      payload.append("productName", formData.productName);
+      payload.append("quantity", formData.quantity);
+      payload.append("dimensions", formData.dimensions);
+      payload.append("material", formData.material);
+      payload.append("temperature", formData.temperature);
+      payload.append("pressure", formData.pressure);
+      payload.append("medium", formData.medium);
+      payload.append("standard", formData.standard);
+      payload.append("notes", formData.notes);
+      payload.append("website_hp", formData.website_hp);
+
+      for (const file of files) {
+        payload.append("files", file);
+      }
+
+      const res = await fetch("/api/rfq", {
+        method: "POST",
+        body: payload,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Talebiniz iletilirken bir hata oluştu.");
+      }
+
+      setReferenceCode(data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`);
       setIsSuccess(true);
-    } catch (err) {
-      setErrorMessage("Teklif iletilirken bir hata oluştu. Lütfen doğrudan telefon veya WhatsApp ile iletişime geçiniz.");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Teklif iletilirken bir hata oluştu.";
+      setErrorMessage(`${msg} Lütfen doğrudan telefon veya WhatsApp ile iletişime geçiniz.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -122,7 +155,7 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
 
   if (isSuccess) {
     return (
-      <div className="bg-white border-2 border-emerald-500 p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-sm">
+      <div className="bg-white border-2 border-emerald-500 p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-sm rounded-xl">
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 border border-emerald-300 rounded-full flex items-center justify-center mx-auto mb-5">
           <CheckCircleIcon className="w-8 h-8" />
         </div>
@@ -133,22 +166,39 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
           Teşekkür Ederiz, Talebiniz İletildi.
         </h3>
         <p className="mt-4 text-sm sm:text-base text-industrial-600 leading-relaxed">
-          Sayın <strong>{formData.fullName}</strong>, ilettiğiniz teknik detaylar ve dosyalar mühendislik departmanımıza başarıyla ulaştı. Çalışma parametreleri ve malzeme analiziniz yapılarak en kısa sürede tarafınıza yazılı teklif iletilecektir.
+          Sayın <strong>{formData.fullName}</strong>, ilettiğiniz teknik detaylar ve dosyalar mühendislik departmanımıza başarıyla ulaştı.
+          {formData.email && (
+            <span className="block mt-1 text-emerald-700 font-medium">
+              Detayları içeren teyit e-postası <strong>{formData.email}</strong> adresinize gönderildi.
+            </span>
+          )}
+          Çalışma parametreleri ve malzeme analiziniz yapılarak en kısa sürede tarafınıza yazılı teklif iletilecektir.
         </p>
+
+        {referenceCode && (
+          <div className="mt-6 p-4 bg-industrial-50 border border-industrial-200 max-w-sm mx-auto rounded-lg">
+            <span className="text-[11px] font-mono text-industrial-500 uppercase tracking-wider block">
+              TALEP TAKİP REFERANS KODU:
+            </span>
+            <span className="text-xl font-mono font-bold text-rust">
+              {referenceCode}
+            </span>
+          </div>
+        )}
 
         <div className="mt-8 pt-6 border-t border-industrial-200 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
           <a
             href={`tel:${companyData.phone}`}
-            className="px-4 py-2.5 bg-industrial-900 text-white hover:bg-industrial-800 transition-colors inline-flex items-center gap-2"
+            className="px-4 py-2.5 bg-industrial-900 text-white hover:bg-industrial-800 transition-colors inline-flex items-center gap-2 rounded-lg"
           >
             <PhoneIcon className="w-4 h-4 text-steel-blue" />
-            <span>Acil Durum Santral: {companyData.phoneFormatted}</span>
+            <span>Acil Santral: {companyData.phoneFormatted}</span>
           </a>
           <a
-            href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
+            href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Merhaba Emek Conta, #${referenceCode} referans kodlu teklif talebimi teyit etmek istiyorum.`)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2.5 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors inline-flex items-center gap-2"
+            className="px-4 py-2.5 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors inline-flex items-center gap-2 rounded-lg"
           >
             <WhatsappIcon className="w-4 h-4" />
             <span>WhatsApp ile Teyit Et</span>
@@ -178,8 +228,9 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
                 website_hp: "",
               });
               setFiles([]);
+              setReferenceCode("");
             }}
-            className="text-xs font-mono text-steel-blue hover:underline"
+            className="text-xs font-mono text-steel-blue hover:underline cursor-pointer"
           >
             ← Yeni Bir Teklif Talebi Gönder
           </button>

@@ -45,11 +45,12 @@
 - **1.2 Domain Bağlama:** `emekconta.com` alan adının DNS ayarları (A/CNAME) ve Vercel yönlendirmesi.
 - **1.3 Çevre Değişkenleri (.env):** API anahtarları ve e-posta ayarlarının güvenli tanımlanması.
 
-### 🟠 Aşama 2: İletişim & Dönüşüm (Öncelikli)
-- **2.1 RFQ Formu E-Posta Entegrasyonu:** Resend veya Nodemailer ile `/teklif-iste` ve ana sayfadaki teklif formundan gelen verilerin doğrudan `info@emekconta.com`'a gitmesi.
-- **2.2 Müşteri Teyit E-Postası:** Formu dolduran müşteriye otomatik profesyonel "Talebiniz alınmıştır" yanıtı.
-- **2.3 WhatsApp Floating Butonu:** Tüm sayfalarda sağ altta sabit, tek tıkla doğrudan WhatsApp RFQ hattına yönlendiren şık buton.
-- **2.4 Numune Talep Formu:** `/numune-talep` sayfası — malzeme testi isteyen AR-GE/bakım mühendisleri için numune isteme akışı.
+### 🟠 Aşama 2: İletişim & Dönüşüm (TAMAMLANDI ✅)
+- **2.1 RFQ Formu E-Posta Entegrasyonu (Tamamlandı):** `resend` paketi ile `lib/email.ts` servisi ve `app/api/rfq/route.ts` API uç noktası oluşturuldu. `/teklif-iste` ve ana sayfa dropzone formları bağlandı; gelen teknik veriler kurumsal HTML tablosu olarak `info@emekconta.com` ve `teklif@emekconta.com` adreslerine yönlendirildi. `RESEND_API_KEY` yokken zarif simülasyon modu sağlandı.
+- **2.2 Müşteri Teyit E-Postası (Tamamlandı):** E-posta giren müşterilere otomatik kurumsal "Talebiniz Alındı [Referans: EC-XXXXXX]" teyit e-postası ve 2 saatlik geri dönüş SLA taahhüdü şablonu eklendi.
+- **2.3 WhatsApp Floating Butonu (Tamamlandı):** `components/ui/WhatsAppFloatingButton.tsx` bileşeni tüm sayfalarda sağ altta sabitlendi (`+905442230828` kurumsal hattı, hover tooltip kartı, canlı online durum göstergesi ve tam erişilebilirlik).
+- **2.4 Numune Talep Formu (Tamamlandı):** `/numune-talep` sayfası ve `components/sample/SampleRequestForm.tsx` bileşeni oluşturuldu; AR-GE ve bakım ekipleri için 8 farklı malzeme çeşidi, kalınlık seçimi ve teslimat adresi akışı `/api/rfq`'ya bağlandı; footer, mega menü ve sitemap'e eklendi.
+
 
 ### 🟡 Aşama 3: B2B Satış Araçları
 - **3.1 Toplu Teklif Sepeti (RFQ Cart):** Ziyaretçilerin birden fazla contayı seçip tek bir teklif talebinde toplayabilmesi (fiyat olmadan teklif listesi).

@@ -108,3 +108,31 @@ export interface CompanyProfile {
   quoteEmail: string;
   locations: CompanyLocation[];
 }
+
+export interface RfqEmailPayload {
+  referenceCode: string;
+  type: "rfq_detailed" | "rfq_quick" | "sample_request";
+  fullName: string;
+  companyName?: string;
+  phone: string;
+  email?: string;
+  category?: string;
+  productName?: string;
+  quantity?: string;
+  dimensions?: string;
+  material?: string;
+  temperature?: string;
+  pressure?: string;
+  medium?: string;
+  standard?: string;
+  notes?: string;
+  fileNames?: string[];
+  sampleMaterials?: string[];
+  thickness?: string;
+  deliveryAddress?: string;
+  city?: string;
+  district?: string;
+  taxOfficeOrNumber?: string;
+  createdAt?: string;
+}
+

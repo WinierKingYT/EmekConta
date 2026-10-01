@@ -19,6 +19,7 @@ export function QuickRFQDropzone() {
   const [fileError, setFileError] = useState<string | null>(null);
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [notes, setNotes] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -26,6 +27,7 @@ export function QuickRFQDropzone() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [referenceCode, setReferenceCode] = useState("");
   const [isDragging, setIsDragging] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -85,7 +87,11 @@ export function QuickRFQDropzone() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !phone) return;
+    setErrorMessage(null);
+    if (!fullName.trim() || !phone.trim()) {
+      setErrorMessage("Lütfen Ad Soyad ve Telefon Numarası alanlarını doldurunuz.");
+      return;
+    }
 
     if (honeypot) {
       setIsSuccess(true);
@@ -93,13 +99,40 @@ export function QuickRFQDropzone() {
     }
 
     setIsSubmitting(true);
-    // Simulate API processing delay
-    await new Promise((resolve) => setTimeout(resolve, 800));
 
-    const ref = `EC-${Math.floor(100000 + Math.random() * 900000)}`;
-    setReferenceCode(ref);
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    try {
+      const payload = new FormData();
+      payload.append("type", "rfq_quick");
+      payload.append("fullName", fullName.trim());
+      payload.append("phone", phone.trim());
+      payload.append("email", email.trim());
+      payload.append("companyName", company.trim());
+      payload.append("notes", notes.trim());
+      payload.append("website_hp", honeypot);
+      if (file) {
+        payload.append("file", file);
+      }
+
+      const res = await fetch("/api/rfq", {
+        method: "POST",
+        body: payload,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Talebiniz iletilirken bir hata oluştu.");
+      }
+
+      const ref = data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceCode(ref);
+      setIsSuccess(true);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Teknik çizim iletilirken bir hata oluştu.";
+      setErrorMessage(`${msg} Lütfen doğrudan telefon veya WhatsApp ile iletişime geçiniz.`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -107,8 +140,10 @@ export function QuickRFQDropzone() {
     setFileError(null);
     setFullName("");
     setPhone("");
+    setEmail("");
     setCompany("");
     setNotes("");
+    setErrorMessage(null);
     setIsSuccess(false);
     setReferenceCode("");
   };
@@ -243,6 +278,12 @@ export function QuickRFQDropzone() {
                   autoComplete="off"
                 />
 
+                {errorMessage && (
+                  <div className="p-3 bg-red-950/80 border border-red-500/50 text-red-200 text-xs font-mono rounded-lg">
+                    {errorMessage}
+                  </div>
+                )}
+
                 {/* Dropzone Area */}
                 <div>
                   <label className="block text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2">
@@ -337,14 +378,25 @@ export function QuickRFQDropzone() {
                     </div>
                   </div>
 
-                  <div className="mt-3">
-                    <input
-                      type="text"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      placeholder="Firma Adı (Opsiyonel)"
-                      className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                    <div>
+                      <input
+                        type="text"
+                        value={company}
+                        onChange={(e) => setCompany(e.target.value)}
+                        placeholder="Firma Adı (Opsiyonel)"
+                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="E-posta Adresi (Yazılı Teklif İçin)"
+                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                      />
+                    </div>
                   </div>
 
                   <div className="mt-3">

@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 import { companyData } from "@/data/company";
 
 const inter = Inter({
@@ -111,6 +112,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );

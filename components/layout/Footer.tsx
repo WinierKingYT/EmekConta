@@ -186,6 +186,11 @@ export function Footer() {
                   Teknik Çizim ile Teklif Al
                 </Link>
               </li>
+              <li>
+                <Link href="/numune-talep" className="hover:text-white transition-colors text-rust font-medium">
+                  Ücretsiz Numune Talep Et (AR-GE) →
+                </Link>
+              </li>
             </ul>
           </div>
 
