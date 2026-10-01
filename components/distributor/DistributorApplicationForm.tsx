@@ -163,31 +163,31 @@ export function DistributorApplicationForm() {
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 border border-emerald-300 rounded-full flex items-center justify-center mx-auto mb-5">
           <CheckCircleIcon className="w-8 h-8" />
         </div>
-        <span className="text-xs font-mono font-bold tracking-widest text-emerald-700 uppercase block mb-1">
+        <span className="text-xs font-sans font-bold tracking-widest text-emerald-700 uppercase block mb-1">
           BAYİLİK BAŞVURUSU ALINDI
         </span>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-industrial-900 tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-medium text-[#191D20] tracking-tight">
           Başvurunuz Değerlendirmeye Alındı
         </h3>
-        <p className="mt-4 text-sm sm:text-base text-industrial-600 leading-relaxed">
+        <p className="mt-4 text-sm sm:text-base text-[#62635F] leading-relaxed">
           Sayın <strong>{formData.fullName}</strong> ({formData.companyName}), Emek Conta bölgesel bayilik & toptan dağıtım başvurunuz satış direktörlüğümüze ulaştı. Bölge kotaları ve iskonto şartları incelenerek 1 iş günü içinde sizinle temas kurulacaktır.
         </p>
 
         {referenceCode && (
-          <div className="mt-6 p-4 bg-industrial-50 border border-industrial-200 max-w-sm mx-auto rounded-lg font-mono">
-            <span className="text-[11px] text-industrial-500 uppercase tracking-wider block">
+          <div className="mt-6 p-4 bg-[#F2EFE9] border border-[#D9D5CD] max-w-sm mx-auto rounded-lg font-sans">
+            <span className="text-[11px] text-[#62635F] uppercase tracking-wider block">
               BAŞVURU TAKİP NUMARASI:
             </span>
             <span className="text-xl font-bold text-rust">{referenceCode}</span>
           </div>
         )}
 
-        <div className="mt-8 pt-6 border-t border-industrial-200 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
+        <div className="mt-8 pt-6 border-t border-[#D9D5CD] flex flex-wrap items-center justify-center gap-4 text-xs font-sans">
           <a
             href={`tel:${companyData.phone}`}
-            className="px-4 py-2.5 bg-industrial-900 text-white hover:bg-industrial-800 transition-colors inline-flex items-center gap-2 rounded-lg"
+            className="px-4 py-2.5 bg-[#191D20] text-white hover:bg-[#33383B] transition-colors inline-flex items-center gap-2 rounded-lg"
           >
-            <PhoneIcon className="w-4 h-4 text-steel-blue" />
+            <PhoneIcon className="w-4 h-4 text-[#96350B]" />
             <span>Bayi Satış Santrali: {companyData.phoneFormatted}</span>
           </a>
           <a
@@ -205,7 +205,7 @@ export function DistributorApplicationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-industrial-200 p-6 sm:p-10 shadow-xs space-y-8 rounded-xl">
+    <form onSubmit={handleSubmit} className="bg-[#F8F6F2] border border-[#D9D5CD] p-5 sm:p-10 space-y-10 rounded-xl">
       {/* Honeypot for bot protection */}
       <input
         type="text"
@@ -225,16 +225,16 @@ export function DistributorApplicationForm() {
 
       {/* Group 1: Company & Author Identity */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-rust">01.</span>
-          <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#D9D5CD]">
+          <span className="font-sans text-xs font-bold text-rust">01.</span>
+          <h3 className="font-bold text-base text-[#191D20] uppercase tracking-wide">
             Firma ve Yetkili Kimliği
           </h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           <div className="sm:col-span-2">
-            <label htmlFor="companyName" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="companyName" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Firma Resmi Ticari Ünvanı <span className="text-red-600">*</span>
             </label>
             <input
@@ -245,12 +245,12 @@ export function DistributorApplicationForm() {
               value={formData.companyName}
               onChange={handleInputChange}
               placeholder="Örn: ABC Endüstriyel Hırdavat ve Tesisat Malzemeleri Ltd. Şti."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="taxOfficeOrNumber" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="taxOfficeOrNumber" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Vergi Dairesi ve Numarası
             </label>
             <input
@@ -260,12 +260,12 @@ export function DistributorApplicationForm() {
               value={formData.taxOfficeOrNumber}
               onChange={handleInputChange}
               placeholder="Örn: Beyoğlu VD - 1234567890"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="businessType" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="businessType" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Ana Faaliyet Alanı
             </label>
             <select
@@ -273,7 +273,7 @@ export function DistributorApplicationForm() {
               name="businessType"
               value={formData.businessType}
               onChange={handleInputChange}
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             >
               {BUSINESS_TYPES.map((bt, idx) => (
                 <option key={idx} value={bt}>
@@ -284,7 +284,7 @@ export function DistributorApplicationForm() {
           </div>
 
           <div>
-            <label htmlFor="fullName" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="fullName" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Yetkili Adı Soyadı <span className="text-red-600">*</span>
             </label>
             <input
@@ -295,12 +295,12 @@ export function DistributorApplicationForm() {
               value={formData.fullName}
               onChange={handleInputChange}
               placeholder="Ad ve soyad"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="title" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="title" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Görevi / Ünvanı
             </label>
             <input
@@ -310,12 +310,12 @@ export function DistributorApplicationForm() {
               value={formData.title}
               onChange={handleInputChange}
               placeholder="Örn: Şirket Ortağı / Genel Müdür"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="phone" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Telefon Numarası <span className="text-red-600">*</span>
             </label>
             <input
@@ -326,12 +326,12 @@ export function DistributorApplicationForm() {
               value={formData.phone}
               onChange={handleInputChange}
               placeholder="0 (5XX) XXX XX XX"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="email" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Kurumsal E-posta <span className="text-red-600">*</span>
             </label>
             <input
@@ -342,7 +342,7 @@ export function DistributorApplicationForm() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="yetkili@firma.com"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
         </div>
@@ -350,16 +350,16 @@ export function DistributorApplicationForm() {
 
       {/* Group 2: Location & Distribution Capacity */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-rust">02.</span>
-          <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#D9D5CD]">
+          <span className="font-sans text-xs font-bold text-rust">02.</span>
+          <h3 className="font-bold text-base text-[#191D20] uppercase tracking-wide">
             Lokasyon & Dağıtım Kapasitesi
           </h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           <div>
-            <label htmlFor="city" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="city" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Faaliyet Gösterilen İl <span className="text-red-600">*</span>
             </label>
             <input
@@ -370,12 +370,12 @@ export function DistributorApplicationForm() {
               value={formData.city}
               onChange={handleInputChange}
               placeholder="Örn: İzmir, Bursa, Kocaeli, Mersin..."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="warehouseArea" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="warehouseArea" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Mağaza / Depo Kapalı Alanı
             </label>
             <select
@@ -383,7 +383,7 @@ export function DistributorApplicationForm() {
               name="warehouseArea"
               value={formData.warehouseArea}
               onChange={handleInputChange}
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             >
               {WAREHOUSE_SIZES.map((ws, idx) => (
                 <option key={idx} value={ws}>
@@ -394,7 +394,7 @@ export function DistributorApplicationForm() {
           </div>
 
           <div>
-            <label htmlFor="estimatedAnnualVolume" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="estimatedAnnualVolume" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Tahmini Yıllık Alım Hacmi
             </label>
             <select
@@ -402,7 +402,7 @@ export function DistributorApplicationForm() {
               name="estimatedAnnualVolume"
               value={formData.estimatedAnnualVolume}
               onChange={handleInputChange}
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white font-mono text-xs"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white font-sans text-xs"
             >
               <option value="100.000 TL – 250.000 TL">100.000 TL – 250.000 TL</option>
               <option value="250.000 TL – 1.000.000 TL">250.000 TL – 1.000.000 TL</option>
@@ -415,14 +415,14 @@ export function DistributorApplicationForm() {
 
       {/* Group 3: Target Product Portfolio */}
       <div>
-        <div className="flex items-center justify-between mb-4 pb-2 border-b border-industrial-200">
+        <div className="flex items-center justify-between mb-4 pb-2 border-b border-[#D9D5CD]">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs font-bold text-rust">03.</span>
-            <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
+            <span className="font-sans text-xs font-bold text-rust">03.</span>
+            <h3 className="font-bold text-base text-[#191D20] uppercase tracking-wide">
               Dağıtımı Hedeflenen Ürün Grupları <span className="text-red-600">*</span>
             </h3>
           </div>
-          <span className="text-xs font-mono text-industrial-500">
+          <span className="text-xs font-sans text-[#62635F]">
             {selectedProducts.length} grup seçildi
           </span>
         </div>
@@ -438,7 +438,7 @@ export function DistributorApplicationForm() {
                 className={`p-3 text-left border rounded-lg transition-all flex items-center justify-between cursor-pointer ${
                   isSelected
                     ? "border-rust bg-rust/5 ring-1 ring-rust text-rust font-bold"
-                    : "border-industrial-200 bg-industrial-50 hover:bg-white text-industrial-800"
+                    : "border-[#D9D5CD] bg-[#F2EFE9] hover:bg-white text-[#191D20]"
                 }`}
               >
                 <span className="text-xs">{pg}</span>
@@ -457,16 +457,16 @@ export function DistributorApplicationForm() {
 
       {/* Group 4: Notes and Current Portfolio */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-rust">04.</span>
-          <h3 className="font-bold text-base text-industrial-900 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#D9D5CD]">
+          <span className="font-sans text-xs font-bold text-rust">04.</span>
+          <h3 className="font-bold text-base text-[#191D20] uppercase tracking-wide">
             Mevcut Temsilcilikler ve Ek Açıklamalar
           </h3>
         </div>
 
         <div className="space-y-4">
           <div>
-            <label htmlFor="currentBrands" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="currentBrands" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Halihazırda Bayisi Olduğunuz / Dağıttığınız Markalar (Opsiyonel)
             </label>
             <input
@@ -476,12 +476,12 @@ export function DistributorApplicationForm() {
               value={formData.currentBrands}
               onChange={handleInputChange}
               placeholder="Örn: Klinger, Donit, Teadit, SKF, Trakya Döküm vb."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="notes" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="notes" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Başvuru Gerekçeniz ve İşbirliği Beklentiniz
             </label>
             <textarea
@@ -491,15 +491,15 @@ export function DistributorApplicationForm() {
               value={formData.notes}
               onChange={handleInputChange}
               placeholder="Bölgenizdeki sanayi potansiyeli, hedef sektörleriniz (tersane, petrokimya, gıda vb.) ve ortaklık hedefleriniz hakkında bilgi verebilirsiniz."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white resize-none"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white resize-none"
             />
           </div>
         </div>
       </div>
 
       {/* Submit Action */}
-      <div className="pt-4 border-t border-industrial-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-xs text-industrial-500 font-mono">
+      <div className="pt-4 border-t border-[#D9D5CD] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2 text-xs text-[#62635F] font-sans">
           <ShieldCheckIcon className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>Başvurunuz gizlilik ilkeleri kapsamında ticari sır olarak korunur.</span>
         </div>

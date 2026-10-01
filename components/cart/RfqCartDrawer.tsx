@@ -116,14 +116,14 @@ export function RfqCartDrawer() {
     <>
       {/* Toast Notification when item added */}
       {notification && (
-        <div className="fixed bottom-20 left-6 z-50 max-w-sm p-4 bg-night text-white border border-industrial-700 rounded-xl shadow-2xl flex items-center justify-between gap-3 animate-fade-in">
+        <div className="fixed bottom-20 left-6 z-50 max-w-sm p-4 bg-[#191D20] text-white border border-industrial-700 rounded-xl shadow-2xl flex items-center justify-between gap-3 animate-fade-in">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <p className="text-xs font-mono">{notification}</p>
+            <p className="text-xs font-sans">{notification}</p>
           </div>
           <button
             onClick={dismissNotification}
-            className="text-industrial-400 hover:text-white text-xs font-mono px-1"
+            className="text-[#969C93] hover:text-white text-xs font-sans px-1"
           >
             ✕
           </button>
@@ -134,29 +134,29 @@ export function RfqCartDrawer() {
       {isOpen && (
         <div
           onClick={closeCart}
-          className="fixed inset-0 bg-night/70 backdrop-blur-xs z-50 transition-opacity"
+          className="fixed inset-0 bg-[#191D20]/70 backdrop-blur-xs z-50 transition-opacity"
         />
       )}
 
       {/* Slide-over Drawer */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-full sm:max-w-lg bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 bottom-0 w-full sm:max-w-lg bg-[#F8F6F2] shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Drawer Header */}
-        <div className="px-6 py-4 bg-night text-white border-b border-industrial-800 flex items-center justify-between">
+        <div className="px-6 py-4 bg-[#191D20] text-white border-b border-industrial-800 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-rust"></span>
-            <h2 className="text-base font-bold tracking-tight">Teklif Sepeti (RFQ Cart)</h2>
-            <span className="text-xs font-mono px-2 py-0.5 bg-industrial-800 text-rust rounded-md">
+            <h2 className="text-base font-bold tracking-tight">Teklif listeniz</h2>
+            <span className="text-xs font-sans px-2 py-0.5 bg-[#33383B] text-rust rounded-md">
               {itemCount} Ürün
             </span>
           </div>
           <button
             onClick={closeCart}
             aria-label="Sepeti Kapat"
-            className="p-1.5 text-industrial-400 hover:text-white rounded-lg hover:bg-industrial-800 transition-colors"
+            className="p-1.5 text-[#969C93] hover:text-white rounded-lg hover:bg-[#33383B] transition-colors"
           >
             ✕
           </button>
@@ -169,14 +169,14 @@ export function RfqCartDrawer() {
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 border border-emerald-300 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircleIcon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-industrial-900">
+              <h3 className="text-xl font-bold text-[#191D20]">
                 Toplu Teklif Talebiniz Alındı!
               </h3>
-              <p className="text-xs sm:text-sm text-industrial-600 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#62635F] max-w-sm mx-auto leading-relaxed">
                 Mühendislik ekibimiz sepetinizdeki ürünleri ve çalışma şartlarınızı inceleyerek en kısa sürede resmi proforma iletecektir.
               </p>
-              <div className="p-3 bg-industrial-50 border border-industrial-200 max-w-xs mx-auto rounded-lg font-mono text-xs">
-                <span className="text-industrial-500 block text-[10px]">TAKİP NUMARASI:</span>
+              <div className="p-3 bg-[#F2EFE9] border border-[#D9D5CD] max-w-xs mx-auto rounded-lg font-sans text-xs">
+                <span className="text-[#62635F] block text-[10px]">TAKİP NUMARASI:</span>
                 <span className="text-rust font-bold text-lg">{referenceCode}</span>
               </div>
               <div className="pt-4 flex flex-col gap-2">
@@ -184,7 +184,7 @@ export function RfqCartDrawer() {
                   href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Merhaba Emek Conta, #${referenceCode} referans numaralı toplu teklif talebim hakkında bilgi almak istiyorum.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-sans font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors"
                 >
                   <WhatsappIcon className="w-4 h-4" />
                   <span>WhatsApp ile Teyit Et</span>
@@ -195,7 +195,7 @@ export function RfqCartDrawer() {
                     setIsSuccess(false);
                     closeCart();
                   }}
-                  className="text-xs font-mono text-steel-blue hover:underline py-2"
+                  className="text-xs font-sans text-[#96350B] hover:underline py-2"
                 >
                   Kapat ve Alışverişe Devam Et
                 </button>
@@ -203,20 +203,20 @@ export function RfqCartDrawer() {
             </div>
           ) : items.length === 0 ? (
             <div className="py-16 text-center space-y-4">
-              <div className="w-14 h-14 bg-industrial-100 text-industrial-400 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 bg-[#EAE7E1] text-[#969C93] rounded-full flex items-center justify-center mx-auto">
                 <DocumentTextIcon className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-industrial-800">
+              <h3 className="text-base font-bold text-[#191D20]">
                 Teklif Sepetiniz Boş
               </h3>
-              <p className="text-xs text-industrial-500 max-w-xs mx-auto">
+              <p className="text-xs text-[#62635F] max-w-xs mx-auto">
                 Ürün sayfalarından "Teklif Sepetine Ekle" butonunu kullanarak contaları toplu teklif listenize ekleyebilirsiniz.
               </p>
               <div className="pt-2">
                 <Link
                   href="/urunler"
                   onClick={closeCart}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-rust hover:bg-rust-light text-white text-xs font-mono font-semibold rounded-lg transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-rust hover:bg-rust-light text-white text-xs font-sans font-semibold rounded-lg transition-colors"
                 >
                   <span>Ürün Kataloğuna Gözat</span>
                   <ArrowRightIcon className="w-3.5 h-3.5" />
@@ -227,7 +227,7 @@ export function RfqCartDrawer() {
             <>
               {/* Product List */}
               <div className="space-y-3">
-                <div className="flex items-center justify-between pb-2 border-b border-industrial-200 text-xs font-mono text-industrial-500">
+                <div className="flex items-center justify-between pb-2 border-b border-[#D9D5CD] text-xs font-sans text-[#62635F]">
                   <span>SEÇİLEN ÜRÜNLER ({items.length})</span>
                   <button
                     onClick={clearCart}
@@ -240,24 +240,24 @@ export function RfqCartDrawer() {
                 {items.map((item) => (
                   <div
                     key={item.id}
-                    className="p-3.5 bg-industrial-50 border border-industrial-200 rounded-xl space-y-2"
+                    className="p-3.5 bg-[#F2EFE9] border border-[#D9D5CD] rounded-xl space-y-2"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <Link
                           href={`/urunler/${item.slug}`}
                           onClick={closeCart}
-                          className="text-xs sm:text-sm font-bold text-night hover:text-rust transition-colors block"
+                          className="text-xs sm:text-sm font-bold text-[#191D20] hover:text-rust transition-colors block"
                         >
                           {item.name}
                         </Link>
-                        <span className="text-[10px] font-mono text-industrial-500">
+                        <span className="text-[10px] font-sans text-[#62635F]">
                           {item.category} {item.dimensions ? `• ${item.dimensions}` : ""}
                         </span>
                       </div>
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="text-[11px] font-mono text-rose-500 hover:text-rose-700"
+                        className="text-[11px] font-sans text-rose-500 hover:text-rose-700"
                         title="Ürünü Çıkar"
                       >
                         ✕
@@ -265,13 +265,13 @@ export function RfqCartDrawer() {
                     </div>
 
                     <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs font-mono text-industrial-600">Miktar:</span>
+                      <span className="text-xs font-sans text-[#62635F]">Miktar:</span>
                       <input
                         type="text"
                         value={item.quantity}
                         onChange={(e) => updateQuantity(item.id, e.target.value)}
-                        placeholder="Örn: 50 Adet"
-                        className="w-28 px-2 py-1 bg-white border border-industrial-300 text-xs font-mono rounded text-right focus:outline-none focus:border-rust"
+                        placeholder="Örn: 50 Adet" aria-label={`${item.name} miktarı`}
+                        className="w-28 px-2 py-1 bg-white border border-[#CFCBC3] text-xs font-sans rounded text-right focus:outline-none focus:border-rust"
                       />
                     </div>
                   </div>
@@ -290,15 +290,15 @@ export function RfqCartDrawer() {
                   href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${getWhatsAppCartMessage()}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-mono font-bold rounded-lg transition-colors shrink-0"
+                  className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-sans font-bold rounded-lg transition-colors shrink-0"
                 >
                   WhatsApp'a Aktar
                 </a>
               </div>
 
               {/* Fast Checkout Form */}
-              <form onSubmit={handleSubmit} className="pt-4 border-t border-industrial-200 space-y-3">
-                <span className="text-xs font-mono font-bold text-industrial-700 block uppercase">
+              <form onSubmit={handleSubmit} className="pt-4 border-t border-[#D9D5CD] space-y-3">
+                <span className="text-xs font-sans font-bold text-[#4D514B] block uppercase">
                   Toplu Teklif İletişim Bilgileri
                 </span>
 
@@ -325,8 +325,8 @@ export function RfqCartDrawer() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="Ad Soyad *"
-                    className="w-full px-3 py-2 bg-industrial-50 border border-industrial-300 text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white"
+                    placeholder="Ad Soyad *" aria-label="Ad Soyad *"
+                    className="w-full px-3 py-2 bg-[#F2EFE9] border border-[#CFCBC3] text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white"
                   />
                   <input
                     type="tel"
@@ -334,8 +334,8 @@ export function RfqCartDrawer() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Telefon *"
-                    className="w-full px-3 py-2 bg-industrial-50 border border-industrial-300 text-xs font-mono rounded-lg focus:outline-none focus:border-rust focus:bg-white"
+                    placeholder="Telefon *" aria-label="Telefon *"
+                    className="w-full px-3 py-2 bg-[#F2EFE9] border border-[#CFCBC3] text-xs font-sans rounded-lg focus:outline-none focus:border-rust focus:bg-white"
                   />
                 </div>
 
@@ -345,16 +345,16 @@ export function RfqCartDrawer() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="E-posta (Teyit için)"
-                    className="w-full px-3 py-2 bg-industrial-50 border border-industrial-300 text-xs font-mono rounded-lg focus:outline-none focus:border-rust focus:bg-white"
+                    placeholder="E-posta (Teyit için)" aria-label="E-posta (Teyit için)"
+                    className="w-full px-3 py-2 bg-[#F2EFE9] border border-[#CFCBC3] text-xs font-sans rounded-lg focus:outline-none focus:border-rust focus:bg-white"
                   />
                   <input
                     type="text"
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleInputChange}
-                    placeholder="Firma Adı"
-                    className="w-full px-3 py-2 bg-industrial-50 border border-industrial-300 text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white"
+                    placeholder="Firma Adı" aria-label="Firma Adı"
+                    className="w-full px-3 py-2 bg-[#F2EFE9] border border-[#CFCBC3] text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white"
                   />
                 </div>
 
@@ -363,14 +363,14 @@ export function RfqCartDrawer() {
                   name="notes"
                   value={formData.notes}
                   onChange={handleInputChange}
-                  placeholder="Teslimat termin tarihi, toleranslar veya özel çalışma koşulu notları..."
-                  className="w-full px-3 py-2 bg-industrial-50 border border-industrial-300 text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white resize-none"
+                  placeholder="Teslimat termin tarihi, toleranslar veya özel çalışma koşulu notları..." aria-label="Teslimat termin tarihi, toleranslar veya özel çalışma koşulu notları..."
+                  className="w-full px-3 py-2 bg-[#F2EFE9] border border-[#CFCBC3] text-xs rounded-lg focus:outline-none focus:border-rust focus:bg-white resize-none"
                 />
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-brick hover:bg-brick-hover text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3 bg-[#B7410E] hover:bg-[#96350B] text-white font-sans text-xs font-semibold transition-colors rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>Talebiniz İletiliyor...</span>
@@ -379,7 +379,7 @@ export function RfqCartDrawer() {
                   )}
                 </button>
 
-                <p className="text-[10px] font-mono text-industrial-400 text-center">
+                <p className="text-[10px] font-sans text-[#969C93] text-center">
                   Talebiniz mesai saatleri içinde 2 saatte fiyatlandırılarak tarafınıza iletilir.
                 </p>
               </form>

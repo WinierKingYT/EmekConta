@@ -10,9 +10,12 @@ export interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   className?: string;
+  language?: "tr" | "en";
 }
 
-export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
+export function Breadcrumb({ items, className = "", language = "tr" }: BreadcrumbProps) {
+  const homeLabel = language === "en" ? "Home" : "Ana Sayfa";
+  const homeHref = language === "en" ? "/en" : "/";
   // BreadcrumbList JSON-LD Schema
   const schema = {
     "@context": "https://schema.org",
@@ -21,8 +24,8 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Ana Sayfa",
-        item: "https://emekconta.com",
+        name: homeLabel,
+        item: `https://emekconta.com${homeHref}`,
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
@@ -34,15 +37,15 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
   };
 
   return (
-    <nav aria-label="Breadcrumb" className={`text-xs font-mono text-industrial-500 ${className}`}>
+    <nav aria-label="Breadcrumb" className={`text-xs text-[#62635F] ${className}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <ol className="flex items-center flex-wrap gap-1.5">
         <li>
-          <Link href="/" className="hover:text-industrial-900 transition-colors">
-            Ana Sayfa
+          <Link href={homeHref} className="hover:text-industrial-900 transition-colors">
+            {homeLabel}
           </Link>
         </li>
         {items.map((item, index) => {

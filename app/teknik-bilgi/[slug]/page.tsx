@@ -5,15 +5,9 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
+
 import { articlesData } from "@/data/articles";
-import {
-  DocumentTextIcon,
-  ClockIcon,
-  ArrowRightIcon,
-  UploadCloudIcon,
-  ShieldCheckIcon,
-} from "@/components/icons/Icons";
+import { ArrowRightIcon } from "@/components/icons/Icons";
 
 interface Props {
   params: { slug: string };
@@ -97,118 +91,20 @@ export default function ArticleDetailPage({ params }: Props) {
     mainEntityOfPage: `https://emekconta.com/teknik-bilgi/${article.slug}`,
   };
 
+  const updatedDate = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Istanbul" }).format(new Date(`${article.updatedAt}T12:00:00Z`));
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-
-      <Container size="narrow">
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Teknik Bilgi", href: "/teknik-bilgi" },
-            { label: article.title },
-          ]}
-          className="mb-6"
-        />
-
-        {/* Article Container */}
-        <article className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-12 mb-10">
-          {/* Header Metadata */}
-          <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-industrial-500 pb-4 border-b border-industrial-100 mb-6">
-            <span className="px-2 py-0.5 bg-steel-light text-steel-darkblue font-semibold uppercase rounded-md">
-              {article.category}
-            </span>
-            <span className="flex items-center gap-1">
-              <ClockIcon className="w-3.5 h-3.5 text-industrial-400" />
-              <span>{article.readingTimeMinutes} Dakika Okuma</span>
-            </span>
-            <span>•</span>
-            <span>Son Güncelleme: {article.updatedAt}</span>
-          </div>
-
-          {/* Title */}
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight leading-tight mb-6">
-            {article.title}
-          </h1>
-
-          {/* Executive Summary Lead */}
-          <div className="p-4 sm:p-5 bg-industrial-50 border-l-4 border-steel-blue text-sm sm:text-base text-industrial-700 leading-relaxed mb-8 rounded-r-md">
-            <strong>Teknik Özet:</strong> {article.summary}
-          </div>
-
-          {/* Standards Tags */}
-          {article.standardsMentioned && article.standardsMentioned.length > 0 && (
-            <div className="mb-8 flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-mono text-industrial-500">İlgili Standartlar:</span>
-              {article.standardsMentioned.map((std, idx) => (
-                <Badge key={idx} variant="neutral">
-                  {std}
-                </Badge>
-              ))}
-            </div>
-          )}
-
-          {/* Article Structured Body */}
-          <div className="space-y-8 text-industrial-800 leading-relaxed text-sm sm:text-base">
-            {article.content.map((sec, sIdx) => (
-              <section key={sIdx}>
-                <h2 className="text-lg sm:text-xl font-bold text-industrial-900 mb-3 pb-2 border-b border-industrial-100">
-                  {sec.heading}
-                </h2>
-                <div className="space-y-3 text-industrial-700">
-                  {sec.body.map((p, pIdx) => (
-                    <p key={pIdx}>{p}</p>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-
-          {/* Bottom Technical Disclaimer & Action */}
-          <div className="mt-12 pt-6 border-t border-industrial-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs font-mono text-industrial-500 text-center sm:text-left">
-              * Bu doküman genel bilgilendirme amacıyla hazırlanmıştır. Özel flanş ve akışkan hesaplamaları için teknik ekibimizle görüşünüz.
-            </p>
-            <Button href="/teklif-iste" variant="accent" size="md" className="shrink-0 w-full sm:w-auto">
-              <UploadCloudIcon className="w-4 h-4 mr-2" />
-              Teknik Teklif İste
-            </Button>
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <Container>
+        <Breadcrumb items={[{ label: "Teknik Bilgi", href: "/teknik-bilgi" }, { label: article.title }]} className="mb-10" />
+        <article>
+          <header className="mb-12 max-w-4xl"><p className="mb-6 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">{article.category}</p><h1 className="text-3xl font-medium leading-[1.13] tracking-[-0.045em] sm:text-5xl">{article.title}</h1><p className="mt-7 max-w-3xl text-lg leading-relaxed text-[#62635F]">{article.summary}</p><div className="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-xs text-[#62635F]"><span>{article.readingTimeMinutes} dk okuma</span><span>Son güncelleme: <time dateTime={article.updatedAt}>{updatedDate}</time></span></div></header>
+          <div className="grid items-start gap-10 border-t border-[#191D20]/15 pt-10 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-16">
+            <aside className="lg:sticky lg:top-28"><nav aria-label="Rehberin içindekiler"><p className="mb-5 text-[11px] font-medium uppercase tracking-[0.18em] text-[#62635F]">Bu rehberde</p><ol className="space-y-3">{article.content.map((section,index) => <li key={index}><a href={`#bolum-${index + 1}`} className="block border-l border-[#191D20]/20 py-1 pl-4 text-sm leading-relaxed text-[#4D514B] hover:border-[#B7410E] hover:text-[#96350B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-rust">{section.heading}</a></li>)}</ol></nav>{article.standardsMentioned && article.standardsMentioned.length > 0 && <div className="mt-8 border-t border-[#191D20]/15 pt-5"><p className="mb-3 text-xs font-medium">İlgili standartlar</p><ul className="space-y-2 text-xs text-[#62635F]">{article.standardsMentioned.map(standard => <li key={standard}>{standard}</li>)}</ul></div>}</aside>
+            <div className="min-w-0 max-w-[720px]"><div className="space-y-12">{article.content.map((section,index) => <section key={index} id={`bolum-${index + 1}`} className="scroll-mt-28"><h2 className="mb-5 text-2xl font-medium leading-snug tracking-tight sm:text-3xl">{section.heading}</h2><div className="space-y-5 text-base leading-[1.9] text-[#4D514B]">{section.body.map((paragraph,paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div></section>)}</div><div className="mt-12 border-t border-[#191D20]/15 pt-7"><p className="mb-6 text-sm leading-relaxed text-[#62635F]">Bu rehber genel bilgilendirme amacıyla hazırlanmıştır. Uygulamanıza özel malzeme ve çalışma şartlarını teknik ekibimizle değerlendirebilirsiniz.</p><Button href="/teklif-iste" variant="accent">Uygulamanız için teklif iste ↗</Button></div></div>
           </div>
         </article>
-
-        {/* Related Articles */}
-        {relatedArticles.length > 0 && (
-          <div className="mt-10">
-            <h3 className="text-lg font-bold text-industrial-900 mb-4">
-              İlgili Diğer Teknik Kaynaklar
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {relatedArticles.map((rel) => (
-                <Link
-                  key={rel.id}
-                  href={`/teknik-bilgi/${rel.slug}`}
-                  className="p-4 bg-white border border-industrial-200 rounded-xl hover:border-industrial-400 transition-colors flex flex-col justify-between"
-                >
-                  <div>
-                    <span className="text-[10px] font-mono text-steel-darkblue block uppercase mb-1">
-                      {rel.category}
-                    </span>
-                    <h4 className="text-xs sm:text-sm font-bold text-industrial-900 line-clamp-2 leading-snug">
-                      {rel.title}
-                    </h4>
-                  </div>
-                  <div className="mt-3 text-[11px] font-mono text-steel-blue flex items-center gap-1">
-                    <span>Devamını Oku</span>
-                    <ArrowRightIcon className="w-3 h-3" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+        {relatedArticles.length > 0 && <section className="mt-20 border-t border-[#191D20]/15 pt-10"><div className="mb-8 flex flex-wrap items-end justify-between gap-4"><h2 className="text-3xl font-medium tracking-tight">Okumaya devam edin.</h2><Link href="/teknik-bilgi" className="text-sm text-[#96350B] underline underline-offset-4">Tüm rehberler</Link></div><div className="grid gap-8 md:grid-cols-3">{relatedArticles.map(related => <Link key={related.id} href={`/teknik-bilgi/${related.slug}`} className="group flex flex-col border-t border-[#191D20]/20 pt-5"><p className="mb-4 text-xs text-[#62635F]">{related.category} / {related.readingTimeMinutes} dk</p><h3 className="mb-6 text-xl font-medium leading-snug group-hover:text-[#96350B]">{related.title}</h3><span className="mt-auto inline-flex items-center gap-6 text-sm">Rehberi oku <ArrowRightIcon className="h-4 w-4" /></span></Link>)}</div></section>}
       </Container>
     </div>
   );

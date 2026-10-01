@@ -1,19 +1,12 @@
 import React from "react";
+import Image from "next/image";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import {
-  ShieldCheckIcon,
-  FactoryIcon,
-  ClockIcon,
-  DocumentTextIcon,
-  CheckCircleIcon,
-  ArrowRightIcon,
-  PhoneIcon,
-  WhatsappIcon,
-} from "@/components/icons/Icons";
+
 import { companyData } from "@/data/company";
 
 export const metadata: Metadata = {
@@ -89,197 +82,15 @@ const EXPORT_FACTS = [
 
 export default function ExportPage() {
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <Container>
-        <Breadcrumb
-          items={[{ label: "Uluslararası Standartlar & İhracat" }]}
-          className="mb-6"
-        />
-
-        {/* Hero Section */}
-        <div className="bg-night text-white border border-industrial-800 rounded-xl p-8 sm:p-14 mb-12 relative overflow-hidden shadow-xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rust/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 max-w-3xl">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-2.5 py-1 bg-rust text-white text-[11px] font-mono font-bold uppercase tracking-wider rounded-md">
-                KÜRESEL İMALAT & İHRACAT
-              </span>
-              <span className="px-2.5 py-1 bg-industrial-800 text-industrial-300 text-[11px] font-mono border border-industrial-700 rounded-md">
-                ASME / DIN / EN / ISO
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Uluslararası Standartlarda Conta İmalatı & Global Lojistik
-            </h1>
-
-            <p className="mt-5 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              İstanbul merkezli tesislerimizde, dünya denizcilik filolarına, petrokimya rafinerilerine ve enerji santrallerine ASME ve DIN normlarında sızdırmazlık ürünleri üretiyoruz. Tüm ihracat siparişlerimiz EN 10204 3.1 sertifikası ve ISPM 15 ihracat ambalajıyla sevk edilir.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button href="/teklif-iste" variant="accent" size="lg" className="rounded-lg font-semibold">
-                <span>İhracat Teklifi Talep Et</span>
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
-              </Button>
-
-              <Link
-                href="/en/export"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-industrial-800 hover:bg-industrial-700 text-white text-sm font-mono font-bold rounded-lg border border-industrial-700 transition-colors"
-              >
-                <span>Switch to English Version</span>
-                <span className="text-rust">→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Export Metric Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 font-mono">
-          {EXPORT_FACTS.map((fact, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-industrial-200 p-6 rounded-xl text-center shadow-xs"
-            >
-              <div className="text-2xl sm:text-3xl font-extrabold text-rust mb-1">
-                {fact.value}
-              </div>
-              <div className="text-xs text-industrial-600 font-medium uppercase tracking-wider">
-                {fact.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Standards Grid */}
-        <div className="mb-12">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-mono font-bold text-rust uppercase tracking-widest block mb-2">
-              MÜHENDİSLİK UYUMLULUĞU
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-night tracking-tight">
-              Tam Kapsamlı Standartlar ve Kalite Normları
-            </h2>
-            <p className="mt-3 text-sm text-industrial-600">
-              Üretim hatlarımızda üretilen her conta, ilgili uluslararası normun ölçüsel toleranslarına, sarım sıklığına ve malzeme saflığına harfiyen uygun olarak imal edilir.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {STANDARDS_GRID.map((std, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-industrial-200 p-6 rounded-xl hover:border-rust transition-all shadow-xs flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-rust bg-rust/10 px-2 py-0.5 rounded">
-                      {std.standard}
-                    </span>
-                    <CheckCircleIcon className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <h3 className="text-base font-bold text-night mb-2">
-                    {std.title}
-                  </h3>
-                  <p className="text-xs text-industrial-600 leading-relaxed mb-4">
-                    {std.description}
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-industrial-100 text-[11px] font-mono text-industrial-400">
-                  {std.scope}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Global Logistics and Delivery Box */}
-        <div className="bg-white border border-industrial-200 rounded-xl p-8 sm:p-12 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="text-xs font-mono font-bold text-rust uppercase tracking-widest block mb-2">
-                LOJİSTİK & TESLİMAT ALTYAPISI
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-night tracking-tight mb-4">
-                İstanbul'dan Dünyanın Tüm Limanlarına ve Tesislerine
-              </h2>
-              <p className="text-sm text-industrial-600 leading-relaxed mb-6">
-                Stratejik coğrafi konumumuz sayesinde, Avrupa, Orta Doğu, Kuzey Afrika ve Karadeniz havzasına hızlı transit süreleriyle teslimat sağlıyoruz:
-              </p>
-
-              <div className="space-y-3.5 text-xs font-mono">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Express Hava Kargo (DHL / FedEx / UPS):</strong>
-                    <span className="text-industrial-500">Avrupa ve Körfez ülkelerine 24-48 saatte kapı teslimat.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Deniz Yolu Konteyner (Ambarlı & Tuzla Limanları):</strong>
-                    <span className="text-industrial-500">Tersane kuru havuz (drydock) projeleri ve büyük tonajlı sevkiyatlar için FCL/LCL.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Çoklu Para Birimi & Incoterms:</strong>
-                    <span className="text-industrial-500">EUR, USD veya GBP cinsinden EXW, FOB, CIF veya DAP teslim seçenekleri.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-industrial-900 text-white p-6 sm:p-8 rounded-xl border border-industrial-800">
-              <h3 className="text-lg font-bold mb-2 text-white">İhracat Departmanı İletişim</h3>
-              <p className="text-xs text-industrial-300 leading-relaxed mb-6">
-                Yurt dışı projeleriniz, gümrük süreçleriniz ve uluslararası şartnameli ihaleleriniz için doğrudan ihracat mühendislerimizle görüşün.
-              </p>
-
-              <div className="space-y-3 text-xs font-mono mb-6">
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">Santral:</span>
-                  <a href={`tel:${companyData.phone}`} className="text-white hover:text-rust font-bold">
-                    {companyData.phoneFormatted}
-                  </a>
-                </div>
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">E-posta:</span>
-                  <a href={`mailto:${companyData.quoteEmail}`} className="text-rust hover:underline font-bold">
-                    {companyData.quoteEmail}
-                  </a>
-                </div>
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">WhatsApp Export:</span>
-                  <a
-                    href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent("Merhaba Emek Conta, ihracat ve uluslararası teslimat hakkında bilgi almak istiyorum.")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:underline font-bold"
-                  >
-                    {companyData.whatsappFormatted}
-                  </a>
-                </div>
-              </div>
-
-              <Button href="/teklif-iste" variant="accent" className="w-full text-center justify-center font-bold">
-                İhracat Teklif Formunu Aç
-              </Button>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </div>
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12"><Container>
+      <Breadcrumb items={[{ label: "Uluslararası Standartlar & İhracat" }]} className="mb-10" />
+      <PageHeading eyebrow="Emek Conta / Uluslararası çözümler" title={<>İstanbul'dan,<br />dünya standartlarına.</>} description="Sanayi tesisleri, rafineriler ve denizcilik projeleri için ASME, DIN ve EN normlarında sızdırmazlık ürünleri. Teknik şartnamenize uygun üretim ve teslimat seçeneklerini görüşelim." />
+      <div className="mb-12 flex flex-wrap items-center gap-6"><Button href="/teklif-iste" variant="accent" size="lg">İhracat teklifi iste ↗</Button><Link href="/en/export" className="border-b border-[#191D20]/30 pb-2 text-sm hover:text-[#96350B]">View in English ↗</Link></div>
+      <div className="relative mb-12 aspect-[4/3] overflow-hidden rounded-xl sm:aspect-[16/7]"><Image src="/images/hero/hero-slide-2.webp" alt="Uluslararası flanş standartlarına yönelik levha ve sızdırmazlık contaları" fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" /></div>
+      <dl className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">{EXPORT_FACTS.map(fact => <div key={fact.label} className="border-t border-[#191D20]/20 pt-6"><dt className="text-xs text-[#62635F]">{fact.label}</dt><dd className="mt-4 text-2xl font-medium tracking-tight text-[#96350B] sm:text-3xl">{fact.value}</dd></div>)}</dl>
+      <section className="mb-16"><p className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">Teknik kapsam</p><h2 className="mb-10 text-3xl font-medium tracking-tight sm:text-4xl">Standartlar ve kalite normları.</h2><div className="grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">{STANDARDS_GRID.map(standard => <div key={standard.standard} className="border-t border-[#191D20]/20 pt-6"><p className="mb-5 text-xs font-medium text-[#96350B]">{standard.standard}</p><h3 className="mb-4 text-xl font-medium leading-snug">{standard.title}</h3><p className="text-sm leading-relaxed text-[#62635F]">{standard.description}</p><p className="mt-5 text-xs leading-relaxed text-[#62635F]">{standard.scope}</p></div>)}</div></section>
+      <section className="mb-12 grid gap-8 rounded-xl bg-[#191D20] p-7 text-white sm:p-10 lg:grid-cols-2"><div><p className="mb-5 text-[11px] uppercase tracking-[0.2em] text-[#DD895F]">Lojistik ve teslimat</p><h2 className="mb-5 text-3xl font-medium leading-tight tracking-tight">Üretim kadar,<br />ulaştırmak da önemli.</h2><p className="max-w-md text-sm leading-relaxed text-[#B9BCB8]">Projenizin miktar, ambalaj ve teslimat ihtiyaçlarına göre hava veya deniz yolu sevkiyat seçeneklerini birlikte değerlendirelim.</p></div><ul className="space-y-6 text-sm text-[#D1D3CC]">{[{ title: "Express hava kargo", description: "DHL, FedEx ve UPS ile sevkiyat seçenekleri." }, { title: "Deniz yolu taşımacılığı", description: "Büyük tonajlı talepler için FCL / LCL sevkiyat." }, { title: "Teslim ve ödeme koşulları", description: "EUR, USD ve GBP; EXW, FOB, CIF veya DAP seçenekleri." }].map(item => <li key={item.title} className="border-t border-white/20 pt-4"><h3 className="mb-2 font-medium text-[#DD895F]">{item.title}</h3><p className="text-[#B9BCB8]">{item.description}</p></li>)}</ul></section>
+      <section className="flex flex-col justify-between gap-6 border-t border-[#191D20]/15 pt-10 lg:flex-row lg:items-center"><div><h2 className="text-2xl font-medium tracking-tight">Projenizin gereksinimlerini paylaşın.</h2><a href={`mailto:${companyData.quoteEmail}`} className="mt-4 inline-block text-sm text-[#96350B] underline underline-offset-4">{companyData.quoteEmail}</a></div><div className="flex flex-wrap gap-4"><Button href="/teklif-iste" variant="accent" size="lg">İhracat teklif formu ↗</Button><a href={`https://wa.me/${companyData.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Merhaba Emek Conta, ihracat ve uluslararası teslimat hakkında bilgi almak istiyorum.")}`} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-[#191D20]/25 px-6 py-4 text-sm font-medium hover:border-[#96350B] hover:text-[#96350B]">WhatsApp ile görüşün</a></div></section>
+    </Container></div>
   );
 }

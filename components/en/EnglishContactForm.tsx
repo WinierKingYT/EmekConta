@@ -119,24 +119,24 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 border border-emerald-300 rounded-full flex items-center justify-center mx-auto mb-5">
           <CheckCircleIcon className="w-8 h-8" />
         </div>
-        <span className="text-xs font-mono font-bold tracking-widest text-emerald-700 uppercase block mb-1">
+        <span className="text-xs font-sans font-bold tracking-widest text-emerald-700 uppercase block mb-1">
           EXPORT INQUIRY RECEIVED
         </span>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-industrial-900 tracking-tight">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#191D20] tracking-tight">
           Thank You, {formData.fullName}
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-industrial-600 max-w-md mx-auto leading-relaxed">
+        <p className="mt-4 text-sm sm:text-base text-[#62635F] max-w-md mx-auto leading-relaxed">
           Your technical inquiry has been assigned to our export engineering department. A formal proforma quotation with CIF/FOB terms will be sent to <strong>{formData.email}</strong> within business hours.
         </p>
 
-        <div className="mt-6 p-4 bg-industrial-50 border border-industrial-200 max-w-sm mx-auto rounded-lg font-mono">
-          <span className="text-[11px] text-industrial-500 uppercase tracking-wider block">
+        <div className="mt-6 p-4 bg-[#F2EFE9] border border-[#D9D5CD] max-w-sm mx-auto rounded-lg font-sans">
+          <span className="text-[11px] text-[#62635F] uppercase tracking-wider block">
             INQUIRY REFERENCE:
           </span>
           <span className="text-xl font-bold text-rust">{referenceCode}</span>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-industrial-200 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
+        <div className="mt-8 pt-6 border-t border-[#D9D5CD] flex flex-wrap items-center justify-center gap-4 text-xs font-sans">
           <a
             href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Hello Emek Gaskets, inquiring about export RFQ #${referenceCode}.`)}`}
             target="_blank"
@@ -152,7 +152,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-industrial-200 p-6 sm:p-10 shadow-xs space-y-6 rounded-xl">
+    <form onSubmit={handleSubmit} className="bg-white border border-[#D9D5CD] p-6 sm:p-10 shadow-xs space-y-6 rounded-xl">
       <input
         type="text"
         name="website_hp"
@@ -171,16 +171,16 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
 
       {/* Contact Information */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-rust">01.</span>
-          <h3 className="font-bold text-sm text-industrial-900 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#D9D5CD]">
+          <span className="font-sans text-xs font-bold text-rust">01.</span>
+          <h3 className="font-bold text-sm text-[#191D20] uppercase tracking-wide">
             Company & Contact Details
           </h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="fullName" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="fullName" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Contact Name <span className="text-red-600">*</span>
             </label>
             <input
@@ -191,12 +191,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.fullName}
               onChange={handleInputChange}
               placeholder="e.g. Captain James Smith / Chief Engineer"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="companyName" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="companyName" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Company / Vessel Name
             </label>
             <input
@@ -206,12 +206,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.companyName}
               onChange={handleInputChange}
               placeholder="e.g. Baltic Shipping Corp. / Petrotech Refinery"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="email" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Business E-mail <span className="text-red-600">*</span>
             </label>
             <input
@@ -222,12 +222,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.email}
               onChange={handleInputChange}
               placeholder="procurement@company.com"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="phone" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Telephone / WhatsApp (with Country Code) <span className="text-red-600">*</span>
             </label>
             <input
@@ -238,12 +238,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.phone}
               onChange={handleInputChange}
               placeholder="+44 20 1234 5678"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label htmlFor="country" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="country" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Destination Country & Port / City
             </label>
             <input
@@ -253,7 +253,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.country}
               onChange={handleInputChange}
               placeholder="e.g. Rotterdam, Netherlands / Houston, USA / Dubai, UAE"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
         </div>
@@ -261,16 +261,16 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
 
       {/* Technical Requirements */}
       <div>
-        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-industrial-200">
-          <span className="font-mono text-xs font-bold text-rust">02.</span>
-          <h3 className="font-bold text-sm text-industrial-900 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#D9D5CD]">
+          <span className="font-sans text-xs font-bold text-rust">02.</span>
+          <h3 className="font-bold text-sm text-[#191D20] uppercase tracking-wide">
             Gasket Specifications & Inquiry Scope
           </h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="productName" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="productName" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Product Description / Type
             </label>
             <input
@@ -280,12 +280,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.productName}
               onChange={handleInputChange}
               placeholder="e.g. Spiral Wound Gasket / Pure Graphite Rings"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="standard" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="standard" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Applicable Standard
             </label>
             <select
@@ -293,7 +293,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               name="standard"
               value={formData.standard}
               onChange={handleInputChange}
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white font-mono"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white font-sans"
             >
               <option value="ASME B16.20">ASME B16.20 (Spiral Wound)</option>
               <option value="ASME B16.21">ASME B16.21 (Non-Metallic Flat)</option>
@@ -305,7 +305,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
           </div>
 
           <div>
-            <label htmlFor="dimensions" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="dimensions" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Flange Size & Class / DN & PN
             </label>
             <input
@@ -315,12 +315,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.dimensions}
               onChange={handleInputChange}
               placeholder="e.g. 4 inch Class 300 / DN 150 PN 40"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div>
-            <label htmlFor="quantity" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="quantity" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Estimated Quantity (Pieces / Sets)
             </label>
             <input
@@ -330,12 +330,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.quantity}
               onChange={handleInputChange}
               placeholder="e.g. 250 pcs / 10 sets"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 font-mono focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] font-sans focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label htmlFor="operatingConditions" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="operatingConditions" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Operating Parameters (Medium, Temp, Pressure)
             </label>
             <input
@@ -345,12 +345,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.operatingConditions}
               onChange={handleInputChange}
               placeholder="e.g. Superheated Steam @ 420°C, 45 Bar / Heavy Fuel Oil"
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white"
             />
           </div>
 
           <div className="sm:col-span-2">
-            <label htmlFor="notes" className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+            <label htmlFor="notes" className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
               Additional Details / Invoicing & Delivery Instructions
             </label>
             <textarea
@@ -360,7 +360,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
               value={formData.notes}
               onChange={handleInputChange}
               placeholder="Please specify Incoterms (EXW, FOB, CIF), required delivery date, or special MTR certification requirements..."
-              className="w-full px-3.5 py-2.5 bg-industrial-50 border border-industrial-300 rounded-lg text-sm text-industrial-900 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white resize-none"
+              className="w-full px-3.5 py-2.5 bg-[#F2EFE9] border border-[#CFCBC3] rounded-lg text-sm text-[#191D20] focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white resize-none"
             />
           </div>
         </div>
@@ -368,12 +368,12 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
 
       {/* CAD File / Technical Drawing Upload */}
       <div>
-        <label className="block text-xs font-mono font-medium text-industrial-700 mb-1.5">
+        <label className="block text-xs font-sans font-medium text-[#4D514B] mb-1.5">
           Attach Technical Drawing / Specification (Optional)
         </label>
-        <div className="border-2 border-dashed border-industrial-300 p-5 rounded-lg text-center bg-industrial-50 hover:bg-white transition-colors">
+        <div className="border-2 border-dashed border-[#CFCBC3] p-5 rounded-lg text-center bg-[#F2EFE9] hover:bg-white transition-colors">
           <UploadCloudIcon className="w-8 h-8 text-industrial-400 mx-auto mb-2" />
-          <p className="text-xs text-industrial-600 mb-1">
+          <p className="text-xs text-[#62635F] mb-1">
             Upload PDF, DWG, DXF, STEP, PNG, or JPG files (Max 15MB)
           </p>
           <input
@@ -381,7 +381,7 @@ export function EnglishContactForm({ defaultProduct }: EnglishContactFormProps) 
             id="files"
             multiple
             onChange={handleFileChange}
-            className="text-xs font-mono text-industrial-500 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-rust file:text-white hover:file:bg-rust-dark cursor-pointer"
+            className="text-xs font-sans text-[#62635F] file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-rust file:text-white hover:file:bg-rust-dark cursor-pointer"
           />
         </div>
       </div>

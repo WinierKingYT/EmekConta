@@ -4,12 +4,8 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { articlesData } from "@/data/articles";
-import {
-  DocumentTextIcon,
-  ArrowRightIcon,
-  RulerIcon,
-  ShieldCheckIcon,
-} from "@/components/icons/Icons";
+import { ArrowRightIcon } from "@/components/icons/Icons";
+import { PageHeading } from "@/components/ui/PageHeading";
 
 export const metadata: Metadata = {
   title: "Teknik Bilgi Merkezi | Endüstriyel Conta ve Sızdırmazlık Rehberi",
@@ -26,90 +22,11 @@ export default function TechnicalKnowledgePage() {
   const categories = Array.from(new Set(articlesData.map((a) => a.category)));
 
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[{ label: "Teknik Bilgi" }]}
-          className="mb-6"
-        />
-
-        {/* Page Header */}
-        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
-              MÜHENDİSLİK KÜTÜPHANESİ
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight">
-            Teknik Bilgi & Standartlar Merkezi
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-industrial-600 max-w-3xl leading-relaxed">
-            Satın alma uzmanları, bakım şefleri ve mekanik tasarım mühendisleri için hazırlanmış; ASME/DIN flanş standartları, malzeme mukavemetleri ve sızdırmazlık seçim kriterlerine dair teknik kaynaklar.
-          </p>
-
-          {/* Quick Categories filter buttons */}
-          <div className="mt-6 pt-4 border-t border-industrial-100 flex flex-wrap gap-2 text-xs font-mono">
-            <span className="text-industrial-500 py-1 mr-1">Kategoriler:</span>
-            {categories.map((cat, idx) => (
-              <span
-                key={idx}
-                className="px-2.5 py-1 bg-industrial-100 text-industrial-800 border border-industrial-200 rounded-md"
-              >
-                {cat}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {articlesData.map((article) => (
-            <article
-              key={article.id}
-              className="group bg-white border border-industrial-200 rounded-xl hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between p-6 sm:p-8"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
-                  <span className="text-steel-darkblue font-semibold uppercase">
-                    {article.category}
-                  </span>
-                  <span>{article.readingTimeMinutes} dk okuma</span>
-                </div>
-
-                <h2 className="text-lg font-bold text-industrial-900 group-hover:text-steel-blue transition-colors leading-snug">
-                  <Link href={`/teknik-bilgi/${article.slug}`}>
-                    {article.title}
-                  </Link>
-                </h2>
-
-                <p className="mt-3 text-xs sm:text-sm text-industrial-600 line-clamp-3 leading-relaxed">
-                  {article.summary}
-                </p>
-
-                {article.standardsMentioned && article.standardsMentioned.length > 0 && (
-                  <div className="mt-4 pt-3 border-t border-industrial-100 flex flex-wrap gap-1">
-                    {article.standardsMentioned.map((std, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700 rounded-md"
-                      >
-                        {std}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-industrial-100 flex items-center justify-between text-xs font-mono font-medium text-industrial-800 group-hover:text-steel-blue">
-                <span>Teknik Analizi İncele</span>
-                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </article>
-          ))}
-        </div>
-      </Container>
-    </div>
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12"><Container>
+      <Breadcrumb items={[{ label: "Teknik Bilgi" }]} className="mb-10" />
+      <PageHeading eyebrow="Emek Conta / Teknik kütüphane" title={<>Doğru seçim,<br />bilgiyle başlar.</>} description="Malzemeler, çalışma şartları ve standartlar üzerine teknik rehberler. Sızdırmazlık ürünlerini daha yakından tanıyın; uygulamanız için doğru soruları sorun." />
+      <nav aria-label="Rehber konuları" className="mb-14 flex flex-wrap gap-3 border-y border-[#191D20]/15 py-6">{categories.map((category, index) => <a key={category} href={`#konu-${index + 1}`} className="rounded-full border border-[#CFCBC3] px-4 py-2.5 text-xs font-medium text-[#4D514B] transition-colors hover:border-[#B7410E] hover:text-[#96350B] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust">{category}</a>)}</nav>
+      <div className="space-y-14">{categories.map((category, index) => <section key={category} id={`konu-${index + 1}`} className="scroll-mt-28"><div className="mb-7 flex items-center gap-4"><span className="text-xs text-[#96350B]">{String(index + 1).padStart(2, "0")}</span><h2 className="text-2xl font-medium tracking-tight">{category}</h2></div><div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">{articlesData.filter(article => article.category === category).map(article => <Link key={article.id} href={`/teknik-bilgi/${article.slug}`} className="group flex flex-col rounded-xl border border-[#D9D5CD] bg-[#F8F6F2] p-6 sm:p-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust"><p className="mb-6 text-xs text-[#62635F]">{article.readingTimeMinutes} dk okuma</p><h3 className="text-xl font-medium leading-snug tracking-tight group-hover:text-[#96350B]">{article.title}</h3><p className="mb-6 mt-4 text-sm leading-relaxed text-[#62635F]">{article.summary}</p>{article.standardsMentioned && article.standardsMentioned.length > 0 && <p className="mb-6 text-xs leading-relaxed text-[#62635F]">{article.standardsMentioned.join(" / ")}</p>}<span className="mt-auto inline-flex items-center gap-6 border-t border-[#191D20]/15 pt-5 text-sm font-medium">Rehberi oku <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></Link>)}</div></section>)}</div>
+    </Container></div>
   );
 }

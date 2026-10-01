@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
@@ -89,200 +90,17 @@ const EXPORT_FACTS = [
 
 export default function EnglishExportPage() {
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12">
       <Container>
-        <Breadcrumb
-          items={[
-            { label: "Home", href: "/en" },
-            { label: "Export & Standards" },
-          ]}
-          className="mb-6"
-        />
-
-        {/* Hero Section */}
-        <div className="bg-night text-white border border-industrial-800 rounded-xl p-8 sm:p-14 mb-12 relative overflow-hidden shadow-xl">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rust/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 max-w-3xl">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="px-2.5 py-1 bg-rust text-white text-[11px] font-mono font-bold uppercase tracking-wider rounded-md">
-                GLOBAL MANUFACTURING & EXPORT
-              </span>
-              <span className="px-2.5 py-1 bg-industrial-800 text-industrial-300 text-[11px] font-mono border border-industrial-700 rounded-md">
-                ASME / DIN / EN / ISO COMPLIANT
-              </span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              International Standard Industrial Gaskets & Global Supply
-            </h1>
-
-            <p className="mt-5 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              Emek Gaskets manufactures precision sealing components from our Istanbul facility for world maritime fleets, offshore drydocks, petrochemical refineries, and power generation facilities across 25+ countries. Every export order is supplied with EN 10204 3.1 Mill Test Reports and seaworthy packaging.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button href="/en/contact" variant="accent" size="lg" className="rounded-lg font-semibold">
-                <span>Request International RFQ</span>
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
-              </Button>
-
-              <Link
-                href="/ihracat"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-industrial-800 hover:bg-industrial-700 text-white text-sm font-mono font-bold rounded-lg border border-industrial-700 transition-colors"
-              >
-                <span>Türkçe Versiyonu İncele</span>
-                <span className="text-rust">→</span>
-              </Link>
-            </div>
-          </div>
+        <Breadcrumb language="en" items={[{ label: "Export & Standards" }]} className="mb-10" />
+        <div className="grid gap-10 pb-14 lg:grid-cols-2 lg:items-center">
+          <div><PageHeading eyebrow="Emek Gaskets / International supply" title={<>Made in Istanbul.<br />Connected worldwide.</>} description="Industrial sealing products for maritime, energy and process industries. Discuss your standards, documentation and delivery requirements with our export team." /><Button href="/en/contact" variant="accent" size="lg">Discuss your export project <span className="ml-5" aria-hidden="true">↗</span></Button></div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#EAE7E1]"><Image src="/images/hero/hero-slide-2.webp" alt="Industrial gasket sheets and precision sealing components" fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" /></div>
         </div>
-
-        {/* Export Metric Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 font-mono">
-          {EXPORT_FACTS.map((fact, idx) => (
-            <div
-              key={idx}
-              className="bg-white border border-industrial-200 p-6 rounded-xl text-center shadow-xs"
-            >
-              <div className="text-2xl sm:text-3xl font-extrabold text-rust mb-1">
-                {fact.value}
-              </div>
-              <div className="text-xs text-industrial-600 font-medium uppercase tracking-wider">
-                {fact.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Standards Grid */}
-        <div className="mb-12">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-mono font-bold text-rust uppercase tracking-widest block mb-2">
-              ENGINEERING INTEGRITY
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-night tracking-tight">
-              Rigorous Compliance with Global Sealing Norms
-            </h2>
-            <p className="mt-3 text-sm text-industrial-600">
-              Each gasket manufactured on our automated production lines adheres strictly to dimensional tolerances, winding density, and material purity defined by international standards.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {STANDARDS_GRID.map((std, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-industrial-200 p-6 rounded-xl hover:border-rust transition-all shadow-xs flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono text-xs font-bold text-rust bg-rust/10 px-2 py-0.5 rounded">
-                      {std.standard}
-                    </span>
-                    <CheckCircleIcon className="w-5 h-5 text-emerald-600" />
-                  </div>
-                  <h3 className="text-base font-bold text-night mb-2">
-                    {std.title}
-                  </h3>
-                  <p className="text-xs text-industrial-600 leading-relaxed mb-4">
-                    {std.description}
-                  </p>
-                </div>
-                <div className="pt-3 border-t border-industrial-100 text-[11px] font-mono text-industrial-400">
-                  {std.scope}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Global Logistics and Delivery Box */}
-        <div className="bg-white border border-industrial-200 rounded-xl p-8 sm:p-12 mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="text-xs font-mono font-bold text-rust uppercase tracking-widest block mb-2">
-                LOGISTICS & DELIVERY
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-night tracking-tight mb-4">
-                Fast Worldwide Dispatch from Istanbul
-              </h2>
-              <p className="text-sm text-industrial-600 leading-relaxed mb-6">
-                Positioned strategically at the crossroads of Europe and Asia, we offer seamless global logistics to international seaports, shipyards, and industrial zones:
-              </p>
-
-              <div className="space-y-3.5 text-xs font-mono">
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Air Courier Express (DHL / FedEx / UPS):</strong>
-                    <span className="text-industrial-500">24 to 48-hour delivery across Europe, the Middle East, and North America for emergency plant shutdowns and vessel repairs.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Ocean Container Freight (Ambarlı & Tuzla Ports):</strong>
-                    <span className="text-industrial-500">FCL and LCL containerized freight for shipyard drydocks, OEM bulk orders, and industrial EPC contracts.</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-md bg-industrial-100 flex items-center justify-center shrink-0 text-rust font-bold">
-                    ✓
-                  </div>
-                  <div>
-                    <strong className="text-night block">Multi-Currency Invoicing & Flexible Incoterms:</strong>
-                    <span className="text-industrial-500">Quotations provided in EUR (€), USD ($), or GBP (£) under EXW, FOB, CIF, or DAP delivery terms.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-industrial-900 text-white p-6 sm:p-8 rounded-xl border border-industrial-800">
-              <h3 className="text-lg font-bold mb-2 text-white">Global Sales & Engineering Desk</h3>
-              <p className="text-xs text-industrial-300 leading-relaxed mb-6">
-                Contact our international engineering desk for specification review, material cross-referencing, and rapid export quotation:
-              </p>
-
-              <div className="space-y-3 text-xs font-mono mb-6">
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">Headquarters Phone:</span>
-                  <a href={`tel:${companyData.phone}`} className="text-white hover:text-rust font-bold">
-                    {companyData.phoneFormatted}
-                  </a>
-                </div>
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">Export E-mail:</span>
-                  <a href={`mailto:${companyData.quoteEmail}`} className="text-rust hover:underline font-bold">
-                    {companyData.quoteEmail}
-                  </a>
-                </div>
-                <div className="p-3 bg-industrial-800 border border-industrial-700 rounded-lg flex items-center justify-between">
-                  <span className="text-industrial-400">WhatsApp Export Desk:</span>
-                  <a
-                    href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello Emek Gaskets, I am inquiring about international export and gasket supply.")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:underline font-bold"
-                  >
-                    {companyData.whatsappFormatted}
-                  </a>
-                </div>
-              </div>
-
-              <Button href="/en/contact" variant="accent" className="w-full text-center justify-center font-bold">
-                Submit Export RFQ Inquiry
-              </Button>
-            </div>
-          </div>
-        </div>
+        <dl className="grid grid-cols-2 gap-8 border-y border-[#191D20]/15 py-10 lg:grid-cols-4">{EXPORT_FACTS.map(fact => <div key={fact.label}><dd className="mb-3 text-2xl font-medium tracking-tight text-[#96350B] sm:text-3xl">{fact.value}</dd><dt className="text-xs text-[#62635F]">{fact.label}</dt></div>)}</dl>
+        <section className="py-16 sm:py-24"><p className="mb-5 text-[11px] uppercase tracking-[0.2em] text-[#96350B]">01 / Standards & documentation</p><h2 className="mb-10 max-w-2xl text-3xl font-medium tracking-tight sm:text-4xl">A shared language for industrial precision.</h2><div className="grid gap-x-12 md:grid-cols-2">{STANDARDS_GRID.map((standard,index) => <article key={standard.standard} className="border-t border-[#191D20]/15 py-8"><div className="mb-5 flex justify-between text-xs text-[#96350B]"><span>{standard.standard}</span><span className="text-[#62635F]">{String(index+1).padStart(2,"0")}</span></div><h3 className="mb-3 text-xl font-medium">{standard.title}</h3><p className="text-sm leading-relaxed text-[#62635F]">{standard.description}</p><p className="mt-5 text-xs leading-relaxed text-[#62635F]">{standard.scope}</p></article>)}</div></section>
       </Container>
+      <section className="bg-[#191D20] py-16 text-white sm:py-24"><Container className="grid gap-12 lg:grid-cols-2"><div><p className="mb-5 text-[11px] uppercase tracking-[0.2em] text-[#DD895F]">02 / Logistics & delivery</p><h2 className="mb-6 text-3xl font-medium tracking-tight sm:text-4xl">From our workshop<br />to your operation.</h2><p className="max-w-lg text-sm leading-relaxed text-[#B9BCB8]">Air courier and ocean freight options from Istanbul. Share your destination, quantity and required delivery date so our team can prepare a suitable quotation.</p></div><div><ul className="mb-8 divide-y divide-white/15 text-sm">{["Air courier for urgent maintenance requirements", "Ocean freight for bulk and project orders", "EUR, USD or GBP quotations", "EXW, FOB, CIF or DAP delivery terms"].map(item => <li key={item} className="py-4">{item}</li>)}</ul><a href={`mailto:${companyData.quoteEmail}`} className="mb-6 inline-block text-lg text-[#DD895F] hover:underline break-all">{companyData.quoteEmail}</a><div><Button href="/en/contact" variant="accent" size="lg">Request an export quote <span className="ml-5" aria-hidden="true">↗</span></Button></div></div></Container></section>
     </div>
   );
 }

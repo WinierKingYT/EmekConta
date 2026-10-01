@@ -1,18 +1,12 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import {
-  ShieldCheckIcon,
-  FactoryIcon,
-  RulerIcon,
-  CheckCircleIcon,
-  ArrowRightIcon,
-  ClockIcon,
-} from "@/components/icons/Icons";
-import { companyData } from "@/data/company";
+
+
 
 export const metadata: Metadata = {
   title: "Hakkımızda | Endüstriyel Sızdırmazlık Çözümleri",
@@ -54,149 +48,15 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12">
       <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[{ label: "Hakkımızda" }]}
-          className="mb-6"
-        />
-
-        {/* Page Header */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
-              KURUMSAL PROFİL
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight">
-            Endüstriyel Sızdırmazlıkta Uzmanlık ve Güven
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-industrial-600 max-w-3xl leading-relaxed">
-            Emek Conta; yalnızca conta satan bir aracı firma değil, teknik resim, numune veya uluslararası standartlara göre üretim yapan bağımsız bir mühendislik ve imalat kuruluşudur.
-          </p>
-        </div>
-
-        {/* Section 1: Ne Yapıyoruz? */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <h2 className="text-xl sm:text-2xl font-bold text-industrial-900 mb-4">
-                Ne Yapıyoruz?
-              </h2>
-              <p className="text-sm sm:text-base text-industrial-700 leading-relaxed mb-4">
-                Boru hatları, buhar kazanları, ısı eşanjörleri, türbinler, pompalar ve gemi makineleri gibi basınç ve sıcaklık altında çalışan tüm endüstriyel ekipmanların sızdırmazlık güvenliğini sağlıyoruz.
-              </p>
-              <p className="text-sm text-industrial-600 leading-relaxed">
-                ASME, DIN ve EN standartlarında spiral sarımlı contalar, saf grafit levha contalar, asbestsiz klingrit contalar, kauçuk (EPDM, NBR, Viton, Silikon) parçalar, saf PTFE ve örgü salmastraların imalatını ve toptan tedariğini gerçekleştiriyoruz.
-              </p>
-            </div>
-
-            {/* Industrial Spec Box */}
-            <div className="lg:col-span-5 bg-industrial-900 text-white p-6 border border-industrial-800 rounded-md">
-              <div className="text-xs font-mono text-steel-blue uppercase tracking-wider mb-2">
-                TEMEL İMALAT YAKLAŞIMI
-              </div>
-              <div className="text-lg font-bold text-white mb-3">
-                Doğru Akışkan, Doğru Malzeme, Sıfır Sızıntı.
-              </div>
-              <p className="text-xs text-industrial-300 leading-relaxed font-sans">
-                Yanlış seçilen bir conta, fabrikalarda milyonlarca liralık duruşlara ve denizcilikte ciddi güvenlik risklerine neden olur. Amacımız her flanş için çalışma sıcaklığı, basınç ve akışkana en uygun çözümü sunmaktır.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Section 2: Üretim Kabiliyeti & Makine Parkuru */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
-              <RulerIcon className="w-5 h-5" />
-            </div>
-            <h3 className="font-bold text-base text-industrial-900 mb-2">
-              CAD & CNC Kesim
-            </h3>
-            <p className="text-xs sm:text-sm text-industrial-600 leading-relaxed">
-              AutoCAD, SolidWorks ve DXF formatlarındaki teknik resimler doğrudan CNC tezgâhlarımıza aktarılır. Sıfır kalıp maliyeti ile hassas kesim sağlanır.
-            </p>
-          </div>
-
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
-              <FactoryIcon className="w-5 h-5" />
-            </div>
-            <h3 className="font-bold text-base text-industrial-900 mb-2">
-              Spiral Sarım Tezgâhları
-            </h3>
-            <p className="text-xs sm:text-sm text-industrial-600 leading-relaxed">
-              ASME B16.20 standartlarında paslanmaz çelik (304, 316L) şerit ve saf grafit/PTFE dolgu ile helisel sarım contaları hassas gerginlikle imal ediyoruz.
-            </p>
-          </div>
-
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
-            <div className="w-10 h-10 bg-industrial-100 text-steel-darkblue flex items-center justify-center mb-4 rounded-md">
-              <ShieldCheckIcon className="w-5 h-5" />
-            </div>
-            <h3 className="font-bold text-base text-industrial-900 mb-2">
-              Kalite & Boyutsal Kontrol
-            </h3>
-            <p className="text-xs sm:text-sm text-industrial-600 leading-relaxed">
-              Üretilen her parti conta kumpas, mikrometre ve optik ölçüm cihazlarıyla et kalınlığı, iç/dış çap ve cıvata eksenleri açısından denetlenir.
-            </p>
-          </div>
-        </div>
-
-        {/* Section 3: Tarihçe (Milestones) */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
-              GELİŞİM SÜRECİ
-            </span>
-          </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-industrial-900 mb-8">
-            Kurumsal Gelişim ve Kilometre Taşları
-          </h2>
-
-          <div className="space-y-6">
-            {milestones.map((m, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col sm:flex-row sm:items-start gap-4 pb-6 border-b border-industrial-100 last:border-b-0 last:pb-0"
-              >
-                <div className="sm:w-28 shrink-0">
-                  <span className="font-mono text-xl font-extrabold text-steel-blue">
-                    {m.year}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-bold text-base text-industrial-900 mb-1">
-                    {m.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-industrial-600 leading-relaxed">
-                    {m.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA Card */}
-        <div className="bg-industrial-900 text-white p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-lg border border-industrial-800">
-          <div>
-            <h3 className="text-xl font-bold text-white">
-              Tesisiniz İçin Özel Sızdırmazlık Çözümü Mü Arıyorsunuz?
-            </h3>
-            <p className="text-xs sm:text-sm text-industrial-300 mt-1 max-w-xl">
-              Teknik ekibimiz numunenizi veya teknik çiziminizi inceleyerek en uygun malzeme spesifikasyonunu belirlesin.
-            </p>
-          </div>
-          <Button href="/teklif-iste" variant="accent" size="lg" className="shrink-0 w-full sm:w-auto">
-            Teknik Teklif İste
-          </Button>
-        </div>
+        <Breadcrumb items={[{ label: "Hakkımızda" }]} className="mb-10" />
+        <PageHeading eyebrow="Emek Conta / Hakkımızda" title={<>İşimizin özü,<br />detaya verdiğimiz emek.</>} description="Sanayi ve denizcilik için standart ve özel üretim sızdırmazlık çözümleri. Malzemeyi tanıyan, ölçüyü önemseyen ve uygulamanızın gereksinimlerine odaklanan bir üretim yaklaşımı." />
+        <figure className="mb-16"><div className="relative aspect-[4/3] overflow-hidden rounded-xl sm:aspect-[16/7]"><Image src="/images/hero/hero-slide-1.webp" alt="Atölye ortamında spiral sarımlı contalar ve hassas ölçüm kumpası" fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover object-[center_65%]" /></div><figcaption className="mt-4 flex flex-wrap justify-between gap-3 text-xs text-[#62635F]"><span>Malzeme, ölçü ve üretim bir arada.</span><span>Endüstriyel sızdırmazlık çözümleri</span></figcaption></figure>
+        <section className="mb-16 grid gap-8 border-t border-[#191D20]/15 pt-10 lg:grid-cols-3"><h2 className="text-3xl font-medium leading-tight tracking-tight">Her bağlantıyı,<br />kendi şartlarında<br />değerlendiririz.</h2><div className="space-y-5 text-base leading-relaxed text-[#4D514B] lg:col-span-2"><p>Boru hatları, kazanlar, pompalar ve gemi makineleri farklı sıcaklık, basınç ve akışkan şartlarında çalışır. Doğru sızdırmazlık çözümü, bu şartları anlamakla başlar.</p><p>Spiral sarımlı contalar, grafit ve klingrit levhalar, kauçuk parçalar, PTFE ürünleri ve örgülü salmastralarla standart ölçülerden teknik resme göre özel üretime uzanan ihtiyaçlara cevap veriyoruz.</p></div></section>
+        <section className="mb-16 rounded-xl bg-[#191D20] p-7 text-white sm:p-10"><p className="mb-5 text-[11px] uppercase tracking-[0.2em] text-[#DD895F]">Üretim yaklaşımımız</p><div className="grid gap-10 md:grid-cols-3">{[{ title: "Çizime sadık üretim", description: "Teknik resim ve numuneye göre ölçü, geometri ve üretim gereksinimlerini değerlendiriyoruz." }, { title: "Malzemeyi tanıyan seçim", description: "Grafit, kauçuk, PTFE ve diğer malzemeleri uygulamanın çalışma şartlarına göre ele alıyoruz." }, { title: "Detayda kalite kontrolü", description: "İç ve dış çap, et kalınlığı ve bağlantı ölçülerini üretim sürecinin bir parçası olarak kontrol ediyoruz." }].map((item, index) => <div key={item.title} className="border-t border-white/20 pt-5"><span className="text-xs text-[#DD895F]">{String(index + 1).padStart(2, "0")}</span><h3 className="mb-4 mt-6 text-xl font-medium">{item.title}</h3><p className="text-sm leading-relaxed text-[#B9BCB8]">{item.description}</p></div>)}</div></section>
+        <section className="mb-16 grid gap-8 lg:grid-cols-3"><div><p className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">Gelişim sürecimiz</p><h2 className="text-3xl font-medium tracking-tight">Üretimden gelen<br />birikim.</h2></div><ol className="lg:col-span-2">{milestones.map(milestone => <li key={milestone.year} className="grid gap-4 border-t border-[#191D20]/15 py-6 sm:grid-cols-[110px_1fr]"><span className="text-sm font-medium text-[#96350B]">{milestone.year}</span><div><h3 className="mb-3 text-xl font-medium">{milestone.title}</h3><p className="text-sm leading-relaxed text-[#62635F]">{milestone.description}</p></div></li>)}</ol></section>
+        <section className="flex flex-col justify-between gap-6 rounded-xl bg-[#E7E3DC] p-7 sm:p-10 lg:flex-row lg:items-center"><div><h2 className="text-2xl font-medium tracking-tight">Sizin uygulamanızla başlayalım.</h2><p className="mt-3 text-sm text-[#62635F]">Teknik resminizi veya numunenizi birlikte değerlendirelim.</p></div><Button href="/teklif-iste" variant="accent" size="lg">Teknik teklif iste ↗</Button></section>
       </Container>
     </div>
   );

@@ -1,9 +1,14 @@
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation";
+import { EnglishFooter } from "@/components/en/EnglishFooter";
 import Link from "next/link";
 import { companyData } from "@/data/company";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/en" || pathname.startsWith("/en/")) return <EnglishFooter />;
   const currentYear = 2026;
 
   return (
