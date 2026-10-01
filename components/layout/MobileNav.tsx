@@ -3,10 +3,12 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { mainNavItems, companyData } from "@/data/company";
+import { companyData } from "@/data/company";
 import { PhoneIcon, WhatsappIcon, MailIcon, XIcon, ArrowRightIcon } from "@/components/icons/Icons";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { i18nNav, i18nDict } from "@/lib/i18n";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -15,6 +17,8 @@ interface MobileNavProps {
 
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+  const navItems = isEn ? i18nNav.en : i18nNav.tr;
 
   // Close on escape key
   useEffect(() => {
@@ -56,25 +60,28 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className="flex items-center justify-between pb-4 border-b border-industrial-800">
             <div>
               <span className="font-mono text-xs tracking-widest text-industrial-400 block uppercase">
-                Menü
+                {isEn ? "Menu" : "Menü"}
               </span>
               <span className="text-lg font-bold tracking-tight text-white">
                 EMEK CONTA
               </span>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              className="p-2 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-rust"
-              aria-label="Menüyü Kapat"
-            >
-              <XIcon className="w-6 h-6" />
-            </button>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <button
+                type="button"
+                onClick={onClose}
+                className="p-1.5 text-industrial-400 hover:text-white hover:bg-industrial-800 transition-colors rounded-md focus:outline-none focus:ring-2 focus:ring-rust"
+                aria-label={isEn ? "Close Menu" : "Menüyü Kapat"}
+              >
+                <XIcon className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {/* Nav Links */}
           <nav className="mt-6 flex flex-col space-y-1">
-            {mainNavItems.map((item) => {
+            {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
@@ -101,12 +108,12 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         {/* Quick CTA and Contacts */}
         <div className="pt-6 border-t border-industrial-800 space-y-4">
           <Button
-            href="/teklif-iste"
+            href={isEn ? "/en/contact" : "/teklif-iste"}
             variant="accent"
             size="lg"
             className="w-full text-center"
           >
-            Teknik Teklif İste
+            {isEn ? i18nDict.en.requestQuote : i18nDict.tr.requestQuote}
           </Button>
 
           <div className="space-y-2 pt-2 text-sm text-industrial-300">

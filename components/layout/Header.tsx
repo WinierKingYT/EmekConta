@@ -16,7 +16,9 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MobileNav } from "./MobileNav";
 import { MegaMenu } from "./MegaMenu";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useRfqCart } from "@/lib/cart-context";
+import { i18nNav, i18nDict } from "@/lib/i18n";
 
 export function Header() {
   const { itemCount, openCart } = useRfqCart();
@@ -24,6 +26,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+  const navItems = isEn ? i18nNav.en : i18nNav.tr;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -66,16 +70,18 @@ export function Header() {
         <Container className="flex items-center justify-between py-2">
           <div className="flex items-center gap-4 text-[11px] font-mono">
             <span className="text-industrial-300 font-medium">
-              1997'den Beri Sanayi & Denizcilik Sızdırmazlık Çözümleri
+              {isEn
+                ? "Industrial & Marine Sealing Solutions Since 1997"
+                : "1997'den Beri Sanayi & Denizcilik Sızdırmazlık Çözümleri"}
             </span>
             <span className="text-industrial-700">|</span>
             <span className="text-industrial-400 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-rust" />
-              DIN EN 1514 & ASME B16.20 İmalat
+              {isEn ? "DIN EN 1514 & ASME B16.20 Mfg" : "DIN EN 1514 & ASME B16.20 İmalat"}
             </span>
             <span className="text-industrial-700">|</span>
             <span className="text-industrial-400">
-              İstanbul Fabrika & Karaköy Şube
+              {isEn ? "Istanbul Factory & Global Export" : "İstanbul Fabrika & Karaköy Şube"}
             </span>
           </div>
           <div className="flex items-center gap-5">
@@ -121,9 +127,9 @@ export function Header() {
         <Container className="flex items-center justify-between relative">
           {/* Logo */}
           <Link
-            href="/"
+            href={isEn ? "/en" : "/"}
             className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-rust rounded-lg p-1 -m-1"
-            aria-label="Emek Conta Ana Sayfa"
+            aria-label={isEn ? "Emek Gaskets Home" : "Emek Conta Ana Sayfa"}
           >
             {/* Precision geometric emblem */}
             <div className="w-10 h-10 bg-night-light border-2 border-rust/50 group-hover:border-rust transition-all flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden rounded-lg">
@@ -144,16 +150,18 @@ export function Header() {
                 </span>
               </div>
               <span className="text-[9.5px] sm:text-[10px] font-mono tracking-widest text-industrial-400 uppercase mt-1 leading-none font-medium">
-                Endüstriyel Sızdırmazlık San. ve Tic.
+                {isEn ? "Industrial Sealing Solutions" : "Endüstriyel Sızdırmazlık San. ve Tic."}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {mainNavItems.map((item) => {
-              const isActive = pathname === item.href || (item.href === "/urunler" && pathname.startsWith("/urunler"));
-              const isProductsTab = item.href === "/urunler";
+            {navItems.map((item) => {
+              const isProductsTab = item.href === "/urunler" || item.href === "/en/products";
+              const isActive =
+                pathname === item.href ||
+                (isProductsTab && (pathname.startsWith("/urunler") || pathname.startsWith("/en/products")));
 
               return (
                 <div
@@ -200,28 +208,31 @@ export function Header() {
           </nav>
 
           {/* Right Action & Mobile Trigger */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
             {/* RFQ Cart Trigger */}
             <button
               type="button"
               onClick={openCart}
               aria-label={`Teklif Sepeti (${itemCount} ürün)`}
-              className="relative px-3 py-1.5 bg-industrial-900 hover:bg-industrial-800 text-industrial-200 hover:text-white border border-industrial-800 hover:border-industrial-700 transition-all text-xs font-mono font-medium rounded-lg flex items-center gap-2 cursor-pointer shadow-xs"
+              className="relative px-2.5 sm:px-3 py-1.5 bg-industrial-900 hover:bg-industrial-800 text-industrial-200 hover:text-white border border-industrial-800 hover:border-industrial-700 transition-all text-xs font-mono font-medium rounded-lg flex items-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs"
             >
               <DocumentTextIcon className="w-4 h-4 text-rust" />
-              <span className="hidden xl:inline">Teklif Listem</span>
+              <span className="hidden xl:inline">{isEn ? i18nDict.en.quoteCart : i18nDict.tr.quoteCart}</span>
               <span className="px-1.5 py-0.2 bg-rust text-white text-[10px] font-bold rounded-md min-w-[18px] text-center">
                 {itemCount}
               </span>
             </button>
 
             <Button
-              href="/teklif-iste"
+              href={isEn ? "/en/contact" : "/teklif-iste"}
               variant="accent"
               size="sm"
-              className="hidden sm:inline-flex shadow-md hover:shadow-brick/20 transition-all font-semibold rounded-lg"
+              className="hidden sm:inline-flex shadow-md hover:shadow-brick/20 transition-all font-semibold rounded-lg text-xs"
             >
-              <span>Teklif İste</span>
+              <span>{isEn ? i18nDict.en.requestQuote : i18nDict.tr.requestQuote}</span>
               <span className="ml-1 text-xs opacity-80">→</span>
             </Button>
 

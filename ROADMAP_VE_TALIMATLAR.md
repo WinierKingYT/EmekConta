@@ -74,10 +74,11 @@
 - **5.2 Microsoft Clarity (Tamamlandı):** Kullanıcı oturum kayıtları ve ısı haritaları için `NEXT_PUBLIC_CLARITY_PROJECT_ID` destekli Clarity script'i `app/layout.tsx` gövdesine entegre edildi; özel lead etiketleri (`setClarityTag`) tanımlandı.
 - **5.3 RFQ & İletişim Dönüşüm Takibi (Tamamlandı):** Detaylı RFQ formu, ana sayfa hızlı CAD dropzone'u, numune talep portalı, toplu teklif sepeti ve bayi başvuru formu olmak üzere 5 form akışına `generate_lead` standardı ve Clarity `rfq_submitted` event'leri bağlandı. WhatsApp ve telefon tıklamaları ile teknik föy (datasheet) yazdırma/indirme eylemlerine dönüşüm takipçileri eklendi.
 
-### 🟣 Aşama 6: İhracat & Çoklu Dil
-- **6.1 İngilizce Versiyon (`/en`):** `next-intl` ile yabancı tersane ve petrokimya firmaları için tam İngilizce dil desteği.
-- **6.2 Uluslararası Standartlar İhracat Sayfası:** ASME, DIN, EN, ISO normlarına tam uyumu öne çıkaran ihracat odaklı landing page.
-- **6.3 Arapça Versiyon (Opsiyonel):** Körfez ülkeleri ve Ortadoğu pazarı için RTL layout.
+### 🟣 Aşama 6: İhracat & Çoklu Dil (TAMAMLANDI ✅)
+- **6.1 İngilizce Versiyon (`/en`) (Tamamlandı):** Uluslararası tersaneler, rafineriler ve petrokimya tesisleri için tam İngilizce portal (`/en`), İngilizce ürün kataloğu (`/en/products`), 12 ürün için SSG derlenen İngilizce detay sayfaları (`/en/products/[slug]`) ve Product JSON-LD şemaları, uluslararası İngilizce RFQ iletişim formu (`/en/contact`) geliştirildi.
+- **6.2 Uluslararası Standartlar İhracat Sayfası (Tamamlandı):** ASME B16.20, DIN EN 1514-1/2, API 601, ISO 7483 normlarına tam uyum, EN 10204 3.1 malzeme test sertifikasyonu (MTR) ve küresel lojistik detaylarını içeren Türkçe (`/ihracat`) ve İngilizce (`/en/export`) landing page'leri hazırlandı.
+- **6.3 Dil Değiştirici & Entegrasyon (Tamamlandı):** Rota duyarlı `LanguageSwitcher.tsx` bileşeni geliştirilerek masaüstü `Header`, `MobileNav` ve `Footer` bileşenlerine entegre edildi. Dinamik site haritası (`app/sitemap.ts`) 16 yeni ihracat ve İngilizce rotayla genişletildi.
+- **6.4 Arapça Versiyon (Opsiyonel):** İsteğe bağlı olarak Körfez ülkeleri için gelecekteki genişleme fazı olarak arşivlendi.
 
 ### ⚪ Aşama 7: Performans & Yasal Uyumluluk
 - **7.1 WebP Görsel Dönüşümü:** Ürün görsellerinin sıkıştırılması ve optimize edilmesi.
@@ -107,5 +108,5 @@ Sevgili yapay zeka asistanı, bu projeyi devraldığında lütfen aşağıdaki k
    - Kullanıcının açıkça "istemiyorum" dediği özellikleri (hesaplayıcılar, videolar, sosyal medya, sadakat bülteni) asla gündeme getirme veya eklemeye kalkışma.
    - Doğrudan yukarıdaki **İstenen Yol Haritası** doğrultusunda çalış.
 
-5. **Sıradaki Aşama Önerisi:**
-   - **Aşama 2**, **Aşama 3**, **Aşama 4** ve **Aşama 5** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 6: İhracat & Çoklu Dil** (Uluslararası standartlar ASME/DIN ihracat landing page'i, `/en` İngilizce dil altyapısı ve küresel tersane/petrokimya B2B içerikleri).
+5. **Sıradaki Aşama:**
+   - **Aşama 2**, **Aşama 3**, **Aşama 4**, **Aşama 5** ve **Aşama 6** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 7: Performans, Yasal Uyumluluk (KVKK / Çerez Politikası) & Canlıya Hazırlık**.

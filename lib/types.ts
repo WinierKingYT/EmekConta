@@ -35,6 +35,30 @@ export interface Product {
   seoDescription: string;
 }
 
+export interface EnglishProduct {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  categorySlug?: string;
+  shortDescription: string;
+  description: string;
+  features: string[];
+  materials: string[];
+  standards: string[];
+  sectors?: string[];
+  applications?: string[];
+  specifications: ProductSpecification[];
+  image?: string;
+  imagePlaceholderText?: string;
+  drawingSupported?: boolean;
+  relatedProductSlugs?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+  pressureRange?: string;
+  temperatureRange?: string;
+}
+
 export type ProductCategoryType =
   | "contalar"
   | "contalik-malzemeler"

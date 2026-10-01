@@ -196,6 +196,16 @@ export function Footer() {
                   Bayilik & Toptancı Başvurusu
                 </Link>
               </li>
+              <li>
+                <Link href="/ihracat" className="hover:text-white transition-colors">
+                  İhracat & Global Standartlar (ASME/DIN)
+                </Link>
+              </li>
+              <li>
+                <Link href="/en" className="hover:text-white transition-colors text-rust font-medium">
+                  English International Portal (EN) →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -263,6 +273,14 @@ export function Footer() {
             <span className="text-industrial-800">|</span>
             <Link href="/teknik-bilgi" className="hover:text-industrial-300 transition-colors">
               Teknik Standartlar
+            </Link>
+            <span className="text-industrial-800">|</span>
+            <Link href="/ihracat" className="hover:text-industrial-300 transition-colors">
+              İhracat
+            </Link>
+            <span className="text-industrial-800">|</span>
+            <Link href="/en" className="hover:text-industrial-300 transition-colors">
+              English
             </Link>
           </div>
         </Container>

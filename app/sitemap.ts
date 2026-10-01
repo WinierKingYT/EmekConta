@@ -75,6 +75,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/ihracat`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/en/export`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/products`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/contact`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ];
 
   // Dynamic Product Pages & Datasheets
@@ -92,6 +122,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
   ]);
+
+  // Dynamic English Product Pages
+  const enProductRoutes: MetadataRoute.Sitemap = productsData.map((p) => ({
+    url: `${baseUrl}/en/products/${p.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  }));
 
   // Dynamic Sector Pages
   const sectorRoutes: MetadataRoute.Sitemap = sectorsData.map((s) => ({
@@ -112,6 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes,
     ...productRoutes,
+    ...enProductRoutes,
     ...sectorRoutes,
     ...articleRoutes,
   ];
