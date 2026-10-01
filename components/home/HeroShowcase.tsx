@@ -109,7 +109,7 @@ export function HeroShowcase() {
         <div className="flex items-center gap-2 px-3 py-1.5 bg-industrial-900 border border-industrial-800 rounded-lg">
           <FactoryIcon className="w-3.5 h-3.5 text-rust" />
           <span className="text-white font-semibold tracking-wide">
-            Üretim & İmalat Vitrini
+            Ürün & Mühendislik Vitrini
           </span>
           <span className="text-industrial-500">•</span>
           <span className="text-industrial-400 text-[10px]">
@@ -238,7 +238,7 @@ export function HeroShowcase() {
           </div>
           <div className="text-right">
             <span className="text-industrial-500 block text-[10px]">TESLİMAT / TERMİN</span>
-            <span className="text-emerald-400 font-semibold">Hızlı Stok & İmalat</span>
+            <span className="text-emerald-400 font-semibold">Hızlı Stok & Sevkiyat</span>
           </div>
         </div>
       </div>

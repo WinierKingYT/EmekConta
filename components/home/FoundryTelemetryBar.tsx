@@ -44,7 +44,7 @@ export function FoundryTelemetryBar() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rust opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-rust"></span>
             </span>
-            <span>İMALAT VE ATÖLYE TELEMETRİSİ:</span>
+            <span>CANLI ATÖLYE & OPERASYON TELEMETRİSİ:</span>
           </div>
 
           {/* Metric Grid */}
