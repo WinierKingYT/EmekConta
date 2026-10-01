@@ -1,47 +1,100 @@
-# EMEK CONTA — B2B Endüstriyel Sızdırmazlık Web Sitesi
+# EMEK CONTA — B2B Endüstriyel Sızdırmazlık Platformu
 
-Emek Conta (1997'den beri) için geliştirilmiş modern, yüksek performanslı, güven telkin eden ve tam SEO uyumlu B2B kurumsal web platformu.
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![Pages](https://img.shields.io/badge/SSG_Static_Pages-75-emerald?style=flat)]()
+[![Code Quality](https://img.shields.io/badge/ESLint-0_Errors_|_0_Warnings-brightgreen?style=flat)]()
+[![Lighthouse](https://img.shields.io/badge/Performance-Lighthouse_90+-orange?style=flat)]()
 
-Bu site klasik bir e-ticaret sitesi değildir; satın almacılar, fabrika bakım şefleri ve makine mühendislerinin teknik resim, numune veya standart ölçülere göre hızlı ve güvenilir biçimde resmi teklif (RFQ) almasını sağlayan endüstriyel bir üretici platformudur.
+**Emek Conta (1997'den beri)** için geliştirilmiş; satın almacılar, fabrika bakım şefleri ve makine mühendislerinin teknik resim, numune veya standart ölçülere göre resmi teklif (RFQ) almasını sağlayan yüksek performanslı, çok dilli ve kurumsal B2B üretici web platformu.
 
 ---
 
-## 🚀 Öne Çıkan Özellikler
+## 🏗️ 7 Aşamalı Mimari & Özellik Matrisi
 
-1. **Çift Modlu Hero Vitrini (Studio Showcase & CAD):**
-   - **3'lü İnteraktif Stüdyo Vitrini:** Softbox aydınlatmalı stüdyo ortamında çekilmiş onlarca endüstriyel conta, salmastra ve mühendislik plastiğini sergileyen otomatik döngülü vitrin.
-   - **Vektörel CAD Şematiği:** Tek tıkla ASME B16.20 Class 300 ölçülendirilmiş teknik çizim moduna geçiş.
-2. **İnteraktif Malzeme & Çalışma Koşulu Seçim Aracı:**
-   - Akışkan (Buhar, Asit/Kimyasal, Deniz Suyu, Akaryakıt, Gıda), sıcaklık ve basınca göre anında en doğru sızdırmazlık contasını ve standart normunu hesaplar.
-3. **Anasayfa Hızlı Çizim & Numune Dropzone:**
-   - Ziyaretçilerin doğrudan anasayfadan CAD (DWG, DXF, STEP, PDF) veya numune fotoğraflarını sürükleyip 2 saatte proforma teklif talep etmesini sağlayan yüksek dönüşümlü B2B modülü.
-4. **Kapsamlı Ürün & Sektör Mimarisi:**
-   - 12 Ürün Grubu (Spiral sarımlı, telli grafit, Klingrit, PTFE, Viton/EPDM, salmastralar, ambar kapak lastikleri vb.)
-   - 10 Endüstriyel Sektör (Denizcilik, Enerji, Petrokimya, Demir-Çelik, Çimento, Gıda vb.)
-   - Teknik Bilgi Merkezi (Standartlar, seçim rehberleri, cıvata torklama ve montaj kılavuzları).
-5. **Görsel & Yükleme Performansı:**
-   - Native `sharp` motoruyla WebP sıkıştırması (toplam katalog boyutunda %88 tasarruf).
-   - Ekran üstü (Above-the-fold) görsellerde `priority`, diğerlerinde `lazy loading`.
-6. **Mükemmel SEO & Yapısal Veri:**
-   - 41 rotayı otomatik indeksleyen dinamik `sitemap.xml` ve `robots.txt`.
-   - Schema.org Organization, Breadcrumb ve OpenGraph / Twitter kartları.
+Proje, endüstriyel standartlara tam uyumlu 7 aşamalı yol haritası ile eksiksiz olarak tamamlanmıştır:
+
+### 1. Temel Mimari & B2B Arayüz (Aşama 1)
+- **Çift Modlu Hero Vitrini:** Stüdyo fotoğraf vitrini ve vektörel ASME B16.20 teknik çizim blueprint modu.
+- **İnteraktif Malzeme Seçici:** Akışkan türü, sıcaklık ve basınca göre optimum conta önerisi.
+- **Anasayfa CAD/Çizim Dropzone:** Sürükle-bırak CAD (.dwg, .dxf, .step, .pdf) yükleme alanı ve 2 saatlik SLA taahhüdü.
+- **12 Ürün & 10 Sektör Mimarisi:** Denizcilik, rafineri, enerji, demir-çelik ve kimya sektörlerine özel sayfalar.
+
+### 2. İletişim & Dönüşüm Altyapısı (Aşama 2)
+- **WhatsApp Floating Buton:** Canlı durum göstergeli, erişilebilir kurumsal WhatsApp iletişim düğmesi (`+90 544 223 08 28`).
+- **Resend RFQ E-Posta Entegrasyonu:** Detaylı teklif, hızlı çizim, numune ve bayi başvurularını HTML formatında anında satış ekibine ileten `/api/rfq` API rotası.
+- **Otomatik Müşteri Teyit E-Postası:** Müşteriye özel referans kodlu (`EC-XXXXXX`) profesyonel teyit e-postası ve SLA bilgilendirmesi.
+- **Ücretsiz AR-GE Numune Portalı (`/numune-talep`):** Bakım ve tasarım ekipleri için 8 farklı malzeme seçeneği sunan numune talep sistemi.
+
+### 3. B2B Satış Araçları (Aşama 3)
+- **Toplu Teklif Sepeti (RFQ Cart):** LocalStorage destekli, sayfa değiştirmeden teklif listesi oluşturma (`RfqCartDrawer`, `/teklif-sepeti`).
+- **12 Teknik PDF Datasheet (TDS):** DIN/ASME standartlarına uygun, yazdırılabilir (`@media print`) ve tek tıkla PDF kaydedilebilir teknik föyler (`/urunler/[slug]/datasheet`).
+- **B2B Bayi / Toptancı Başvuru Portalı (`/bayi-basvuru`):** Ticari sicil, yıllık alım hacmi ve depo bilgilerini toplayan kurumsal ortaklık akışı.
+
+### 4. SEO & Zengin Veri (Aşama 4)
+- **Dinamik 75 Rotalı Sitemap (`app/sitemap.ts`):** Tüm statik, sektörel, ürün ve İngilizce sayfaları dinamik indeksleyen site haritası.
+- **Zengin JSON-LD Şemaları:** `Organization`, `LocalBusiness`, `Manufacturer`, `WebSite`, `Product`, `AggregateOffer`, `BreadcrumbList`, `Service` ve `Article`.
+- **Dinamik 1200x630 OpenGraph Görseli (`app/opengraph-image.tsx`):** Sosyal medya ve mesajlaşma paylaşımları için otomatik görsel oluşturucu.
+- **GSC Doğrulaması & Canonical URL:** `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` desteği ve canonical etiketler.
+
+### 5. Analitik & Lead Takibi (Aşama 5)
+- **Google Analytics 4 (GA4):** `generate_lead`, `contact`, `view_datasheet` standart e-ticaret/B2B dönüşüm olayları.
+- **Microsoft Clarity:** Kullanıcı oturum kayıtları, ısı haritaları ve `setClarityTag` ile lead referans etiketleme.
+- **Dönüşüm İzleyicileri:** 5 farklı RFQ formu, telefon aramaları, WhatsApp tıklamaları ve teknik föy indirmeleri.
+
+### 6. İhracat & Çoklu Dil (Aşama 6)
+- **İngilizce Uluslararası Portal (`/en`):** Uluslararası tersane ve rafineriler için İngilizce ana sayfa, ürün kataloğu (`/en/products`) ve 12 ürün detay sayfası (`/en/products/[slug]`).
+- **Global İhracat Sayfası (`/ihracat` & `/en/export`):** ASME B16.20, DIN EN 1514-1/2, EN 10204 3.1 MTR sertifikasyonu ve hava/deniz lojistik kılavuzu.
+- **İngilizce Uluslararası RFQ Formu (`/en/contact`):** Global müşteriler için CIF/FOB teslimat seçenekli teklif portalı.
+- **Akıllı Dil Değiştirici (`LanguageSwitcher.tsx`):** Bulunulan rotayı tanıyan ve 1:1 dil geçişi sunan TR ↔ EN bileşeni.
+
+### 7. Performans, Yasal Uyumluluk & Canlıya Hazırlık (Aşama 7)
+- **WebP Görsel Sıkıştırması:** %85 – %97 boyut tasarruflu WebP katalog görselleri.
+- **KVKK Aydınlatma Metni (`/kvkk`):** 6698 sayılı Kişisel Verilerin Korunması Kanunu'na tam uyumlu yasal bildirim.
+- **Çerez Politikası (`/cerez-politikasi`):** Çerez kategorileri, saklama süreleri ve tarayıcı yönetim rehberi.
+- **Çerez Tercih Bandı (`CookieConsentBanner.tsx`):** Google Analytics ve Microsoft Clarity Consent Mode v2 ile senkronize, kullanıcı dostu çerez bandı.
+- **Lighthouse 90+ & Güvenlik Başlıkları:** `next.config.mjs` üzerinde Gzip/Brotli sıkıştırma (`compress: true`), HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` ve 1 yıllık statik varlık önbelleklemesi.
 
 ---
 
 ## 🛠️ Teknoloji Yığını
 
-- **Framework:** Next.js 14 (App Router)
-- **Dil:** TypeScript 5.6
-- **Stil & Arayüz:** Tailwind CSS 3.4, PostCSS, Autoprefixer
-- **Görüntü İşleme:** Sharp (libvips)
-- **Kod Kalitesi:** ESLint 8 (`next/core-web-vitals`)
-- **İkonlar:** Özel Vektörel SVG Endüstriyel İkon Kütüphanesi
+| Alan | Teknoloji | Açıklama |
+|---|---|---|
+| **Framework** | Next.js 14.2.35 (App Router) | Hibrit SSG / ISR mimarisi, Edge API desteği |
+| **Dil** | TypeScript 5.6 | Sıkı tip denetimi ve sıfır hata toleransı |
+| **Stil** | Tailwind CSS 3.4 | Endüstriyel palet (Pas, Gece Mavisi, Tuğla, Çelik) |
+| **E-Posta** | Resend SDK | Transaksiyonel RFQ bildirimleri ve teyit mektubu |
+| **Analitik** | GA4 & Microsoft Clarity | B2B lead takibi ve Consent Mode v2 |
+| **Görsel** | Sharp / WebP / Next Image | Yüksek sıkıştırma, responsive srcset |
+| **Kod Kalitesi** | ESLint 8 (`next/core-web-vitals`) | 0 hata, 0 uyarı |
 
 ---
 
-## 📦 Kurulum ve Geliştirme
+## ⚙️ Çevre Değişkenleri (.env.local)
 
-Projeyi yerel ortamınızda çalıştırmak için:
+Projeyi tam fonksiyonel olarak çalıştırmak için kök dizinde `.env.local` dosyası oluşturun:
+
+```bash
+# E-Posta Gönderimi (Resend)
+RESEND_API_KEY=re_your_api_key_here
+RESEND_FROM_EMAIL=Emek Conta <teklif@emekconta.com>
+NOTIFICATION_EMAIL=teklif@emekconta.com
+
+# Analitik & Takip (İsteğe Bağlı)
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_CLARITY_PROJECT_ID=xxxxxxxxxx
+
+# Arama Motoru Doğrulaması (İsteğe Bağlı)
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=google-site-verification=xxxxxxxxxxxxxxx
+```
+
+> **Not:** E-posta veya analitik anahtarları girilmediğinde sistem hata fırlatmaz; yerel geliştirme modunda güvenli simülasyon (`console.debug`) logları üretilir.
+
+---
+
+## 📦 Kurulum ve Çalıştırma
 
 ```bash
 # 1. Bağımlılıkları yükleyin
@@ -56,49 +109,84 @@ http://localhost:3000
 
 ---
 
-## 🏗️ Derleme ve Kalite Kontrol
+## 🏗️ Derleme ve Doğrulama
 
 ```bash
-# ESLint denetimi (0 hata, 0 uyarı)
+# Kod standartları denetimi (0 hata, 0 uyarı garantisi)
 npm run lint
 
-# Üretim derlemesi (41 rotanın tamamı statik/dinamik optimize edilir)
+# Üretim derlemesi (75 sayfanın tamamı SSG olarak derlenir)
 npm run build
 
-# Üretim sunucusunu başlatma
+# Üretim sunucusunu yerel ortamda çalıştırma
 npm run start
 ```
 
 ---
 
-## 📁 Proje Dizin Yapısı
+## 📁 Proje Dizin Mimarisi
 
 ```text
-├── app/                      # Next.js App Router sayfaları ve rotaları
-│   ├── hakkimizda/           # Kurumsal tarihçe ve fabrika bilgileri
-│   ├── iletisim/             # Harita, santral, e-posta ve adres
-│   ├── ozel-uretim/          # Numuneye & teknik resme göre üretim
-│   ├── sektorler/            # Sektörel çözümler ve detay sayfaları
-│   ├── teklif-iste/          # Kapsamlı RFQ formu ve dosya yükleme
-│   ├── teknik-bilgi/         # Mühendislik kılavuzları ve makaleler
-│   ├── urunler/              # Ürün kataloğu ve 12 dinamik ürün sayfası
-│   ├── layout.tsx            # Global metadata, fontlar ve layout
-│   ├── page.tsx              # Anasayfa
-│   ├── sitemap.ts            # Otomatik SEO sitemap üretici
-│   └── robots.ts             # Arama motoru robot direktifleri
-├── components/               # Modüler React bileşenleri
-│   ├── home/                 # Hero, Vitrin, Malzeme Seçici, Dropzone vb.
-│   ├── layout/               # Header, Footer, Breadcrumb
-│   ├── products/             # ProductCard, ProductFilter
-│   ├── rfq/                  # RFQForm ve dosya doğrulayıcı
-│   └── ui/                   # Container, Button, Badge
-├── data/                     # Merkezi veri modelleri (ürünler, sektörler, makaleler)
-├── public/                   # Statik varlıklar (WebP ürün ve stüdyo görselleri)
-└── scripts/                  # Görsel optimizasyon ve katalog araçları
+├── app/                          # Next.js App Router Rotaları
+│   ├── api/rfq/                  # Resend RFQ ve e-posta API rotası
+│   ├── bayi-basvuru/             # B2B Bayi / Toptancı başvuru portalı
+│   ├── cerez-politikasi/         # Çerez (Cookie) kullanım politikası
+│   ├── en/                       # İngilizce Uluslararası Portalı
+│   │   ├── contact/              # Uluslararası RFQ formu
+│   │   ├── export/               # ASME & DIN İhracat rehberi
+│   │   ├── products/             # İngilizce ürün kataloğu
+│   │   │   └── [slug]/           # 12 İngilizce ürün detay sayfası (SSG)
+│   │   └── page.tsx              # İngilizce ana sayfa
+│   ├── hakkimizda/               # 1997'den bugüne tarihçe & tesisler
+│   ├── ihracat/                  # Uluslararası Standartlar (ASME/DIN) landing page
+│   ├── iletisim/                 # İkitelli Fabrika & Karaköy şube iletişim
+│   ├── kvkk/                     # 6698 sayılı KVKK Aydınlatma Metni
+│   ├── numune-talep/             # Ücretsiz AR-GE numune talep portalı
+│   ├── ozel-uretim/              # CAD / Numuneye göre özel conta kesimi
+│   ├── sektorler/                # 10 endüstriyel sektör sayfası
+│   ├── teklif-iste/              # Kapsamlı RFQ formu ve CAD dropzone
+│   ├── teklif-sepeti/            # Toplu teklif sepeti yönetim sayfası
+│   ├── teknik-bilgi/             # 6 teknik mühendislik makalesi
+│   ├── urunler/                  # Ürün kataloğu ve detay sayfaları
+│   │   └── [slug]/               # 12 Türkçe ürün detay sayfası (SSG)
+│   │       └── datasheet/        # 12 Teknik PDF Datasheet (TDS) sayfası (SSG)
+│   ├── opengraph-image.tsx       # Dinamik 1200x630 OpenGraph üreticisi
+│   ├── robots.ts                 # Dinamik robots.txt
+│   ├── sitemap.ts                # 75 rotalı dinamik XML sitemap
+│   └── layout.tsx                # Kök layout, JSON-LD, Analytics, Cookie Banner
+├── components/                   # Modüler React Bileşenleri
+│   ├── analytics/                # GA4 ve Clarity script bileşenleri
+│   ├── cart/                     # RfqCartDrawer yan çekmece bileşeni
+│   ├── distributor/              # Bayi başvuru formu
+│   ├── en/                       # İngilizce iletişim formu
+│   ├── home/                     # Hero, Vitrin, Dropzone, Malzeme Seçici
+│   ├── layout/                   # Header, MobileNav, Footer, LanguageSwitcher
+│   ├── legal/                    # CookieConsentBanner çerez tercih bandı
+│   ├── products/                 # ProductCard, ProductFilter
+│   ├── rfq/                      # RFQForm ve dosya yöneticisi
+│   ├── sample/                   # Numune talep formu
+│   └── ui/                       # Container, Button, Badge, WhatsAppButton, PrintButton
+├── data/                         # Veri Modelleri & İçerik Depoları
+│   ├── company.ts                # Şirket iletişim, lokasyon ve navigasyon verileri
+│   ├── products.ts               # 12 Türkçe ürün teknik parametreleri
+│   ├── sectors.ts                # 10 Sektör verisi
+│   ├── articles.ts               # Teknik makaleler ve rehberler
+│   └── en/products.ts            # 12 İngilizce ürün parametresi ve kategorileri
+├── lib/                          # Yardımcı Kütüphaneler
+│   ├── analytics.ts              # GA4, Clarity ve Consent Mode v2 fonksiyonları
+│   ├── cart-context.tsx          # RFQ Sepeti React Context & LocalStorage altyapısı
+│   ├── i18n.ts                   # Çoklu dil sözlükleri ve navigasyon rotaları
+│   └── types.ts                  # TypeScript alan tipi tanımları
+├── public/                       # Statik Varlıklar
+│   ├── images/hero/              # Sıkıştırılmış WebP vitrin görselleri
+│   └── images/products/          # Sıkıştırılmış WebP ürün fotoğrafları
+├── next.config.mjs               # Güvenlik başlıkları, sıkıştırma ve WebP ayarları
+└── ROADMAP_VE_TALIMATLAR.md      # 7 Aşamalı tam proje şartnamesi ve durum kaydı
 ```
 
 ---
 
 ## 📄 Lisans ve Mülkiyet
 
-Telif Hakkı © 1997 - 2026 **Emek Conta Sanayi ve Ticaret**. Tüm hakları saklıdır.
+Telif Hakkı © 1997 - 2026 **Emek Conta Sanayi ve Ticaret**. Tüm hakları saklıdır.  
+Endüstriyel Sızdırmazlık Çözümleri • İkitelli OSB / İstanbul
