@@ -63,13 +63,19 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                   >
                     {/* Thumbnail */}
                     <div className="w-13 h-13 rounded-lg bg-industrial-950 border border-industrial-800 p-1 shrink-0 overflow-hidden relative group-hover:border-rust/40 transition-colors">
-                      <Image
-                        src={category.image}
-                        alt={category.name}
-                        fill
-                        sizes="52px"
-                        className="object-contain p-0.5 transition-transform duration-300 group-hover:scale-105"
-                      />
+                      {category.image ? (
+                        <Image
+                          src={category.image}
+                          alt={category.name}
+                          fill
+                          sizes="52px"
+                          className="object-contain p-0.5 transition-transform duration-300 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-industrial-600 text-[10px] font-mono uppercase">
+                          {category.name.slice(0, 2)}
+                        </div>
+                      )}
                     </div>
 
                     {/* Content */}

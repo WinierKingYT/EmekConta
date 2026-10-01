@@ -28,7 +28,7 @@ export function KnowledgeTeaser() {
             <Link
               key={article.id}
               href={`/teknik-bilgi/${article.slug}`}
-              className="group p-6 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between rounded-lg"
+              className="group p-6 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between rounded-xl"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
@@ -51,7 +51,7 @@ export function KnowledgeTeaser() {
                     {article.standardsMentioned.map((std, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[10px] font-mono px-1.5 py-0.5 bg-industrial-100 text-night border border-industrial-200/50 rounded"
+                        className="text-[10px] font-mono px-1.5 py-0.5 bg-industrial-100 text-night border border-industrial-200/50 rounded-md"
                       >
                         {std}
                       </span>

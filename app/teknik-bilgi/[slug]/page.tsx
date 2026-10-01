@@ -93,10 +93,10 @@ export default function ArticleDetailPage({ params }: Props) {
         />
 
         {/* Article Container */}
-        <article className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-12 mb-10">
+        <article className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-12 mb-10">
           {/* Header Metadata */}
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-industrial-500 pb-4 border-b border-industrial-100 mb-6">
-            <span className="px-2 py-0.5 bg-steel-light text-steel-darkblue font-semibold uppercase rounded">
+            <span className="px-2 py-0.5 bg-steel-light text-steel-darkblue font-semibold uppercase rounded-md">
               {article.category}
             </span>
             <span className="flex items-center gap-1">
@@ -168,7 +168,7 @@ export default function ArticleDetailPage({ params }: Props) {
                 <Link
                   key={rel.id}
                   href={`/teknik-bilgi/${rel.slug}`}
-                  className="p-4 bg-white border border-industrial-200 rounded-lg hover:border-industrial-400 transition-colors flex flex-col justify-between"
+                  className="p-4 bg-white border border-industrial-200 rounded-xl hover:border-industrial-400 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-[10px] font-mono text-steel-darkblue block uppercase mb-1">

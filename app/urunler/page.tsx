@@ -33,7 +33,7 @@ export default function ProductsPage({
         />
 
         {/* Page Header */}
-        <div className="mb-10 bg-white border border-industrial-200 rounded-lg p-6 sm:p-10">
+        <div className="mb-10 bg-white border border-industrial-200 rounded-xl p-6 sm:p-10">
           <div className="flex items-center gap-2 mb-2.5">
             <span className="w-4 h-[2px] bg-rust inline-block"></span>
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">

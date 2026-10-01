@@ -93,7 +93,7 @@ export default function ProductDetailPage({ params }: Props) {
         />
 
         {/* Product Hero Grid (Left: CAD/Visual Schematic, Right: Specs & Actions) */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left: Industrial Visual / Blueprint schematic or Clean Catalog Photo */}
             <div
@@ -225,7 +225,7 @@ export default function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Detailed Technical Specifications Table */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-rust inline-block"></span>
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
@@ -250,7 +250,7 @@ export default function ProductDetailPage({ params }: Props) {
         {/* Materials and Applications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {/* Materials */}
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <RulerIcon className="w-5 h-5 text-rust" />
               <span>Malzeme Seçenekleri</span>
@@ -266,7 +266,7 @@ export default function ProductDetailPage({ params }: Props) {
           </div>
 
           {/* Applications */}
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
             <h3 className="text-lg font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <ShieldCheckIcon className="w-5 h-5 text-rust" />
               <span>Uygulama Alanları</span>
@@ -283,7 +283,7 @@ export default function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Detailed Engineering Description */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
           <h3 className="text-xl font-bold text-industrial-900 mb-4">
             Ürün Hakkında Detaylı Mühendislik Bilgisi
           </h3>

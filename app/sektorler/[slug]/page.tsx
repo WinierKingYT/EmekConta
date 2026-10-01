@@ -67,9 +67,9 @@ export default function SectorDetailPage({ params }: Props) {
         />
 
         {/* Sector Hero */}
-        <div className="bg-industrial-900 text-white border border-industrial-800 rounded-lg p-8 sm:p-12 mb-10">
+        <div className="bg-industrial-900 text-white border border-industrial-800 rounded-xl p-8 sm:p-12 mb-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider rounded">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider rounded-md">
               <span className="w-2 h-2 bg-steel-blue rounded-full" />
               SEKTÖREL MÜHENDİSLİK ÇÖZÜMLERİ
             </div>
@@ -87,7 +87,7 @@ export default function SectorDetailPage({ params }: Props) {
               {sector.standards.map((std, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 bg-industrial-850 border border-industrial-700 text-xs font-mono text-industrial-300 rounded"
+                  className="px-2.5 py-1 bg-industrial-850 border border-industrial-700 text-xs font-mono text-industrial-300 rounded-md"
                 >
                   {std}
                 </span>
@@ -99,7 +99,7 @@ export default function SectorDetailPage({ params }: Props) {
         {/* Challenges vs Solutions 2-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Challenges */}
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
             <h2 className="text-xl font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <span className="text-red-600 font-mono font-bold">!</span>
               <span>Sektörel Zorluklar & Riskler</span>
@@ -115,7 +115,7 @@ export default function SectorDetailPage({ params }: Props) {
           </div>
 
           {/* Solutions */}
-          <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-8">
+          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
             <h2 className="text-xl font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
               <ShieldCheckIcon className="w-5 h-5 text-steel-blue" />
               <span>Emek Conta Mühendislik Çözümleri</span>
@@ -157,7 +157,7 @@ export default function SectorDetailPage({ params }: Props) {
         )}
 
         {/* Sector RFQ Callout */}
-        <div className="bg-industrial-950 text-white border border-industrial-800 rounded-lg p-8 sm:p-12 text-center max-w-3xl mx-auto">
+        <div className="bg-industrial-950 text-white border border-industrial-800 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
             {sector.name} Tesisiniz İçin Teklif Alın
           </h3>

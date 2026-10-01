@@ -32,7 +32,7 @@ export default function QuotePage({
         />
 
         {/* Page Header */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-8">
+        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-8">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-rust inline-block"></span>
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">

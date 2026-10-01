@@ -35,7 +35,7 @@ export default function TechnicalKnowledgePage() {
         />
 
         {/* Page Header */}
-        <div className="bg-white border border-industrial-200 rounded-lg p-6 sm:p-10 mb-10">
+        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
           <div className="flex items-center gap-2 mb-2">
             <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
             <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
@@ -55,7 +55,7 @@ export default function TechnicalKnowledgePage() {
             {categories.map((cat, idx) => (
               <span
                 key={idx}
-                className="px-2.5 py-1 bg-industrial-100 text-industrial-800 border border-industrial-200 rounded"
+                className="px-2.5 py-1 bg-industrial-100 text-industrial-800 border border-industrial-200 rounded-md"
               >
                 {cat}
               </span>
@@ -68,7 +68,7 @@ export default function TechnicalKnowledgePage() {
           {articlesData.map((article) => (
             <article
               key={article.id}
-              className="group bg-white border border-industrial-200 rounded-lg hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between p-6 sm:p-8"
+              className="group bg-white border border-industrial-200 rounded-xl hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between p-6 sm:p-8"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
@@ -93,7 +93,7 @@ export default function TechnicalKnowledgePage() {
                     {article.standardsMentioned.map((std, sIdx) => (
                       <span
                         key={sIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700 rounded"
+                        className="text-[10px] font-mono px-2 py-0.5 bg-industrial-100 text-industrial-700 rounded-md"
                       >
                         {std}
                       </span>
