@@ -46,6 +46,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/teklif-sepeti`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/bayi-basvuru`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/teknik-bilgi`,
       lastModified: currentDate,
       changeFrequency: "weekly",
@@ -65,13 +77,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic Product Pages
-  const productRoutes: MetadataRoute.Sitemap = productsData.map((p) => ({
-    url: `${baseUrl}/urunler/${p.slug}`,
-    lastModified: currentDate,
-    changeFrequency: "weekly",
-    priority: 0.85,
-  }));
+  // Dynamic Product Pages & Datasheets
+  const productRoutes: MetadataRoute.Sitemap = productsData.flatMap((p) => [
+    {
+      url: `${baseUrl}/urunler/${p.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/urunler/${p.slug}/datasheet`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ]);
 
   // Dynamic Sector Pages
   const sectorRoutes: MetadataRoute.Sitemap = sectorsData.map((s) => ({

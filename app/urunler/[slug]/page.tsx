@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { TechnicalTable, Column } from "@/components/ui/TechnicalTable";
 import { ProductCard } from "@/components/products/ProductCard";
+import { ProductDetailActions } from "@/components/products/ProductDetailActions";
 import { productsData } from "@/data/products";
 import { ProductSpecification } from "@/lib/types";
 import {
@@ -200,25 +201,9 @@ export default function ProductDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="mt-8 pt-6 border-t border-industrial-200 flex flex-wrap gap-4">
-                <Button
-                  href={`/teklif-iste?urun=${encodeURIComponent(product.name)}`}
-                  variant="accent"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  <UploadCloudIcon className="w-5 h-5 mr-2" />
-                  Bu Ürün İçin Teklif İste
-                </Button>
-                <Button
-                  href="/ozel-uretim"
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  Teknik Çizim Gönder
-                </Button>
+              {/* Action Buttons: Batch RFQ Cart & PDF Datasheet */}
+              <div className="mt-8 pt-6 border-t border-industrial-200">
+                <ProductDetailActions product={product} />
               </div>
             </div>
           </div>

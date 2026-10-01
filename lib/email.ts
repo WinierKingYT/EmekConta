@@ -24,6 +24,8 @@ function buildInternalEmailHtml(data: RfqEmailPayload): string {
     rfq_detailed: "Detaylı Teknik RFQ Formu (/teklif-iste)",
     rfq_quick: "Hızlı Teknik Çizim Dropzone (Ana Sayfa)",
     sample_request: "AR-GE / Malzeme Numune Talebi (/numune-talep)",
+    rfq_cart: "Toplu Teklif Sepeti (RFQ Cart)",
+    distributor_application: "Yetkili Bayi & Toptancı Başvurusu (/bayi-basvuru)",
   };
 
   const formTypeLabel = typeLabels[data.type] || "Web Formu";
@@ -45,6 +47,20 @@ function buildInternalEmailHtml(data: RfqEmailPayload): string {
       { label: "İstenen Kalınlık(lar)", value: data.thickness || "Belirtilmedi" },
       { label: "Teslimat Adresi", value: data.deliveryAddress ? `${data.deliveryAddress} - ${data.district || ""}/${data.city || ""}` : "Belirtilmedi" },
       { label: "Vergi Dairesi / No", value: data.taxOfficeOrNumber || "Belirtilmedi" }
+    );
+  } else if (data.type === "rfq_cart") {
+    const itemsText = data.cartItems && data.cartItems.length > 0
+      ? data.cartItems.map((item, idx) => `${idx + 1}. <strong>${item.name}</strong> (${item.category}) - Miktar: <strong>${item.quantity}</strong>${item.dimensions ? ` [Ölçü: ${item.dimensions}]` : ""}`).join("<br>")
+      : "Ürün listesi boş";
+    techRows.push({ label: `Sepetteki Ürünler (${data.cartItems?.length || 0} Kalem)`, value: itemsText });
+  } else if (data.type === "distributor_application") {
+    techRows.push(
+      { label: "Faaliyet Türü", value: data.businessType || "Belirtilmedi" },
+      { label: "Vergi Dairesi / No", value: data.taxOfficeOrNumber || "Belirtilmedi" },
+      { label: "Şehir / İlçe", value: `${data.city || ""}${data.district ? ` / ${data.district}` : ""}` },
+      { label: "Depo / Mağaza Alanı", value: data.warehouseArea || "Belirtilmedi" },
+      { label: "Dağıtım Hedeflenen Ürünler", value: data.targetProducts?.join(", ") || "Belirtilmedi" },
+      { label: "Tahmini Yıllık Hacim", value: data.estimatedAnnualVolume || "Belirtilmedi" }
     );
   } else {
     techRows.push(
@@ -156,6 +172,22 @@ function buildInternalEmailHtml(data: RfqEmailPayload): string {
  */
 function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
   const isSample = data.type === "sample_request";
+  const isCart = data.type === "rfq_cart";
+  const isDistributor = data.type === "distributor_application";
+
+  let heading = "Teklif Talebiniz Başarıyla Alındı";
+  if (isSample) heading = "Numune Talebiniz Alındı";
+  if (isCart) heading = "Toplu Teklif Sepetiniz Alındı";
+  if (isDistributor) heading = "Bayilik Başvurunuz Alındı";
+
+  let bodyText = "Web sitemiz üzerinden ilettiğiniz teknik çizim ve çalışma şartı parametreleri mühendislik ekibimize başarıyla ulaşmıştır. Standart veya özel üretim contanız için teknik analiz yapılarak mesai saatleri içinde en geç <strong>2 saat</strong> içerisinde resmi teklifimiz tarafınıza sunulacaktır.";
+  if (isSample) {
+    bodyText = "Emek Conta'ya iletmiş olduğunuz malzeme numune talebi başarıyla kayıt altına alınmıştır. İlgili numune parçaları ve teknik veri föyleri hazırlanarak belirtilen adrese sevk edilecektir.";
+  } else if (isCart) {
+    bodyText = `Sepetinizdeki <strong>${data.cartItems?.length || 0} kalem ürün</strong> için toplu teklif talebiniz mühendislik ekibimize başarıyla ulaşmıştır. Çalışma parametreleriniz ve adetler incelenerek en kısa sürede resmi proforma iletilecektir.`;
+  } else if (isDistributor) {
+    bodyText = "Emek Conta yetkili satıcılık & bölgesel toptan dağıtım başvurunuz satış direktörlüğümüze ulaşmıştır. Bölge kotası ve toptan iskonto şartları incelenerek 1 iş günü içinde tarafınızla temas kurulacaktır.";
+  }
 
   return `
   <!DOCTYPE html>
@@ -173,7 +205,7 @@ function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
               EMEK CONTA SANAYİ VE TİCARET
             </div>
             <h1 style="margin: 0; font-size: 22px; font-weight: 800; color: #ffffff;">
-              ${isSample ? "Numune Talebiniz Alındı" : "Teklif Talebiniz Başarıyla Alındı"}
+              ${heading}
             </h1>
             <p style="margin: 6px 0 0 0; font-size: 13px; color: #94a3b8;">
               1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri.
@@ -188,10 +220,7 @@ function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
               Sayın <strong>${data.fullName}</strong>${data.companyName ? ` (${data.companyName})` : ""},
             </p>
             <p style="font-size: 14px; color: #475569; margin: 0 0 20px 0; line-height: 1.6;">
-              ${isSample
-                ? "Emek Conta'ya iletmiş olduğunuz malzeme numune talebi başarıyla kayıt altına alınmıştır. İlgili numune parçaları ve teknik veri föyleri hazırlanarak belirtilen adrese sevk edilecektir."
-                : "Web sitemiz üzerinden ilettiğiniz teknik çizim ve çalışma şartı parametreleri mühendislik ekibimize başarıyla ulaşmıştır. Standart veya özel üretim contanız için teknik analiz yapılarak mesai saatleri içinde en geç <strong>2 saat</strong> içerisinde resmi teklifimiz tarafınıza sunulacaktır."
-              }
+              ${bodyText}
             </p>
 
             <!-- Reference Badge -->

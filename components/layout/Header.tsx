@@ -10,13 +10,16 @@ import {
   MailIcon,
   MenuIcon,
   ChevronDownIcon,
+  DocumentTextIcon,
 } from "@/components/icons/Icons";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MobileNav } from "./MobileNav";
 import { MegaMenu } from "./MegaMenu";
+import { useRfqCart } from "@/lib/cart-context";
 
 export function Header() {
+  const { itemCount, openCart } = useRfqCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
@@ -197,7 +200,21 @@ export function Header() {
           </nav>
 
           {/* Right Action & Mobile Trigger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            {/* RFQ Cart Trigger */}
+            <button
+              type="button"
+              onClick={openCart}
+              aria-label={`Teklif Sepeti (${itemCount} ürün)`}
+              className="relative px-3 py-1.5 bg-industrial-900 hover:bg-industrial-800 text-industrial-200 hover:text-white border border-industrial-800 hover:border-industrial-700 transition-all text-xs font-mono font-medium rounded-lg flex items-center gap-2 cursor-pointer shadow-xs"
+            >
+              <DocumentTextIcon className="w-4 h-4 text-rust" />
+              <span className="hidden xl:inline">Teklif Listem</span>
+              <span className="px-1.5 py-0.2 bg-rust text-white text-[10px] font-bold rounded-md min-w-[18px] text-center">
+                {itemCount}
+              </span>
+            </button>
+
             <Button
               href="/teklif-iste"
               variant="accent"

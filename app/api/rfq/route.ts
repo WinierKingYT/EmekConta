@@ -90,12 +90,18 @@ export async function POST(request: NextRequest) {
         });
       }
 
-      const refCode = `EC-${Math.floor(100000 + Math.random() * 900000)}`;
+      const reqType = body.type || "rfq_detailed";
+      let prefix = "EC";
+      if (reqType === "distributor_application") prefix = "BAYI";
+      else if (reqType === "rfq_cart") prefix = "RFQ";
+      else if (reqType === "sample_request") prefix = "SMP";
+
+      const refCode = body.referenceCode || `${prefix}-${Math.floor(100000 + Math.random() * 900000)}`;
 
       payload = {
         referenceCode: refCode,
-        type: body.type || "rfq_detailed",
-        fullName: (body.fullName || "").trim(),
+        type: reqType,
+        fullName: (body.fullName || body.authorizedPerson || "").trim(),
         companyName: (body.companyName || "").trim(),
         phone: (body.phone || "").trim(),
         email: (body.email || "").trim(),
@@ -108,14 +114,20 @@ export async function POST(request: NextRequest) {
         pressure: body.pressure,
         medium: body.medium,
         standard: body.standard,
-        notes: body.notes,
+        notes: body.notes || body.message,
         fileNames: body.fileNames,
         sampleMaterials: body.sampleMaterials,
         thickness: body.thickness,
-        deliveryAddress: body.deliveryAddress,
+        deliveryAddress: body.deliveryAddress || body.address,
         city: body.city,
         district: body.district,
-        taxOfficeOrNumber: body.taxOfficeOrNumber,
+        taxOfficeOrNumber: body.taxOfficeOrNumber || body.taxId || (body.taxOffice ? `${body.taxOffice} / ${body.taxId || ""}` : undefined),
+        cartItems: body.cartItems,
+        businessType: body.businessType,
+        activityRegion: body.activityRegion,
+        warehouseArea: body.warehouseArea,
+        targetProducts: body.targetProducts,
+        estimatedAnnualVolume: body.estimatedAnnualVolume || body.targetVolume,
         createdAt: new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" }),
       };
     }
@@ -131,10 +143,46 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (payload.type === "rfq_cart") {
+      if (!payload.cartItems || !Array.isArray(payload.cartItems) || payload.cartItems.length === 0) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Sepetinizde ürün bulunmamaktadır.",
+          },
+          { status: 400 }
+        );
+      }
+    }
+
+    if (payload.type === "distributor_application") {
+      if (!payload.companyName || !payload.city) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Firma Adı ve Faaliyet Gösterilen İl alanları bayilik başvurusu için zorunludur.",
+          },
+          { status: 400 }
+        );
+      }
+      if (!payload.taxOfficeOrNumber) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Vergi Dairesi veya Vergi Numarası bayilik başvurusu için zorunludur.",
+          },
+          { status: 400 }
+        );
+      }
+    }
+
     // Dispatch emails via Resend (or simulation fallback)
     const result = await sendRfqEmails(payload);
 
-    return NextResponse.json(result);
+    return NextResponse.json({
+      ...result,
+      rfqId: result.referenceCode,
+    });
   } catch (error: unknown) {
     const errorMsg = error instanceof Error ? error.message : "Sunucu tarafında bir hata oluştu";
     console.error("[API /api/rfq ERROR]:", errorMsg);

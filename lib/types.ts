@@ -109,9 +109,20 @@ export interface CompanyProfile {
   locations: CompanyLocation[];
 }
 
+export interface RfqCartItem {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  quantity: string;
+  dimensions?: string;
+  material?: string;
+  notes?: string;
+}
+
 export interface RfqEmailPayload {
   referenceCode: string;
-  type: "rfq_detailed" | "rfq_quick" | "sample_request";
+  type: "rfq_detailed" | "rfq_quick" | "sample_request" | "rfq_cart" | "distributor_application";
   fullName: string;
   companyName?: string;
   phone: string;
@@ -133,6 +144,12 @@ export interface RfqEmailPayload {
   city?: string;
   district?: string;
   taxOfficeOrNumber?: string;
+  cartItems?: RfqCartItem[];
+  businessType?: string;
+  activityRegion?: string;
+  warehouseArea?: string;
+  targetProducts?: string[];
+  estimatedAnnualVolume?: string;
   createdAt?: string;
 }
 

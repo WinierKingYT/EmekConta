@@ -132,11 +132,11 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               <p className="text-xs text-industrial-300 leading-relaxed font-sans mb-3.5">
                 DWG, DXF veya PDF çizimlerinizi iletin; CNC su jeti ve bıçak kesim tezgâhlarımızda kalıp beklemeden aynı gün üretelim.
               </p>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href="/ozel-uretim"
                   onClick={onClose}
-                  className="inline-flex items-center gap-2 text-xs font-mono font-bold text-white bg-rust hover:bg-rust-light px-3.5 py-2 rounded-lg transition-colors shadow-xs"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-bold text-white bg-rust hover:bg-rust-light px-3 py-2 rounded-lg transition-colors shadow-xs"
                 >
                   <span>Özel Üretim</span>
                   <ArrowRightIcon className="w-3.5 h-3.5" />
@@ -147,6 +147,13 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                   className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-industrial-200 hover:text-white bg-industrial-950/80 hover:bg-industrial-800 px-3 py-2 rounded-lg transition-colors border border-industrial-800"
                 >
                   <span>Numune İste</span>
+                </Link>
+                <Link
+                  href="/bayi-basvuru"
+                  onClick={onClose}
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-industrial-200 hover:text-white bg-industrial-950/80 hover:bg-industrial-800 px-3 py-2 rounded-lg transition-colors border border-industrial-800"
+                >
+                  <span>Bayilik</span>
                 </Link>
               </div>
             </div>

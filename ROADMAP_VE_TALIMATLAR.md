@@ -52,10 +52,10 @@
 - **2.4 Numune Talep Formu (Tamamlandı):** `/numune-talep` sayfası ve `components/sample/SampleRequestForm.tsx` bileşeni oluşturuldu; AR-GE ve bakım ekipleri için 8 farklı malzeme çeşidi, kalınlık seçimi ve teslimat adresi akışı `/api/rfq`'ya bağlandı; footer, mega menü ve sitemap'e eklendi.
 
 
-### 🟡 Aşama 3: B2B Satış Araçları
-- **3.1 Toplu Teklif Sepeti (RFQ Cart):** Ziyaretçilerin birden fazla contayı seçip tek bir teklif talebinde toplayabilmesi (fiyat olmadan teklif listesi).
-- **3.2 Teknik PDF Datasheets:** Ürün sayfalarında "Teknik Föyü İndir (PDF)" butonu (özellikler, basınç-sıcaklık eğrisi, standartlar).
-- **3.3 Bayi / Toptancı Başvuru Formu:** `/bayi-basvuru` sayfası — endüstriyel hırdavatçı ve distribütörler için başvuru formu.
+### 🟡 Aşama 3: B2B Satış Araçları (TAMAMLANDI ✅)
+- **3.1 Toplu Teklif Sepeti (RFQ Cart) (Tamamlandı):** `lib/cart-context.tsx` context & local storage altyapısı, `components/cart/RfqCartDrawer.tsx` yan çekmecesi, `components/layout/Header.tsx` dinamik rozetli sepet butonu, ürün kartları ve detay sayfalarında "Teklif Listesine Ekle" aksiyonları, ve `/teklif-sepeti` tam sayfa yönetim/gönderim portalı kuruldu. WhatsApp formatlı teyit ve `/api/rfq` toplu e-posta gönderimi entegre edildi.
+- **3.2 Teknik PDF Datasheets (Tamamlandı):** 12 ürünün tamamı için DIN/ASME standartlarına uygun teknik föy sayfaları (`/urunler/[slug]/datasheet`) oluşturuldu. `generateStaticParams` ile SSG olarak derlendi; teknik çizim toleransları, malzeme özellikleri, basınç-sıcaklık limitleri, `@media print` A4 baskı stilleri ve `components/ui/PrintButton.tsx` istemci yazdırma/PDF kaydetme düğmesi eklendi.
+- **3.3 Bayi / Toptancı Başvuru Formu (Tamamlandı):** `/bayi-basvuru` B2B bayi ve toptancı başvuru portalı ve `components/distributor/DistributorApplicationForm.tsx` bileşeni geliştirildi. Ticari ünvan, vergi no, depo metrekaresi, yıllık alım hacmi, hedef ürün portföyü seçimleri eklendi; `/api/rfq` üzerinden `BAYI-XXXXXX` referans kodlu e-posta bildirimi ve müşteri teyit e-postası akışı bağlandı. Footer, mega menü ve sitemap'e kaydedildi.
 
 ### 🟢 Aşama 4: SEO & Bulunabilirlik
 - **4.1 Dinamik Sitemap (`app/sitemap.ts`):** 12 ürün, 10 sektör ve 6 teknik makaleyi içeren otomatik güncellenen XML site haritası.
@@ -101,5 +101,5 @@ Sevgili yapay zeka asistanı, bu projeyi devraldığında lütfen aşağıdaki k
    - Kullanıcının açıkça "istemiyorum" dediği özellikleri (hesaplayıcılar, videolar, sosyal medya, sadakat bülteni) asla gündeme getirme veya eklemeye kalkışma.
    - Doğrudan yukarıdaki **İstenen Yol Haritası** doğrultusunda çalış.
 
-5. **Başlangıç Önerisi:**
-   - Yeni oturumda ilk olarak **Aşama 2 (WhatsApp Floating Butonu + RFQ Formu E-Posta)** veya **Aşama 4 (Sitemap & JSON-LD SEO)** ile başlanması en verimli sonucu verir.
+5. **Sıradaki Aşama Önerisi:**
+   - **Aşama 2** ve **Aşama 3** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 4: SEO & Bulunabilirlik** (Dinamik Sitemap, JSON-LD Yapılandırılmış Veri `Product`/`LocalBusiness`/`BreadcrumbList`, Open Graph & Twitter kartları, GSC meta tag doğrulaması).

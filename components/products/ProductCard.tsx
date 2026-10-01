@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { ArrowRightIcon, RulerIcon, CheckCircleIcon } from "@/components/icons/Icons";
+import { useRfqCart } from "@/lib/cart-context";
 
 interface ProductCardProps {
   product: Product;
@@ -11,6 +14,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
+  const { addItem } = useRfqCart();
   return (
     <div className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-xl overflow-hidden">
       <div>
@@ -108,14 +112,31 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </div>
 
       {/* Card Footer / Action */}
-      <div className="border-t border-industrial-200">
+      <div className="border-t border-industrial-200 grid grid-cols-12 divide-x divide-industrial-200">
         <Link
           href={`/urunler/${product.slug}`}
-          className="w-full inline-flex items-center justify-between px-5 py-3 bg-industrial-50 group-hover:bg-brick group-hover:text-white text-night text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
+          className="col-span-8 flex items-center justify-between px-4 py-3 bg-industrial-50 group-hover:bg-brick group-hover:text-white text-night text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300"
         >
-          <span>Teknik Özellikler & Teklif</span>
+          <span>İncele & Teklif</span>
           <ArrowRightIcon className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            addItem({
+              slug: product.slug,
+              name: product.name,
+              category: product.category,
+              quantity: "50 Adet",
+            });
+          }}
+          title="Teklif Sepetine Ekle"
+          className="col-span-4 flex items-center justify-center gap-1 px-2 py-3 bg-industrial-100 hover:bg-night text-industrial-800 hover:text-white text-xs font-mono font-bold transition-colors cursor-pointer"
+        >
+          <span>+ Sepet</span>
+        </button>
       </div>
     </div>
   );

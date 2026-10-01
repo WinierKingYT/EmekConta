@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
+import { RfqCartProvider } from "@/lib/cart-context";
+import { RfqCartDrawer } from "@/components/cart/RfqCartDrawer";
 import { companyData } from "@/data/company";
 
 const inter = Inter({
@@ -107,12 +109,15 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased min-h-screen flex flex-col bg-industrial-50 text-industrial-900 selection:bg-steel-blue selection:text-white">
-        <Header />
-        <main className="flex-1 w-full" id="main-content">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFloatingButton />
+        <RfqCartProvider>
+          <Header />
+          <main className="flex-1 w-full" id="main-content">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppFloatingButton />
+          <RfqCartDrawer />
+        </RfqCartProvider>
       </body>
     </html>
   );

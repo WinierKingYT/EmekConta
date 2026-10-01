@@ -191,6 +191,11 @@ export function Footer() {
                   Ücretsiz Numune Talep Et (AR-GE) →
                 </Link>
               </li>
+              <li>
+                <Link href="/bayi-basvuru" className="hover:text-white transition-colors">
+                  Bayilik & Toptancı Başvurusu
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -222,6 +227,11 @@ export function Footer() {
                 <a href={`mailto:${companyData.quoteEmail}`} className="text-rust hover:text-rust-light font-mono">
                   {companyData.quoteEmail}
                 </a>
+              </div>
+              <div className="pt-1">
+                <Link href="/teklif-sepeti" className="inline-flex items-center gap-1 text-rust hover:text-rust-light font-mono text-xs font-semibold">
+                  <span>Teklif Sepetim (RFQ Cart) →</span>
+                </Link>
               </div>
               <div className="pt-2">
                 <Link
