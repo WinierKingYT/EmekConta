@@ -57,11 +57,17 @@
 - **3.2 Teknik PDF Datasheets (Tamamlandı):** 12 ürünün tamamı için DIN/ASME standartlarına uygun teknik föy sayfaları (`/urunler/[slug]/datasheet`) oluşturuldu. `generateStaticParams` ile SSG olarak derlendi; teknik çizim toleransları, malzeme özellikleri, basınç-sıcaklık limitleri, `@media print` A4 baskı stilleri ve `components/ui/PrintButton.tsx` istemci yazdırma/PDF kaydetme düğmesi eklendi.
 - **3.3 Bayi / Toptancı Başvuru Formu (Tamamlandı):** `/bayi-basvuru` B2B bayi ve toptancı başvuru portalı ve `components/distributor/DistributorApplicationForm.tsx` bileşeni geliştirildi. Ticari ünvan, vergi no, depo metrekaresi, yıllık alım hacmi, hedef ürün portföyü seçimleri eklendi; `/api/rfq` üzerinden `BAYI-XXXXXX` referans kodlu e-posta bildirimi ve müşteri teyit e-postası akışı bağlandı. Footer, mega menü ve sitemap'e kaydedildi.
 
-### 🟢 Aşama 4: SEO & Bulunabilirlik
-- **4.1 Dinamik Sitemap (`app/sitemap.ts`):** 12 ürün, 10 sektör ve 6 teknik makaleyi içeren otomatik güncellenen XML site haritası.
-- **4.2 JSON-LD Yapılandırılmış Veri:** `Product`, `LocalBusiness`, `BreadcrumbList` schema'larının sayfalara gömülmesi.
-- **4.3 Open Graph & Metadata:** WhatsApp ve LinkedIn'de paylaşıldığında zengin kart ve görsel görünümü.
-- **4.4 Google Search Console:** Doğrulama ve sitemap kaydı.
+### 🟢 Aşama 4: SEO & Bulunabilirlik (TAMAMLANDI ✅)
+- **4.1 Dinamik Sitemap & Robots (`app/sitemap.ts`, `app/robots.ts`) (Tamamlandı):** 12 ürün, 12 teknik veri föyü (TDS), 10 sektör, 6 teknik makale ve tüm B2B sayfalarını (sepet, numune, bayi başvuru, özel üretim) içeren dinamik XML site haritası ve `Host` / `Disallow: /api/` kurallarını barındıran `robots.txt` optimize edildi.
+- **4.2 JSON-LD Yapılandırılmış Veri (Tamamlandı):**
+  - `Organization` + `LocalBusiness` + `Manufacturer`: İstanbul merkez & Karaköy şube adresleri, kurumsal telefon, e-posta, çalışma saatleri (`app/layout.tsx`).
+  - `WebSite`: Kurumsal arama aksiyonu ve site kimliği (`app/page.tsx`).
+  - `Product`: Ürün özellikleri, ASME/DIN ek parametreleri, marka, üretici ve `AggregateOffer` teklif şeması (`app/urunler/[slug]/page.tsx`).
+  - `BreadcrumbList`: Google Rich Results uyumlu "Ana Sayfa" pozisyon 1 hiyerarşik yapılandırması (`components/layout/Breadcrumb.tsx`).
+  - `Service`: 10 sektör için sızdırmazlık mühendisliği ve imalat hizmet şeması (`app/sektorler/[slug]/page.tsx`).
+  - `Article`: Teknik makaleler için yayıncı, yazar, başlık ve tarih şeması (`app/teknik-bilgi/[slug]/page.tsx`).
+- **4.3 Open Graph & Metadata (Tamamlandı):** `app/opengraph-image.tsx` ile `next/og` (`ImageResponse`) altyapısında 1200x630 çözünürlüğünde kurumsal pas/gece mavisi renklerinde dinamik sosyal medya ve WhatsApp önizleme kartı oluşturuldu. Canonical URL'ler (`alternates.canonical`) ve `summary_large_image` Twitter kartları tüm sayfalara bağlandı.
+- **4.4 Google Search Console Doğrulaması (Tamamlandı):** `verification.google` meta etiketi (`NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`) `app/layout.tsx` içerisine entegre edildi.
 
 ### 🔵 Aşama 5: Analitik & Takip
 - **5.1 Google Analytics 4 (GA4):** Next.js Script ile entegrasyon.
@@ -102,4 +108,4 @@ Sevgili yapay zeka asistanı, bu projeyi devraldığında lütfen aşağıdaki k
    - Doğrudan yukarıdaki **İstenen Yol Haritası** doğrultusunda çalış.
 
 5. **Sıradaki Aşama Önerisi:**
-   - **Aşama 2** ve **Aşama 3** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 4: SEO & Bulunabilirlik** (Dinamik Sitemap, JSON-LD Yapılandırılmış Veri `Product`/`LocalBusiness`/`BreadcrumbList`, Open Graph & Twitter kartları, GSC meta tag doğrulaması).
+   - **Aşama 2**, **Aşama 3** ve **Aşama 4** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 5: Analitik & Takip** (Google Analytics 4 / GA4, Microsoft Clarity kullanıcı oturum kayıtları ve RFQ Form Conversion Event tracking).

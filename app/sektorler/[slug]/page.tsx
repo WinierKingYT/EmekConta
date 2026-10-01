@@ -34,10 +34,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${sector.name} Sızdırmazlık Çözümleri | Emek Conta`,
     description: sector.shortDescription,
+    alternates: {
+      canonical: `https://emekconta.com/sektorler/${sector.slug}`,
+    },
     openGraph: {
       title: `${sector.name} Sızdırmazlık Çözümleri | Emek Conta`,
       description: sector.shortDescription,
       url: `https://emekconta.com/sektorler/${sector.slug}`,
+      type: "website",
+      images: [
+        {
+          url: "https://emekconta.com/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${sector.name} Sızdırmazlık Çözümleri`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${sector.name} Sızdırmazlık Çözümleri | Emek Conta`,
+      description: sector.shortDescription,
+      images: ["https://emekconta.com/opengraph-image.png"],
     },
   };
 }
@@ -54,8 +72,30 @@ export default function SectorDetailPage({ params }: Props) {
     sector.recommendedProducts.includes(p.slug)
   );
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${sector.name} Sızdırmazlık Çözümleri`,
+    description: sector.description,
+    provider: {
+      "@type": "Organization",
+      name: "Emek Conta Sanayi ve Ticaret",
+      url: "https://emekconta.com",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Turkey",
+    },
+    serviceType: "Endüstriyel Conta İmalatı ve Flanş Sızdırmazlık Mühendisliği",
+    url: `https://emekconta.com/sektorler/${sector.slug}`,
+  };
+
   return (
     <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Container>
         {/* Breadcrumb */}
         <Breadcrumb

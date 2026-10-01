@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${article.title} | Emek Conta Teknik Bilgi`,
     description: article.summary,
+    alternates: {
+      canonical: `https://emekconta.com/teknik-bilgi/${article.slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.summary,
@@ -39,6 +42,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
+      images: [
+        {
+          url: "https://emekconta.com/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.summary,
+      images: ["https://emekconta.com/opengraph-image.png"],
     },
   };
 }
@@ -61,6 +78,7 @@ export default function ArticleDetailPage({ params }: Props) {
     "@type": "Article",
     headline: article.title,
     description: article.summary,
+    image: "https://emekconta.com/opengraph-image.png",
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
     author: {
@@ -71,6 +89,10 @@ export default function ArticleDetailPage({ params }: Props) {
       "@type": "Organization",
       name: "Emek Conta",
       url: "https://emekconta.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://emekconta.com/logo.png",
+      },
     },
     mainEntityOfPage: `https://emekconta.com/teknik-bilgi/${article.slug}`,
   };

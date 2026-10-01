@@ -35,13 +35,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = productsData.find((p) => p.slug === params.slug);
   if (!product) return {};
 
+  const ogImageUrl = product.image
+    ? `https://emekconta.com${product.image}`
+    : "https://emekconta.com/opengraph-image.png";
+
   return {
     title: product.seoTitle,
     description: product.seoDescription,
+    alternates: {
+      canonical: `https://emekconta.com/urunler/${product.slug}`,
+    },
     openGraph: {
       title: product.seoTitle,
       description: product.seoDescription,
       url: `https://emekconta.com/urunler/${product.slug}`,
+      type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          width: product.image ? 800 : 1200,
+          height: product.image ? 800 : 630,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.seoTitle,
+      description: product.seoDescription,
+      images: [ogImageUrl],
     },
   };
 }
@@ -56,6 +78,46 @@ export default function ProductDetailPage({ params }: Props) {
   const relatedProducts = productsData.filter((p) =>
     product.relatedProductSlugs.includes(p.slug)
   );
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.image
+      ? `https://emekconta.com${product.image}`
+      : "https://emekconta.com/opengraph-image.png",
+    category: product.category,
+    sku: `EC-${product.slug.toUpperCase()}`,
+    mpn: `EC-MPN-${product.slug.toUpperCase()}`,
+    brand: {
+      "@type": "Brand",
+      name: "Emek Conta",
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Emek Conta Sanayi ve Ticaret",
+      url: "https://emekconta.com",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "TRY",
+      availability: "https://schema.org/InStock",
+      price: "0.00",
+      priceValidUntil: "2027-12-31",
+      url: `https://emekconta.com/urunler/${product.slug}`,
+      seller: {
+        "@type": "Organization",
+        name: "Emek Conta",
+      },
+    },
+    additionalProperty: product.specifications.map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.property,
+      value: spec.value,
+      propertyID: spec.standard || undefined,
+    })),
+  };
 
   // Table columns for technical specifications
   const specColumns: Column<ProductSpecification>[] = [
@@ -83,6 +145,10 @@ export default function ProductDetailPage({ params }: Props) {
 
   return (
     <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <Container>
         {/* Breadcrumb */}
         <Breadcrumb

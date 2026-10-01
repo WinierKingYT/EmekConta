@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
+  alternates: {
+    canonical: "https://emekconta.com",
+  },
   openGraph: {
     type: "website",
     locale: "tr_TR",
@@ -62,6 +65,26 @@ export const metadata: Metadata = {
     description:
       "Standart sızdırmazlık ürünlerinden teknik resim ve numuneye göre özel üretime kadar sanayi ve denizcilik uygulamaları için güvenilir çözümler.",
     siteName: "Emek Conta",
+    images: [
+      {
+        url: "https://emekconta.com/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Emek Conta Endüstriyel Sızdırmazlık Çözümleri",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri",
+    description:
+      "1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri imalatçısı.",
+    images: ["https://emekconta.com/opengraph-image.png"],
+  },
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      "google-site-verification=EMEK_CONTA_OFFICIAL_GSC_TOKEN",
   },
   robots: {
     index: true,
@@ -81,23 +104,72 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Structured Organization Schema
+  // Structured Organization, LocalBusiness & Manufacturer Schema
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness", "Manufacturer"],
     name: "Emek Conta",
     legalName: "Emek Conta Sanayi ve Ticaret",
     url: "https://emekconta.com",
+    logo: "https://emekconta.com/logo.png",
+    image: "https://emekconta.com/opengraph-image.png",
     foundingDate: "1997",
     description:
-      "Sanayi ve denizcilik sektörleri için standart ve özel üretim endüstriyel conta ve sızdırmazlık çözümleri imalatçısı.",
+      "1997'den beri sanayi ve denizcilik sektörleri için standart ve özel üretim endüstriyel conta ve sızdırmazlık çözümleri imalatçısı.",
     telephone: companyData.phone,
     email: companyData.email,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "İstanbul",
+      streetAddress: companyData.locations[0].address,
+      addressLocality: companyData.locations[0].district,
+      addressRegion: companyData.locations[0].city,
       addressCountry: "TR",
     },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:30",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "08:30",
+        closes: "13:00",
+      },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: companyData.phone,
+        contactType: "customer service",
+        areaServed: "TR",
+        availableLanguage: ["Turkish", "English"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: companyData.whatsapp,
+        contactType: "sales",
+        areaServed: "TR",
+        availableLanguage: ["Turkish", "English"],
+      },
+    ],
+    department: companyData.locations.map((loc) => ({
+      "@type": ["LocalBusiness", "Store"],
+      name: `Emek Conta - ${loc.name}`,
+      telephone: loc.phone,
+      email: loc.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: loc.address,
+        addressLocality: loc.district,
+        addressRegion: loc.city,
+        addressCountry: "TR",
+      },
+      openingHours: "Mo-Fr 08:30-18:00, Sa 08:30-13:00",
+    })),
   };
 
   return (
