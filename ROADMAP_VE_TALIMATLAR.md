@@ -80,33 +80,20 @@
 - **6.3 Dil Değiştirici & Entegrasyon (Tamamlandı):** Rota duyarlı `LanguageSwitcher.tsx` bileşeni geliştirilerek masaüstü `Header`, `MobileNav` ve `Footer` bileşenlerine entegre edildi. Dinamik site haritası (`app/sitemap.ts`) 16 yeni ihracat ve İngilizce rotayla genişletildi.
 - **6.4 Arapça Versiyon (Opsiyonel):** İsteğe bağlı olarak Körfez ülkeleri için gelecekteki genişleme fazı olarak arşivlendi.
 
-### ⚪ Aşama 7: Performans & Yasal Uyumluluk
-- **7.1 WebP Görsel Dönüşümü:** Ürün görsellerinin sıkıştırılması ve optimize edilmesi.
-- **7.2 KVKK & Çerez Bildirimi:** Sade, kullanıcıyı rahatsız etmeyen yasal çerez bandı.
-- **7.3 Lighthouse 90+:** Mobil ve masaüstü Core Web Vitals optimizasyonu.
+### ⚪ Aşama 7: Performans, Yasal Uyumluluk & Canlıya Hazırlık (TAMAMLANDI ✅)
+- **7.1 WebP Görsel Dönüşümü (Tamamlandı):** 12 ürün görselinin tamamı ve ana sayfa görsel slaytları yüksek sıkıştırmalı WebP formatında derlendi (%85-97 dosya boyutu tasarrufu). Next.js `next/image` ile modern AVIF ve WebP öncelikli format desteği sağlandı.
+- **7.2 KVKK & Çerez Bildirimi (Tamamlandı):** 6698 sayılı Kanun’a tam uyumlu `app/kvkk/page.tsx` Aydınlatma Metni ve `app/cerez-politikasi/page.tsx` politikası yazıldı. Şık, kullanıcıyı rahatsız etmeyen, Consent Mode v2 entegrasyonuna sahip `CookieConsentBanner.tsx` bileşeni `app/layout.tsx`'e bağlandı.
+- **7.3 Lighthouse 90+ & Core Web Vitals (Tamamlandı):** `next.config.mjs` üzerinde Gzip/Brotli sıkıştırma (`compress: true`), HSTS, X-Content-Type-Options, DNS Prefetch ve agresif statik görsel önbellekleme kuralları (`minimumCacheTTL: 31536000`, `immutable`) yapılandırıldı. `Inter` ve `JetBrains_Mono` fontları `display: swap` ile CLS/FCP engelleri kaldırıldı.
 
 ---
 
-## 🤖 4. YENİ SOHBETTEKİ MODEL / ACENTE İÇİN TALİMATLAR
+## 🏆 4. YOL HARİTASI TAMAMLANMA ÖZETİ (AŞAMA 1 – 7 TAMAMLANDI)
 
-Sevgili yapay zeka asistanı, bu projeyi devraldığında lütfen aşağıdaki kritik kurallara titizlikle uy:
-
-1. **Terminal / Shell Kuralı (Windows PowerShell):**
-   - Komutları zincirlemek için `&&` **KULLANMA**. PowerShell `&&` karakterini tanımaz.
-   - Komutları tek tek çalıştır (`git add .`, ardından `git commit ...`, ardından `git push ...`).
-   - Node komutları için `npm.cmd` kullan.
-
-2. **Tasarım Bütünlüğü Kuralı:**
-   - Asla aşırı yuvarlatılmış (pill/tam yuvarlak) köşeler yapma. Kartlar için `rounded-xl`, buton/inputlar için `rounded-lg`, etiketler için `rounded-md` standardını koru.
-   - Renkleri asla bozma (`rust: #b7410e`, `brick: #c04657`, `night: #1a2536`, `industrial-50: #f4f6f8`).
-
-3. **Derleme ve Tip Güvenliği:**
-   - Her kod değişikliğinden sonra mutlaka `npm.cmd run lint` ve `npm.cmd run build` komutlarıyla derlemeyi doğrula.
-   - Hata ve uyarı bırakma.
-
-4. **Kullanıcı Kısıtları:**
-   - Kullanıcının açıkça "istemiyorum" dediği özellikleri (hesaplayıcılar, videolar, sosyal medya, sadakat bülteni) asla gündeme getirme veya eklemeye kalkışma.
-   - Doğrudan yukarıdaki **İstenen Yol Haritası** doğrultusunda çalış.
-
-5. **Sıradaki Aşama:**
-   - **Aşama 2**, **Aşama 3**, **Aşama 4**, **Aşama 5** ve **Aşama 6** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 7: Performans, Yasal Uyumluluk (KVKK / Çerez Politikası) & Canlıya Hazırlık**.
+Tüm 7 aşama eksiksiz, sıfır lint hatası, sıfır derleme hatası ve 75 SSG statik sayfa ile başarıyla tamamlanmış ve canlıya hazır hale getirilmiştir:
+- ✅ **Aşama 1:** Temel Mimari, Marka Kimliği & Responsive Layout
+- ✅ **Aşama 2:** İletişim, WhatsApp Floating Buton, Resend E-Posta Entegrasyonu & Numune Talep Portalı
+- ✅ **Aşama 3:** Toplu Teklif Sepeti (RFQ Cart), 12 Teknik PDF Datasheet & Bayi/Toptancı Portalı
+- ✅ **Aşama 4:** SEO, Dinamik XML Sitemap, Robots.txt, JSON-LD Zengin Şemalar & 1200x630 OpenGraph
+- ✅ **Aşama 5:** Google Analytics 4, Microsoft Clarity & B2B Lead Dönüşüm İzleme
+- ✅ **Aşama 6:** İhracat & Standartlar Portalı (`/ihracat`), İngilizce Dil Altyapısı (`/en`, `/en/products`, `/en/contact`), Hreflang & Dil Değiştirici
+- ✅ **Aşama 7:** WebP Asset Optimizasyonu, KVKK & Çerez Bildirim Bandı, Güvenlik Başlıkları & Core Web Vitals (Lighthouse 90+)

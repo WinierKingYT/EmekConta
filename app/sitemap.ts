@@ -105,6 +105,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/kvkk`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/cerez-politikasi`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
   ];
 
   // Dynamic Product Pages & Datasheets

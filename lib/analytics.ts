@@ -58,6 +58,32 @@ export function setClarityTag(key: string, value: string | string[]) {
   }
 }
 
+export type CookieConsentStatus = "all" | "essential" | "denied";
+
+/**
+ * Updates analytics consent in Google Analytics (Consent Mode v2) and Microsoft Clarity
+ */
+export function updateAnalyticsConsent(consent: CookieConsentStatus) {
+  if (typeof window === "undefined") return;
+
+  const isGranted = consent === "all";
+
+  // Google Analytics Consent Mode v2 update
+  if (typeof window.gtag === "function") {
+    window.gtag("set", "consent", {
+      analytics_storage: isGranted ? "granted" : "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+  }
+
+  // Microsoft Clarity Consent API
+  if (typeof window.clarity === "function") {
+    window.clarity("consent", isGranted);
+  }
+}
+
 export type RfqFormType =
   | "rfq_detailed"
   | "rfq_quick"

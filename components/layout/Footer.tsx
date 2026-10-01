@@ -267,12 +267,16 @@ export function Footer() {
               Kurumsal Kimlik
             </Link>
             <span className="text-industrial-800">|</span>
-            <Link href="/iletisim" className="hover:text-industrial-300 transition-colors">
-              KVKK & Gizlilik
+            <Link href="/kvkk" className="hover:text-industrial-300 transition-colors">
+              KVKK Aydınlatma
+            </Link>
+            <span className="text-industrial-800">|</span>
+            <Link href="/cerez-politikasi" className="hover:text-industrial-300 transition-colors">
+              Çerez Politikası
             </Link>
             <span className="text-industrial-800">|</span>
             <Link href="/teknik-bilgi" className="hover:text-industrial-300 transition-colors">
-              Teknik Standartlar
+              Standartlar
             </Link>
             <span className="text-industrial-800">|</span>
             <Link href="/ihracat" className="hover:text-industrial-300 transition-colors">
