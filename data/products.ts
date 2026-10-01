@@ -109,7 +109,7 @@ export const productsData: Product[] = [
         "value": "Su, glikol, seyreltik asit ve alkalilere karşı mükemmel"
       }
     ],
-    "image": "/images/products/custom_epdm_rubber_gasket.webp",
+    "image": "/images/products/epdm-conta.webp",
     "imagePlaceholderText": "EPDM Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -162,7 +162,7 @@ export const productsData: Product[] = [
         "value": "PN 10, PN 16, Class 150"
       }
     ],
-    "image": "/images/products/custom_epdm_rubber_gasket.webp",
+    "image": "/images/products/epdm-flans-conta.webp",
     "imagePlaceholderText": "EPDM Flanş Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -216,7 +216,7 @@ export const productsData: Product[] = [
         "value": "-40°C ile +120°C"
       }
     ],
-    "image": "/images/products/custom_steel_reinforced_gasket.webp",
+    "image": "/images/products/epdm-celik-takviyeli-elastomer-conta.webp",
     "imagePlaceholderText": "EPDM Çelik Takviyeli Elastomer Flanş Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -265,7 +265,7 @@ export const productsData: Product[] = [
         "value": "PN 16 – PN 25"
       }
     ],
-    "image": "/images/products/custom_steel_reinforced_gasket.webp",
+    "image": "/images/products/celik-takviyeli-conta.webp",
     "imagePlaceholderText": "Çelik Takviyeli Kauçuk Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -319,7 +319,7 @@ export const productsData: Product[] = [
         "value": "2 mm, 3 mm, 4 mm, 5 mm, 8 mm, 10 mm"
       }
     ],
-    "image": "/images/products/custom_epdm_rubber_gasket.webp",
+    "image": "/images/products/lastik-conta.webp",
     "imagePlaceholderText": "Lastik Conta (SBR / Doğal Kauçuk) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -373,7 +373,7 @@ export const productsData: Product[] = [
         "value": "Siyah / Yeşil / Kahverengi"
       }
     ],
-    "image": "/images/products/custom_viton_fkm_gasket.webp",
+    "image": "/images/products/viton-conta.webp",
     "imagePlaceholderText": "Viton Conta (FKM Floroelastomer) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -422,7 +422,7 @@ export const productsData: Product[] = [
         "value": "DN 15 – DN 600"
       }
     ],
-    "image": "/images/products/custom_viton_fkm_gasket.webp",
+    "image": "/images/products/viton-flans-conta.webp",
     "imagePlaceholderText": "Viton Flanş Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -471,7 +471,7 @@ export const productsData: Product[] = [
         "value": "100 Bar'a kadar (destekli yuvalarda)"
       }
     ],
-    "image": "/images/products/custom_viton_fkm_gasket.webp",
+    "image": "/images/products/mekanik-viton-conta.webp",
     "imagePlaceholderText": "Mekanik Viton Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -527,7 +527,7 @@ export const productsData: Product[] = [
         "value": "Şeffaf, Kırmızı (Kiremit), Beyaz, Mavi"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-conta.webp",
     "imagePlaceholderText": "Silikon Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -586,7 +586,7 @@ export const productsData: Product[] = [
         "value": "-200°C ile +550°C (Grafit) / +260°C (PTFE)"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/spiral-sarimli-celik-conta.webp",
     "imagePlaceholderText": "Spiral Sarımlı Çelik Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -636,7 +636,7 @@ export const productsData: Product[] = [
         "value": "AISI 304 / 316L Paslanmaz Çelik"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/saf-grafitli-ici-ringli-conta.webp",
     "imagePlaceholderText": "Saf Grafitli İçi Ringli Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -681,7 +681,7 @@ export const productsData: Product[] = [
         "value": "PN 40 – PN 100"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/saf-grafitli-ringli-conta.webp",
     "imagePlaceholderText": "Saf Grafitli Ringli Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -726,7 +726,7 @@ export const productsData: Product[] = [
         "value": "PN 63 (63 Bar)"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/grafitli-ici-bilezikli-conta.webp",
     "imagePlaceholderText": "Grafitli İçi Bilezikli Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -780,7 +780,7 @@ export const productsData: Product[] = [
         "value": "1.5 mm, 2 mm, 3 mm"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/grafitli-telli-conta.webp",
     "imagePlaceholderText": "Grafitli Telli Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -830,7 +830,7 @@ export const productsData: Product[] = [
         "value": "1.0 mm, 1.5 mm, 2.0 mm, 3.0 mm"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/klingirit-flans-conta.webp",
     "imagePlaceholderText": "Klingirit Flanş Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -875,7 +875,7 @@ export const productsData: Product[] = [
         "value": "40 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/klingirit-conta.webp",
     "imagePlaceholderText": "Klingirit Conta (Asbestsiz) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -920,7 +920,7 @@ export const productsData: Product[] = [
         "value": "40 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/asbetsiz-conta.webp",
     "imagePlaceholderText": "Asbestsiz Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -975,7 +975,7 @@ export const productsData: Product[] = [
         "value": "≥ 25 MPa"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/ptfe-teflon-conta.webp",
     "imagePlaceholderText": "PTFE / Teflon Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1031,7 +1031,7 @@ export const productsData: Product[] = [
         "value": "-40°C ile +150°C (G10 ile +180°C)"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/izole-flans-kiti-conta.webp",
     "imagePlaceholderText": "İzole Flanş Kiti Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1080,7 +1080,7 @@ export const productsData: Product[] = [
         "value": "80x120, 100x150, 150x200, 220x320, 300x400 mm"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/kazan-kapak-contasi.webp",
     "imagePlaceholderText": "Kazan Kapak Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1125,7 +1125,7 @@ export const productsData: Product[] = [
         "value": "PN 40 - PN 100"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/buhar-contasi.webp",
     "imagePlaceholderText": "Buhar Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1170,7 +1170,7 @@ export const productsData: Product[] = [
         "value": "PN 10 - PN 16"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/kalorifer-contasi.webp",
     "imagePlaceholderText": "Kalorifer Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1212,7 +1212,7 @@ export const productsData: Product[] = [
         "value": "16 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/kalorifer-boru-contasi.webp",
     "imagePlaceholderText": "Kalorifer Boru Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1255,7 +1255,7 @@ export const productsData: Product[] = [
         "value": "1/2\", 3/4\", 1\", 1 1/4\", 1 1/2\", 2\", 2 1/2\", 3\", 4\""
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/rekor-conta.webp",
     "imagePlaceholderText": "Rekor Conta (Rakor Contası) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1303,7 +1303,7 @@ export const productsData: Product[] = [
         "value": "DXF, DWG, PDF, STEP, Fiziksel Numune"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/ozel-kesim-conta.webp",
     "imagePlaceholderText": "Özel Kesim Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1342,7 +1342,7 @@ export const productsData: Product[] = [
         "value": "CNC Kesim / Vulkanizasyon / Metal Büküm"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/ozel-imalat-conta.webp",
     "imagePlaceholderText": "Özel İmalat Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1390,7 +1390,7 @@ export const productsData: Product[] = [
         "value": "40 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/antiasit.webp",
     "imagePlaceholderText": "Antiasit Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1438,7 +1438,7 @@ export const productsData: Product[] = [
         "value": "PN 25"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/antipetrol.webp",
     "imagePlaceholderText": "Antipetrol Conta - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1482,7 +1482,7 @@ export const productsData: Product[] = [
         "value": "25 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/antipetrol-conta.webp",
     "imagePlaceholderText": "Antipetrol Conta (Flanş Tipi) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1525,7 +1525,7 @@ export const productsData: Product[] = [
         "value": "100 Bar"
       }
     ],
-    "image": "/images/products/custom_spiral_wound_gasket.webp",
+    "image": "/images/products/t200.webp",
     "imagePlaceholderText": "T200 Yüksek Sıcaklık ve Basınç Contası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1581,7 +1581,7 @@ export const productsData: Product[] = [
         "value": "0.5 mm, 1.0 mm, 1.5 mm, 2.0 mm, 3.0 mm"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/saf-grafit-levha.webp",
     "imagePlaceholderText": "Saf Grafit Levha - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1633,7 +1633,7 @@ export const productsData: Product[] = [
         "value": "0.5 mm - 5.0 mm"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/asbestsiz-klingrit-levhalar.webp",
     "imagePlaceholderText": "Asbestsiz Klingrit Levhalar - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1675,7 +1675,7 @@ export const productsData: Product[] = [
         "value": "40 Bar"
       }
     ],
-    "image": "/images/products/custom_klingrite_gasket.webp",
+    "image": "/images/products/asbestsiz-klingerit-levha.webp",
     "imagePlaceholderText": "Asbestsiz Klingerit Levha (Plaka) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1718,7 +1718,7 @@ export const productsData: Product[] = [
         "value": "80 Bar"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/sacli-klingerit.webp",
     "imagePlaceholderText": "Saçlı Klingerit Levha - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1761,7 +1761,7 @@ export const productsData: Product[] = [
         "value": "60 Bar"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/grafitli-asbestsiz-telli.webp",
     "imagePlaceholderText": "Grafitli Asbestsiz Telli Levha - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1804,7 +1804,7 @@ export const productsData: Product[] = [
         "value": "50 Bar"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_sheet.webp",
+    "image": "/images/products/grafitli-asbestli-telli.webp",
     "imagePlaceholderText": "Grafitli Telli Yüksek Isı Levhası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1857,7 +1857,7 @@ export const productsData: Product[] = [
         "value": "1.0 mm ile 10.0 mm arası"
       }
     ],
-    "image": "/images/products/custom_cork_sheet_gasket.webp",
+    "image": "/images/products/mantar-levhalar.webp",
     "imagePlaceholderText": "Mantar Levhalar (Kauçuklu Mantar) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1910,7 +1910,7 @@ export const productsData: Product[] = [
         "value": "1000 x 2000 mm"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/vulkanize-fiber-levhalar.webp",
     "imagePlaceholderText": "Vulkanize Fiber Levhalar - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -1952,7 +1952,7 @@ export const productsData: Product[] = [
         "value": "0.5 mm - 10 mm"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/fiber-levhalar.webp",
     "imagePlaceholderText": "Fiber Levhalar - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2005,7 +2005,7 @@ export const productsData: Product[] = [
         "value": "Açık Yeşil / Sarımsı Saydam"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/epoxy-fiber-levha.webp",
     "imagePlaceholderText": "Epoksi Fiber Levha (FR4 / G10) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2054,7 +2054,7 @@ export const productsData: Product[] = [
         "value": "1 mm - 10 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-levhalar.webp",
     "imagePlaceholderText": "Silikon Levhalar (Plaka & Rulo) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2106,7 +2106,7 @@ export const productsData: Product[] = [
         "value": "Sarı (Bal Rengi), Kırmızı, Yeşil"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/poliuretan-levhalar.webp",
     "imagePlaceholderText": "Poliüretan Levhalar (PU) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2159,7 +2159,7 @@ export const productsData: Product[] = [
         "value": "0.5 mm - 50 mm"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/ptfe-teflon-levha.webp",
     "imagePlaceholderText": "PTFE / Teflon Levha - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2203,7 +2203,7 @@ export const productsData: Product[] = [
         "value": "85 Bar"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-levha.webp",
     "imagePlaceholderText": "Termoflon Levha (Modifiye PTFE) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2246,7 +2246,7 @@ export const productsData: Product[] = [
         "value": "260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-film.webp",
     "imagePlaceholderText": "Termoflon PTFE Hassas Film - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2299,7 +2299,7 @@ export const productsData: Product[] = [
         "value": "4x4 mm'den 50x50 mm'ye kadar kare kesit"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/saf-grafit-salmastra.webp",
     "imagePlaceholderText": "Saf Grafit Salmastra - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2346,7 +2346,7 @@ export const productsData: Product[] = [
         "value": "10 m/s"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/grafitli-salmastralar.webp",
     "imagePlaceholderText": "Grafitli Örgülü Salmastra - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2388,7 +2388,7 @@ export const productsData: Product[] = [
         "value": "10 mm - 50 mm"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/grafitli-serit-salmastralar.webp",
     "imagePlaceholderText": "Grafitli Şerit Salmastra (Kendinden Yapışkanlı) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2437,7 +2437,7 @@ export const productsData: Product[] = [
         "value": "0 - 14"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/saf-teflon-salmastra.webp",
     "imagePlaceholderText": "Saf Teflon (PTFE) Salmastra - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2489,7 +2489,7 @@ export const productsData: Product[] = [
         "value": "0 - 14"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/grafitli-teflon-salmastra.webp",
     "imagePlaceholderText": "Grafitli Teflon Salmastra (GORE GFO Muadili) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2541,7 +2541,7 @@ export const productsData: Product[] = [
         "value": "2 - 12"
       }
     ],
-    "image": "/images/products/custom_aramid_kevlar_packing.webp",
+    "image": "/images/products/aramid-kevlar-salmastra.webp",
     "imagePlaceholderText": "Aramid / Kevlar Örgülü Salmastra - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2594,7 +2594,7 @@ export const productsData: Product[] = [
         "value": "5 - 11"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/ramie-salmastra.webp",
     "imagePlaceholderText": "Ramie Elyaf Gemi Şaft Salmastrası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2642,7 +2642,7 @@ export const productsData: Product[] = [
         "value": "Pompa: 30 Bar / Vana: 250 Bar"
       }
     ],
-    "image": "/images/products/custom_aramid_kevlar_packing.webp",
+    "image": "/images/products/ats-kempomp-salmastra.webp",
     "imagePlaceholderText": "ATS Kempomp Salmastra (Zebra Örgü) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2684,7 +2684,7 @@ export const productsData: Product[] = [
         "value": "20 Bar"
       }
     ],
-    "image": "/images/products/custom_pure_graphite_packing.webp",
+    "image": "/images/products/termoflon-salmastra.webp",
     "imagePlaceholderText": "Termoflon PTFE Yağlı Salmastra - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2732,7 +2732,7 @@ export const productsData: Product[] = [
         "value": "5x5 mm'den 50x50 mm'ye kadar"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-elyaf-salmastra.webp",
     "imagePlaceholderText": "Cam Elyaf Örgülü Yalıtım Salmastrası - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2784,7 +2784,7 @@ export const productsData: Product[] = [
         "value": "6x6 mm - 60x60 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-salmastralar.webp",
     "imagePlaceholderText": "Seramik Elyaf Örgülü Salmastra (1260°C) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2822,7 +2822,7 @@ export const productsData: Product[] = [
         "value": "1260°C"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-salmastra.webp",
     "imagePlaceholderText": "Seramik Salmastra (Yuvarlak & Kare) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2865,7 +2865,7 @@ export const productsData: Product[] = [
         "value": "Ø 4 mm - Ø 40 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-fitiller.webp",
     "imagePlaceholderText": "Cam Elyaf Fitiller (Yuvarlak & İp) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2903,7 +2903,7 @@ export const productsData: Product[] = [
         "value": "550°C"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-elyaf-fitil.webp",
     "imagePlaceholderText": "Cam Elyaf Fitil (Örme) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2949,7 +2949,7 @@ export const productsData: Product[] = [
         "value": "2 mm - 5 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-elyaf-serit.webp",
     "imagePlaceholderText": "Cam Elyaf Şerit (Bant) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -2997,7 +2997,7 @@ export const productsData: Product[] = [
         "value": "1000 mm / 1200 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-elyaf-bez.webp",
     "imagePlaceholderText": "Cam Elyaf Bez (Kumaş) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3036,7 +3036,7 @@ export const productsData: Product[] = [
         "value": "550°C - 1260°C"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-ve-seramik-bez-kumaslar.webp",
     "imagePlaceholderText": "Cam ve Seramik Bez Kumaşlar - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3078,7 +3078,7 @@ export const productsData: Product[] = [
         "value": "600 x 1000 mm / 1000 x 1200 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-ve-seramik-levhalar.webp",
     "imagePlaceholderText": "Cam ve Seramik Yalıtım Levhaları - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3116,7 +3116,7 @@ export const productsData: Product[] = [
         "value": "550°C - 1260°C"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/cam-ve-seramik-seritler.webp",
     "imagePlaceholderText": "Cam ve Seramik Şeritler (Bantlar) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3168,7 +3168,7 @@ export const productsData: Product[] = [
         "value": "1000 mm x 30 m"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-elyaf-kumaslar.webp",
     "imagePlaceholderText": "Seramik Elyaf Kumaşlar (1260°C) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3210,7 +3210,7 @@ export const productsData: Product[] = [
         "value": "2 mm, 3 mm, 5 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-bez.webp",
     "imagePlaceholderText": "Seramik Bez (İnconel Telli) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3252,7 +3252,7 @@ export const productsData: Product[] = [
         "value": "25 mm - 100 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-serit.webp",
     "imagePlaceholderText": "Seramik Şerit (Bant) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3294,7 +3294,7 @@ export const productsData: Product[] = [
         "value": "Ø 6 mm - Ø 50 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-fitil.webp",
     "imagePlaceholderText": "Seramik Fitil (Burgulu / Örgülü İp) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3394,7 +3394,7 @@ export const productsData: Product[] = [
         "value": "610 mm x 7320 mm x 25 mm / 50 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-battaniye.webp",
     "imagePlaceholderText": "Seramik Battaniye (1260°C Blanket) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3442,7 +3442,7 @@ export const productsData: Product[] = [
         "value": "610 mm / 1000 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-paper-kagit.webp",
     "imagePlaceholderText": "Seramik Paper (Kağıt Conta Malzemesi) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3486,7 +3486,7 @@ export const productsData: Product[] = [
         "value": "60 Shore A"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-profiller.webp",
     "imagePlaceholderText": "Silikon Profiller (Özel Kesit) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3530,7 +3530,7 @@ export const productsData: Product[] = [
         "value": "500 g/m² - 1000 g/m²"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-kumaslar.webp",
     "imagePlaceholderText": "Silikon Kaplı Cam Kumaş - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3572,7 +3572,7 @@ export const productsData: Product[] = [
         "value": "10x2 mm'den 50x20 mm'ye kadar"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-lamalar.webp",
     "imagePlaceholderText": "Silikon Lamalar (Şerit) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3614,7 +3614,7 @@ export const productsData: Product[] = [
         "value": "-60°C / +250°C"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-fitiller.webp",
     "imagePlaceholderText": "Silikon Fitiller (Yuvarlak) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3663,7 +3663,7 @@ export const productsData: Product[] = [
         "value": "Şeffaf / Saydam"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/silikon-hortumlar.webp",
     "imagePlaceholderText": "Silikon Hortumlar (Gıda & Medikal) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3711,7 +3711,7 @@ export const productsData: Product[] = [
         "value": "Kendinden Yapışkanlı / Düz"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/termoflon-cam-kumas.webp",
     "imagePlaceholderText": "Termoflon Cam Kumaş (PTFE Kaplı) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3766,7 +3766,7 @@ export const productsData: Product[] = [
         "value": "Sarı (Standart), Siyah (Molibden katkılı), Mavi"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/kestamid.webp",
     "imagePlaceholderText": "Kestamid (Döküm Poliamid - PA 6G) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3814,7 +3814,7 @@ export const productsData: Product[] = [
         "value": "Beyaz (Naturel), Siyah"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/polyamid.webp",
     "imagePlaceholderText": "Poliamid (PA 6 / PA 66 - Naylon) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3863,7 +3863,7 @@ export const productsData: Product[] = [
         "value": "Beyaz (Opak), Siyah"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/poliasetal.webp",
     "imagePlaceholderText": "Poliasetal (POM / Delrin) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3912,7 +3912,7 @@ export const productsData: Product[] = [
         "value": "Beyaz (Naturel), Yeşil, Siyah"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/polietilen.webp",
     "imagePlaceholderText": "Polietilen (PE 300 / PE 500 / PE 1000) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -3960,7 +3960,7 @@ export const productsData: Product[] = [
         "value": "Gri (RAL 7032), Beyaz"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/polipropilen.webp",
     "imagePlaceholderText": "Polipropilen (PP Levha & Çubuk) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4008,7 +4008,7 @@ export const productsData: Product[] = [
         "value": "Koyu Gri (RAL 7011)"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/pvc.webp",
     "imagePlaceholderText": "Sert PVC (Polivinil Klorür) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4051,7 +4051,7 @@ export const productsData: Product[] = [
         "value": "500 mm / 1000 mm"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/bos-cubuklar.webp",
     "imagePlaceholderText": "İçi Boş Çubuklar (Boru / Kovan Plastikler) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4093,7 +4093,7 @@ export const productsData: Product[] = [
         "value": "1000 mm / 2000 mm"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/dolu-cubuklar.webp",
     "imagePlaceholderText": "Dolu Çubuklar (Silindirik Plastik Çubuklar) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4135,7 +4135,7 @@ export const productsData: Product[] = [
         "value": "Ø 8 mm - Ø 80 mm"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/fiber-cubuklar.webp",
     "imagePlaceholderText": "Fiber Çubuklar (Yalıtım Çubuğu) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4177,7 +4177,7 @@ export const productsData: Product[] = [
         "value": "155°C - 180°C"
       }
     ],
-    "image": "/images/products/custom_flange_insulation_kit.webp",
+    "image": "/images/products/epoxy-fiber-cubuk.webp",
     "imagePlaceholderText": "Epoksi Fiber Çubuk (G10 / G11) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4224,7 +4224,7 @@ export const productsData: Product[] = [
         "value": "Kırık Beyaz / Açık Gri"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/cam-elyafli-termoflon.webp",
     "imagePlaceholderText": "Cam Elyaflı Termoflon (PTFE + %25 Cam) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4272,7 +4272,7 @@ export const productsData: Product[] = [
         "value": "Bronz / Kahverengi Metalik"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/bronzlu-termoflon.webp",
     "imagePlaceholderText": "Bronzlu Termoflon (PTFE + %40 Bronz) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4320,7 +4320,7 @@ export const productsData: Product[] = [
         "value": "Mat Siyah"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/karbonlu-termoflon.webp",
     "imagePlaceholderText": "Karbonlu Termoflon (PTFE + %25 Karbon) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4362,7 +4362,7 @@ export const productsData: Product[] = [
         "value": "260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-cubuk.webp",
     "imagePlaceholderText": "Termoflon PTFE Çubuk (Dolgulu & Saf) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4404,7 +4404,7 @@ export const productsData: Product[] = [
         "value": "-240°C ile +260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-cord.webp",
     "imagePlaceholderText": "Termoflon Cord (Yuvarlak ePTFE Fitil) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4443,7 +4443,7 @@ export const productsData: Product[] = [
         "value": "-70°C / +260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-hortum.webp",
     "imagePlaceholderText": "Termoflon PTFE Hortum - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4493,7 +4493,7 @@ export const productsData: Product[] = [
         "value": "Vakumdan 200 Bar'a kadar"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/termoflon-contalon.webp",
     "imagePlaceholderText": "Termoflon Contalon (Kendinden Yapışkanlı ePTFE Şerit Conta) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4535,7 +4535,7 @@ export const productsData: Product[] = [
         "value": "260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/etch-termoflon.webp",
     "imagePlaceholderText": "Etch Termoflon (Aşındırılmış Yapışmaya Uygun PTFE) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4573,7 +4573,7 @@ export const productsData: Product[] = [
         "value": "260°C"
       }
     ],
-    "image": "/images/products/custom_ptfe_teflon_gasket.webp",
+    "image": "/images/products/sanfor-termoflon.webp",
     "imagePlaceholderText": "Sanfor Termoflon (Tekstil Sanfor Bandı) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4622,7 +4622,7 @@ export const productsData: Product[] = [
         "value": "2 mm'den 30 mm'ye kadar"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/presli-yun-keceler.webp",
     "imagePlaceholderText": "Presli Doğal Yün Keçeler - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
@@ -4666,7 +4666,7 @@ export const productsData: Product[] = [
         "value": "200 g/m² - 2000 g/m²"
       }
     ],
-    "image": "/images/products/custom_kestamid_engineering_plastic.webp",
+    "image": "/images/products/sentetik-keceler.webp",
     "imagePlaceholderText": "Sentetik Teknik Keçeler (Polyester / Polipropilen) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
