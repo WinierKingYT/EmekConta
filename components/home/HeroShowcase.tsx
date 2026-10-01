@@ -166,8 +166,8 @@ export function HeroShowcase() {
                   {slide.cornerBadgeRight}
                 </div>
                 <div className="px-2.5 py-1 bg-industrial-950/90 backdrop-blur-xs border border-industrial-800 text-[10px] font-mono text-emerald-400 text-right rounded-md shadow-xs">
-                  <span className="text-industrial-400 block text-[9px]">ÜRETİM MERKEZİ</span>
-                  İstanbul / Türkiye
+                  <span className="text-industrial-400 block text-[9px]">KALİTE GÜVENCESİ</span>
+                  DIN & ASME Normu
                 </div>
               </div>
             </div>

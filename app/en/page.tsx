@@ -17,7 +17,7 @@ import {
 import { companyData } from "@/data/company";
 
 export const metadata: Metadata = {
-  title: "Emek Gaskets | Industrial Sealing & Gasket Manufacturing (Since 1997)",
+  title: "Emek Gaskets | Industrial Sealing & Gasket Manufacturing",
   description:
     "Manufacturer of ASME B16.20 spiral wound gaskets, pure graphite, non-asbestos sheets, and custom CNC cut seals for marine and heavy industry. Worldwide delivery from Istanbul.",
   alternates: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Emek Gaskets | Industrial Sealing Solutions Since 1997",
+    title: "Emek Gaskets | Industrial Sealing Solutions",
     description:
       "Reliable Turkish gasket manufacturer serving international refineries, shipyards, and power generation facilities.",
     url: "https://emekconta.com/en",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 const TRUST_METRICS = [
-  { title: "Since 1997", desc: "27+ Years Manufacturing Heritage" },
+  { title: "Certified Standards", desc: "ASME & DIN Compliant Manufacturing" },
   { title: "Global Standards", desc: "ASME B16.20 & DIN EN 1514-2" },
   { title: "Custom CAD / CNC", desc: "Cut-to-Print Gasket Machining" },
   { title: "Certified Quality", desc: "EN 10204 3.1 MTR Traceability" },
@@ -55,7 +55,7 @@ export default function EnglishHomePage() {
             <div className="flex items-center gap-2 mb-4">
               <span className="w-4 h-[2px] bg-rust inline-block"></span>
               <span className="text-xs font-mono font-bold tracking-widest text-rust uppercase">
-                ISTANBUL GASKET MANUFACTURER • EST. 1997
+                ISTANBUL GASKET MANUFACTURER & EXPORTER
               </span>
             </div>
 

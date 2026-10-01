@@ -108,7 +108,7 @@ export interface TechnicalArticle {
 
 export interface CompanyLocation {
   name: string;
-  type: "Merkez / İmalat" | "Satış / Şube";
+  type: "Merkez / İmalat" | "Satış / Şube" | "Satış & İletişim" | "Merkez Satış Ofisi";
   address: string;
   district: string;
   city: string;

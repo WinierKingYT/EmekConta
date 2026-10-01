@@ -33,8 +33,8 @@ export function WhyEmekSection() {
     {
       title: "Sanayi ve Denizcilik Deneyimi",
       description:
-        "1997 yılından bu yana ağır sanayi, enerji santralleri, rafineriler, tersaneler ve gemi filolarının sızdırmazlık arızalarına doğrudan saha deneyimiyle çözüm üretiyoruz.",
-      badge: "1997'den Bugüne",
+        "Ağır sanayi, enerji santralleri, rafineriler, tersaneler ve gemi filolarının sızdırmazlık arızalarına doğrudan saha deneyimiyle çözüm üretiyoruz.",
+      badge: "Saha Deneyimi",
     },
     {
       title: "Mühendislik & Malzeme Seçimi Desteği",

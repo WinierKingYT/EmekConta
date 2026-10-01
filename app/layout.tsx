@@ -31,11 +31,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://emekconta.com"),
   title: {
-    default: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri (1997'den Beri)",
+    default: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri",
     template: "%s | Emek Conta",
   },
   description:
-    "1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri. Spiral sarımlı contalar, saf grafit, klingrit, kauçuk ve teknik resme göre özel conta üretimi.",
+    "Sanayi ve denizcilik için güvenilir endüstriyel sızdırmazlık çözümleri. Spiral sarımlı contalar, saf grafit, klingrit, kauçuk ve teknik resme göre özel conta üretimi.",
   keywords: [
     "emek conta",
     "endüstriyel conta",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri",
     description:
-      "1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri imalatçısı.",
+      "Sanayi ve denizcilik için güvenilir endüstriyel sızdırmazlık çözümleri imalatçısı.",
     images: ["https://emekconta.com/opengraph-image.png"],
   },
   verification: {
@@ -115,9 +115,8 @@ export default function RootLayout({
     url: "https://emekconta.com",
     logo: "https://emekconta.com/logo.png",
     image: "https://emekconta.com/opengraph-image.png",
-    foundingDate: "1997",
     description:
-      "1997'den beri sanayi ve denizcilik sektörleri için standart ve özel üretim endüstriyel conta ve sızdırmazlık çözümleri imalatçısı.",
+      "Sanayi ve denizcilik sektörleri için standart ve özel üretim endüstriyel conta ve sızdırmazlık çözümleri imalatçısı.",
     telephone: companyData.phone,
     email: companyData.email,
     priceRange: "$$",

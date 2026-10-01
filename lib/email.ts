@@ -208,7 +208,7 @@ function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
               ${heading}
             </h1>
             <p style="margin: 6px 0 0 0; font-size: 13px; color: #94a3b8;">
-              1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri.
+              Sanayi ve denizcilik için DIN ve ASME normlu güvenilir sızdırmazlık çözümleri.
             </p>
           </td>
         </tr>
@@ -265,10 +265,10 @@ function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
               EMEK CONTA SANAYİ VE TİCARET
             </div>
             <div>
-              <strong>İmalat & Fabrika:</strong> İkitelli OSB Atatürk Oto Sanayi Sitesi 4.Yol No:96 Başakşehir / İSTANBUL | Tel: +90 (212) 486 36 11
+              <strong>Karaköy Satış & İletişim Ofisi:</strong> Kemankeş Karamustafapaşa Mah. Perşembe Pazarı Cad. Beyoğlu / İSTANBUL
             </div>
             <div style="margin-top: 4px;">
-              <strong>Karaköy Satış:</strong> Kemankeş Karamustafapaşa Mah. Perşembe Pazarı Cad. Beyoğlu / İSTANBUL | Tel: ${companyData.phoneFormatted}
+              <strong>Telefon & WhatsApp:</strong> ${companyData.phoneFormatted}
             </div>
             <div style="margin-top: 8px; font-size: 11px; color: #64748b;">
               E-posta: ${companyData.email} | Web: https://emekconta.com

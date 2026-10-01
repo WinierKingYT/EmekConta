@@ -15,12 +15,12 @@ import {
 } from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
-  title: "İletişim | Fabrika & Karaköy Şube Adresleri",
+  title: "İletişim | Emek Conta Satış & İletişim Ofisi",
   description:
-    "Emek Conta iletişim bilgileri, İkitelli Organize Sanayi Bölgesi imalat merkezi ve Karaköy Perşembe Pazarı satış şubesi adresleri, telefon ve WhatsApp hatları.",
+    "Emek Conta iletişim bilgileri, Karaköy Perşembe Pazarı satış şubesi adresi, telefon ve WhatsApp hatları.",
   openGraph: {
     title: "İletişim ve Adres Bilgileri | Emek Conta",
-    description: "Emek Conta fabrikası ve Karaköy şubesi iletişim bilgileri. Telefon, WhatsApp ve harita.",
+    description: "Emek Conta Karaköy şubesi iletişim bilgileri. Telefon, WhatsApp ve harita.",
     url: "https://emekconta.com/iletisim",
   },
 };
@@ -134,8 +134,8 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* 2 Physical Locations Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        {/* Physical Location Card */}
+        <div className="max-w-3xl mx-auto mb-12">
           {companyData.locations.map((loc, idx) => (
             <div
               key={idx}

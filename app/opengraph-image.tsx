@@ -114,10 +114,10 @@ export default function Image() {
                 fontSize: "14px",
               }}
             >
-              ★ 1997'DEN BERİ
+              ★ SERTİFİKALI İMALAT
             </span>
             <span style={{ color: "#94a3b8", fontSize: "14px", fontWeight: 500 }}>
-              27+ Yıllık İmalat Tecrübesi
+              DIN & ASME Normu
             </span>
           </div>
         </div>
@@ -231,7 +231,7 @@ export default function Image() {
           >
             <span style={{ color: "#ffffff" }}>emekconta.com</span>
             <span>•</span>
-            <span>+90 (212) 293 25 09</span>
+            <span>+90 (546) 419 19 38</span>
             <span>•</span>
             <span style={{ color: "#38bdf8" }}>İstanbul</span>
           </div>

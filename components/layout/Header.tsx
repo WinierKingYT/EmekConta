@@ -71,8 +71,8 @@ export function Header() {
           <div className="flex items-center gap-2.5 text-[11px] font-mono">
             <span className="text-industrial-300 font-medium">
               {isEn
-                ? "Industrial Sealing Solutions Since 1997"
-                : "1997'den Beri Endüstriyel Sızdırmazlık Çözümleri"}
+                ? "Industrial Sealing Solutions"
+                : "Endüstriyel Sızdırmazlık Çözümleri"}
             </span>
             <span className="text-industrial-600">•</span>
             <span className="text-industrial-400 flex items-center gap-1.5">
@@ -134,7 +134,7 @@ export function Header() {
                 EMEK CONTA
               </span>
               <span className="text-[9px] font-mono tracking-wider text-industrial-400 uppercase mt-1 leading-none font-medium">
-                {isEn ? "Sealing Solutions • Est. 1997" : "Sızdırmazlık Sanayi • Est. 1997"}
+                {isEn ? "Industrial Sealing Solutions" : "Endüstriyel Sızdırmazlık Sanayi"}
               </span>
             </div>
           </Link>

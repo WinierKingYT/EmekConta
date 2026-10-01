@@ -15,12 +15,12 @@ import {
 import { companyData } from "@/data/company";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | 1997'den Beri Endüstriyel Sızdırmazlık Çözümleri",
+  title: "Hakkımızda | Endüstriyel Sızdırmazlık Çözümleri",
   description:
-    "1997 yılında kurulan Emek Conta; sanayi, rafineri ve denizcilik sektörlerine standart flanş contaları, spiral sarımlı contalar ve teknik resme göre özel conta üretimi sunar.",
+    "Emek Conta; sanayi, rafineri ve denizcilik sektörlerine standart flanş contaları, spiral sarımlı contalar ve teknik resme göre özel conta üretimi sunar.",
   openGraph: {
     title: "Hakkımızda | Emek Conta",
-    description: "1997'den beri endüstriyel conta ve sızdırmazlık imalatı. Kurumsal geçmişimiz ve üretim yeteneklerimiz.",
+    description: "Endüstriyel conta ve sızdırmazlık imalatı. Kurumsal geçmişimiz ve üretim yeteneklerimiz.",
     url: "https://emekconta.com/hakkimizda",
   },
 };
@@ -28,28 +28,28 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const milestones = [
     {
-      year: "1997",
+      year: "Başlangıç",
       title: "Kuruluş ve İlk İmalat",
       description:
         "Emek Conta, İstanbul'da endüstriyel tesisler ve denizcilik sektörünün kritik sızdırmazlık ihtiyaçlarını karşılamak üzere faaliyete başladı.",
     },
     {
-      year: "2005",
+      year: "Gelişim",
       title: "Spiral Sarımlı Conta Üretim Hattı",
       description:
         "Yüksek sıcaklık ve basınca maruz kalan rafineri ve kazan hatları için ASME B16.20 standartlarında spiral sarımlı conta imalatına başlandı.",
     },
     {
-      year: "2014",
+      year: "Teknoloji",
       title: "CNC Kesim & Kalıpsız İmalat Entegrasyonu",
       description:
         "CAD/CAM destekli CNC su jeti ve bıçak kesim tezgâhları yatırımı ile kalıp maliyeti olmadan saatler içinde prototip ve özel ölçü conta üretim kabiliyetine ulaşıldı.",
     },
     {
-      year: "2024+",
-      title: "Karaköy Satış & İkitelli OSB İmalat Tesisleri",
+      year: "Genişleme",
+      title: "Karaköy Satış & Dağıtım Merkezi",
       description:
-        "İkitelli OSB imalat merkezi ve Karaköy dağıtım şubesi ile Türkiye geneline ve uluslararası deniz taşımacılığına kesintisiz sızdırmazlık desteği.",
+        "Karaköy satış ve lojistik ofisi ile Türkiye geneline ve uluslararası deniz taşımacılığına kesintisiz sızdırmazlık desteği.",
     },
   ];
 
@@ -71,7 +71,7 @@ export default function AboutPage() {
             </span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight">
-            1997'den Bugüne Endüstriyel Sızdırmazlık
+            Endüstriyel Sızdırmazlıkta Uzmanlık ve Güven
           </h1>
           <p className="mt-3 text-sm sm:text-base text-industrial-600 max-w-3xl leading-relaxed">
             Emek Conta; yalnızca conta satan bir aracı firma değil, teknik resim, numune veya uluslararası standartlara göre üretim yapan bağımsız bir mühendislik ve imalat kuruluşudur.
@@ -156,7 +156,7 @@ export default function AboutPage() {
             </span>
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-industrial-900 mb-8">
-            1997'den Günümüze Kilometre Taşları
+            Kurumsal Gelişim ve Kilometre Taşları
           </h2>
 
           <div className="space-y-6">

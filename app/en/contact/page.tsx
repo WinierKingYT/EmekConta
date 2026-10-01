@@ -94,28 +94,21 @@ export default function EnglishContactPage({
         {/* The Inquiry Form */}
         <EnglishContactForm defaultProduct={searchParams.product} />
 
-        {/* Manufacturing & Branch Coordinates */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs font-mono">
-          <div className="bg-white border border-industrial-200 p-5 rounded-xl">
-            <span className="text-[10px] font-bold text-rust uppercase block mb-1">
-              MANUFACTURING PLANT (HQ)
+        {/* Sales & Export Coordinates */}
+        <div className="mt-12 max-w-2xl mx-auto text-xs font-mono">
+          <div className="bg-white border border-industrial-200 p-6 rounded-xl text-center shadow-xs">
+            <span className="text-[10px] font-bold text-rust uppercase block mb-1 tracking-wider">
+              HEAD OFFICE & COMMERCIAL DISPATCH
             </span>
-            <div className="font-bold text-night text-sm mb-1">Emek Gaskets Istanbul Factory</div>
-            <p className="text-industrial-500 mb-2 leading-relaxed">
-              Ikitelli Industrial Zone, Ataturk Sanayi Sitesi 4.Yol No:96, Basaksehir, Istanbul / Turkey
-            </p>
-            <div className="text-industrial-600">Hours: Mon-Fri 08:30 – 18:00 (GMT+3)</div>
-          </div>
-
-          <div className="bg-white border border-industrial-200 p-5 rounded-xl">
-            <span className="text-[10px] font-bold text-rust uppercase block mb-1">
-              MARITIME & HARBOR BRANCH
-            </span>
-            <div className="font-bold text-night text-sm mb-1">Karakoy Commercial Branch</div>
-            <p className="text-industrial-500 mb-2 leading-relaxed">
+            <div className="font-bold text-night text-base mb-1">Emek Gaskets Sales & Dispatch Office</div>
+            <p className="text-industrial-500 mb-3 leading-relaxed">
               Kemankes Karamustafapasa Mah. Persembe Pazari Cad., Beyoglu, Istanbul / Turkey
             </p>
-            <div className="text-industrial-600">Proximity: 15 min to Karakoy / Galata Port</div>
+            <div className="text-industrial-600 flex items-center justify-center gap-4 flex-wrap">
+              <span>Hours: Mon-Fri 08:30 – 18:00 (GMT+3)</span>
+              <span>•</span>
+              <span>Direct: {companyData.phoneFormatted}</span>
+            </div>
           </div>
         </div>
       </Container>

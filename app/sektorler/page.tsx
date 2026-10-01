@@ -39,7 +39,7 @@ export default function SectorsPage() {
             Sektörel Sızdırmazlık Çözümleri
           </h1>
           <p className="mt-3 text-sm sm:text-base text-industrial-600 max-w-3xl leading-relaxed">
-            Her endüstrinin akışkan kimyası, çalışma basıncı, sıcaklık sınırları ve yasal güvenlik normları birbirinden farklıdır. 1997'den bu yana 10 temel sektör için sahada kanıtlanmış conta çözümleri geliştiriyoruz.
+            Her endüstrinin akışkan kimyası, çalışma basıncı, sıcaklık sınırları ve yasal güvenlik normları birbirinden farklıdır. 10 temel endüstriyel sektör için sahada kanıtlanmış conta çözümleri geliştiriyoruz.
           </p>
         </div>
 

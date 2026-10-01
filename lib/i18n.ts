@@ -28,9 +28,8 @@ export const i18nNav: Record<Locale, NavItem[]> = {
 
 export const i18nDict = {
   tr: {
-    siteTitle: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri (1997'den Beri)",
+    siteTitle: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri",
     requestQuote: "Teklif İste",
-    sampleKit: "Numune Talep Et",
     quoteCart: "Teklif Listem",
     technicalDatasheet: "Teknik Föy (TDS)",
     contactUs: "İletişim",
@@ -38,12 +37,11 @@ export const i18nDict = {
     allProducts: "Tüm Ürünler",
     customGaskets: "Özel Conta İmalatı",
     standardsCompliance: "ASME & DIN Normlarına Tam Uyum",
-    productionExperience: "27+ Yıllık İmalat Tecrübesi",
+    productionExperience: "Sertifikalı ve Toleranslı İmalat",
   },
   en: {
-    siteTitle: "Emek Gaskets | Industrial Sealing Solutions & Gasket Manufacturing Since 1997",
+    siteTitle: "Emek Gaskets | Industrial Sealing Solutions & Gasket Manufacturing",
     requestQuote: "Request a Quote",
-    sampleKit: "Request Sample Kit",
     quoteCart: "Quote List",
     technicalDatasheet: "Technical Datasheet (TDS)",
     contactUs: "Contact Sales",
@@ -51,6 +49,6 @@ export const i18nDict = {
     allProducts: "All Products",
     customGaskets: "Custom Gasket Fabrication",
     standardsCompliance: "Full ASME & DIN Standards Compliance",
-    productionExperience: "27+ Years Manufacturing Expertise",
+    productionExperience: "Certified High Precision Manufacturing",
   },
 };

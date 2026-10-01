@@ -82,7 +82,7 @@ const STANDARDS_GRID = [
 
 const EXPORT_FACTS = [
   { value: "25+", label: "Export Destinations" },
-  { value: "1997", label: "Year Established" },
+  { value: "100%", label: "Standard Compliance" },
   { value: "EN 10204 3.1", label: "MTR Certification" },
   { value: "48-72h", label: "Express Global Dispatch" },
 ];
@@ -118,7 +118,7 @@ export default function EnglishExportPage() {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              Since 1997, Emek Gaskets has manufactured precision sealing components from our Istanbul facility for world maritime fleets, offshore drydocks, petrochemical refineries, and power generation facilities across 25+ countries. Every export order is supplied with EN 10204 3.1 Mill Test Reports and seaworthy packaging.
+              Emek Gaskets manufactures precision sealing components from our Istanbul facility for world maritime fleets, offshore drydocks, petrochemical refineries, and power generation facilities across 25+ countries. Every export order is supplied with EN 10204 3.1 Mill Test Reports and seaworthy packaging.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

@@ -7,7 +7,7 @@
 [![Code Quality](https://img.shields.io/badge/ESLint-0_Errors_|_0_Warnings-brightgreen?style=flat)]()
 [![Lighthouse](https://img.shields.io/badge/Performance-Lighthouse_90+-orange?style=flat)]()
 
-**Emek Conta (1997'den beri)** için geliştirilmiş; satın almacılar, fabrika bakım şefleri ve makine mühendislerinin teknik resim, numune veya standart ölçülere göre resmi teklif (RFQ) almasını sağlayan yüksek performanslı, çok dilli ve kurumsal B2B üretici web platformu.
+**Emek Conta** için geliştirilmiş; satın almacılar, fabrika bakım şefleri ve makine mühendislerinin teknik resim, numune veya standart ölçülere göre resmi teklif (RFQ) almasını sağlayan yüksek performanslı, çok dilli ve kurumsal B2B üretici web platformu.
 
 ---
 
@@ -22,10 +22,9 @@ Proje, endüstriyel standartlara tam uyumlu 7 aşamalı yol haritası ile eksiks
 - **12 Ürün & 10 Sektör Mimarisi:** Denizcilik, rafineri, enerji, demir-çelik ve kimya sektörlerine özel sayfalar.
 
 ### 2. İletişim & Dönüşüm Altyapısı (Aşama 2)
-- **WhatsApp Floating Buton:** Canlı durum göstergeli, erişilebilir kurumsal WhatsApp iletişim düğmesi (`+90 544 223 08 28`).
-- **Resend RFQ E-Posta Entegrasyonu:** Detaylı teklif, hızlı çizim, numune ve bayi başvurularını HTML formatında anında satış ekibine ileten `/api/rfq` API rotası.
+- **WhatsApp Floating Buton:** Canlı durum göstergeli, erişilebilir kurumsal WhatsApp iletişim düğmesi (`+90 546 419 19 38`).
+- **Resend RFQ E-Posta Entegrasyonu:** Detaylı teklif, hızlı çizim, sepet ve bayi başvurularını HTML formatında anında satış ekibine (`info@emekconta.com`) ileten `/api/rfq` API rotası.
 - **Otomatik Müşteri Teyit E-Postası:** Müşteriye özel referans kodlu (`EC-XXXXXX`) profesyonel teyit e-postası ve SLA bilgilendirmesi.
-- **Ücretsiz AR-GE Numune Portalı (`/numune-talep`):** Bakım ve tasarım ekipleri için 8 farklı malzeme seçeneği sunan numune talep sistemi.
 
 ### 3. B2B Satış Araçları (Aşama 3)
 - **Toplu Teklif Sepeti (RFQ Cart):** LocalStorage destekli, sayfa değiştirmeden teklif listesi oluşturma (`RfqCartDrawer`, `/teklif-sepeti`).
@@ -79,8 +78,8 @@ Projeyi tam fonksiyonel olarak çalıştırmak için kök dizinde `.env.local` d
 ```bash
 # E-Posta Gönderimi (Resend)
 RESEND_API_KEY=re_your_api_key_here
-RESEND_FROM_EMAIL=Emek Conta <teklif@emekconta.com>
-NOTIFICATION_EMAIL=teklif@emekconta.com
+RESEND_FROM_EMAIL=Emek Conta <info@emekconta.com>
+NOTIFICATION_EMAIL=info@emekconta.com
 
 # Analitik & Takip (İsteğe Bağlı)
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
@@ -137,12 +136,11 @@ npm run start
 │   │   ├── products/             # İngilizce ürün kataloğu
 │   │   │   └── [slug]/           # 12 İngilizce ürün detay sayfası (SSG)
 │   │   └── page.tsx              # İngilizce ana sayfa
-│   ├── hakkimizda/               # 1997'den bugüne tarihçe & tesisler
+│   ├── hakkimizda/               # Kurumsal geçmiş, uzmanlık & sertifikalar
 │   ├── ihracat/                  # Uluslararası Standartlar (ASME/DIN) landing page
-│   ├── iletisim/                 # İkitelli Fabrika & Karaköy şube iletişim
+│   ├── iletisim/                 # Karaköy satış ve iletişim ofisi
 │   ├── kvkk/                     # 6698 sayılı KVKK Aydınlatma Metni
-│   ├── numune-talep/             # Ücretsiz AR-GE numune talep portalı
-│   ├── ozel-uretim/              # CAD / Numuneye göre özel conta kesimi
+│   ├── ozel-uretim/              # CAD / Teknik resme göre özel conta kesimi
 │   ├── sektorler/                # 10 endüstriyel sektör sayfası
 │   ├── teklif-iste/              # Kapsamlı RFQ formu ve CAD dropzone
 │   ├── teklif-sepeti/            # Toplu teklif sepeti yönetim sayfası
@@ -152,7 +150,7 @@ npm run start
 │   │       └── datasheet/        # 12 Teknik PDF Datasheet (TDS) sayfası (SSG)
 │   ├── opengraph-image.tsx       # Dinamik 1200x630 OpenGraph üreticisi
 │   ├── robots.ts                 # Dinamik robots.txt
-│   ├── sitemap.ts                # 75 rotalı dinamik XML sitemap
+│   ├── sitemap.ts                # Dinamik XML sitemap
 │   └── layout.tsx                # Kök layout, JSON-LD, Analytics, Cookie Banner
 ├── components/                   # Modüler React Bileşenleri
 │   ├── analytics/                # GA4 ve Clarity script bileşenleri
@@ -164,7 +162,6 @@ npm run start
 │   ├── legal/                    # CookieConsentBanner çerez tercih bandı
 │   ├── products/                 # ProductCard, ProductFilter
 │   ├── rfq/                      # RFQForm ve dosya yöneticisi
-│   ├── sample/                   # Numune talep formu
 │   └── ui/                       # Container, Button, Badge, WhatsAppButton, PrintButton
 ├── data/                         # Veri Modelleri & İçerik Depoları
 │   ├── company.ts                # Şirket iletişim, lokasyon ve navigasyon verileri
@@ -188,5 +185,5 @@ npm run start
 
 ## 📄 Lisans ve Mülkiyet
 
-Telif Hakkı © 1997 - 2026 **Emek Conta Sanayi ve Ticaret**. Tüm hakları saklıdır.  
-Endüstriyel Sızdırmazlık Çözümleri • İkitelli OSB / İstanbul
+Telif Hakkı © 2026 **Emek Conta Sanayi ve Ticaret**. Tüm hakları saklıdır.  
+Endüstriyel Sızdırmazlık Çözümleri • Karaköy / İstanbul

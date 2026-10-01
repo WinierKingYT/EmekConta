@@ -33,7 +33,7 @@ export function CustomMfgSection() {
             </p>
 
             <p className="mt-5 text-sm sm:text-base text-industrial-300 leading-relaxed max-w-2xl">
-              Endüstriyel tesislerdeki özel flanşlar, eski model ithal makineler, pompa gövdeleri veya denizcilik ekipmanlarında katalog contaları her zaman uyum sağlamaz. Emek Conta, modern CNC kesim altyapısı ve 1997'den gelen kalıpçılık tecrübesiyle çizim veya numunenizi hızla sızdırmazlık ürününe dönüştürür.
+              Endüstriyel tesislerdeki özel flanşlar, eski model ithal makineler, pompa gövdeleri veya denizcilik ekipmanlarında katalog contaları her zaman uyum sağlamaz. Emek Conta, modern CNC kesim altyapısı ve ileri mühendislik tecrübesiyle çizim veya numunenizi hızla sızdırmazlık ürününe dönüştürür.
             </p>
 
             <ul className="mt-6 space-y-3">

@@ -142,18 +142,11 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                   <ArrowRightIcon className="w-3.5 h-3.5" />
                 </Link>
                 <Link
-                  href="/numune-talep"
-                  onClick={onClose}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-industrial-200 hover:text-white bg-industrial-950/80 hover:bg-industrial-800 px-3 py-2 rounded-lg transition-colors border border-industrial-800"
-                >
-                  <span>Numune İste</span>
-                </Link>
-                <Link
                   href="/bayi-basvuru"
                   onClick={onClose}
                   className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-industrial-200 hover:text-white bg-industrial-950/80 hover:bg-industrial-800 px-3 py-2 rounded-lg transition-colors border border-industrial-800"
                 >
-                  <span>Bayilik</span>
+                  <span>Bayilik Başvurusu</span>
                 </Link>
               </div>
             </div>

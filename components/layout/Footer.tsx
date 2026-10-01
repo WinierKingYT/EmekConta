@@ -52,10 +52,10 @@ export function Footer() {
             </div>
             <div>
               <h4 className="font-bold text-white text-sm tracking-tight group-hover:text-rust transition-colors">
-                İstanbul Fabrika & Satış
+                Karaköy Satış & Sevkiyat
               </h4>
               <p className="text-xs text-industrial-400 mt-1 leading-relaxed">
-                İkitelli OSB İmalat tesisimiz ve Karaköy şubemiz ile endüstri ve denizcilik sektörüne kesintisiz hizmet.
+                Karaköy şubemiz ve güçlü lojistik ağımız ile sanayi ve denizcilik sektörüne kesintisiz hizmet.
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-industrial-400 text-xs sm:text-sm leading-relaxed max-w-md">
-              1997 yılından bu yana sanayi tesisleri, rafineriler, enerji santralleri ve denizcilik sektörü için yüksek sıcaklık, basınç ve kimyasal ortamlara dayanıklı endüstriyel sızdırmazlık elemanları imal ediyoruz.
+              Sanayi tesisleri, rafineriler, enerji santralleri ve denizcilik sektörü için yüksek sıcaklık, basınç ve kimyasal ortamlara dayanıklı endüstriyel sızdırmazlık elemanları imal ediyoruz.
             </p>
             
             {/* Certifications and Standards Badge Chips */}
@@ -98,8 +98,7 @@ export function Footer() {
             </div>
 
             <div className="pt-2 flex flex-col gap-1.5 text-xs text-industrial-400 font-mono">
-              <div>İmalat: İkitelli OSB / Başakşehir / İstanbul</div>
-              <div>Şube: Karaköy Perşembe Pazarı / İstanbul</div>
+              <div>Merkez: Karaköy Perşembe Pazarı / İstanbul</div>
               <div className="text-[11px] text-industrial-500 pt-1">
                 Çalışma Saatleri: Hafta içi 08:30 - 18:00 | Cmt 08:30 - 13:00
               </div>
@@ -173,7 +172,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/hakkimizda" className="hover:text-white transition-colors">
-                  1997'den Bugüne Tarihçe
+                  Kurumsal Geçmiş & Hakkımızda
                 </Link>
               </li>
               <li>
@@ -184,11 +183,6 @@ export function Footer() {
               <li>
                 <Link href="/teklif-iste" className="hover:text-white transition-colors">
                   Teknik Çizim ile Teklif Al
-                </Link>
-              </li>
-              <li>
-                <Link href="/numune-talep" className="hover:text-white transition-colors text-rust font-medium">
-                  Ücretsiz Numune Talep Et (AR-GE) →
                 </Link>
               </li>
               <li>

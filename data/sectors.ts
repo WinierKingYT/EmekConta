@@ -6,7 +6,7 @@ export const sectorsData: IndustrySector[] = [
     slug: "denizcilik",
     name: "Denizcilik & Gemi İnşa",
     shortDescription: "Gemi ana makineleri, buhar kazanları, sintine/balast devreleri ve ambar kapakları için deniz suyu ve yakıt dayanımlı sızdırmazlık elemanları.",
-    description: "Deniz ortamı; yüksek tuz konsantrasyonu, sürekli titreşim ve agresif yakıt/yağ akışkanları nedeniyle en zorlu çalışma şartlarından biridir. Emek Conta olarak 1997'den bu yana tersaneler, gemi donatım firmaları ve armatörler için standart flanş contalarının yanı sıra ambar kapak contaları, egzoz manifold contaları ve tulumba salmastraları sağlamaktayız.",
+    description: "Deniz ortamı; yüksek tuz konsantrasyonu, sürekli titreşim ve agresif yakıt/yağ akışkanları nedeniyle en zorlu çalışma şartlarından biridir. Emek Conta olarak tersaneler, gemi donatım firmaları ve armatörler için standart flanş contalarının yanı sıra ambar kapak contaları, egzoz manifold contaları ve tulumba salmastraları sağlamaktayız.",
     challenges: [
       "Deniz suyunun neden olduğu agresif elektrokimyasal korozyon",
       "Gemi seyir halinde iken motor ve boru devrelerinde oluşan yüksek titreşim",
@@ -17,7 +17,7 @@ export const sectorsData: IndustrySector[] = [
       "AISI 316L sarımlı ve grafit dolgulu spiral sarımlı contalar",
       "Tuzlu su ve ozona tam dayanımlı neopren ve EPDM sünger profiller",
       "Kazan ve buhar devreleri için telli saf grafit flanş contaları",
-      "Karaköy ve İkitelli stoklarımızdan aynı gün acil teslimat kabiliyeti",
+      "Karaköy merkez depomuzdan aynı gün acil teslimat kabiliyeti",
     ],
     recommendedProducts: ["spiral-sarimli-contalar", "grafit-contalar", "kaucuk-epdm-nbr-contalar", "orgulu-salmastralar"],
     standards: ["ASME B16.20", "DIN EN 1514-2", "JIS Sealing Standards"],

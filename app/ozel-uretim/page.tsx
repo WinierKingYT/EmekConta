@@ -74,7 +74,7 @@ export default function CustomManufacturingPage() {
             </h1>
 
             <p className="mt-6 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              Katalog standartları tesisinizdeki özel ölçülere uymadığında, Emek Conta'nın 1997'den gelen kalıpçılık ve CNC kesim tecrübesi devreye girer. Teknik çizim, ölçü tablosu veya numune üzerinden en zorlu geometrileri dahi hızla üretiyoruz.
+              Katalog standartları tesisinizdeki özel ölçülere uymadığında, Emek Conta'nın yüksek hassasiyetli kalıpçılık ve CNC kesim tecrübesi devreye girer. Teknik çizim, ölçü tablosu veya numune üzerinden en zorlu geometrileri dahi hızla üretiyoruz.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-industrial-300">
@@ -88,7 +88,7 @@ export default function CustomManufacturingPage() {
               </span>
               <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded-md">
                 <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
-                Aynı Gün Numune Kesimi
+                Aynı Gün Prototip Kesimi
               </span>
             </div>
           </div>

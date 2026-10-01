@@ -82,7 +82,7 @@ const STANDARDS_GRID = [
 
 const EXPORT_FACTS = [
   { value: "25+", label: "İhracat Yapılan Ülke" },
-  { value: "1997", label: "Kuruluş Yılı & Tecrübe" },
+  { value: "%100", label: "Norm & Tolerans Uyumu" },
   { value: "EN 10204 3.1", label: "MTR Sertifikasyon" },
   { value: "48-72 Saat", label: "Express Global Kargo" },
 ];
@@ -115,7 +115,7 @@ export default function ExportPage() {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              1997'den beri İstanbul merkezli fabrikamızda, dünya denizcilik filolarına, petrokimya rafinerilerine ve enerji santrallerine ASME ve DIN normlarında sızdırmazlık ürünleri üretiyoruz. Tüm ihracat siparişlerimiz EN 10204 3.1 sertifikası ve ISPM 15 ihracat ambalajıyla sevk edilir.
+              İstanbul merkezli tesislerimizde, dünya denizcilik filolarına, petrokimya rafinerilerine ve enerji santrallerine ASME ve DIN normlarında sızdırmazlık ürünleri üretiyoruz. Tüm ihracat siparişlerimiz EN 10204 3.1 sertifikası ve ISPM 15 ihracat ambalajıyla sevk edilir.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">

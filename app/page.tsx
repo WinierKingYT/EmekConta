@@ -14,9 +14,9 @@ import { KnowledgeTeaser } from "@/components/home/KnowledgeTeaser";
 import { FinalCTASection } from "@/components/home/FinalCTASection";
 
 export const metadata: Metadata = {
-  title: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri (1997'den Beri)",
+  title: "Emek Conta | Endüstriyel Sızdırmazlık Çözümleri",
   description:
-    "1997'den beri sanayi ve denizcilik için güvenilir sızdırmazlık çözümleri. Spiral sarımlı contalar, saf grafit, klingrit, kauçuk ve teknik resme göre özel conta üretimi.",
+    "Sanayi ve denizcilik için güvenilir endüstriyel sızdırmazlık çözümleri. Spiral sarımlı contalar, saf grafit, klingrit, kauçuk ve teknik resme göre özel conta üretimi.",
   alternates: {
     canonical: "https://emekconta.com",
   },
@@ -31,7 +31,7 @@ export default function HomePage() {
     url: "https://emekconta.com",
     inLanguage: "tr-TR",
     description:
-      "1997'den beri sanayi ve denizcilik için güvenilir endüstriyel sızdırmazlık çözümleri imalatçısı.",
+      "Sanayi ve denizcilik için güvenilir endüstriyel sızdırmazlık çözümleri imalatçısı.",
     potentialAction: {
       "@type": "SearchAction",
       target: {

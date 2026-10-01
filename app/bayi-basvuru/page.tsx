@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Emek Conta Bölge Bayiliği ve Toptan Dağıtım Başvurusu",
     description:
-      "1997'den beri sanayi ve denizcilik sızdırmazlık imalatçısı Emek Conta yetkili satıcı ağına katılın.",
+      "Sanayi ve denizcilik sızdırmazlık çözümlerinde güvenilir üretici Emek Conta yetkili satıcı ağına katılın.",
     url: "https://emekconta.com/bayi-basvuru",
   },
 };
@@ -45,7 +45,7 @@ export default function DistributorPage() {
             Yetkili Bayi & Toptancı Başvurusu
           </h1>
           <p className="mt-3 text-sm sm:text-base text-industrial-600 leading-relaxed">
-            Bölgenizdeki sanayi tesislerine, tersanelere ve bakım atölyelerine 1997'den beri sektör lideri Emek Conta ürünlerini ulaştırın. Yüksek toptan iskonto oranları, doğrudan fabrika CAD desteği ve hızlı imalat kapasitemiz ile işinizi büyütün.
+            Bölgenizdeki sanayi tesislerine, tersanelere ve bakım atölyelerine sektör lideri Emek Conta ürünlerini ulaştırın. Yüksek toptan iskonto oranları, doğrudan CAD desteği ve hızlı imalat kapasitemiz ile işinizi büyütün.
           </p>
 
           {/* 3 Pillars Grid */}
@@ -57,12 +57,12 @@ export default function DistributorPage() {
 
             <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-lg">
               <span className="text-[10px] text-rust font-bold block mb-0.5">02. CAD & MÜHENDİSLİK</span>
-              <span className="font-semibold text-industrial-900">Özel Çizim ve Numune Desteği</span>
+              <span className="font-semibold text-industrial-900">Özel Çizim ve Prototip Desteği</span>
             </div>
 
             <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-lg">
               <span className="text-[10px] text-rust font-bold block mb-0.5">03. HIZLI SEVKİYAT</span>
-              <span className="font-semibold text-industrial-900">İstanbul Fabrikadan Aynı Gün Kargo</span>
+              <span className="font-semibold text-industrial-900">Merkez Depodan Aynı Gün Kargo</span>
             </div>
           </div>
         </div>

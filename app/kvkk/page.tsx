@@ -56,9 +56,8 @@ export default function KvkkPage() {
             </p>
             <div className="mt-3 p-4 bg-industrial-50 border border-industrial-150 rounded-lg font-mono text-xs space-y-1 text-industrial-700">
               <div><strong>Firma Ünvanı:</strong> Emek Conta Sanayi ve Ticaret</div>
-              <div><strong>Fabrika & Merkez:</strong> {companyData.locations[0].address}, {companyData.locations[0].district} / {companyData.locations[0].city}</div>
-              <div><strong>Karaköy Şube:</strong> {companyData.locations[1].address}, {companyData.locations[1].district} / {companyData.locations[1].city}</div>
-              <div><strong>E-Posta:</strong> {companyData.email} | <strong>Santral:</strong> {companyData.phoneFormatted}</div>
+              <div><strong>Adres & İletişim Ofisi:</strong> {companyData.locations[0].address}, {companyData.locations[0].district} / {companyData.locations[0].city}</div>
+              <div><strong>E-Posta:</strong> {companyData.email} | <strong>Telefon:</strong> {companyData.phoneFormatted}</div>
             </div>
           </section>
 

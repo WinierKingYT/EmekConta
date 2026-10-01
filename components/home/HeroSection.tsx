@@ -40,7 +40,7 @@ export function HeroSection() {
             {/* Engineering Badge */}
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 rounded-md shadow-xs">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="font-semibold tracking-wide">[ 1997'DEN BUGÜNE ]</span>
+              <span className="font-semibold tracking-wide">[ YÜKSEK MÜHENDİSLİK & GÜVEN ]</span>
               <span className="text-industrial-500">•</span>
               <span className="text-industrial-300">SANAYİ VE DENİZCİLİK SIZDIRMAZLIK ÇÖZÜMLERİ</span>
             </div>
@@ -49,9 +49,9 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
               Endüstriyel Sızdırmazlıkta <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rust-light via-rust to-[#ea6e36]">
-                1997'den Gelen
+                Yüksek Mühendislik
               </span>{" "}
-              Tecrübe
+              ve Güven
             </h1>
 
             {/* Subtext */}
