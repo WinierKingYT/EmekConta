@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/Button";
 import {
   UploadCloudIcon,
   CheckCircleIcon,
-  ShieldCheckIcon,
-  ClockIcon,
   WhatsappIcon,
   PhoneIcon,
   DocumentTextIcon,
@@ -159,75 +157,29 @@ export function QuickRFQDropzone() {
   );
 
   return (
-    <section className="py-16 sm:py-24 bg-industrial-950 text-white border-b border-industrial-800 relative overflow-hidden">
-      {/* Precision grid background texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-          backgroundSize: "24px 24px",
-        }}
-      />
-
+    <section className="py-20 sm:py-28 bg-[#191D20] text-white relative overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Authoritative B2B Proposition & Guarantees */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-900 border border-industrial-800 text-xs font-mono text-rust mb-4 rounded-md">
+            <div className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#DD895F] mb-6">
               <UploadCloudIcon className="w-3.5 h-3.5" />
-              <span>HIZLI TEKNİK ÇİZİM DEĞERLENDİRME</span>
+              <span>06 / Talebinizi paylaşın</span>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Teknik Çiziminizi Yükleyin, <br />
-              <span className="text-rust">2 Saatte Teklif</span> Alın
+            <h2 className="text-4xl sm:text-5xl font-medium text-white tracking-[-0.045em] leading-[1.1]">
+              Çözümünüz burada <br />
+              <span className="text-[#DD895F]">başlasın.</span>
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-industrial-300 leading-relaxed">
-              CAD çiziminiz (DWG, DXF, STEP, PDF) veya atölyede çektiğiniz numune fotoğrafı için aynı gün mühendislik incelemesi ve resmi proforma teklifi sunuyoruz.
+            <p className="mt-4 text-sm sm:text-base text-[#C9CCC5] leading-relaxed">
+              Teknik çiziminizi veya numune fotoğrafınızı ekleyin. Ölçü, adet ve çalışma şartlarını paylaşın; ihtiyacınıza uygun teklifi hazırlayalım.
             </p>
 
-            {/* SLA & Security Guarantees */}
-            <div className="mt-8 space-y-4 w-full">
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
-                <ClockIcon className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-                    2 Saat İçinde Geri Dönüş Garantisi
-                  </h3>
-                  <p className="text-xs text-industrial-400 mt-0.5">
-                    Mesai saatleri içindeki teknik çizim talepleri aynı gün fiyatlandırılır.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
-                <ShieldCheckIcon className="w-5 h-5 text-rust shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-                    Gizlilik & Ticari NDA Güvencesi
-                  </h3>
-                  <p className="text-xs text-industrial-400 mt-0.5">
-                    Paylaştığınız teknik resimler ve ölçüler gizlilik sözleşmesi (NDA) kapsamındadır.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3 bg-industrial-900/60 border border-industrial-800 rounded-xl">
-                <CheckCircleIcon className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-                    Sıfır Kalıp Maliyeti (CNC Kesim)
-                  </h3>
-                  <p className="text-xs text-industrial-400 mt-0.5">
-                    Vakumlu CNC bıçak tezgahımızla özel flanş ve karter contalarını kalıpsız kesiyoruz.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p className="mt-8 border-t border-white/15 pt-6 text-sm leading-relaxed text-[#B9BCB8]">Teknik resim, numune fotoğrafı veya ölçü bilgisiyle başlayabilirsiniz. Ekibimiz üretim gereksinimlerinizi sizinle birlikte değerlendirsin.</p>
 
             {/* Direct WhatsApp Callout */}
-            <div className="mt-6 pt-6 border-t border-industrial-850 w-full flex items-center justify-between text-xs font-mono text-industrial-400">
+            <div className="mt-6 pt-6 border-t border-white/15 w-full flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between text-xs font-sans text-[#B9BCB8]">
               <span>Doğrudan Çizim Gönderin:</span>
               <a
                 href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${whatsappQuickMessage}`}
@@ -242,24 +194,15 @@ export function QuickRFQDropzone() {
           </div>
 
           {/* Right Column: The Direct Dropzone Form */}
-          <div className="lg:col-span-7 bg-industrial-900 border border-industrial-800 p-6 sm:p-8 shadow-2xl relative rounded-xl overflow-hidden">
-            {/* Subtle blueprint dark grid */}
-            <div className="absolute inset-0 bg-blueprint-dark opacity-40 pointer-events-none" />
-
-            {/* Corner CAD reticles (+) */}
-            <span className="absolute top-2.5 left-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
-            <span className="absolute top-2.5 right-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
-            <span className="absolute bottom-2.5 left-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
-            <span className="absolute bottom-2.5 right-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
-
+          <div className="lg:col-span-7 bg-[#23282B] border border-white/15 p-5 sm:p-8 relative rounded-xl overflow-hidden">
             <div className="relative z-10">
               {/* Engraved Header */}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-industrial-800 font-mono text-[10px] text-industrial-400">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/15 font-sans text-[10px] text-[#B9BCB8]">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-rust" />
-                  <span className="font-bold text-white uppercase tracking-wider">DİJİTAL ÇİZİM MASASI // CAD DROPZONE</span>
+                  <span className="font-bold text-white uppercase tracking-wider">Teknik teklif talebi</span>
                 </span>
-                <span className="text-industrial-500 hidden sm:inline">AUTOCAD • SOLIDWORKS • STEP</span>
+                <span className="text-[#A9AEA6] hidden sm:inline">Çizim / Numune / Ölçü</span>
               </div>
             {isSuccess ? (
               <div className="py-8 text-center space-y-4">
@@ -267,11 +210,11 @@ export function QuickRFQDropzone() {
                   <CheckCircleIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Teknik Çizim Talebiniz Alındı!</h3>
-                <p className="text-xs sm:text-sm text-industrial-300 max-w-md mx-auto leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#C9CCC5] max-w-md mx-auto leading-relaxed">
                   Mühendislik ekibimiz dosyanızı incelemeye aldı. En geç 2 saat içinde belirttiğiniz telefon numarasından sizinle iletişime geçilecektir.
                 </p>
-                <div className="p-3 bg-industrial-950 border border-industrial-800 max-w-xs mx-auto font-mono text-xs text-industrial-300 rounded-lg">
-                  <span className="text-industrial-500 block text-[10px]">TAKİP REFERANS KODU:</span>
+                <div className="p-3 bg-[#191D20] border border-white/15 max-w-xs mx-auto font-sans text-xs text-[#C9CCC5] rounded-lg">
+                  <span className="text-[#A9AEA6] block text-[10px]">TAKİP REFERANS KODU:</span>
                   <span className="text-emerald-400 font-bold text-base">{referenceCode}</span>
                 </div>
                 <div className="pt-4 flex justify-center gap-3">
@@ -282,7 +225,7 @@ export function QuickRFQDropzone() {
                     href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Merhaba Emek Conta, #${referenceCode} referans kodlu teknik çizimim hakkında bilgi almak istiyorum.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white text-xs font-mono hover:bg-emerald-500 transition-colors rounded-lg"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white text-xs font-sans hover:bg-emerald-500 transition-colors rounded-lg"
                   >
                     <WhatsappIcon className="w-4 h-4" />
                     <span>WhatsApp'tan Takip Et</span>
@@ -303,14 +246,14 @@ export function QuickRFQDropzone() {
                 />
 
                 {errorMessage && (
-                  <div className="p-3 bg-red-950/80 border border-red-500/50 text-red-200 text-xs font-mono rounded-lg">
+                  <div className="p-3 bg-red-950/80 border border-red-500/50 text-red-200 text-xs font-sans rounded-lg">
                     {errorMessage}
                   </div>
                 )}
 
                 {/* Dropzone Area */}
                 <div>
-                  <label className="block text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-sans text-[#C9CCC5] uppercase tracking-wider mb-2">
                     1. TEKNİK ÇİZİM VEYA NUMUNE FOTOĞRAFI (OPSİYONEL)
                   </label>
 
@@ -318,13 +261,17 @@ export function QuickRFQDropzone() {
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Teknik çizim veya numune fotoğrafı seç"
+                    onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); fileInputRef.current?.click(); } }}
                     onClick={() => fileInputRef.current?.click()}
                     className={`border-2 border-dashed p-6 text-center cursor-pointer transition-all rounded-xl ${
                       isDragging
                         ? "border-rust bg-rust/20"
                         : file
                         ? "border-emerald-500/60 bg-emerald-950/20"
-                        : "border-industrial-700 bg-industrial-950/70 hover:border-rust/60 hover:bg-industrial-950"
+                        : "border-white/25 bg-[#191D20] hover:border-rust/60 hover:bg-[#2C3235]"
                     }`}
                   >
                     <input
@@ -338,9 +285,9 @@ export function QuickRFQDropzone() {
                     {file ? (
                       <div className="flex items-center justify-center gap-3">
                         <DocumentTextIcon className="w-8 h-8 text-emerald-400 shrink-0" />
-                        <div className="text-left font-mono truncate max-w-[280px] sm:max-w-xs">
+                        <div className="min-w-0 text-left font-sans truncate max-w-full sm:max-w-xs">
                           <p className="text-xs text-white font-bold truncate">{file.name}</p>
-                          <p className="text-[10px] text-industrial-400">
+                          <p className="text-[10px] text-[#B9BCB8]">
                             {(file.size / 1024).toFixed(1)} KB — Yüklendi
                           </p>
                         </div>
@@ -350,7 +297,7 @@ export function QuickRFQDropzone() {
                             e.stopPropagation();
                             setFile(null);
                           }}
-                          className="text-[10px] font-mono text-rose-400 hover:underline ml-2"
+                          className="text-[10px] font-sans text-rose-400 hover:underline ml-2"
                         >
                           Kaldır
                         </button>
@@ -358,10 +305,10 @@ export function QuickRFQDropzone() {
                     ) : (
                       <div>
                         <UploadCloudIcon className="w-8 h-8 text-rust mx-auto mb-2" />
-                        <p className="text-xs font-mono text-industrial-200 font-semibold">
+                        <p className="text-xs font-sans text-industrial-200 font-semibold">
                           Dosyayı buraya sürükleyin veya <span className="text-rust underline">gözatın</span>
                         </p>
-                        <p className="text-[10px] font-mono text-industrial-500 mt-1">
+                        <p className="text-[10px] font-sans text-[#A9AEA6] mt-1">
                           Desteklenen: PDF, DWG, DXF, STEP, PNG, JPG (Maks. 25 MB)
                         </p>
                       </div>
@@ -369,13 +316,13 @@ export function QuickRFQDropzone() {
                   </div>
 
                   {fileError && (
-                    <p className="text-[11px] font-mono text-rose-400 mt-1.5">{fileError}</p>
+                    <p className="text-[11px] font-sans text-rose-400 mt-1.5">{fileError}</p>
                   )}
                 </div>
 
                 {/* Contact Fields Grid */}
                 <div className="pt-2">
-                  <label className="block text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-sans text-[#C9CCC5] uppercase tracking-wider mb-2">
                     2. İLETİŞİM VE TEKLİF DETAYLARI
                   </label>
 
@@ -386,8 +333,8 @@ export function QuickRFQDropzone() {
                         required
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        placeholder="Yetkili Adı Soyadı *"
-                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                        placeholder="Yetkili Adı Soyadı *" aria-label="Yetkili Adı Soyadı *"
+                        className="w-full px-3.5 py-2.5 bg-[#191D20] border border-white/25 text-white text-xs font-sans placeholder-[#A9AEA6] focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                     <div>
@@ -396,8 +343,8 @@ export function QuickRFQDropzone() {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        placeholder="Telefon Numarası (Teklif İçin) *"
-                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                        placeholder="Telefon Numarası (Teklif İçin) *" aria-label="Telefon Numarası (Teklif İçin) *"
+                        className="w-full px-3.5 py-2.5 bg-[#191D20] border border-white/25 text-white text-xs font-sans placeholder-[#A9AEA6] focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                   </div>
@@ -408,8 +355,8 @@ export function QuickRFQDropzone() {
                         type="text"
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
-                        placeholder="Firma Adı (Opsiyonel)"
-                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                        placeholder="Firma Adı (Opsiyonel)" aria-label="Firma Adı (Opsiyonel)"
+                        className="w-full px-3.5 py-2.5 bg-[#191D20] border border-white/25 text-white text-xs font-sans placeholder-[#A9AEA6] focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                     <div>
@@ -417,8 +364,8 @@ export function QuickRFQDropzone() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="E-posta Adresi (Yazılı Teklif İçin)"
-                        className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust rounded-lg"
+                        placeholder="E-posta Adresi (Yazılı Teklif İçin)" aria-label="E-posta Adresi (Yazılı Teklif İçin)"
+                        className="w-full px-3.5 py-2.5 bg-[#191D20] border border-white/25 text-white text-xs font-sans placeholder-[#A9AEA6] focus:outline-none focus:border-rust rounded-lg"
                       />
                     </div>
                   </div>
@@ -428,8 +375,8 @@ export function QuickRFQDropzone() {
                       rows={2}
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
-                      placeholder="Ölçü, adet veya çalışma şartı notları (Örn: DN50 PN16, 50 adet, 250°C buhar hattı)..."
-                      className="w-full px-3.5 py-2.5 bg-industrial-950 border border-industrial-700 text-white text-xs font-mono placeholder-industrial-500 focus:outline-none focus:border-rust resize-none rounded-lg"
+                      placeholder="Ölçü, adet veya çalışma şartı notları (Örn: DN50 PN16, 50 adet, 250°C buhar hattı)..." aria-label="Ölçü, adet veya çalışma şartı notları (Örn: DN50 PN16, 50 adet, 250°C buhar hattı)..."
+                      className="w-full px-3.5 py-2.5 bg-[#191D20] border border-white/25 text-white text-xs font-sans placeholder-[#A9AEA6] focus:outline-none focus:border-rust resize-none rounded-lg"
                     />
                   </div>
                 </div>
@@ -439,7 +386,7 @@ export function QuickRFQDropzone() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 bg-gradient-to-b from-rust-hot via-rust to-rust-forge hover:from-rust-ember hover:to-rust text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 border border-rust-ember/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_4px_16px_rgba(183,65,14,0.35)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_24px_rgba(232,89,34,0.45)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 rounded-lg cursor-pointer"
+                    className="w-full py-4 bg-[#B7410E] hover:bg-[#96350B] text-white text-sm font-semibold transition-colors flex items-center justify-center gap-4 disabled:opacity-50 rounded-lg cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   >
                     {isSubmitting ? (
                       <>
@@ -448,14 +395,14 @@ export function QuickRFQDropzone() {
                       </>
                     ) : (
                       <>
-                        <span>Teknik Teklif İste (2 Saatte Geri Dönüş)</span>
+                        <span>Teklif talebini gönder</span>
                         <span className="text-white font-bold">→</span>
                       </>
                     )}
                   </button>
                 </div>
 
-                <p className="text-[10px] font-mono text-industrial-500 text-center">
+                <p className="text-[10px] font-sans text-[#A9AEA6] text-center">
                   Formu göndererek teknik verilerinizin gizlilik (NDA) esaslarına göre incelenmesini onaylamış olursunuz.
                 </p>
               </form>

@@ -67,7 +67,7 @@
 @layer utilities {
   /* Subtle light CAD engineering blueprint grid */
   .bg-blueprint-grid {
-    background-image: 
+    background-image:
       linear-gradient(to right, rgba(26, 37, 54, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(26, 37, 54, 0.05) 1px, transparent 1px);
     background-size: 24px 24px;
@@ -75,7 +75,7 @@
 
   /* Dark titanium blueprint grid with subtle rust accents */
   .bg-blueprint-dark {
-    background-image: 
+    background-image:
       linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 32px 32px;
@@ -100,4 +100,13 @@
   .hairline-rust {
     border-image: linear-gradient(to right, transparent, #b7410e, #e85922, transparent) 1;
   }
+}
+
+/* Material-led opening: readable photography with a quiet graphite backdrop. */
+.precision-hero { background: #191d20; }
+.precision-hero-shade {
+  background: linear-gradient(90deg, #191d20 0%, rgba(25,29,32,.88) 13%, rgba(25,29,32,.26) 53%, rgba(25,29,32,.08) 100%), linear-gradient(0deg, rgba(25,29,32,.85), transparent 35%);
+}
+@media (max-width: 1023px) {
+  .precision-hero-shade { background: linear-gradient(90deg, rgba(25,29,32,.95), rgba(25,29,32,.72)), linear-gradient(0deg, #191d20, transparent 50%); }
 }

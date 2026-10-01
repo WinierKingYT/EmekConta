@@ -299,7 +299,7 @@ function Scene() {
 /* ------------------------------------------------------------------ */
 /*  Exported Canvas wrapper                                            */
 /* ------------------------------------------------------------------ */
-export function Header3DScene() {
+export function Header3DScene({ focused = false }: { focused?: boolean }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -327,7 +327,7 @@ export function Header3DScene() {
         onPointerMove={() => {}}
       >
         <Suspense fallback={null}>
-          <Scene />
+          {focused ? <><Lights /><SpiralWoundRing position={[1.3, 0, 0]} radius={1.35} color="#b7410e" mouseInfluence={0.12} /></> : <Scene />}
         </Suspense>
       </Canvas>
     </div>

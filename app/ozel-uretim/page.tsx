@@ -1,16 +1,11 @@
 import React from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { RFQForm } from "@/components/rfq/RFQForm";
-import {
-  RulerIcon,
-  FactoryIcon,
-  CheckCircleIcon,
-  ShieldCheckIcon,
-  UploadCloudIcon,
-  DocumentTextIcon,
-} from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
   title: "Özel Conta Üretimi | CAD Çizim ve Numuneye Göre İmalat",
@@ -52,139 +47,13 @@ export default function CustomManufacturingPage() {
   ];
 
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[{ label: "Özel Üretim" }]}
-          className="mb-6"
-        />
-
-        {/* Hero Section */}
-        <div className="bg-industrial-900 text-white border border-industrial-800 rounded-xl p-8 sm:p-12 lg:p-16 mb-12">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider rounded-md">
-              <span className="w-2 h-2 bg-rust rounded-full" />
-              ÖZEL İMALAT & NUMUNEYE GÖRE KESİM
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Teknik Çiziminizi Gönderin. <br />
-              <span className="text-rust">Üretim Çözümünü</span> Birlikte Belirleyelim.
-            </h1>
-
-            <p className="mt-6 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              Katalog standartları tesisinizdeki özel ölçülere uymadığında, Emek Conta'nın yüksek hassasiyetli kalıpçılık ve CNC kesim tecrübesi devreye girer. Teknik çizim, ölçü tablosu veya numune üzerinden en zorlu geometrileri dahi hızla üretiyoruz.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-industrial-300">
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded-md">
-                <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
-                Sıfır Kalıp Maliyeti
-              </span>
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded-md">
-                <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
-                Hassas CNC Bıçak & Su Jeti
-              </span>
-              <span className="flex items-center gap-1.5 bg-industrial-850 px-3 py-1.5 border border-industrial-700 rounded-md">
-                <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
-                Aynı Gün Prototip Kesimi
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* 4 Capabilities Grid */}
-        <div className="mb-14">
-          <h2 className="text-2xl font-bold text-night mb-6">
-            Özel İmalat Kabiliyetlerimiz
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {capabilities.map((cap, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8 flex flex-col justify-between hover:border-rust hover:shadow-md transition-all duration-200"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-mono font-bold text-rust">
-                      0{idx + 1}. KABİLİYET
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 bg-rust-subtle text-rust border border-rust-border uppercase font-medium rounded-md">
-                      {cap.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-night mb-2">
-                    {cap.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-industrial-600 leading-relaxed">
-                    {cap.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Supported Material Library */}
-        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-14">
-          <h2 className="text-xl sm:text-2xl font-bold text-night mb-4">
-            Özel Kesimde Kullanılan Malzemeler
-          </h2>
-          <p className="text-xs sm:text-sm text-industrial-600 mb-6 max-w-3xl">
-            Tüm malzemeler doğrudan fabrika stoklarımızda mevcut olup, talep ettiğiniz et kalınlığında (0.5 mm'den 50 mm'ye kadar) derhal işleme alınır:
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs font-mono">
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">Saf Grafit</span>
-              <span className="text-[10px] text-industrial-500">Telli / Düz</span>
-            </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">Asbestsiz Klingrit</span>
-              <span className="text-[10px] text-industrial-500">Aramid / NBR</span>
-            </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">EPDM Kauçuk</span>
-              <span className="text-[10px] text-industrial-500">Su & Ozon</span>
-            </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">NBR Kauçuk</span>
-              <span className="text-[10px] text-industrial-500">Yağ & Yakıt</span>
-            </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">Saf PTFE / ePTFE</span>
-              <span className="text-[10px] text-industrial-500">Asit & Kimya</span>
-            </div>
-            <div className="p-3 bg-industrial-50 border border-industrial-200 rounded-md">
-              <span className="font-bold text-night block">Viton / Silikon</span>
-              <span className="text-[10px] text-industrial-500">Yüksek Isı / Gıda</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Dedicated RFQ Section */}
-        <div id="cizim-gonder" className="scroll-mt-24">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <span className="text-xs font-mono font-bold text-rust tracking-widest uppercase block mb-1">
-              DOĞRUDAN ÇİZİM İLETİN
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-industrial-900 tracking-tight">
-              Özel Üretim Teklif Formu
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm text-industrial-600">
-              Çiziminizi yükleyin veya ölçüleri girin; teknik ekibimiz tolerans kontrolü yaparak teklifinizi hazırlasın.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <RFQForm />
-          </div>
-        </div>
-      </Container>
-    </div>
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12"><Container>
+      <Breadcrumb items={[{ label: "Özel Üretim" }]} className="mb-10" />
+      <PageHeading eyebrow="Emek Conta / Özel üretim" title={<>Çiziminizden,<br />tam ölçünüzde.</>} description="Standart ölçü yetmediğinde teknik resim, ölçü veya numunenizle başlayın. Malzeme seçimini ve üretim yöntemini uygulamanıza göre birlikte belirleyelim." />
+      <div className="relative mb-16 aspect-[4/3] overflow-hidden rounded-xl sm:aspect-[16/7]"><Image src="/images/hero/cnc-cutting.jpg" alt="Özel formlu contaların teknik çizime göre CNC kesimi" fill priority sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover" /></div>
+      <div className="mb-16 grid gap-8 lg:grid-cols-3"><div><p className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">Üretim yaklaşımımız</p><h2 className="text-3xl font-medium leading-tight tracking-tight">Her detay,<br />ihtiyacınıza göre.</h2><div className="mt-7"><Button href="#cizim-gonder" variant="accent">Çiziminizi paylaşın ↗</Button></div></div><div className="grid gap-8 sm:grid-cols-2 lg:col-span-2">{capabilities.map((capability, index) => <section key={capability.title} className="border-t border-[#191D20]/20 pt-5"><p className="mb-5 text-xs text-[#96350B]">{String(index + 1).padStart(2, "0")} / {capability.badge}</p><h3 className="mb-3 text-xl font-medium leading-snug">{capability.title}</h3><p className="text-sm leading-relaxed text-[#62635F]">{capability.description}</p></section>)}</div></div>
+      <section className="mb-16 rounded-xl bg-[#191D20] p-7 text-white sm:p-10"><h2 className="mb-6 text-2xl font-medium tracking-tight">Uygulamaya uygun malzeme.</h2><p className="mb-7 max-w-xl text-sm leading-relaxed text-[#B9BCB8]">Sıcaklık, basınç ve akışkan gereksinimlerine göre farklı malzeme seçeneklerini değerlendiriyoruz.</p><ul className="flex flex-wrap gap-x-8 gap-y-4 text-sm text-[#DD895F]">{["Saf grafit", "Asbestsiz klingrit", "EPDM", "NBR", "PTFE / ePTFE", "Viton / Silikon"].map(material => <li key={material}>{material}</li>)}</ul></section>
+      <section id="cizim-gonder" className="scroll-mt-24 border-t border-[#191D20]/15 pt-10"><div className="mb-8"><p className="mb-4 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">Birlikte başlayalım</p><h2 className="text-3xl font-medium tracking-tight">Özel üretim talebiniz.</h2><p className="mt-3 text-sm text-[#62635F]">Çizim, numune fotoğrafı veya ölçü bilgilerinizi paylaşın.</p></div><RFQForm /></section>
+    </Container></div>
   );
 }

@@ -1,135 +1,34 @@
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { CheckCircleIcon, ShieldCheckIcon, ClockIcon } from "@/components/icons/Icons";
-import { companyData } from "@/data/company";
-import { HeroShowcase } from "./HeroShowcase";
-import { Header3DScene } from "@/components/layout/Header3DScene";
+import { ArrowRightIcon } from "@/components/icons/Icons";
 
 export function HeroSection() {
   return (
-    <section className="relative bg-industrial-950 text-white overflow-hidden border-b border-industrial-800">
-      {/* 3D Interactive Gasket Background */}
-      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden="true">
-        <Header3DScene />
+    <section className="precision-hero relative overflow-hidden text-white">
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[62%]">
+        <Image src="/images/hero/hero-slide-1.webp" alt="Spiral sarımlı contalar ve hassas ölçüm kumpası" fill priority sizes="(max-width: 1024px) 100vw, 62vw" className="object-cover object-[58%_center]" />
+        <div className="precision-hero-shade absolute inset-0" />
       </div>
-
-      {/* Precision grid background texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-          backgroundSize: '24px 24px',
-          zIndex: 1,
-        }}
-      />
-
-      {/* Atmospheric radial glow behind the showcase console */}
-      <div 
-        className="absolute right-0 top-1/4 w-[650px] h-[650px] pointer-events-none opacity-60 blur-3xl rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(183, 65, 14, 0.22) 0%, rgba(26, 37, 54, 0.4) 45%, transparent 70%)',
-          zIndex: 1,
-        }}
-      />
-
-      <Container className="relative py-16 sm:py-24 lg:py-28" style={{ zIndex: 2 }}>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Authoritative Engineering Copy */}
-          <div className="lg:col-span-7 flex flex-col items-start">
-            {/* Engineering Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 bg-industrial-900 border border-rust/30 text-xs font-mono text-industrial-200 mb-6 rounded-md shadow-xs">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="font-semibold tracking-wide">[ YÜKSEK MÜHENDİSLİK & GÜVEN ]</span>
-              <span className="text-industrial-500">•</span>
-              <span className="text-industrial-300">SANAYİ VE DENİZCİLİK SIZDIRMAZLIK ÇÖZÜMLERİ</span>
+      <Container className="relative z-10">
+        <div className="grid min-h-[650px] lg:min-h-[740px] lg:grid-cols-12">
+          <div className="flex flex-col justify-center py-16 sm:py-24 lg:col-span-7">
+            <p className="mb-8 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#D5C6B9]"><span className="h-px w-8 bg-[#B7410E]" />Emek Conta / Endüstriyel sızdırmazlık</p>
+            <h1 className="max-w-[760px] text-[clamp(2.8rem,6.8vw,6rem)] font-medium leading-[1.02] tracking-[-0.065em]">Her bağlantıda<br /><span className="text-[#DD895F]">hassasiyet.</span></h1>
+            <p className="mt-7 max-w-[390px] text-base leading-relaxed text-[#D1D0CC] sm:text-lg">Sanayi ve denizcilik için sızdırmazlık çözümleri. Standart ölçüden size özel üretime.</p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Button href="/urunler" variant="accent" size="lg" className="gap-6">Ürünleri İncele <ArrowRightIcon className="h-4 w-4" /></Button>
+              <Button href="/teklif-iste" variant="outline" size="lg" className="gap-6">Teklif İste <span aria-hidden="true">↗</span></Button>
             </div>
-
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
-              Endüstriyel Sızdırmazlıkta <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rust-light via-rust to-[#ea6e36]">
-                Yüksek Mühendislik
-              </span>{" "}
-              ve Güven
-            </h1>
-
-            {/* Subtext */}
-            <p className="mt-6 text-base sm:text-lg text-industrial-300 leading-relaxed max-w-2xl">
-              {companyData.subMessage}
-            </p>
-
-            {/* Primary CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <Button href="/urunler" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-lg">
-                <span>Üretim Gamını İncele</span>
-                <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-              </Button>
-              <Button
-                href="/teklif-iste"
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
-              >
-                <span>Teknik Çizim / Teklif İste</span>
-                <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
-              </Button>
-            </div>
-
-            {/* SLA / Micro Assurance */}
-            <div className="mt-4 flex items-center gap-2 text-xs font-mono text-industrial-400">
-              <ClockIcon className="w-3.5 h-3.5 text-rust shrink-0" />
-              <span>Ortalama teklif dönüş süresi: <strong className="text-industrial-200 font-semibold">30 Dakika</strong></span>
-              <span className="text-industrial-600 hidden sm:inline">|</span>
-              <span className="hidden sm:inline text-industrial-300">DIN EN 1514 & ASME B16.20 Kalite Normları</span>
-            </div>
-
-            {/* Key Micro Capabilities as 3 Elevated Micro-Cards */}
-            <div className="mt-8 pt-8 border-t border-industrial-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
-                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
-                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
-                  <span>DIN & ASME Normları</span>
-                </div>
-                <p className="text-[11px] text-industrial-400 font-sans leading-tight">
-                  Standardize flanş ölçüleri ve mikron tolerans güvencesi.
-                </p>
-              </div>
-
-              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
-                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
-                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
-                  <span>CAD / DXF Kesim</span>
-                </div>
-                <p className="text-[11px] text-industrial-400 font-sans leading-tight">
-                  CNC bıçak ile kalıp maliyetsiz özel formlu imalat.
-                </p>
-              </div>
-
-              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
-                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
-                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
-                  <span>Numuneye Göre Üretim</span>
-                </div>
-                <p className="text-[11px] text-industrial-400 font-sans leading-tight">
-                  Birebir numune tarama & acil teslimat imkânı.
-                </p>
-              </div>
-            </div>
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] tracking-wide text-[#BABBB6]"><span>DIN & ASME standartları</span><span className="h-3 w-px bg-white/20" aria-hidden="true" /><span>Teknik resme göre özel üretim</span></div>
           </div>
-
-          {/* Right Column: High-Precision Photographic Showcase Console */}
-          <div className="lg:col-span-5 flex justify-center">
-            <HeroShowcase />
+          <div className="hidden items-end justify-end pb-12 lg:col-span-5 lg:flex">
+            <Link href="/urunler/spiral-sarimli-contalar" className="group flex max-w-xs items-center gap-5 border-t border-white/35 pt-5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-white"><span className="text-[11px] text-white/65">01 /</span><div><span className="mb-1 block text-[10px] uppercase tracking-[0.18em] text-white/65">Ürün odağı</span><span className="text-sm font-medium">Spiral sarımlı contalar</span></div><ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" /></Link>
           </div>
         </div>
       </Container>
+      <div className="relative z-10 border-t border-white/15"><Container className="flex items-center justify-between gap-6 py-5 text-[10px] uppercase tracking-[0.16em] text-[#B7B9B5]"><span>Malzemeyi tanırız. Detayı önemseriz.</span><a href="#urun-gruplari" className="flex items-center gap-4 text-white hover:text-[#DD895F]">Çözümleri keşfet <span aria-hidden="true">↓</span></a></Container></div>
     </section>
   );
 }

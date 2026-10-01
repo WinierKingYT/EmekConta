@@ -265,7 +265,7 @@ function buildCustomerConfirmationHtml(data: RfqEmailPayload): string {
               EMEK CONTA SANAYİ VE TİCARET
             </div>
             <div>
-              <strong>Karaköy Satış & İletişim Ofisi:</strong> Kemankeş Karamustafapaşa Mah. Perşembe Pazarı Cad. Beyoğlu / İSTANBUL
+              <strong>Karaköy Satış & İletişim Ofisi:</strong> Arap Cami Mah. Galata Mahkemesi Sk. Ticaret Han, 34445 Beyoğlu / İSTANBUL
             </div>
             <div style="margin-top: 4px;">
               <strong>Telefon & WhatsApp:</strong> ${companyData.phoneFormatted}

@@ -1,4 +1,5 @@
 import React from "react";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
@@ -19,82 +20,10 @@ export const metadata: Metadata = {
 
 export default function SectorsPage() {
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[{ label: "Sektörler" }]}
-          className="mb-6"
-        />
-
-        {/* Page Header */}
-        <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-10 mb-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="w-4 h-[2px] bg-steel-blue inline-block"></span>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-steel-darkblue">
-              ENDÜSTRİYEL UYGULAMALAR
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-industrial-900 tracking-tight">
-            Sektörel Sızdırmazlık Çözümleri
-          </h1>
-          <p className="mt-3 text-sm sm:text-base text-industrial-600 max-w-3xl leading-relaxed">
-            Her endüstrinin akışkan kimyası, çalışma basıncı, sıcaklık sınırları ve yasal güvenlik normları birbirinden farklıdır. 10 temel endüstriyel sektör için sahada kanıtlanmış conta çözümleri geliştiriyoruz.
-          </p>
-        </div>
-
-        {/* 10 Sectors Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {sectorsData.map((sector, idx) => (
-            <div
-              key={sector.id}
-              className="group bg-white border border-industrial-200 rounded-xl hover:border-industrial-400 hover:shadow-sm transition-all flex flex-col justify-between p-6 sm:p-8"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
-                  <span className="text-steel-darkblue font-bold">0{idx + 1}. SEKTÖR</span>
-                  <span>{sector.standards[0] || "Standart Norm"}</span>
-                </div>
-
-                <h2 className="text-xl font-bold text-industrial-900 group-hover:text-steel-blue transition-colors">
-                  <Link href={`/sektorler/${sector.slug}`}>
-                    {sector.name}
-                  </Link>
-                </h2>
-
-                <p className="mt-3 text-xs sm:text-sm text-industrial-600 leading-relaxed">
-                  {sector.shortDescription}
-                </p>
-
-                {/* Challenges preview */}
-                <div className="mt-4 pt-3 border-t border-industrial-100">
-                  <span className="text-[11px] font-mono text-industrial-500 uppercase font-semibold block mb-1.5">
-                    Kritik Çalışma Zorlukları:
-                  </span>
-                  <ul className="space-y-1 text-xs text-industrial-700">
-                    {sector.challenges.slice(0, 2).map((ch, cIdx) => (
-                      <li key={cIdx} className="flex items-start gap-1.5">
-                        <span className="w-1.5 h-1.5 bg-steel-blue rounded-full mt-1.5 shrink-0" />
-                        <span className="line-clamp-1">{ch}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-industrial-100">
-                <Link
-                  href={`/sektorler/${sector.slug}`}
-                  className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-industrial-900 group-hover:text-steel-blue transition-colors"
-                >
-                  <span>Sektör Çözümlerini İncele</span>
-                  <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </div>
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12"><Container>
+      <Breadcrumb items={[{ label: "Sektörler" }]} className="mb-10" />
+      <PageHeading eyebrow="Emek Conta / Sektörel çözümler" title={<>Farklı şartlar.<br />Aynı hassasiyet.</>} description="Her sektörün sıcaklık, basınç ve akışkan gereksinimleri farklıdır. Uygulama alanınıza uygun sızdırmazlık ürünlerini ve üretim çözümlerini keşfedin." />
+      <div className="grid gap-x-10 gap-y-8 md:grid-cols-2">{sectorsData.map((sector, index) => <Link key={sector.id} href={`/sektorler/${sector.slug}`} className="group flex items-start gap-5 border-t border-[#191D20]/20 py-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-rust"><span className="mt-1 text-xs text-[#96350B]">{String(index + 1).padStart(2, "0")}</span><div className="flex-1"><h2 className="text-2xl font-medium tracking-tight group-hover:text-[#96350B]">{sector.name}</h2><p className="mt-4 text-sm leading-relaxed text-[#62635F]">{sector.shortDescription}</p><p className="mt-5 text-[11px] text-[#62635F]">{sector.standards.join(" / ")}</p><span className="mt-6 inline-flex items-center gap-5 text-sm font-medium">Çözümleri incele <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></div></Link>)}</div>
+    </Container></div>
   );
 }

@@ -1,145 +1,30 @@
 "use client";
-
-import React, { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import { Product, ProductCategory } from "@/lib/types";
 import { ProductCard } from "./ProductCard";
-import { SearchIcon, FilterIcon } from "@/components/icons/Icons";
+import { SearchIcon } from "@/components/icons/Icons";
 
-interface ProductFilterProps {
-  products: Product[];
-  categories: ProductCategory[];
-  initialCategory?: string;
-}
-
-export function ProductFilter({
-  products,
-  categories,
-  initialCategory,
-}: ProductFilterProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    initialCategory || "all"
-  );
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      // Category match
-      const matchesCategory =
-        selectedCategory === "all" || product.category === selectedCategory;
-
-      // Search match
-      const query = searchQuery.toLowerCase().trim();
-      if (!query) return matchesCategory;
-
-      const matchesSearch =
-        product.name.toLowerCase().includes(query) ||
-        product.shortDescription.toLowerCase().includes(query) ||
-        product.standards.some((s) => s.toLowerCase().includes(query)) ||
-        product.materials.some((m) => m.toLowerCase().includes(query));
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [products, selectedCategory, searchQuery]);
-
+export function ProductFilter({ products, categories, initialCategory, initialQuery = "" }: { products: Product[]; categories: ProductCategory[]; initialCategory?: string; initialQuery?: string }) {
+  const validCategory = categories.some(category => category.id === initialCategory) ? initialCategory! : "all";
+  const [selectedCategory, setSelectedCategory] = useState(validCategory);
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+  useEffect(() => { setSelectedCategory(validCategory); }, [validCategory]);
+  useEffect(() => { setSearchQuery(initialQuery); }, [initialQuery]);
+  const filteredProducts = useMemo(() => products.filter(product => {
+    if (selectedCategory !== "all" && product.category !== selectedCategory) return false;
+    const query = searchQuery.toLocaleLowerCase("tr-TR").trim();
+    return !query || [product.name, product.shortDescription, ...product.standards, ...product.materials].some(value => value.toLocaleLowerCase("tr-TR").includes(query));
+  }), [products, selectedCategory, searchQuery]);
+  const reset = () => { setSelectedCategory("all"); setSearchQuery(""); };
   return (
     <div className="space-y-8">
-      {/* Filter and Search Bar */}
-      <div className="bg-white border border-industrial-200 p-4 sm:p-6 space-y-4 rounded-lg shadow-xs">
-        {/* Search Input */}
-        <div className="relative">
-          <label htmlFor="product-search" className="sr-only">
-            Ürün veya Standart Ara
-          </label>
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-industrial-400">
-            <SearchIcon className="w-5 h-5" />
-          </div>
-          <input
-            id="product-search"
-            type="search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Ürün adı, standart (ASME, DIN), malzeme (grafit, EPDM, PTFE) ara..."
-            className="w-full pl-11 pr-4 py-2.5 bg-industrial-50 border border-industrial-300 text-industrial-900 text-sm placeholder-industrial-500 focus:outline-none focus:ring-2 focus:ring-rust focus:bg-white rounded-lg transition-colors"
-          />
-        </div>
-
-        {/* Category Tabs */}
-        <div>
-          <div className="text-xs font-mono text-industrial-500 uppercase tracking-wider mb-2.5 flex items-center gap-2">
-            <FilterIcon className="w-3.5 h-3.5" />
-            <span>Kategoriye Göre Filtrele</span>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => setSelectedCategory("all")}
-              className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-lg ${
-                selectedCategory === "all"
-                  ? "bg-rust text-white border-rust shadow-xs"
-                  : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
-              }`}
-            >
-              Tüm Ürünler ({products.length})
-            </button>
-
-            {categories.map((cat) => {
-              const count = products.filter((p) => p.category === cat.id).length;
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs font-mono font-medium transition-colors border rounded-lg ${
-                    selectedCategory === cat.id
-                      ? "bg-rust text-white border-rust shadow-xs"
-                      : "bg-industrial-50 text-night border-industrial-200 hover:bg-white hover:border-rust hover:text-rust"
-                  }`}
-                >
-                  {cat.name} ({count})
-                </button>
-              );
-            })}
-          </div>
-        </div>
+      <div className="space-y-6 border-y border-[#191D20]/15 py-7">
+        <div className="relative max-w-xl"><label htmlFor="product-search" className="sr-only">Ürün, malzeme veya standart ara</label><SearchIcon className="pointer-events-none absolute left-4 top-4 h-5 w-5 text-[#62635F]" /><input id="product-search" type="search" value={searchQuery} onChange={event => setSearchQuery(event.target.value)} placeholder="Ürün, malzeme veya standart ara" className="w-full rounded-lg border border-[#D9D5CD] bg-[#F8F6F2] py-4 pl-12 pr-4 text-sm text-[#191D20] placeholder:text-[#62635F] focus:outline-none focus:ring-2 focus:ring-rust" /></div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Ürün kategorileri">{[{ id: "all", name: "Tüm ürünler" }, ...categories].map(category => <button key={category.id} type="button" aria-pressed={selectedCategory === category.id} onClick={() => setSelectedCategory(category.id)} className={`rounded-full border px-4 py-2.5 text-xs font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust ${selectedCategory === category.id ? "border-[#191D20] bg-[#191D20] text-white" : "border-[#CFCBC3] text-[#4D514B] hover:border-[#B7410E] hover:text-[#96350B]"}`}>{category.name} <span className="ml-2 opacity-75">{category.id === "all" ? products.length : products.filter(product => product.category === category.id).length}</span></button>)}</div>
       </div>
-
-      {/* Result Status */}
-      <div className="flex items-center justify-between text-xs font-mono text-industrial-500">
-        <span>
-          GÖSTERİLEN: <strong className="text-night">{filteredProducts.length}</strong> ÜRÜN
-        </span>
-        {(selectedCategory !== "all" || searchQuery) && (
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedCategory("all");
-              setSearchQuery("");
-            }}
-            className="text-rust hover:underline"
-          >
-            Filtreleri Temizle
-          </button>
-        )}
-      </div>
-
-      {/* Product Grid */}
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} priority={index < 3} />
-          ))}
-        </div>
-      ) : (
-        <div className="p-12 text-center bg-white border border-industrial-200 rounded-xl">
-          <p className="text-base font-semibold text-industrial-800">
-            Arama kriterlerine uygun ürün bulunamadı.
-          </p>
-          <p className="text-xs sm:text-sm text-industrial-500 mt-1 max-w-md mx-auto">
-            Özel ölçü veya aradığınız özel spesifikasyon için lütfen doğrudan teknik resim veya numune ile teklif isteyin.
-          </p>
-        </div>
-      )}
+      <div className="flex items-center justify-between gap-4 text-xs text-[#62635F]"><p role="status" aria-live="polite">{filteredProducts.length} ürün gösteriliyor</p>{(selectedCategory !== "all" || searchQuery) && <button type="button" onClick={reset} className="text-[#96350B] underline underline-offset-4">Filtreleri temizle</button>}</div>
+      {filteredProducts.length ? <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{filteredProducts.map((product, index) => <ProductCard key={product.id} product={product} priority={index < 3} />)}</div> : <div className="rounded-xl border border-[#D9D5CD] py-16 text-center"><h2 className="text-xl font-medium text-[#191D20]">Aramanıza uygun ürün bulunamadı.</h2><p className="mx-auto mt-3 max-w-md px-5 text-sm text-[#62635F]">Başka bir malzeme veya standartla arayın. Özel bir ürün için teknik ekibimize ulaşabilirsiniz.</p><Link href="/teklif-iste" className="mt-6 inline-block text-sm text-[#96350B] underline underline-offset-4">Özel üretim için teklif iste</Link></div>}
     </div>
   );
 }

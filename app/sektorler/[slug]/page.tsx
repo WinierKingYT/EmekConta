@@ -1,21 +1,15 @@
 import React from "react";
+import { PageHeading } from "@/components/ui/PageHeading";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
+
 import { ProductCard } from "@/components/products/ProductCard";
 import { sectorsData } from "@/data/sectors";
 import { productsData } from "@/data/products";
-import {
-  ShieldCheckIcon,
-  CheckCircleIcon,
-  RulerIcon,
-  UploadCloudIcon,
-  ArrowRightIcon,
-} from "@/components/icons/Icons";
 
 interface Props {
   params: { slug: string };
@@ -91,133 +85,15 @@ export default function SectorDetailPage({ params }: Props) {
   };
 
   return (
-    <div className="py-8 sm:py-12 bg-industrial-50 min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
+    <div className="min-h-screen bg-[#F2EFE9] py-8 text-[#191D20] sm:py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Container>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Sektörler", href: "/sektorler" },
-            { label: sector.name },
-          ]}
-          className="mb-6"
-        />
-
-        {/* Sector Hero */}
-        <div className="bg-industrial-900 text-white border border-industrial-800 rounded-xl p-8 sm:p-12 mb-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-industrial-800 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider rounded-md">
-              <span className="w-2 h-2 bg-steel-blue rounded-full" />
-              SEKTÖREL MÜHENDİSLİK ÇÖZÜMLERİ
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              {sector.name} İçin <br />
-              <span className="text-steel-blue">Güvenilir Sızdırmazlık</span> Çözümleri
-            </h1>
-
-            <p className="mt-6 text-base sm:text-lg text-industrial-300 leading-relaxed">
-              {sector.description}
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-2">
-              {sector.standards.map((std, idx) => (
-                <span
-                  key={idx}
-                  className="px-2.5 py-1 bg-industrial-850 border border-industrial-700 text-xs font-mono text-industrial-300 rounded-md"
-                >
-                  {std}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Challenges vs Solutions 2-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Challenges */}
-          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
-            <h2 className="text-xl font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
-              <span className="text-red-600 font-mono font-bold">!</span>
-              <span>Sektörel Zorluklar & Riskler</span>
-            </h2>
-            <ul className="space-y-3.5">
-              {sector.challenges.map((ch, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-industrial-700">
-                  <span className="w-2 h-2 bg-red-500 rounded-full mt-1.5 shrink-0" />
-                  <span>{ch}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions */}
-          <div className="bg-white border border-industrial-200 rounded-xl p-6 sm:p-8">
-            <h2 className="text-xl font-bold text-industrial-900 mb-4 pb-3 border-b border-industrial-100 flex items-center gap-2">
-              <ShieldCheckIcon className="w-5 h-5 text-steel-blue" />
-              <span>Emek Conta Mühendislik Çözümleri</span>
-            </h2>
-            <ul className="space-y-3.5">
-              {sector.solutions.map((sol, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-industrial-700">
-                  <CheckCircleIcon className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>{sol}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Recommended Products for this Industry */}
-        {recommendedProducts.length > 0 && (
-          <div className="mb-12">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <span className="text-xs font-mono text-steel-darkblue uppercase tracking-wider block">
-                  ÖNERİLEN ÜRÜNLER
-                </span>
-                <h2 className="text-xl sm:text-2xl font-bold text-industrial-900">
-                  {sector.name} İçin Temel Sızdırmazlık Ürünleri
-                </h2>
-              </div>
-              <Link href="/urunler" className="text-xs font-mono text-steel-blue hover:underline hidden sm:inline">
-                Tüm Kataloğu Gör →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {recommendedProducts.map((prod) => (
-                <ProductCard key={prod.id} product={prod} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Sector RFQ Callout */}
-        <div className="bg-industrial-950 text-white border border-industrial-800 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-            {sector.name} Tesisiniz İçin Teklif Alın
-          </h3>
-          <p className="mt-3 text-xs sm:text-sm text-industrial-400 max-w-xl mx-auto leading-relaxed">
-            Teknik çizim veya çalışma sıcaklık/basınç değerlerinizi iletin; mühendislerimiz sektör standardına uygun malzeme seçimini yaparak aynı gün teklif hazırlasın.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <Button
-              href={`/teklif-iste?sektor=${encodeURIComponent(sector.name)}`}
-              variant="accent"
-              size="lg"
-            >
-              <UploadCloudIcon className="w-5 h-5 mr-2" />
-              Sektörel Teklif Talebi Gönder
-            </Button>
-            <Button href="/iletisim" variant="outline" size="lg" className="text-white border-industrial-700 hover:border-white">
-              Teknik Danışmanlık Al
-            </Button>
-          </div>
-        </div>
+        <Breadcrumb items={[{ label: "Sektörler", href: "/sektorler" }, { label: sector.name }]} className="mb-10" />
+        <PageHeading eyebrow="Emek Conta / Sektörel çözümler" title={sector.name} description={sector.shortDescription} />
+        <section className="mb-14 rounded-xl bg-[#191D20] p-7 text-white sm:p-10"><p className="max-w-4xl text-base leading-relaxed text-[#D1D3CC]">{sector.description}</p><ul className="mt-7 flex flex-wrap gap-x-8 gap-y-3 text-xs text-[#DD895F]">{sector.standards.map(standard => <li key={standard}>{standard}</li>)}</ul></section>
+        <div className="mb-16 grid gap-10 md:grid-cols-2"><section className="border-t border-[#191D20]/20 pt-6"><h2 className="mb-6 text-2xl font-medium tracking-tight">Çalışma şartları ve gereksinimler</h2><ul className="space-y-4 text-sm leading-relaxed text-[#62635F]">{sector.challenges.map(challenge => <li key={challenge} className="border-b border-[#191D20]/10 pb-4">{challenge}</li>)}</ul></section><section className="border-t border-[#191D20]/20 pt-6"><h2 className="mb-6 text-2xl font-medium tracking-tight">Uygulamaya uygun çözümler</h2><ul className="space-y-4 text-sm leading-relaxed text-[#4D514B]">{sector.solutions.map(solution => <li key={solution} className="border-b border-[#191D20]/10 pb-4">{solution}</li>)}</ul></section></div>
+        {recommendedProducts.length > 0 && <section className="mb-16"><div className="mb-8 flex flex-wrap items-end justify-between gap-5"><h2 className="text-3xl font-medium tracking-tight">Bu sektör için ürünler</h2><Link href="/urunler" className="text-sm text-[#96350B] underline underline-offset-4">Tüm ürünleri incele</Link></div><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{recommendedProducts.map(product => <ProductCard key={product.id} product={product} />)}</div></section>}
+        <section className="flex flex-col justify-between gap-6 rounded-xl bg-[#E7E3DC] p-7 sm:p-10 lg:flex-row lg:items-center"><div><h2 className="text-2xl font-medium tracking-tight">Uygulamanızı birlikte değerlendirelim.</h2><p className="mt-3 text-sm text-[#62635F]">Ölçü, sıcaklık, basınç ve akışkan bilgilerinizi paylaşın.</p></div><Button href="/teklif-iste" variant="accent" size="lg">Teknik teklif iste ↗</Button></section>
       </Container>
     </div>
   );

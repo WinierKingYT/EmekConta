@@ -101,9 +101,20 @@ export default function EnglishContactPage({
               HEAD OFFICE & COMMERCIAL DISPATCH
             </span>
             <div className="font-bold text-night text-base mb-1">Emek Gaskets Sales & Dispatch Office</div>
-            <p className="text-industrial-500 mb-3 leading-relaxed">
-              Kemankes Karamustafapasa Mah. Persembe Pazari Cad., Beyoglu, Istanbul / Turkey
+            <p className="text-industrial-500 mb-2 leading-relaxed">
+              Arap Cami Mah. Galata Mahkemesi Sk. Ticaret Han, 34445 Beyoglu, Istanbul / Turkey
             </p>
+            <div className="mb-3">
+              <a
+                href={companyData.locations[0].mapsUrl || "https://maps.google.com"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-rust hover:underline font-semibold"
+              >
+                <span>View on Google Maps</span>
+                <span>↗</span>
+              </a>
+            </div>
             <div className="text-industrial-600 flex items-center justify-center gap-4 flex-wrap">
               <span>Hours: Mon-Fri 08:30 – 18:00 (GMT+3)</span>
               <span>•</span>

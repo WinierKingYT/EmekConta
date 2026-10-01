@@ -1,73 +1,12 @@
-import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Button } from "@/components/ui/Button";
 import { articlesData } from "@/data/articles";
-import { ArrowRightIcon, DocumentTextIcon } from "@/components/icons/Icons";
-
+import { ArrowRightIcon } from "@/components/icons/Icons";
 export function KnowledgeTeaser() {
-  const featuredArticles = articlesData.slice(0, 4);
-
   return (
-    <section className="py-16 sm:py-24 bg-industrial-50 border-b border-industrial-200">
-      <Container>
-        <SectionHeader
-          tag="MÜHENDİSLİK KÜTÜPHANESİ"
-          title="Teknik Bilgi & Standartlar Merkezi"
-          description="Sızdırmazlık malzemeleri, flanş normları ve çalışma parametreleri hakkında mühendisler ve satın almacılar için hazırlanmış teknik kaynaklar."
-          action={
-            <Button href="/teknik-bilgi" variant="outline" size="md">
-              Tüm Makaleleri Oku ({articlesData.length} Makale)
-            </Button>
-          }
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredArticles.map((article) => (
-            <Link
-              key={article.id}
-              href={`/teknik-bilgi/${article.slug}`}
-              className="group p-6 bg-white border border-industrial-200 hover:border-rust hover:shadow-md transition-all duration-200 flex flex-col justify-between rounded-xl"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs font-mono text-industrial-400 mb-3">
-                  <span className="text-rust font-bold uppercase">
-                    {article.category}
-                  </span>
-                  <span>{article.readingTimeMinutes} dk okuma</span>
-                </div>
-
-                <h3 className="text-base font-bold text-night group-hover:text-rust transition-colors leading-snug">
-                  {article.title}
-                </h3>
-
-                <p className="mt-2.5 text-xs text-industrial-600 line-clamp-3 leading-relaxed">
-                  {article.summary}
-                </p>
-
-                {article.standardsMentioned && article.standardsMentioned.length > 0 && (
-                  <div className="mt-4 flex flex-wrap gap-1">
-                    {article.standardsMentioned.map((std, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="text-[10px] font-mono px-1.5 py-0.5 bg-industrial-100 text-night border border-industrial-200/50 rounded-md"
-                      >
-                        {std}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-industrial-100 flex items-center justify-between text-xs font-mono font-medium text-night group-hover:text-brick transition-colors">
-                <span>Teknik Analizi İncele</span>
-                <ArrowRightIcon className="w-4 h-4 text-brick transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
-    </section>
+    <section className="bg-[#F2EFE9] py-20 text-[#191D20] sm:py-24"><Container>
+      <div className="mb-10 flex flex-wrap items-end justify-between gap-6"><div><p className="mb-5 text-[11px] uppercase tracking-[0.2em] text-[#A23A10]">05 / Teknik bilgi</p><h2 className="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Doğru seçim, bilgiyle başlar.</h2></div><Link href="/teknik-bilgi" className="inline-flex items-center gap-6 border-b border-[#191D20]/30 pb-2 text-sm hover:text-[#A23A10]">Tüm rehberler <ArrowRightIcon className="h-4 w-4" /></Link></div>
+      <div className="grid gap-8 md:grid-cols-3">{articlesData.slice(0, 3).map(article => <Link key={article.id} href={`/teknik-bilgi/${article.slug}`} className="group flex flex-col border-t border-[#191D20]/20 pt-5"><div className="mb-6 flex flex-wrap justify-between gap-2 text-[11px] text-[#62635F]"><span>{article.category}</span><span>{article.readingTimeMinutes} dk okuma</span></div><h3 className="text-xl font-medium leading-snug tracking-tight group-hover:text-[#A23A10]">{article.title}</h3><p className="mb-6 mt-4 text-sm leading-relaxed text-[#62635F]">{article.summary}</p><span className="mt-auto inline-flex items-center gap-5 text-sm font-medium">Rehberi oku <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" /></span></Link>)}</div>
+    </Container></section>
   );
 }

@@ -1,84 +1,11 @@
-import React from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { PhoneIcon, WhatsappIcon, MailIcon, UploadCloudIcon } from "@/components/icons/Icons";
 import { companyData } from "@/data/company";
-
 export function FinalCTASection() {
   return (
-    <section className="py-20 sm:py-28 bg-night-deep bg-blueprint-dark text-white relative overflow-hidden border-t border-night-border">
-      {/* Top Hairline Rust Accent */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
-
-      {/* Atmospheric Forge Radial Glow */}
-      <div 
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] pointer-events-none opacity-25 blur-3xl rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(207, 75, 20, 0.4) 0%, rgba(26, 37, 54, 0.2) 60%, transparent 80%)',
-        }}
-      />
-
-      <Container size="narrow" className="text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-night-surface border border-rust/40 text-xs font-mono text-rust-light mb-6 uppercase tracking-wider rounded-md shadow-inner-bevel">
-          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-          Hızlı B2B Teklif & Doğrudan İmalat Danışmanlığı
-        </div>
-
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Uygulamanız İçin Doğru Sızdırmazlık Çözümünü Birlikte Belirleyelim
-        </h2>
-
-        <p className="mt-5 text-base sm:text-lg text-industrial-300 max-w-2xl mx-auto leading-relaxed">
-          Teknik çiziminizi iletin veya çalışma parametrelerinizi (sıcaklık, basınç, akışkan) paylaşın; mühendislik ekibimiz en uygun malzeme ve imalat yöntemini belirlesin.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-xl">
-            <UploadCloudIcon className="w-5 h-5 mr-1" />
-            <span>Teknik Teklif İste</span>
-            <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-          </Button>
-          <Button
-            href="/iletisim"
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
-          >
-            <span>Mühendislik Departmanına Ulaşın</span>
-            <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
-          </Button>
-        </div>
-
-        {/* Quick Contact Line */}
-        <div className="mt-10 pt-8 border-t border-industrial-850 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-industrial-400">
-          <a
-            href={`tel:${companyData.phone}`}
-            className="flex items-center gap-2 hover:text-white transition-colors"
-          >
-            <PhoneIcon className="w-4 h-4 text-rust" />
-            <span>Santral: {companyData.phoneFormatted}</span>
-          </a>
-
-          <a
-            href={`https://wa.me/${companyData.whatsapp.replace('+', '')}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
-          >
-            <WhatsappIcon className="w-4 h-4" />
-            <span>WhatsApp RFQ</span>
-          </a>
-
-          <a
-            href={`mailto:${companyData.quoteEmail}`}
-            className="flex items-center gap-2 hover:text-white transition-colors"
-          >
-            <MailIcon className="w-4 h-4 text-rust" />
-            <span>{companyData.quoteEmail}</span>
-          </a>
-        </div>
-      </Container>
+    <section className="relative overflow-hidden bg-[#B7410E] py-16 text-white sm:py-20">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-32 h-[480px] w-[480px] rounded-full border-[50px] border-white/[0.06]" />
+      <Container className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center"><div><p className="mb-4 text-[11px] uppercase tracking-[0.2em] text-white/80">Birlikte çözelim</p><h2 className="text-3xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">Bir ölçü. Bir çizim.<br />Yeni bir çözüm.</h2></div><div className="max-w-sm"><p className="mb-6 text-sm leading-relaxed text-white/90">İhtiyacınızı konuşmak için bize ulaşın. Standart ürün veya özel üretim için birlikte ilerleyelim.</p><div className="flex flex-wrap items-center gap-6"><Button href="/teklif-iste" variant="primary" size="lg" className="gap-6">Teklif İste <span aria-hidden="true">↗</span></Button><a href={`tel:${companyData.phone}`} className="border-b border-white/60 pb-1 text-sm hover:border-white">Bizi arayın</a></div></div></Container>
     </section>
   );
 }

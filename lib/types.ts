@@ -112,10 +112,12 @@ export interface CompanyLocation {
   address: string;
   district: string;
   city: string;
+  postalCode?: string;
   phone: string;
   email: string;
   workingHours: string;
   mapEmbedQuery?: string;
+  mapsUrl?: string;
 }
 
 export interface CompanyProfile {

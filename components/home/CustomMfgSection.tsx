@@ -1,118 +1,27 @@
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Precision3D } from "./Precision3D";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { UploadCloudIcon, CheckCircleIcon, RulerIcon, FactoryIcon } from "@/components/icons/Icons";
+import { ArrowRightIcon } from "@/components/icons/Icons";
 
 export function CustomMfgSection() {
-  const capabilities = [
-    "DWG, DXF, STEP, PDF veya elle çizilmiş teknik resme göre kesim",
-    "Fiziki numuneden kumpas, mikrometre veya optik ölçüm ile birebir tersine mühendislik",
-    "Kalıp maliyeti olmadan 1 adetten on binlerce adede kadar CNC bıçak ve su jeti kesimi",
-    "Geniş hammadde stoğu: Grafit, Asbestsiz Klingrit, EPDM, NBR, Viton, PTFE, Mantar",
-    "Acil gemi ve tesis arızalarında aynı gün ekspres imalat ve teslimat opsiyonu",
-  ];
-
   return (
-    <section className="py-16 sm:py-24 bg-industrial-900 text-white border-b border-industrial-800">
+    <section className="bg-[#191D20] py-20 text-white sm:py-28">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column: Core Value Proposition */}
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-4 h-[2px] bg-rust inline-block"></span>
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-rust">
-                ÖZEL İMALAT KABİLİYETİ
-              </span>
-            </div>
-
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Standart Ölçü Yetmediğinde
-            </h2>
-            <p className="mt-2 text-xl sm:text-2xl font-medium text-rust">
-              Teknik resme, ölçüye veya numuneye göre üretim.
-            </p>
-
-            <p className="mt-5 text-sm sm:text-base text-industrial-300 leading-relaxed max-w-2xl">
-              Endüstriyel tesislerdeki özel flanşlar, eski model ithal makineler, pompa gövdeleri veya denizcilik ekipmanlarında katalog contaları her zaman uyum sağlamaz. Emek Conta, modern CNC kesim altyapısı ve ileri mühendislik tecrübesiyle çizim veya numunenizi hızla sızdırmazlık ürününe dönüştürür.
-            </p>
-
-            <ul className="mt-6 space-y-3">
-              {capabilities.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-industrial-200">
-                  <CheckCircleIcon className="w-4 h-4 text-rust shrink-0 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-xl">
-                <UploadCloudIcon className="w-5 h-5 mr-1" />
-                <span>Teknik Çizim / CAD Yükle</span>
-                <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
-              </Button>
-              <Button
-                href="/ozel-uretim"
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
-              >
-                <span>Özel Üretim Sürecini İncele</span>
-                <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Column: Workshop Production Mock / Photo Placeholder */}
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <div className="bg-night-deep/95 bg-blueprint-dark border border-night-border p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden group">
-              {/* Top Hairline Rust Accent */}
-              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
-
-              {/* CAD Corner Reticles */}
-              <span className="absolute top-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
-              <span className="absolute top-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
-              <span className="absolute bottom-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
-              <span className="absolute bottom-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
-
-              <div className="flex items-center justify-between pb-4 border-b border-industrial-800 text-xs font-mono text-industrial-400">
-                <div className="flex items-center gap-2">
-                  <FactoryIcon className="w-4 h-4 text-rust-ember" />
-                  <span className="text-industrial-200 font-semibold">İMALAT & TEKNİK ÇÖZÜM MERKEZİ</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-emerald-400 font-bold">CNC AKTİF</span>
-                </div>
-              </div>
-
-              {/* Engineering Spec Card Mock */}
-              <div className="my-6 p-5 bg-night-surface border border-night-border space-y-4 rounded-xl shadow-inner-bevel">
-                <div className="text-xs font-mono text-rust-ember font-bold uppercase tracking-wider">
-                  Kabul Edilen Çizim Formatları
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.DWG</span>
-                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.DXF</span>
-                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.STEP</span>
-                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.PDF</span>
-                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.IGES</span>
-                  <span className="px-2 py-1.5 bg-rust/20 border border-rust/50 text-rust-light font-bold rounded-md">NUMUNE</span>
-                </div>
-
-                <div className="pt-2 text-[11px] text-industrial-400 leading-relaxed font-sans">
-                  * Teknik çiziminiz yoksa contanın net ölçülerini (İç Çap x Dış Çap x Kalınlık x Delik Çapı / Cıvata Adedi) form üzerinden belirtebilirsiniz.
-                </div>
-              </div>
-
-              {/* Notice block */}
-              <div className="pt-4 border-t border-industrial-850 flex items-center justify-between text-xs text-industrial-400 font-mono">
-                <span>MİNİMUM SİPARİŞ ADEDİ:</span>
-                <span className="text-white font-bold px-2 py-0.5 bg-night-deep border border-rust/30 rounded-md text-rust-light">1 ADET PROTOTİP</span>
-              </div>
-            </div>
+            <p className="mb-6 text-[11px] uppercase tracking-[0.2em] text-[#DD895F]">02 / Size özel üretim</p>
+            <h2 className="text-4xl font-medium leading-[1.08] tracking-[-0.045em] sm:text-5xl">Standartların<br />ötesinde,<br /><span className="text-[#DD895F]">tam ölçünüzde.</span></h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#B9BCB8]">Her uygulama kataloğa sığmaz. Teknik resminizi, ölçülerinizi veya numunenizi ihtiyacınıza uygun bir sızdırmazlık çözümüne dönüştürüyoruz.</p>
+            <div className="mt-8 space-y-4 border-t border-white/15 pt-6 text-sm text-[#D3D5CF]"><p>Teknik resim ve numuneye göre üretim</p><p>Standart ve özel formlarda hassas kesim</p><p>Prototipten seri üretime</p></div>
+            <Link href="/ozel-uretim" className="mt-9 inline-flex items-center gap-8 border-b border-[#DD895F]/50 pb-3 text-sm font-medium text-[#DD895F] hover:text-white">Üretim yaklaşımımız <ArrowRightIcon className="h-4 w-4" /></Link>
           </div>
+          <figure className="lg:col-span-7">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl"><Image src="/images/hero/cnc-cutting.jpg" alt="Teknik çizime göre conta levhası kesen CNC tezgâhı" fill sizes="(max-width: 1024px) 100vw, 58vw" className="object-cover" /></div>
+            <figcaption className="mt-4 flex flex-wrap justify-between gap-3 text-[11px] text-[#B9BCB8]"><span>Çizimden ürüne. Detaydan güvene.</span><span>Özel formlu conta kesimi</span></figcaption>
+          </figure>
         </div>
+        <Precision3D />
       </Container>
     </section>
   );

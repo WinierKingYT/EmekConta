@@ -125,6 +125,7 @@ export default function RootLayout({
       streetAddress: companyData.locations[0].address,
       addressLocality: companyData.locations[0].district,
       addressRegion: companyData.locations[0].city,
+      postalCode: companyData.locations[0].postalCode || "34445",
       addressCountry: "TR",
     },
     openingHoursSpecification: [
@@ -167,6 +168,7 @@ export default function RootLayout({
         streetAddress: loc.address,
         addressLocality: loc.district,
         addressRegion: loc.city,
+        postalCode: loc.postalCode || "34445",
         addressCountry: "TR",
       },
       openingHours: "Mo-Fr 08:30-18:00, Sa 08:30-13:00",

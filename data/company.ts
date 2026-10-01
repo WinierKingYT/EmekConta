@@ -16,13 +16,15 @@ export const companyData: CompanyProfile = {
     {
       name: "Karaköy Satış & İletişim Ofisi",
       type: "Satış & İletişim",
-      address: "Kemankeş Karamustafapaşa Mah. Perşembe Pazarı Cad.",
+      address: "Arap Cami Mah. Galata Mahkemesi Sk. Ticaret Han",
       district: "Beyoğlu",
       city: "İstanbul",
+      postalCode: "34445",
       phone: "+90 (546) 419 19 38",
       email: "info@emekconta.com",
       workingHours: "Hafta içi: 08:30 – 18:00 | Cumartesi: 08:30 – 13:00",
-      mapEmbedQuery: "Persembe+Pazari+Karakoy+Istanbul",
+      mapEmbedQuery: "Arap+Cami+Galata+Mahkemesi+Sk+Ticaret+Han+34445+Beyoglu+Istanbul",
+      mapsUrl: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cab9b9160c14a5:0x24f312a224099af8?sa=X&ved=1t:8290&ictx=111",
     },
   ],
 };

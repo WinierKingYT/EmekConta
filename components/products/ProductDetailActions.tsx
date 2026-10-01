@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
+
 import { Product } from "@/lib/types";
 import { useRfqCart } from "@/lib/cart-context";
 import { Button } from "@/components/ui/Button";
@@ -36,19 +36,19 @@ export function ProductDetailActions({ product }: ProductDetailActionsProps) {
   return (
     <div className="space-y-4">
       {/* Quick Add To Batch Cart Controls */}
-      <div className="p-4 bg-industrial-50 border border-industrial-200 rounded-xl space-y-3">
+      <div className="p-4 bg-[#EAE7E1] border border-[#D9D5CD] rounded-xl space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-mono font-bold text-industrial-800 uppercase">
-            Toplu Teklif Sepeti
+          <span className="text-xs font-sans font-medium text-[#191D20]">
+            Teklif listeniz
           </span>
-          <span className="text-[11px] font-mono text-industrial-500">
-            Fiyat olmadan listeye ekle
+          <span className="text-[11px] font-sans text-[#62635F]">
+            Miktarı belirleyin
           </span>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="w-full sm:w-44 flex items-center gap-2">
-            <label htmlFor="quick-qty" className="text-xs font-mono text-industrial-600 shrink-0">
+            <label htmlFor="quick-qty" className="text-xs font-sans text-[#62635F] shrink-0">
               Miktar:
             </label>
             <input
@@ -57,7 +57,7 @@ export function ProductDetailActions({ product }: ProductDetailActionsProps) {
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder="Örn: 50 Adet"
-              className="w-full px-3 py-2 bg-white border border-industrial-300 rounded-lg text-xs font-mono focus:outline-none focus:border-rust"
+              className="w-full px-3 py-2 bg-white border border-[#CFCBC3] rounded-lg text-xs font-sans focus:outline-none focus:border-rust"
             />
           </div>
 
@@ -65,10 +65,10 @@ export function ProductDetailActions({ product }: ProductDetailActionsProps) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className={`flex-1 py-2.5 px-4 font-mono text-xs font-bold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              className={`flex-1 py-2.5 px-4 font-sans text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
                 justAdded
                   ? "bg-emerald-600 text-white"
-                  : "bg-industrial-900 hover:bg-industrial-800 text-white shadow-xs"
+                  : "bg-[#191D20] hover:bg-[#33383B] text-white shadow-xs"
               }`}
             >
               {justAdded ? (
@@ -86,8 +86,8 @@ export function ProductDetailActions({ product }: ProductDetailActionsProps) {
             <button
               type="button"
               onClick={openCart}
-              title="Sepeti Görüntüle"
-              className="px-3 py-2.5 bg-white hover:bg-industrial-100 text-industrial-700 border border-industrial-300 rounded-lg text-xs font-mono cursor-pointer transition-colors"
+              title="Sepeti Görüntüle" aria-label="Teklif sepetini görüntüle"
+              className="px-3 py-2.5 bg-white hover:bg-[#EAE7E1] text-[#4D514B] border border-[#CFCBC3] rounded-lg text-xs font-sans cursor-pointer transition-colors"
             >
               Sepetim
             </button>
@@ -112,10 +112,10 @@ export function ProductDetailActions({ product }: ProductDetailActionsProps) {
           href={`/urunler/${product.slug}/datasheet`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white hover:bg-industrial-100 text-industrial-800 hover:text-night border border-industrial-300 rounded-lg text-xs font-mono font-bold uppercase tracking-wider transition-colors shadow-xs"
+          className="inline-flex items-center justify-center gap-2 px-4 py-3 bg-white hover:bg-[#EAE7E1] text-[#191D20] hover:text-night border border-[#CFCBC3] rounded-lg text-xs font-sans font-semibold transition-colors shadow-xs"
         >
           <DocumentTextIcon className="w-4 h-4 text-rust" />
-          <span>Teknik Föyü İndir (PDF)</span>
+          <span>Teknik föyü görüntüle</span>
         </a>
 
         <Button
