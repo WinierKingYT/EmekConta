@@ -63,3 +63,41 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #b7410e;
 }
+
+@layer utilities {
+  /* Subtle light CAD engineering blueprint grid */
+  .bg-blueprint-grid {
+    background-image: 
+      linear-gradient(to right, rgba(26, 37, 54, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 37, 54, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Dark titanium blueprint grid with subtle rust accents */
+  .bg-blueprint-dark {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Forged machined steel surface */
+  .surface-machined {
+    background: radial-gradient(ellipse at 50% 0%, rgba(183, 65, 14, 0.16) 0%, transparent 65%),
+                linear-gradient(180deg, #162232 0%, #0d141e 100%);
+  }
+
+  /* Bespoke inner bevel highlight for buttons and cards */
+  .bevel-lip {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+
+  .bevel-lip-dark {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Industrial Nameplate / Spec Plate Hairline */
+  .hairline-rust {
+    border-image: linear-gradient(to right, transparent, #b7410e, #e85922, transparent) 1;
+  }
+}

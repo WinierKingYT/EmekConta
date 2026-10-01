@@ -84,9 +84,11 @@ export function HeroSection() {
 
             {/* Key Micro Capabilities as 3 Elevated Micro-Cards */}
             <div className="mt-8 pt-8 border-t border-industrial-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
+              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
+                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
+                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
                   <span>DIN & ASME Normları</span>
                 </div>
                 <p className="text-[11px] text-industrial-400 font-sans leading-tight">
@@ -94,9 +96,11 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
+              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
+                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
+                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
                   <span>CAD / DXF Kesim</span>
                 </div>
                 <p className="text-[11px] text-industrial-400 font-sans leading-tight">
@@ -104,9 +108,11 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="p-3 bg-industrial-900/70 border border-industrial-800 hover:border-rust/40 rounded-xl transition-colors">
+              <div className="p-3.5 bg-night-surface/90 border border-night-border hover:border-rust/60 rounded-xl transition-all relative overflow-hidden group shadow-xs">
+                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust/40 to-transparent group-hover:via-rust" />
+                <span className="absolute top-1 right-1.5 font-mono text-[9px] text-industrial-600 select-none">+</span>
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-white mb-1">
-                  <CheckCircleIcon className="w-4 h-4 text-rust shrink-0" />
+                  <CheckCircleIcon className="w-4 h-4 text-rust-ember shrink-0" />
                   <span>Numuneye Göre Üretim</span>
                 </div>
                 <p className="text-[11px] text-industrial-400 font-sans leading-tight">

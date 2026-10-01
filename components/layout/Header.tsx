@@ -132,9 +132,9 @@ export function Header() {
             aria-label={isEn ? "Emek Gaskets Home" : "Emek Conta Ana Sayfa"}
           >
             {/* Precision geometric emblem */}
-            <div className="w-10 h-10 bg-night-light border-2 border-rust/50 group-hover:border-rust transition-all flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden rounded-lg">
+            <div className="w-10 h-10 bg-night-surface border-2 border-rust/70 group-hover:border-rust group-hover:shadow-[0_0_12px_rgba(207,75,20,0.45)] transition-all flex items-center justify-center shrink-0 shadow-inner-bevel relative overflow-hidden rounded-lg">
               {/* Subtle top-right metallic corner accent */}
-              <div className="absolute top-0 right-0 w-2 h-2 bg-rust/30 rotate-45 transform origin-top-right" />
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-rust/40 rotate-45 transform origin-top-right" />
               <div className="flex items-center font-mono font-black text-sm tracking-tighter">
                 <span className="text-rust text-base mr-0.5">E</span>
                 <span className="text-white text-base">C</span>
@@ -199,7 +199,7 @@ export function Header() {
                       </span>
                     )}
                     {isActive && (
-                      <span className="absolute bottom-0 left-2.5 right-2.5 h-[2.5px] bg-rust rounded-full shadow-xs" />
+                      <span className="absolute bottom-0 left-2.5 right-2.5 h-[2.5px] bg-gradient-to-r from-rust to-rust-ember rounded-full shadow-[0_0_8px_rgba(207,75,20,0.6)]" />
                     )}
                   </Link>
                 </div>
@@ -217,11 +217,11 @@ export function Header() {
               type="button"
               onClick={openCart}
               aria-label={`Teklif Sepeti (${itemCount} ürün)`}
-              className="relative px-2.5 sm:px-3 py-1.5 bg-industrial-900 hover:bg-industrial-800 text-industrial-200 hover:text-white border border-industrial-800 hover:border-industrial-700 transition-all text-xs font-mono font-medium rounded-lg flex items-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs"
+              className="relative px-2.5 sm:px-3 py-1.5 bg-night-surface hover:bg-industrial-850 text-industrial-200 hover:text-white border border-night-border hover:border-rust/40 transition-all text-xs font-mono font-medium rounded-lg flex items-center gap-1.5 sm:gap-2 cursor-pointer shadow-inner-bevel"
             >
-              <DocumentTextIcon className="w-4 h-4 text-rust" />
+              <DocumentTextIcon className="w-4 h-4 text-rust-ember" />
               <span className="hidden xl:inline">{isEn ? i18nDict.en.quoteCart : i18nDict.tr.quoteCart}</span>
-              <span className="px-1.5 py-0.2 bg-rust text-white text-[10px] font-bold rounded-md min-w-[18px] text-center">
+              <span className="px-1.5 py-0.2 bg-gradient-to-r from-rust-hot to-rust text-white text-[10px] font-bold rounded-md min-w-[18px] text-center shadow-xs">
                 {itemCount}
               </span>
             </button>

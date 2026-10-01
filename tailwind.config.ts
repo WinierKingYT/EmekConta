@@ -12,7 +12,11 @@ const config: Config = {
       colors: {
         // Brand Palette (Emek Conta Kurumsal Renk Sistemi)
         rust: {
+          ember: "#e85922",   // Kor pası (Vurgulu parıltı & hover)
+          hot: "#cf4b14",     // Sıcak döküm pası
           DEFAULT: "#b7410e", // Pas Rengi (Ana Ton: Başlıklar, yan menüler, ikonlar)
+          forge: "#96350b",   // Dövme pası
+          deep: "#702504",    // Derin oksit
           dark: "#96350b",
           light: "#d2521c",
           subtle: "#fef3ee",
@@ -26,9 +30,11 @@ const config: Config = {
           subtle: "#fdf2f4",
         },
         night: {
+          deep: "#0d141e",    // En derin dökümhane tabanı
           DEFAULT: "#1a2536", // Gece Mavisi (Kontrast: Ana metinler, koyu arka planlar)
           dark: "#121b27",
           light: "#24334a",
+          surface: "#15202e", // İşlenmiş metal panel yüzeyi
           border: "#2e3f59",
         },
         // Mapped industrial scales
@@ -58,6 +64,14 @@ const config: Config = {
           amber: "#b7410e",    // Pas Rengi
           subtle: "#fdf2f4",   // Açık Tuğla
         },
+      },
+      boxShadow: {
+        "glow-rust-sm": "0 0 10px -2px rgba(183, 65, 14, 0.25)",
+        "glow-rust": "0 0 20px -3px rgba(183, 65, 14, 0.35)",
+        "glow-rust-lg": "0 0 35px -5px rgba(183, 65, 14, 0.45)",
+        "inner-bevel": "inset 0 1px 0 rgba(255, 255, 255, 0.22)",
+        "inner-bevel-dark": "inset 0 1px 0 rgba(255, 255, 255, 0.08)",
+        "machined": "0 4px 20px -2px rgba(18, 27, 39, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],

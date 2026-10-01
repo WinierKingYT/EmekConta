@@ -179,14 +179,14 @@ export function MaterialSelectorWidget() {
         {/* The Interactive Selector Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Controls Column (Left, 5 cols) */}
-          <div className="lg:col-span-5 space-y-6 bg-industrial-950/80 border border-industrial-800 p-6 sm:p-7 rounded-2xl">
+          <div className="lg:col-span-5 space-y-6 bg-night-deep/90 bg-blueprint-dark border border-night-border p-6 sm:p-7 rounded-2xl shadow-xl relative">
             {/* Step 1: Fluid Type */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-rust font-bold">
+                <span className="flex items-center gap-1.5 text-rust-ember font-bold">
                   <span>1.</span> AKIŞKAN / ORTAM
                 </span>
-                <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
+                <span className="text-[10px] text-industrial-500 font-mono">SEÇİNİZ</span>
               </label>
               <div className="grid grid-cols-1 gap-1.5">
                 {[
@@ -202,8 +202,8 @@ export function MaterialSelectorWidget() {
                     onClick={() => setFluid(item.id as FluidType)}
                     className={`w-full text-left px-3 py-2 text-xs font-mono transition-all border rounded-lg flex items-center justify-between cursor-pointer ${
                       fluid === item.id
-                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
-                        : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
+                        ? "bg-gradient-to-r from-rust-hot via-rust to-rust-forge border-rust-ember text-white font-bold shadow-glow-rust-sm"
+                        : "bg-night-surface border-night-border text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
                     <span className="truncate">{item.label}</span>
@@ -216,10 +216,10 @@ export function MaterialSelectorWidget() {
             {/* Step 2: Temperature Range */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-rust font-bold">
+                <span className="flex items-center gap-1.5 text-rust-ember font-bold">
                   <span>2.</span> ÇALIŞMA SICAKLIĞI
                 </span>
-                <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
+                <span className="text-[10px] text-industrial-500 font-mono">SEÇİNİZ</span>
               </label>
               <div className="grid grid-cols-3 gap-1.5">
                 {[
@@ -233,8 +233,8 @@ export function MaterialSelectorWidget() {
                     onClick={() => setTemp(item.id as TempRange)}
                     className={`p-2 text-center font-mono border rounded-lg transition-all cursor-pointer ${
                       temp === item.id
-                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
-                        : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
+                        ? "bg-gradient-to-r from-rust-hot via-rust to-rust-forge border-rust-ember text-white font-bold shadow-glow-rust-sm"
+                        : "bg-night-surface border-night-border text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
                     <span className="block text-[11px] font-bold">{item.label}</span>
@@ -247,10 +247,10 @@ export function MaterialSelectorWidget() {
             {/* Step 3: Pressure Class */}
             <div>
               <label className="flex items-center justify-between text-xs font-mono text-industrial-300 uppercase tracking-wider mb-2.5">
-                <span className="flex items-center gap-1.5 text-rust font-bold">
+                <span className="flex items-center gap-1.5 text-rust-ember font-bold">
                   <span>3.</span> BASINÇ SINIFI
                 </span>
-                <span className="text-[10px] text-industrial-500">SEÇİNİZ</span>
+                <span className="text-[10px] text-industrial-500 font-mono">SEÇİNİZ</span>
               </label>
               <div className="grid grid-cols-3 gap-1.5">
                 {[
@@ -264,8 +264,8 @@ export function MaterialSelectorWidget() {
                     onClick={() => setPressure(item.id as PressureClass)}
                     className={`p-2 text-center font-mono border rounded-lg transition-all cursor-pointer ${
                       pressure === item.id
-                        ? "bg-rust border-rust-light text-white font-bold shadow-xs"
-                        : "bg-industrial-900 border-industrial-800 text-industrial-300 hover:bg-industrial-850 hover:text-white"
+                        ? "bg-gradient-to-r from-rust-hot via-rust to-rust-forge border-rust-ember text-white font-bold shadow-glow-rust-sm"
+                        : "bg-night-surface border-night-border text-industrial-300 hover:bg-industrial-850 hover:text-white"
                     }`}
                   >
                     <span className="block text-[11px] font-bold">{item.label}</span>
@@ -277,7 +277,16 @@ export function MaterialSelectorWidget() {
           </div>
 
           {/* Dynamic Result Column (Right, 7 cols) */}
-          <div className="lg:col-span-7 bg-industrial-950 border border-industrial-750 p-6 sm:p-8 relative shadow-2xl rounded-2xl">
+          <div className="lg:col-span-7 bg-night-surface border border-night-border p-6 sm:p-8 relative shadow-2xl rounded-2xl overflow-hidden">
+            {/* Top Hairline Rust Accent */}
+            <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
+
+            {/* CAD Corner Reticles */}
+            <span className="absolute top-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+            <span className="absolute top-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+            <span className="absolute bottom-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+            <span className="absolute bottom-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+
             {/* Top Match Tag */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-5 border-b border-industrial-800">
               <div className="flex items-center gap-2">
@@ -286,7 +295,7 @@ export function MaterialSelectorWidget() {
                   MÜHENDİSLİK TAVSİYESİ (DOĞRULANMIŞ EŞLEŞME)
                 </span>
               </div>
-              <span className="text-xs font-mono text-rust px-2.5 py-0.5 bg-industrial-900 border border-rust/40 rounded-md">
+              <span className="text-xs font-mono text-rust-light px-2.5 py-0.5 bg-night-deep border border-rust/40 rounded-md">
                 {recommendation.standards}
               </span>
             </div>

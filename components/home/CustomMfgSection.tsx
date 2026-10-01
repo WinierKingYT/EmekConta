@@ -63,27 +63,39 @@ export function CustomMfgSection() {
 
           {/* Right Column: Workshop Production Mock / Photo Placeholder */}
           <div className="lg:col-span-5">
-            <div className="bg-industrial-950 border border-industrial-800 p-6 sm:p-8 rounded-xl">
+            <div className="bg-night-deep/95 bg-blueprint-dark border border-night-border p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden group">
+              {/* Top Hairline Rust Accent */}
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
+
+              {/* CAD Corner Reticles */}
+              <span className="absolute top-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+              <span className="absolute top-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+              <span className="absolute bottom-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+              <span className="absolute bottom-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+
               <div className="flex items-center justify-between pb-4 border-b border-industrial-800 text-xs font-mono text-industrial-400">
                 <div className="flex items-center gap-2">
-                  <FactoryIcon className="w-4 h-4 text-rust" />
-                  <span>İMALAT VE TEKNİK ÇÖZÜM MERKEZİ</span>
+                  <FactoryIcon className="w-4 h-4 text-rust-ember" />
+                  <span className="text-industrial-200 font-semibold">İMALAT & TEKNİK ÇÖZÜM MERKEZİ</span>
                 </div>
-                <span className="text-emerald-400">CNC AKTİF</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-emerald-400 font-bold">CNC AKTİF</span>
+                </div>
               </div>
 
               {/* Engineering Spec Card Mock */}
-              <div className="my-6 p-5 bg-industrial-900 border border-industrial-850 space-y-4 rounded-md">
-                <div className="text-xs font-mono text-industrial-400 uppercase tracking-wider">
+              <div className="my-6 p-5 bg-night-surface border border-night-border space-y-4 rounded-xl shadow-inner-bevel">
+                <div className="text-xs font-mono text-rust-ember font-bold uppercase tracking-wider">
                   Kabul Edilen Çizim Formatları
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">.DWG</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">.DXF</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">.STEP</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">.PDF</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">.IGES</span>
-                  <span className="px-2 py-1.5 bg-industrial-800 border border-industrial-700 text-industrial-200 rounded-md">NUMUNE</span>
+                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.DWG</span>
+                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.DXF</span>
+                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.STEP</span>
+                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.PDF</span>
+                  <span className="px-2 py-1.5 bg-night-deep border border-industrial-800 text-industrial-200 rounded-md hover:border-rust/40 transition-colors">.IGES</span>
+                  <span className="px-2 py-1.5 bg-rust/20 border border-rust/50 text-rust-light font-bold rounded-md">NUMUNE</span>
                 </div>
 
                 <div className="pt-2 text-[11px] text-industrial-400 leading-relaxed font-sans">
@@ -94,7 +106,7 @@ export function CustomMfgSection() {
               {/* Notice block */}
               <div className="pt-4 border-t border-industrial-850 flex items-center justify-between text-xs text-industrial-400 font-mono">
                 <span>MİNİMUM SİPARİŞ ADEDİ:</span>
-                <span className="text-white font-bold">1 ADET PROTOTİP</span>
+                <span className="text-white font-bold px-2 py-0.5 bg-night-deep border border-rust/30 rounded-md text-rust-light">1 ADET PROTOTİP</span>
               </div>
             </div>
           </div>

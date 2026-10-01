@@ -26,14 +26,24 @@ export function CategoryGrid() {
           {productCategories.map((category, idx) => (
             <div
               key={category.id}
-              className="group bg-white border border-industrial-200 hover:border-rust hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-xl overflow-hidden"
+              className="group relative bg-white border border-industrial-200 hover:border-rust hover:shadow-[0_8px_32px_-6px_rgba(183,65,14,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between rounded-xl overflow-hidden"
             >
+              {/* Top subtle metallic corner tick */}
+              <div className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-bl from-rust/40 to-transparent pointer-events-none z-20" />
+
               <div>
                 {/* Visual Header / Real Product Photo */}
-                <div className="relative h-60 bg-gradient-to-b from-white via-white to-industrial-50/70 border-b border-industrial-200 overflow-hidden flex flex-col justify-between p-4">
+                <div className="relative h-60 bg-gradient-to-b from-white via-industrial-50/40 to-industrial-100/60 border-b border-industrial-200 overflow-hidden flex flex-col justify-between p-4">
+                  {/* Subtle blueprint grid overlay */}
+                  <div className="absolute inset-0 bg-blueprint-grid opacity-35 pointer-events-none" />
+
+                  {/* Corner CAD reticles (+) */}
+                  <span className="absolute top-2 left-2 text-[9px] font-mono text-industrial-400/80 pointer-events-none select-none z-10">+</span>
+                  <span className="absolute top-2 right-2 text-[9px] font-mono text-industrial-400/80 pointer-events-none select-none z-10">+</span>
+
                   {/* Category Image */}
                   {category.image && (
-                    <div className="absolute inset-0 p-4 flex items-center justify-center">
+                    <div className="absolute inset-0 p-4 flex items-center justify-center z-10">
                       <Image
                         src={category.image}
                         alt={category.name}
@@ -77,7 +87,7 @@ export function CategoryGrid() {
                     {category.highlights.map((highlight, hIdx) => (
                       <span
                         key={hIdx}
-                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-night border border-industrial-200/60 group-hover:border-rust/30 rounded-md transition-colors"
+                        className="text-xs font-mono px-2 py-0.5 bg-industrial-100 text-night border border-industrial-200/60 group-hover:border-rust/40 rounded-md transition-colors"
                       >
                         {highlight}
                       </span>
@@ -90,7 +100,7 @@ export function CategoryGrid() {
               <div>
                 <Link
                   href={`/urunler?kategori=${category.id}`}
-                  className="w-full flex items-center justify-between px-6 py-3.5 bg-industrial-50 border-t border-industrial-200 text-night group-hover:bg-brick group-hover:text-white transition-all duration-300 font-mono text-xs font-bold uppercase tracking-wider"
+                  className="w-full flex items-center justify-between px-6 py-3.5 bg-industrial-50 border-t border-industrial-200 text-night group-hover:bg-gradient-to-r group-hover:from-rust group-hover:to-rust-forge group-hover:text-white transition-all duration-300 font-mono text-xs font-bold uppercase tracking-wider group-hover:shadow-inner"
                 >
                   <span>Kategoriyi İncele</span>
                   <ArrowRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />

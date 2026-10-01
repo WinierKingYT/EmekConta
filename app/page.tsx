@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
+import { FoundryTelemetryBar } from "@/components/home/FoundryTelemetryBar";
 import { TrustBar } from "@/components/home/TrustBar";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { MaterialSelectorWidget } from "@/components/home/MaterialSelectorWidget";
@@ -49,6 +50,9 @@ export default function HomePage() {
       />
       {/* 1. Hero: Authoritative Title, 2 CTAs, 3-Slide Studio Showcase & CAD */}
       <HeroSection />
+
+      {/* Live Manufacturing & Workshop Telemetry */}
+      <FoundryTelemetryBar />
 
       {/* 2. Trust Bar: 5-item Typographic Pillar */}
       <TrustBar />

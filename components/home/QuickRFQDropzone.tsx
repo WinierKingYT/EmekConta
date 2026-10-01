@@ -242,7 +242,25 @@ export function QuickRFQDropzone() {
           </div>
 
           {/* Right Column: The Direct Dropzone Form */}
-          <div className="lg:col-span-7 bg-industrial-900 border border-industrial-800 p-6 sm:p-8 shadow-2xl relative rounded-2xl">
+          <div className="lg:col-span-7 bg-industrial-900 border border-industrial-800 p-6 sm:p-8 shadow-2xl relative rounded-xl overflow-hidden">
+            {/* Subtle blueprint dark grid */}
+            <div className="absolute inset-0 bg-blueprint-dark opacity-40 pointer-events-none" />
+
+            {/* Corner CAD reticles (+) */}
+            <span className="absolute top-2.5 left-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
+            <span className="absolute top-2.5 right-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
+            <span className="absolute bottom-2.5 left-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
+            <span className="absolute bottom-2.5 right-2.5 text-[9px] font-mono text-industrial-500 pointer-events-none select-none z-10">+</span>
+
+            <div className="relative z-10">
+              {/* Engraved Header */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-industrial-800 font-mono text-[10px] text-industrial-400">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rust" />
+                  <span className="font-bold text-white uppercase tracking-wider">DİJİTAL ÇİZİM MASASI // CAD DROPZONE</span>
+                </span>
+                <span className="text-industrial-500 hidden sm:inline">AUTOCAD • SOLIDWORKS • STEP</span>
+              </div>
             {isSuccess ? (
               <div className="py-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
@@ -421,7 +439,7 @@ export function QuickRFQDropzone() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-brick hover:bg-brick-hover text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 border border-brick shadow-lg disabled:opacity-50 rounded-lg cursor-pointer"
+                    className="w-full py-3.5 bg-gradient-to-b from-rust-hot via-rust to-rust-forge hover:from-rust-ember hover:to-rust text-white font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 border border-rust-ember/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_4px_16px_rgba(183,65,14,0.35)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_24px_rgba(232,89,34,0.45)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 rounded-lg cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
@@ -442,6 +460,7 @@ export function QuickRFQDropzone() {
                 </p>
               </form>
             )}
+            </div>
           </div>
         </div>
       </Container>

@@ -91,10 +91,19 @@ export function HeroShowcase() {
 
   return (
     <div 
-      className="w-full max-w-lg bg-industrial-950/95 border border-industrial-700/80 p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] relative backdrop-blur-md rounded-2xl"
+      className="w-full max-w-lg bg-night-deep/95 bg-blueprint-dark border border-night-border p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] relative backdrop-blur-md rounded-2xl overflow-hidden group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      {/* Top Hairline Rust Accent */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
+
+      {/* CAD Corner Reticles */}
+      <span className="absolute top-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+      <span className="absolute top-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+      <span className="absolute bottom-2 left-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+      <span className="absolute bottom-2 right-2.5 font-mono text-[9px] text-industrial-600 select-none pointer-events-none">+</span>
+
       {/* Console Header */}
       <div className="flex items-center justify-between border-b border-industrial-800 pb-3 mb-4 text-[11px] font-mono">
         <div className="flex items-center gap-2 px-3 py-1.5 bg-industrial-900 border border-industrial-800 rounded-lg">
@@ -178,12 +187,12 @@ export function HeroShowcase() {
             +
           </div>
 
-          {/* Slider Navigation Arrows (Circular, Soft, Ergonomic) */}
+          {/* Slider Navigation Arrows (Machined Precision Controls) */}
           <button
             type="button"
             onClick={prevSlide}
             aria-label="Önceki Görsel"
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-night-surface/90 hover:bg-rust-forge border border-night-border hover:border-rust text-white transition-all backdrop-blur-xs rounded-lg opacity-85 hover:opacity-100 shadow-inner-bevel cursor-pointer"
           >
             <ChevronLeftIcon className="w-4 h-4" />
           </button>
@@ -191,13 +200,13 @@ export function HeroShowcase() {
             type="button"
             onClick={nextSlide}
             aria-label="Sonraki Görsel"
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-industrial-950/85 hover:bg-rust border border-industrial-700/60 hover:border-rust text-white transition-all backdrop-blur-xs rounded-full opacity-80 hover:opacity-100 shadow-md cursor-pointer"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-30 p-2 bg-night-surface/90 hover:bg-rust-forge border border-night-border hover:border-rust text-white transition-all backdrop-blur-xs rounded-lg opacity-85 hover:opacity-100 shadow-inner-bevel cursor-pointer"
           >
             <ChevronRightIcon className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Slide Indicator Selector Pills */}
+        {/* Slide Indicator Selector Tabs */}
         <div className="mt-3.5 grid grid-cols-3 gap-2">
           {slides.map((s, idx) => {
             const isActive = idx === currentSlide;
@@ -208,12 +217,12 @@ export function HeroShowcase() {
                 onClick={() => setCurrentSlide(idx)}
                 className={`py-2 px-2 text-center font-mono text-[10px] border transition-all rounded-lg cursor-pointer ${
                   isActive
-                    ? "bg-industrial-900 border-rust text-rust font-bold shadow-sm shadow-rust/10"
-                    : "bg-industrial-950/60 border-industrial-850 text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
+                    ? "bg-gradient-to-r from-rust-hot to-rust-forge border-rust-ember text-white font-bold shadow-glow-rust-sm"
+                    : "bg-night-surface/80 border-night-border text-industrial-400 hover:text-industrial-200 hover:border-industrial-700"
                 }`}
               >
                 <span className="block truncate">{s.shortLabel}</span>
-                {isActive && <span className="block h-0.5 bg-rust mt-1.5 rounded-full" />}
+                {isActive && <span className="block h-0.5 bg-rust-ember mt-1.5 rounded-full" />}
               </button>
             );
           })}

@@ -6,14 +6,22 @@ import { companyData } from "@/data/company";
 
 export function FinalCTASection() {
   return (
-    <section className="py-16 sm:py-24 bg-industrial-950 text-white relative overflow-hidden">
-      {/* Decorative technical line */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-industrial-800 via-rust to-industrial-800" />
+    <section className="py-20 sm:py-28 bg-night-deep bg-blueprint-dark text-white relative overflow-hidden border-t border-night-border">
+      {/* Top Hairline Rust Accent */}
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-rust to-transparent opacity-80" />
 
-      <Container size="narrow" className="text-center relative">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-industrial-850 border border-industrial-700 text-xs font-mono text-industrial-300 mb-6 uppercase tracking-wider">
-          <span className="w-2 h-2 bg-rust rounded-full" />
-          Hızlı B2B Teklif & Teknik Danışmanlık
+      {/* Atmospheric Forge Radial Glow */}
+      <div 
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] pointer-events-none opacity-25 blur-3xl rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(207, 75, 20, 0.4) 0%, rgba(26, 37, 54, 0.2) 60%, transparent 80%)',
+        }}
+      />
+
+      <Container size="narrow" className="text-center relative z-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-night-surface border border-rust/40 text-xs font-mono text-rust-light mb-6 uppercase tracking-wider rounded-md shadow-inner-bevel">
+          <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+          Hızlı B2B Teklif & Doğrudan İmalat Danışmanlığı
         </div>
 
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
