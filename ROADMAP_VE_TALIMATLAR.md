@@ -69,10 +69,10 @@
 - **4.3 Open Graph & Metadata (Tamamlandı):** `app/opengraph-image.tsx` ile `next/og` (`ImageResponse`) altyapısında 1200x630 çözünürlüğünde kurumsal pas/gece mavisi renklerinde dinamik sosyal medya ve WhatsApp önizleme kartı oluşturuldu. Canonical URL'ler (`alternates.canonical`) ve `summary_large_image` Twitter kartları tüm sayfalara bağlandı.
 - **4.4 Google Search Console Doğrulaması (Tamamlandı):** `verification.google` meta etiketi (`NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`) `app/layout.tsx` içerisine entegre edildi.
 
-### 🔵 Aşama 5: Analitik & Takip
-- **5.1 Google Analytics 4 (GA4):** Next.js Script ile entegrasyon.
-- **5.2 Microsoft Clarity:** Kullanıcı oturum kayıtları ve ısı haritaları (tamamen ücretsiz).
-- **5.3 RFQ Conversion Tracking:** Teklif formu gönderildiğinde analytics event'i tetikleme.
+### 🔵 Aşama 5: Analitik & Takip (TAMAMLANDI ✅)
+- **5.1 Google Analytics 4 (GA4) (Tamamlandı):** `lib/analytics.ts` yardımcı kütüphanesi ve `components/analytics/AnalyticsScripts.tsx` asenkron `next/script` yükleyicisi geliştirildi. `NEXT_PUBLIC_GA_MEASUREMENT_ID` çevre değişkenine bağlandı.
+- **5.2 Microsoft Clarity (Tamamlandı):** Kullanıcı oturum kayıtları ve ısı haritaları için `NEXT_PUBLIC_CLARITY_PROJECT_ID` destekli Clarity script'i `app/layout.tsx` gövdesine entegre edildi; özel lead etiketleri (`setClarityTag`) tanımlandı.
+- **5.3 RFQ & İletişim Dönüşüm Takibi (Tamamlandı):** Detaylı RFQ formu, ana sayfa hızlı CAD dropzone'u, numune talep portalı, toplu teklif sepeti ve bayi başvuru formu olmak üzere 5 form akışına `generate_lead` standardı ve Clarity `rfq_submitted` event'leri bağlandı. WhatsApp ve telefon tıklamaları ile teknik föy (datasheet) yazdırma/indirme eylemlerine dönüşüm takipçileri eklendi.
 
 ### 🟣 Aşama 6: İhracat & Çoklu Dil
 - **6.1 İngilizce Versiyon (`/en`):** `next-intl` ile yabancı tersane ve petrokimya firmaları için tam İngilizce dil desteği.
@@ -108,4 +108,4 @@ Sevgili yapay zeka asistanı, bu projeyi devraldığında lütfen aşağıdaki k
    - Doğrudan yukarıdaki **İstenen Yol Haritası** doğrultusunda çalış.
 
 5. **Sıradaki Aşama Önerisi:**
-   - **Aşama 2**, **Aşama 3** ve **Aşama 4** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 5: Analitik & Takip** (Google Analytics 4 / GA4, Microsoft Clarity kullanıcı oturum kayıtları ve RFQ Form Conversion Event tracking).
+   - **Aşama 2**, **Aşama 3**, **Aşama 4** ve **Aşama 5** başarıyla tamamlandı ve doğrulandı. Sıradaki adım **Aşama 6: İhracat & Çoklu Dil** (Uluslararası standartlar ASME/DIN ihracat landing page'i, `/en` İngilizce dil altyapısı ve küresel tersane/petrokimya B2B içerikleri).

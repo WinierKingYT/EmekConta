@@ -13,6 +13,7 @@ import {
   DocumentTextIcon,
 } from "@/components/icons/Icons";
 import { companyData } from "@/data/company";
+import { trackRfqSubmission } from "@/lib/analytics";
 
 export function QuickRFQDropzone() {
   const [file, setFile] = useState<File | null>(null);
@@ -126,6 +127,11 @@ export function QuickRFQDropzone() {
 
       const ref = data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`;
       setReferenceCode(ref);
+      trackRfqSubmission({
+        formType: "rfq_quick",
+        referenceCode: ref,
+        companyName: company.trim(),
+      });
       setIsSuccess(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Teknik çizim iletilirken bir hata oluştu.";

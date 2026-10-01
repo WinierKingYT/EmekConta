@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { companyData } from "@/data/company";
 import { WhatsappIcon } from "@/components/icons/Icons";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 interface WhatsAppFloatingButtonProps {
   message?: string;
@@ -48,6 +49,7 @@ export function WhatsAppFloatingButton({
       {/* Main Floating Button */}
       <a
         href={whatsappUrl}
+        onClick={() => trackWhatsAppClick("floating_button")}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp ile iletişime geçin ve hızlı teklif alın"

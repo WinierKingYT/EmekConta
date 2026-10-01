@@ -59,7 +59,7 @@ export default function ProductDatasheetPage({
           </Link>
 
           <div className="flex items-center gap-3">
-            <PrintButton />
+            <PrintButton productSlug={product.slug} productName={product.name} />
           </div>
         </div>
       </div>

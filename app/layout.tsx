@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 import { RfqCartProvider } from "@/lib/cart-context";
 import { RfqCartDrawer } from "@/components/cart/RfqCartDrawer";
+import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
 import { companyData } from "@/data/company";
 
 const inter = Inter({
@@ -189,6 +190,7 @@ export default function RootLayout({
           <Footer />
           <WhatsAppFloatingButton />
           <RfqCartDrawer />
+          <AnalyticsScripts />
         </RfqCartProvider>
       </body>
     </html>

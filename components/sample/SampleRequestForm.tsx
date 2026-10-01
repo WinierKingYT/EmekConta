@@ -10,6 +10,7 @@ import {
   ShieldCheckIcon,
   DocumentTextIcon,
 } from "@/components/icons/Icons";
+import { trackRfqSubmission } from "@/lib/analytics";
 
 const AVAILABLE_MATERIALS = [
   { id: "grafit", name: "Saf Genleşmiş Grafit (Tırnaklı Sac Takviyeli)", temp: "650 °C" },
@@ -134,7 +135,15 @@ export function SampleRequestForm() {
         throw new Error(data.error || "Numune talebi kaydedilirken bir hata oluştu.");
       }
 
-      setReferenceCode(data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`);
+      const refCode = data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceCode(refCode);
+      trackRfqSubmission({
+        formType: "sample_request",
+        referenceCode: refCode,
+        companyName: formData.companyName,
+        category: "Numune Kiti",
+        itemCount: selectedMaterials.length,
+      });
       setIsSuccess(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Numune talebi iletilirken bir hata oluştu.";

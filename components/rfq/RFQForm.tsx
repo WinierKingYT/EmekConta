@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { productCategories } from "@/data/products";
 import { companyData } from "@/data/company";
 import { Button } from "@/components/ui/Button";
+import { trackRfqSubmission } from "@/lib/analytics";
 import {
   UploadCloudIcon,
   CheckCircleIcon,
@@ -143,7 +144,15 @@ export function RFQForm({ defaultProduct, defaultCategory }: RFQFormProps) {
         throw new Error(data.error || "Talebiniz iletilirken bir hata oluştu.");
       }
 
-      setReferenceCode(data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`);
+      const refCode = data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceCode(refCode);
+      trackRfqSubmission({
+        formType: "rfq_detailed",
+        referenceCode: refCode,
+        category: formData.category,
+        productName: formData.productName,
+        companyName: formData.companyName,
+      });
       setIsSuccess(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Teklif iletilirken bir hata oluştu.";

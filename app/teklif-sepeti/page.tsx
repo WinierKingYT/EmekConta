@@ -14,6 +14,7 @@ import {
   ArrowRightIcon,
   ShieldCheckIcon,
 } from "@/components/icons/Icons";
+import { trackRfqSubmission, trackWhatsAppClick, trackPhoneClick } from "@/lib/analytics";
 
 export default function CartPage() {
   const { items, itemCount, removeItem, updateQuantity, clearCart } = useRfqCart();
@@ -84,7 +85,14 @@ export default function CartPage() {
         throw new Error(data.error || "Toplu teklif iletilirken bir hata oluştu.");
       }
 
-      setReferenceCode(data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`);
+      const ref = data.referenceCode || `EC-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceCode(ref);
+      trackRfqSubmission({
+        formType: "rfq_cart",
+        referenceCode: ref,
+        itemCount: items.length,
+        companyName: formData.companyName,
+      });
       setIsSuccess(true);
       clearCart();
     } catch (err: unknown) {
@@ -133,6 +141,7 @@ export default function CartPage() {
             <div className="mt-8 pt-6 border-t border-industrial-200 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
               <a
                 href={`tel:${companyData.phone}`}
+                onClick={() => trackPhoneClick("cart_success")}
                 className="px-4 py-2.5 bg-industrial-900 text-white hover:bg-industrial-800 transition-colors inline-flex items-center gap-2 rounded-lg"
               >
                 <PhoneIcon className="w-4 h-4 text-steel-blue" />
@@ -140,6 +149,7 @@ export default function CartPage() {
               </a>
               <a
                 href={`https://wa.me/${companyData.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Merhaba Emek Conta, #${referenceCode} referans kodlu toplu teklif talebim hakkında bilgi almak istiyorum.`)}`}
+                onClick={() => trackWhatsAppClick("cart_success", referenceCode)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2.5 bg-emerald-600 text-white hover:bg-emerald-700 transition-colors inline-flex items-center gap-2 rounded-lg"

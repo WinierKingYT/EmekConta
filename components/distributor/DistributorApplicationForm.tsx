@@ -9,6 +9,7 @@ import {
   WhatsappIcon,
   ShieldCheckIcon,
 } from "@/components/icons/Icons";
+import { trackRfqSubmission } from "@/lib/analytics";
 
 const BUSINESS_TYPES = [
   "Endüstriyel Hırdavat / Rulman / Sızdırmazlık Bayisi",
@@ -139,7 +140,14 @@ export function DistributorApplicationForm() {
         throw new Error(data.error || "Bayilik başvurusu iletilirken bir hata oluştu.");
       }
 
-      setReferenceCode(data.referenceCode || `EC-BAYI-${Math.floor(100000 + Math.random() * 900000)}`);
+      const ref = data.referenceCode || `EC-BAYI-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceCode(ref);
+      trackRfqSubmission({
+        formType: "distributor_application",
+        referenceCode: ref,
+        companyName: formData.companyName,
+        category: formData.businessType,
+      });
       setIsSuccess(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Başvuru iletilirken bir hata oluştu.";
