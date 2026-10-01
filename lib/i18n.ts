@@ -8,23 +8,21 @@ export interface NavItem {
 
 export const i18nNav: Record<Locale, NavItem[]> = {
   tr: [
-    { label: "Ana Sayfa", href: "/" },
     { label: "Ürünler", href: "/urunler" },
+    { label: "Özel İmalat", href: "/ozel-uretim" },
     { label: "Sektörler", href: "/sektorler" },
-    { label: "Özel Üretim", href: "/ozel-uretim", badge: "CAD/CNC" },
-    { label: "İhracat & Standartlar", href: "/ihracat", badge: "ASME/DIN" },
-    { label: "Hakkımızda", href: "/hakkimizda" },
+    { label: "Standartlar", href: "/ihracat" },
     { label: "Teknik Bilgi", href: "/teknik-bilgi" },
+    { label: "Hakkımızda", href: "/hakkimizda" },
     { label: "İletişim", href: "/iletisim" },
   ],
   en: [
-    { label: "Home", href: "/en" },
     { label: "Products", href: "/en/products" },
-    { label: "Export & Standards", href: "/en/export", badge: "ASME/DIN" },
-    { label: "Custom Mfg", href: "/ozel-uretim", badge: "CAD/CNC" },
-    { label: "Sample Kit", href: "/numune-talep", badge: "Free" },
+    { label: "Custom Mfg", href: "/ozel-uretim" },
+    { label: "Sectors", href: "/sektorler" },
+    { label: "Standards", href: "/en/export" },
     { label: "About Us", href: "/hakkimizda" },
-    { label: "Contact & RFQ", href: "/en/contact" },
+    { label: "Contact", href: "/en/contact" },
   ],
 };
 

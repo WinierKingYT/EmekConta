@@ -66,22 +66,18 @@ export function Header() {
   return (
     <>
       {/* Top Utility Bar (B2B Quick Contact) */}
-      <div className="hidden md:block bg-industrial-950 text-industrial-300 text-xs border-b border-industrial-850">
-        <Container className="flex items-center justify-between py-2">
-          <div className="flex items-center gap-4 text-[11px] font-mono">
+      <div className="hidden lg:block bg-industrial-950 text-industrial-300 text-xs border-b border-industrial-850">
+        <Container className="flex items-center justify-between py-1.5">
+          <div className="flex items-center gap-2.5 text-[11px] font-mono">
             <span className="text-industrial-300 font-medium">
               {isEn
-                ? "Industrial & Marine Sealing Solutions Since 1997"
-                : "1997'den Beri Sanayi & Denizcilik Sızdırmazlık Çözümleri"}
+                ? "Industrial Sealing Solutions Since 1997"
+                : "1997'den Beri Endüstriyel Sızdırmazlık Çözümleri"}
             </span>
-            <span className="text-industrial-700">|</span>
+            <span className="text-industrial-600">•</span>
             <span className="text-industrial-400 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-rust" />
-              {isEn ? "DIN EN 1514 & ASME B16.20 Mfg" : "DIN EN 1514 & ASME B16.20 İmalat"}
-            </span>
-            <span className="text-industrial-700">|</span>
-            <span className="text-industrial-400">
-              {isEn ? "Istanbul Factory & Global Export" : "İstanbul Fabrika & Karaköy Şube"}
+              <span className="w-1.5 h-1.5 rounded-full bg-rust-ember" />
+              {isEn ? "ASME B16.20 & DIN EN 1514 Mfg" : "ASME B16.20 & DIN EN 1514 İmalat"}
             </span>
           </div>
           <div className="flex items-center gap-5">
@@ -89,7 +85,7 @@ export function Header() {
               href={`tel:${companyData.phone}`}
               className="flex items-center gap-1.5 text-industrial-300 hover:text-white transition-colors group"
             >
-              <PhoneIcon className="w-3.5 h-3.5 text-rust transition-transform group-hover:scale-110" />
+              <PhoneIcon className="w-3.5 h-3.5 text-rust-ember transition-transform group-hover:scale-110" />
               <span className="font-mono text-xs">{companyData.phoneFormatted}</span>
             </a>
             <a
@@ -103,14 +99,7 @@ export function Header() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <WhatsappIcon className="w-3.5 h-3.5 text-emerald-400 transition-transform group-hover:scale-110" />
-              <span>WhatsApp RFQ</span>
-            </a>
-            <a
-              href={`mailto:${companyData.quoteEmail}`}
-              className="flex items-center gap-1.5 text-industrial-300 hover:text-white transition-colors group"
-            >
-              <MailIcon className="w-3.5 h-3.5 text-rust transition-transform group-hover:scale-110" />
-              <span>{companyData.quoteEmail}</span>
+              <span className="font-mono text-xs">WhatsApp RFQ</span>
             </a>
           </div>
         </Container>
@@ -128,29 +117,24 @@ export function Header() {
           {/* Logo */}
           <Link
             href={isEn ? "/en" : "/"}
-            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-rust rounded-lg p-1 -m-1"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-rust rounded-lg p-1 -m-1 shrink-0"
             aria-label={isEn ? "Emek Gaskets Home" : "Emek Conta Ana Sayfa"}
           >
             {/* Precision geometric emblem */}
-            <div className="w-10 h-10 bg-night-surface border-2 border-rust/70 group-hover:border-rust group-hover:shadow-[0_0_12px_rgba(207,75,20,0.45)] transition-all flex items-center justify-center shrink-0 shadow-inner-bevel relative overflow-hidden rounded-lg">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-night-surface border-2 border-rust/70 group-hover:border-rust group-hover:shadow-[0_0_12px_rgba(207,75,20,0.45)] transition-all flex items-center justify-center shrink-0 shadow-inner-bevel relative overflow-hidden rounded-lg">
               {/* Subtle top-right metallic corner accent */}
               <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-rust/40 rotate-45 transform origin-top-right" />
               <div className="flex items-center font-mono font-black text-sm tracking-tighter">
-                <span className="text-rust text-base mr-0.5">E</span>
+                <span className="text-rust-ember text-base mr-0.5">E</span>
                 <span className="text-white text-base">C</span>
               </div>
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="text-lg sm:text-xl font-black tracking-tight text-white leading-none">
-                  EMEK CONTA
-                </span>
-                <span className="hidden sm:inline-block text-[9px] font-mono px-1.5 py-0.5 bg-industrial-800 text-rust border border-rust/30 font-bold uppercase tracking-wider rounded-md">
-                  EST. 1997
-                </span>
-              </div>
-              <span className="text-[9.5px] sm:text-[10px] font-mono tracking-widest text-industrial-400 uppercase mt-1 leading-none font-medium">
-                {isEn ? "Industrial Sealing Solutions" : "Endüstriyel Sızdırmazlık San. ve Tic."}
+              <span className="text-base sm:text-lg font-black tracking-tight text-white leading-none">
+                EMEK CONTA
+              </span>
+              <span className="text-[9px] font-mono tracking-wider text-industrial-400 uppercase mt-1 leading-none font-medium">
+                {isEn ? "Sealing Solutions • Est. 1997" : "Sızdırmazlık Sanayi • Est. 1997"}
               </span>
             </div>
           </Link>
@@ -177,7 +161,7 @@ export function Header() {
                         setMegaMenuOpen(false);
                       }
                     }}
-                    className={`px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide transition-all duration-200 relative rounded-lg flex items-center gap-1.5 ${
+                    className={`px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-medium tracking-wide whitespace-nowrap transition-all duration-200 relative rounded-lg flex items-center gap-1.5 ${
                       isActive || (isProductsTab && megaMenuOpen)
                         ? "text-white font-bold bg-white/10"
                         : "text-industrial-300 hover:text-white hover:bg-white/5"
@@ -208,7 +192,7 @@ export function Header() {
           </nav>
 
           {/* Right Action & Mobile Trigger */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             {/* Language Switcher */}
             <LanguageSwitcher />
 
@@ -230,10 +214,15 @@ export function Header() {
               href={isEn ? "/en/contact" : "/teklif-iste"}
               variant="accent"
               size="sm"
-              className="hidden sm:inline-flex shadow-md hover:shadow-brick/20 transition-all font-semibold rounded-lg text-xs"
+              className="hidden sm:inline-flex items-center gap-2 shadow-lg"
             >
-              <span>{isEn ? i18nDict.en.requestQuote : i18nDict.tr.requestQuote}</span>
-              <span className="ml-1 text-xs opacity-80">→</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse shrink-0" />
+              <span className="tracking-wide uppercase text-[11px] font-bold">
+                {isEn ? i18nDict.en.requestQuote : i18nDict.tr.requestQuote}
+              </span>
+              <span className="ml-0.5 px-1 py-0.5 bg-black/25 border border-white/20 rounded text-[10px] font-mono group-hover:translate-x-0.5 transition-transform">
+                →
+              </span>
             </Button>
 
             <a

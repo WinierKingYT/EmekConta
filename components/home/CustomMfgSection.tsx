@@ -46,17 +46,19 @@ export function CustomMfgSection() {
             </ul>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto">
-                <UploadCloudIcon className="w-5 h-5 mr-2" />
-                Teknik Çizim Gönder
+              <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-xl">
+                <UploadCloudIcon className="w-5 h-5 mr-1" />
+                <span>Teknik Çizim / CAD Yükle</span>
+                <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
               </Button>
               <Button
                 href="/ozel-uretim"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto text-white border-industrial-600 hover:bg-industrial-800 hover:border-white"
+                className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
               >
-                Özel Üretim Sürecini İncele
+                <span>Özel Üretim Sürecini İncele</span>
+                <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
               </Button>
             </div>
           </div>

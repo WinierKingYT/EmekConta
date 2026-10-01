@@ -34,17 +34,19 @@ export function FinalCTASection() {
 
         {/* Action Buttons */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto">
-            <UploadCloudIcon className="w-5 h-5 mr-2" />
-            Teklif İste
+          <Button href="/teklif-iste" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-xl">
+            <UploadCloudIcon className="w-5 h-5 mr-1" />
+            <span>Teknik Teklif İste</span>
+            <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
           </Button>
           <Button
             href="/iletisim"
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto text-white border-industrial-700 hover:border-white hover:bg-industrial-900"
+            className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
           >
-            Bizimle İletişime Geçin
+            <span>Mühendislik Departmanına Ulaşın</span>
+            <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
           </Button>
         </div>
 

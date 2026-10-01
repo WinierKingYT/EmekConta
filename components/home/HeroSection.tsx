@@ -61,16 +61,18 @@ export function HeroSection() {
 
             {/* Primary CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <Button href="/urunler" variant="accent" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-rust/20">
-                Ürünleri İncele
+              <Button href="/urunler" variant="accent" size="lg" className="w-full sm:w-auto items-center gap-2 shadow-lg">
+                <span>Üretim Gamını İncele</span>
+                <span className="w-5 h-5 rounded bg-black/25 border border-white/20 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">→</span>
               </Button>
               <Button
                 href="/teklif-iste"
                 variant="outline"
                 size="lg"
-                className="w-full sm:w-auto text-white border-industrial-700 hover:border-rust hover:text-white hover:bg-industrial-900/80 transition-all"
+                className="w-full sm:w-auto items-center gap-2 text-white border-night-border hover:border-rust-ember hover:bg-rust-forge/20 transition-all"
               >
-                Teknik Teklif İste
+                <span>Teknik Çizim / Teklif İste</span>
+                <span className="w-5 h-5 rounded bg-white/10 border border-white/15 flex items-center justify-center text-xs font-mono group-hover:translate-x-0.5 transition-transform">↗</span>
               </Button>
             </div>
 
