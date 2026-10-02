@@ -3345,7 +3345,7 @@ export const productsData: Product[] = [
         "value": "10 mm - 50 mm"
       }
     ],
-    "image": "/images/products/custom_ceramic_insulation_blanket.webp",
+    "image": "/images/products/seramik-levha.webp",
     "imagePlaceholderText": "Seramik Levha (Board) - Emek Conta Teknik İmalat",
     "drawingSupported": true,
     "relatedProductSlugs": [
